@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentsInformationSystem.FrmSplashScreen), true, false, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogIn));
             this.txt_username = new DevExpress.XtraEditors.TextEdit();
             this.txt_password = new DevExpress.XtraEditors.TextEdit();
@@ -117,6 +118,10 @@
             this.simpleButton1.Size = new System.Drawing.Size(111, 37);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "LOG IN";
+            // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 10;
             // 
             // FrmLogIn
             // 
