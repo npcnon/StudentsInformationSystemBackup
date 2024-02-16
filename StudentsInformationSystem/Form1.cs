@@ -18,6 +18,10 @@ namespace StudentsInformationSystem
 
         private void FrmLogIn_Load(object sender, EventArgs e)
         {
+        
+
+
+
         }
 
         private void labelControl3_Click(object sender, EventArgs e)
