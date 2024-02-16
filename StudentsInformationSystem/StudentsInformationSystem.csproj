@@ -32,16 +32,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="DevExpress.BonusSkins.v23.2" />
     <Reference Include="DevExpress.Data.Desktop.v23.2" />
     <Reference Include="DevExpress.Data.v23.2" />
+    <Reference Include="DevExpress.Images.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Tutorials.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\DevExpress 23.2\Components\Bin\Framework\DevExpress.Tutorials.v23.2.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Utils.v23.2" />
     <Reference Include="DevExpress.Sparkline.v23.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v23.2" />
     <Reference Include="DevExpress.Printing.v23.2.Core" />
     <Reference Include="DevExpress.Drawing.v23.2" />
+    <Reference Include="DevExpress.XtraGrid.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v23.2, Version=23.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +75,12 @@
     <Compile Include="FrmLogIn.Designer.cs">
       <DependentUpon>FrmLogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,8 +89,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Modules\UcAddStdnt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\UcAddStdnt.Designer.cs">
+      <DependentUpon>UcAddStdnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\UcRmStdnt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\UcRmStdnt.Designer.cs">
+      <DependentUpon>UcRmStdnt.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmLogIn.resx">
       <DependentUpon>FrmLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSplashScreen.resx">
       <DependentUpon>FrmSplashScreen.cs</DependentUpon>
@@ -82,6 +120,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Modules\UcAddStdnt.resx">
+      <DependentUpon>UcAddStdnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\UcRmStdnt.resx">
+      <DependentUpon>UcRmStdnt.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,6 +137,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
