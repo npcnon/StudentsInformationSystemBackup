@@ -79,5 +79,10 @@ namespace StudentsInformationSystem
                 await LoadModuleAsync(ModulesInfo.GetItem("UcRmStdnt"));
             }
         }
+
+        private void m_element_student_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

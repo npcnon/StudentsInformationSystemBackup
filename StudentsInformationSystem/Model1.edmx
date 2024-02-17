@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="sisModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblAddStdntInfo">
+          <Key>
+            <PropertyRef Name="add_info_record" />
+          </Key>
+          <Property Name="add_info_record" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stdnt_id" Type="int" />
+          <Property Name="stdnt_address" Type="varchar" MaxLength="150" />
+          <Property Name="contact_info" Type="varchar" MaxLength="11" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblAddTeacherInfo">
+          <Key>
+            <PropertyRef Name="add_info_record" />
+          </Key>
+          <Property Name="add_info_record" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="teacher_id" Type="int" />
+          <Property Name="teacher_address" Type="varchar" MaxLength="150" />
+          <Property Name="contact_info" Type="varchar" MaxLength="11" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TblSchedule">
+          <Key>
+            <PropertyRef Name="schedule_id" />
+          </Key>
+          <Property Name="schedule_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="room" Type="int" />
+          <Property Name="class_day" Type="varchar" MaxLength="30" />
+          <Property Name="class_hour" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TblStdntInfo">
+          <Key>
+            <PropertyRef Name="stdnt_id" />
+          </Key>
+          <Property Name="stdnt_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="f_name" Type="varchar" MaxLength="50" />
+          <Property Name="m_name" Type="varchar" MaxLength="50" />
+          <Property Name="l_ame" Type="varchar" MaxLength="50" />
+          <Property Name="birth_date" Type="date" />
+          <Property Name="gender" Type="varchar" MaxLength="30" />
+          <Property Name="civil_stat" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TblStdntSchoolDetails">
+          <Key>
+            <PropertyRef Name="school_detail_record" />
+          </Key>
+          <Property Name="school_detail_record" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stdnt_id" Type="int" />
+          <Property Name="course" Type="varchar" MaxLength="150" />
+          <Property Name="department" Type="varchar" MaxLength="150" />
+          <Property Name="yr_lvl" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="TblStdntSubj">
+          <Key>
+            <PropertyRef Name="stdnt_subj_record" />
+          </Key>
+          <Property Name="stdnt_subj_record" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="stdnt_id" Type="int" />
+          <Property Name="offercode" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TblSubjInfo">
+          <Key>
+            <PropertyRef Name="offercode" />
+          </Key>
+          <Property Name="offercode" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="subj_name" Type="varchar" MaxLength="150" />
+          <Property Name="teacher_id" Type="int" />
+          <Property Name="schedule" Type="int" />
+        </EntityType>
+        <EntityType Name="TblTeacherInfo">
+          <Key>
+            <PropertyRef Name="teacher_id" />
+          </Key>
+          <Property Name="teacher_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="f_name" Type="varchar" MaxLength="50" />
+          <Property Name="m_name" Type="varchar" MaxLength="50" />
+          <Property Name="l_ame" Type="varchar" MaxLength="50" />
+          <Property Name="birth_date" Type="date" />
+          <Property Name="gender" Type="varchar" MaxLength="30" />
+          <Property Name="civil_stat" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__TblAddStd__stdnt__4BAC3F29">
+          <End Role="TblStdntInfo" Type="Self.TblStdntInfo" Multiplicity="0..1" />
+          <End Role="TblAddStdntInfo" Type="Self.TblAddStdntInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblStdntInfo">
+              <PropertyRef Name="stdnt_id" />
+            </Principal>
+            <Dependent Role="TblAddStdntInfo">
+              <PropertyRef Name="stdnt_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblAddTea__teach__534D60F1">
+          <End Role="TblTeacherInfo" Type="Self.TblTeacherInfo" Multiplicity="0..1" />
+          <End Role="TblAddTeacherInfo" Type="Self.TblAddTeacherInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblTeacherInfo">
+              <PropertyRef Name="teacher_id" />
+            </Principal>
+            <Dependent Role="TblAddTeacherInfo">
+              <PropertyRef Name="teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblStdntS__offer__5CD6CB2B">
+          <End Role="TblSubjInfo" Type="Self.TblSubjInfo" Multiplicity="0..1" />
+          <End Role="TblStdntSubj" Type="Self.TblStdntSubj" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblSubjInfo">
+              <PropertyRef Name="offercode" />
+            </Principal>
+            <Dependent Role="TblStdntSubj">
+              <PropertyRef Name="offercode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblStdntS__stdnt__4E88ABD4">
+          <End Role="TblStdntInfo" Type="Self.TblStdntInfo" Multiplicity="0..1" />
+          <End Role="TblStdntSchoolDetails" Type="Self.TblStdntSchoolDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblStdntInfo">
+              <PropertyRef Name="stdnt_id" />
+            </Principal>
+            <Dependent Role="TblStdntSchoolDetails">
+              <PropertyRef Name="stdnt_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblStdntS__stdnt__5BE2A6F2">
+          <End Role="TblStdntInfo" Type="Self.TblStdntInfo" Multiplicity="0..1" />
+          <End Role="TblStdntSubj" Type="Self.TblStdntSubj" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblStdntInfo">
+              <PropertyRef Name="stdnt_id" />
+            </Principal>
+            <Dependent Role="TblStdntSubj">
+              <PropertyRef Name="stdnt_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblSubjIn__sched__59063A47">
+          <End Role="TblSchedule" Type="Self.TblSchedule" Multiplicity="0..1" />
+          <End Role="TblSubjInfo" Type="Self.TblSubjInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblSchedule">
+              <PropertyRef Name="schedule_id" />
+            </Principal>
+            <Dependent Role="TblSubjInfo">
+              <PropertyRef Name="schedule" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblSubjIn__teach__5812160E">
+          <End Role="TblTeacherInfo" Type="Self.TblTeacherInfo" Multiplicity="0..1" />
+          <End Role="TblSubjInfo" Type="Self.TblSubjInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblTeacherInfo">
+              <PropertyRef Name="teacher_id" />
+            </Principal>
+            <Dependent Role="TblSubjInfo">
+              <PropertyRef Name="teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="sisModelStoreContainer">
+          <EntitySet Name="TblAddStdntInfo" EntityType="Self.TblAddStdntInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblAddTeacherInfo" EntityType="Self.TblAddTeacherInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSchedule" EntityType="Self.TblSchedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblStdntInfo" EntityType="Self.TblStdntInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblStdntSchoolDetails" EntityType="Self.TblStdntSchoolDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblStdntSubj" EntityType="Self.TblStdntSubj" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSubjInfo" EntityType="Self.TblSubjInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblTeacherInfo" EntityType="Self.TblTeacherInfo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__TblAddStd__stdnt__4BAC3F29" Association="Self.FK__TblAddStd__stdnt__4BAC3F29">
+            <End Role="TblStdntInfo" EntitySet="TblStdntInfo" />
+            <End Role="TblAddStdntInfo" EntitySet="TblAddStdntInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblAddTea__teach__534D60F1" Association="Self.FK__TblAddTea__teach__534D60F1">
+            <End Role="TblTeacherInfo" EntitySet="TblTeacherInfo" />
+            <End Role="TblAddTeacherInfo" EntitySet="TblAddTeacherInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblStdntS__offer__5CD6CB2B" Association="Self.FK__TblStdntS__offer__5CD6CB2B">
+            <End Role="TblSubjInfo" EntitySet="TblSubjInfo" />
+            <End Role="TblStdntSubj" EntitySet="TblStdntSubj" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblStdntS__stdnt__4E88ABD4" Association="Self.FK__TblStdntS__stdnt__4E88ABD4">
+            <End Role="TblStdntInfo" EntitySet="TblStdntInfo" />
+            <End Role="TblStdntSchoolDetails" EntitySet="TblStdntSchoolDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblStdntS__stdnt__5BE2A6F2" Association="Self.FK__TblStdntS__stdnt__5BE2A6F2">
+            <End Role="TblStdntInfo" EntitySet="TblStdntInfo" />
+            <End Role="TblStdntSubj" EntitySet="TblStdntSubj" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblSubjIn__sched__59063A47" Association="Self.FK__TblSubjIn__sched__59063A47">
+            <End Role="TblSchedule" EntitySet="TblSchedule" />
+            <End Role="TblSubjInfo" EntitySet="TblSubjInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblSubjIn__teach__5812160E" Association="Self.FK__TblSubjIn__teach__5812160E">
+            <End Role="TblTeacherInfo" EntitySet="TblTeacherInfo" />
+            <End Role="TblSubjInfo" EntitySet="TblSubjInfo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblAddStdntInfo">
+          <Key>
+            <PropertyRef Name="add_info_record" />
+          </Key>
+          <Property Name="add_info_record" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stdnt_id" Type="Int32" />
+          <Property Name="stdnt_address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="contact_info" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TblStdntInfo" Relationship="Self.FK__TblAddStd__stdnt__4BAC3F29" FromRole="TblAddStdntInfo" ToRole="TblStdntInfo" />
+        </EntityType>
+        <EntityType Name="TblAddTeacherInfo">
+          <Key>
+            <PropertyRef Name="add_info_record" />
+          </Key>
+          <Property Name="add_info_record" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="teacher_id" Type="Int32" />
+          <Property Name="teacher_address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="contact_info" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TblTeacherInfo" Relationship="Self.FK__TblAddTea__teach__534D60F1" FromRole="TblAddTeacherInfo" ToRole="TblTeacherInfo" />
+        </EntityType>
+        <EntityType Name="TblSchedule">
+          <Key>
+            <PropertyRef Name="schedule_id" />
+          </Key>
+          <Property Name="schedule_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="room" Type="Int32" />
+          <Property Name="class_day" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="class_hour" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TblSubjInfoes" Relationship="Self.FK__TblSubjIn__sched__59063A47" FromRole="TblSchedule" ToRole="TblSubjInfo" />
+        </EntityType>
+        <EntityType Name="TblStdntInfo">
+          <Key>
+            <PropertyRef Name="stdnt_id" />
+          </Key>
+          <Property Name="stdnt_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="f_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="m_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="l_ame" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="birth_date" Type="DateTime" />
+          <Property Name="gender" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="civil_stat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TblAddStdntInfoes" Relationship="Self.FK__TblAddStd__stdnt__4BAC3F29" FromRole="TblStdntInfo" ToRole="TblAddStdntInfo" />
+          <NavigationProperty Name="TblStdntSchoolDetails" Relationship="Self.FK__TblStdntS__stdnt__4E88ABD4" FromRole="TblStdntInfo" ToRole="TblStdntSchoolDetails" />
+          <NavigationProperty Name="TblStdntSubjs" Relationship="Self.FK__TblStdntS__stdnt__5BE2A6F2" FromRole="TblStdntInfo" ToRole="TblStdntSubj" />
+        </EntityType>
+        <EntityType Name="TblStdntSchoolDetail">
+          <Key>
+            <PropertyRef Name="school_detail_record" />
+          </Key>
+          <Property Name="school_detail_record" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stdnt_id" Type="Int32" />
+          <Property Name="course" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="department" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="yr_lvl" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TblStdntInfo" Relationship="Self.FK__TblStdntS__stdnt__4E88ABD4" FromRole="TblStdntSchoolDetails" ToRole="TblStdntInfo" />
+        </EntityType>
+        <EntityType Name="TblStdntSubj">
+          <Key>
+            <PropertyRef Name="stdnt_subj_record" />
+          </Key>
+          <Property Name="stdnt_subj_record" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="stdnt_id" Type="Int32" />
+          <Property Name="offercode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TblStdntInfo" Relationship="Self.FK__TblStdntS__stdnt__5BE2A6F2" FromRole="TblStdntSubj" ToRole="TblStdntInfo" />
+          <NavigationProperty Name="TblSubjInfo" Relationship="Self.FK__TblStdntS__offer__5CD6CB2B" FromRole="TblStdntSubj" ToRole="TblSubjInfo" />
+        </EntityType>
+        <EntityType Name="TblSubjInfo">
+          <Key>
+            <PropertyRef Name="offercode" />
+          </Key>
+          <Property Name="offercode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subj_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="teacher_id" Type="Int32" />
+          <Property Name="schedule" Type="Int32" />
+          <NavigationProperty Name="TblSchedule" Relationship="Self.FK__TblSubjIn__sched__59063A47" FromRole="TblSubjInfo" ToRole="TblSchedule" />
+          <NavigationProperty Name="TblStdntSubjs" Relationship="Self.FK__TblStdntS__offer__5CD6CB2B" FromRole="TblSubjInfo" ToRole="TblStdntSubj" />
+          <NavigationProperty Name="TblTeacherInfo" Relationship="Self.FK__TblSubjIn__teach__5812160E" FromRole="TblSubjInfo" ToRole="TblTeacherInfo" />
+        </EntityType>
+        <EntityType Name="TblTeacherInfo">
+          <Key>
+            <PropertyRef Name="teacher_id" />
+          </Key>
+          <Property Name="teacher_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="f_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="m_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="l_ame" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="birth_date" Type="DateTime" />
+          <Property Name="gender" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="civil_stat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TblAddTeacherInfoes" Relationship="Self.FK__TblAddTea__teach__534D60F1" FromRole="TblTeacherInfo" ToRole="TblAddTeacherInfo" />
+          <NavigationProperty Name="TblSubjInfoes" Relationship="Self.FK__TblSubjIn__teach__5812160E" FromRole="TblTeacherInfo" ToRole="TblSubjInfo" />
+        </EntityType>
+        <Association Name="FK__TblAddStd__stdnt__4BAC3F29">
+          <End Role="TblStdntInfo" Type="Self.TblStdntInfo" Multiplicity="0..1" />
+          <End Role="TblAddStdntInfo" Type="Self.TblAddStdntInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblStdntInfo">
+              <PropertyRef Name="stdnt_id" />
+            </Principal>
+            <Dependent Role="TblAddStdntInfo">
+              <PropertyRef Name="stdnt_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblAddTea__teach__534D60F1">
+          <End Role="TblTeacherInfo" Type="Self.TblTeacherInfo" Multiplicity="0..1" />
+          <End Role="TblAddTeacherInfo" Type="Self.TblAddTeacherInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblTeacherInfo">
+              <PropertyRef Name="teacher_id" />
+            </Principal>
+            <Dependent Role="TblAddTeacherInfo">
+              <PropertyRef Name="teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblSubjIn__sched__59063A47">
+          <End Role="TblSchedule" Type="Self.TblSchedule" Multiplicity="0..1" />
+          <End Role="TblSubjInfo" Type="Self.TblSubjInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblSchedule">
+              <PropertyRef Name="schedule_id" />
+            </Principal>
+            <Dependent Role="TblSubjInfo">
+              <PropertyRef Name="schedule" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblStdntS__stdnt__4E88ABD4">
+          <End Role="TblStdntInfo" Type="Self.TblStdntInfo" Multiplicity="0..1" />
+          <End Role="TblStdntSchoolDetails" Type="Self.TblStdntSchoolDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblStdntInfo">
+              <PropertyRef Name="stdnt_id" />
+            </Principal>
+            <Dependent Role="TblStdntSchoolDetails">
+              <PropertyRef Name="stdnt_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblStdntS__stdnt__5BE2A6F2">
+          <End Role="TblStdntInfo" Type="Self.TblStdntInfo" Multiplicity="0..1" />
+          <End Role="TblStdntSubj" Type="Self.TblStdntSubj" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblStdntInfo">
+              <PropertyRef Name="stdnt_id" />
+            </Principal>
+            <Dependent Role="TblStdntSubj">
+              <PropertyRef Name="stdnt_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblStdntS__offer__5CD6CB2B">
+          <End Role="TblSubjInfo" Type="Self.TblSubjInfo" Multiplicity="0..1" />
+          <End Role="TblStdntSubj" Type="Self.TblStdntSubj" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblSubjInfo">
+              <PropertyRef Name="offercode" />
+            </Principal>
+            <Dependent Role="TblStdntSubj">
+              <PropertyRef Name="offercode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TblSubjIn__teach__5812160E">
+          <End Role="TblTeacherInfo" Type="Self.TblTeacherInfo" Multiplicity="0..1" />
+          <End Role="TblSubjInfo" Type="Self.TblSubjInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblTeacherInfo">
+              <PropertyRef Name="teacher_id" />
+            </Principal>
+            <Dependent Role="TblSubjInfo">
+              <PropertyRef Name="teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="sisEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblAddStdntInfoes" EntityType="Self.TblAddStdntInfo" />
+          <EntitySet Name="TblAddTeacherInfoes" EntityType="Self.TblAddTeacherInfo" />
+          <EntitySet Name="TblSchedules" EntityType="Self.TblSchedule" />
+          <EntitySet Name="TblStdntInfoes" EntityType="Self.TblStdntInfo" />
+          <EntitySet Name="TblStdntSchoolDetails" EntityType="Self.TblStdntSchoolDetail" />
+          <EntitySet Name="TblStdntSubjs" EntityType="Self.TblStdntSubj" />
+          <EntitySet Name="TblSubjInfoes" EntityType="Self.TblSubjInfo" />
+          <EntitySet Name="TblTeacherInfoes" EntityType="Self.TblTeacherInfo" />
+          <AssociationSet Name="FK__TblAddStd__stdnt__4BAC3F29" Association="Self.FK__TblAddStd__stdnt__4BAC3F29">
+            <End Role="TblStdntInfo" EntitySet="TblStdntInfoes" />
+            <End Role="TblAddStdntInfo" EntitySet="TblAddStdntInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblAddTea__teach__534D60F1" Association="Self.FK__TblAddTea__teach__534D60F1">
+            <End Role="TblTeacherInfo" EntitySet="TblTeacherInfoes" />
+            <End Role="TblAddTeacherInfo" EntitySet="TblAddTeacherInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblSubjIn__sched__59063A47" Association="Self.FK__TblSubjIn__sched__59063A47">
+            <End Role="TblSchedule" EntitySet="TblSchedules" />
+            <End Role="TblSubjInfo" EntitySet="TblSubjInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblStdntS__stdnt__4E88ABD4" Association="Self.FK__TblStdntS__stdnt__4E88ABD4">
+            <End Role="TblStdntInfo" EntitySet="TblStdntInfoes" />
+            <End Role="TblStdntSchoolDetails" EntitySet="TblStdntSchoolDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblStdntS__stdnt__5BE2A6F2" Association="Self.FK__TblStdntS__stdnt__5BE2A6F2">
+            <End Role="TblStdntInfo" EntitySet="TblStdntInfoes" />
+            <End Role="TblStdntSubj" EntitySet="TblStdntSubjs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblStdntS__offer__5CD6CB2B" Association="Self.FK__TblStdntS__offer__5CD6CB2B">
+            <End Role="TblSubjInfo" EntitySet="TblSubjInfoes" />
+            <End Role="TblStdntSubj" EntitySet="TblStdntSubjs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TblSubjIn__teach__5812160E" Association="Self.FK__TblSubjIn__teach__5812160E">
+            <End Role="TblTeacherInfo" EntitySet="TblTeacherInfoes" />
+            <End Role="TblSubjInfo" EntitySet="TblSubjInfoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sisModelStoreContainer" CdmEntityContainer="sisEntities">
+          <EntitySetMapping Name="TblAddStdntInfoes">
+            <EntityTypeMapping TypeName="sisModel.TblAddStdntInfo">
+              <MappingFragment StoreEntitySet="TblAddStdntInfo">
+                <ScalarProperty Name="add_info_record" ColumnName="add_info_record" />
+                <ScalarProperty Name="stdnt_id" ColumnName="stdnt_id" />
+                <ScalarProperty Name="stdnt_address" ColumnName="stdnt_address" />
+                <ScalarProperty Name="contact_info" ColumnName="contact_info" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAddTeacherInfoes">
+            <EntityTypeMapping TypeName="sisModel.TblAddTeacherInfo">
+              <MappingFragment StoreEntitySet="TblAddTeacherInfo">
+                <ScalarProperty Name="add_info_record" ColumnName="add_info_record" />
+                <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+                <ScalarProperty Name="teacher_address" ColumnName="teacher_address" />
+                <ScalarProperty Name="contact_info" ColumnName="contact_info" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSchedules">
+            <EntityTypeMapping TypeName="sisModel.TblSchedule">
+              <MappingFragment StoreEntitySet="TblSchedule">
+                <ScalarProperty Name="schedule_id" ColumnName="schedule_id" />
+                <ScalarProperty Name="room" ColumnName="room" />
+                <ScalarProperty Name="class_day" ColumnName="class_day" />
+                <ScalarProperty Name="class_hour" ColumnName="class_hour" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblStdntInfoes">
+            <EntityTypeMapping TypeName="sisModel.TblStdntInfo">
+              <MappingFragment StoreEntitySet="TblStdntInfo">
+                <ScalarProperty Name="stdnt_id" ColumnName="stdnt_id" />
+                <ScalarProperty Name="f_name" ColumnName="f_name" />
+                <ScalarProperty Name="m_name" ColumnName="m_name" />
+                <ScalarProperty Name="l_ame" ColumnName="l_ame" />
+                <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="civil_stat" ColumnName="civil_stat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblStdntSchoolDetails">
+            <EntityTypeMapping TypeName="sisModel.TblStdntSchoolDetail">
+              <MappingFragment StoreEntitySet="TblStdntSchoolDetails">
+                <ScalarProperty Name="school_detail_record" ColumnName="school_detail_record" />
+                <ScalarProperty Name="stdnt_id" ColumnName="stdnt_id" />
+                <ScalarProperty Name="course" ColumnName="course" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="yr_lvl" ColumnName="yr_lvl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblStdntSubjs">
+            <EntityTypeMapping TypeName="sisModel.TblStdntSubj">
+              <MappingFragment StoreEntitySet="TblStdntSubj">
+                <ScalarProperty Name="stdnt_subj_record" ColumnName="stdnt_subj_record" />
+                <ScalarProperty Name="stdnt_id" ColumnName="stdnt_id" />
+                <ScalarProperty Name="offercode" ColumnName="offercode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSubjInfoes">
+            <EntityTypeMapping TypeName="sisModel.TblSubjInfo">
+              <MappingFragment StoreEntitySet="TblSubjInfo">
+                <ScalarProperty Name="offercode" ColumnName="offercode" />
+                <ScalarProperty Name="subj_name" ColumnName="subj_name" />
+                <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+                <ScalarProperty Name="schedule" ColumnName="schedule" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblTeacherInfoes">
+            <EntityTypeMapping TypeName="sisModel.TblTeacherInfo">
+              <MappingFragment StoreEntitySet="TblTeacherInfo">
+                <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+                <ScalarProperty Name="f_name" ColumnName="f_name" />
+                <ScalarProperty Name="m_name" ColumnName="m_name" />
+                <ScalarProperty Name="l_ame" ColumnName="l_ame" />
+                <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="civil_stat" ColumnName="civil_stat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

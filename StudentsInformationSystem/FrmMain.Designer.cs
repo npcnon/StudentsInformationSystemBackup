@@ -33,15 +33,15 @@
             this.frm_main_container = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.frm_main_acc_control = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.m_element_student = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_addstdnt = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_srchstdnt = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_rmstdnt = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.s_element_addstdnt = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.s_element_srchstdnt = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.s_element_rmstdnt = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.frm_main_acc_control)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -80,10 +80,32 @@
             this.s_element_addstdnt,
             this.s_element_srchstdnt,
             this.s_element_rmstdnt});
-            this.m_element_student.Expanded = true;
             this.m_element_student.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_student.ImageOptions.SvgImage")));
             this.m_element_student.Name = "m_element_student";
             this.m_element_student.Text = "Students";
+            // 
+            // s_element_addstdnt
+            // 
+            this.s_element_addstdnt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_addstdnt.ImageOptions.SvgImage")));
+            this.s_element_addstdnt.Name = "s_element_addstdnt";
+            this.s_element_addstdnt.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_addstdnt.Text = "Add Student";
+            this.s_element_addstdnt.Click += new System.EventHandler(this.s_element_addstdnt_Click_1);
+            // 
+            // s_element_srchstdnt
+            // 
+            this.s_element_srchstdnt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_srchstdnt.ImageOptions.SvgImage")));
+            this.s_element_srchstdnt.Name = "s_element_srchstdnt";
+            this.s_element_srchstdnt.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_srchstdnt.Text = "Search  Student";
+            // 
+            // s_element_rmstdnt
+            // 
+            this.s_element_rmstdnt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_rmstdnt.ImageOptions.SvgImage")));
+            this.s_element_rmstdnt.Name = "s_element_rmstdnt";
+            this.s_element_rmstdnt.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_rmstdnt.Text = "Remove Student";
+            this.s_element_rmstdnt.Click += new System.EventHandler(this.s_element_rmstdnt_Click_1);
             // 
             // accordionControlElement7
             // 
@@ -124,29 +146,6 @@
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement2.Text = "Element2";
-            // 
-            // s_element_addstdnt
-            // 
-            this.s_element_addstdnt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_addstdnt.ImageOptions.SvgImage")));
-            this.s_element_addstdnt.Name = "s_element_addstdnt";
-            this.s_element_addstdnt.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.s_element_addstdnt.Text = "Add Student";
-            this.s_element_addstdnt.Click += new System.EventHandler(this.s_element_addstdnt_Click_1);
-            // 
-            // s_element_srchstdnt
-            // 
-            this.s_element_srchstdnt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_srchstdnt.ImageOptions.SvgImage")));
-            this.s_element_srchstdnt.Name = "s_element_srchstdnt";
-            this.s_element_srchstdnt.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.s_element_srchstdnt.Text = "Search  Student";
-            // 
-            // s_element_rmstdnt
-            // 
-            this.s_element_rmstdnt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_rmstdnt.ImageOptions.SvgImage")));
-            this.s_element_rmstdnt.Name = "s_element_rmstdnt";
-            this.s_element_rmstdnt.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.s_element_rmstdnt.Text = "Remove Student";
-            this.s_element_rmstdnt.Click += new System.EventHandler(this.s_element_rmstdnt_Click_1);
             // 
             // FrmMain
             // 
