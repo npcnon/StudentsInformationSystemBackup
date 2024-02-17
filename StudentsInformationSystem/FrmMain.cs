@@ -53,6 +53,9 @@ namespace StudentsInformationSystem
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            m_element_teacher.Expanded = false;
+            m_element_student.Expanded = false;
+            m_element_schedule.Expanded = false;
             frm_main_container.Controls.Add(new UcRmStdnt() { Dock = DockStyle.Fill });
         }
 
@@ -80,9 +83,16 @@ namespace StudentsInformationSystem
             }
         }
 
-        private void m_element_student_Click(object sender, EventArgs e)
-        {
 
+        private async void s_element_addtcher_Click(object sender, EventArgs e)
+        {
+            if (ModulesInfo.GetItem("UcAddTcher") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcAddTcher", "StudentsInformationSystem.UI.Modules.UcAddTcher"));
+
+                await LoadModuleAsync(ModulesInfo.GetItem("UcAddTcher"));
+            }
         }
     }
 }

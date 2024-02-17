@@ -35,5 +35,16 @@ namespace StudentsInformationSystem.UI.Modules
         {
 
         }
+
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

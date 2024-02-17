@@ -145,6 +145,12 @@
     <Compile Include="UI\Modules\UcAddStdnt.Designer.cs">
       <DependentUpon>UcAddStdnt.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\UcAddTcher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\UcAddTcher.Designer.cs">
+      <DependentUpon>UcAddTcher.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\UcRmStdnt.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Modules\UcAddStdnt.resx">
       <DependentUpon>UcAddStdnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\UcAddTcher.resx">
+      <DependentUpon>UcAddTcher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcRmStdnt.resx">
       <DependentUpon>UcRmStdnt.cs</DependentUpon>
