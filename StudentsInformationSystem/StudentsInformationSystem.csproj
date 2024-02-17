@@ -110,6 +110,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sisDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sisDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TblAddStdntInfo.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
@@ -189,6 +194,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="sisDataSet2.xsc">
+      <DependentUpon>sisDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="sisDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sisDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sisDataSet2.xss">
+      <DependentUpon>sisDataSet2.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="EntityModel.Context.tt">
