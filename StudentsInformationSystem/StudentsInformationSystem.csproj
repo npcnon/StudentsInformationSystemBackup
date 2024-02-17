@@ -151,6 +151,12 @@
     <Compile Include="UI\Modules\UcRmStdnt.Designer.cs">
       <DependentUpon>UcRmStdnt.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\WaitForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\WaitForm2.Designer.cs">
+      <DependentUpon>WaitForm2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmLogIn.resx">
       <DependentUpon>FrmLogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcRmStdnt.resx">
       <DependentUpon>UcRmStdnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\WaitForm2.resx">
+      <DependentUpon>WaitForm2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <EntityDeploy Include="EntityModel.edmx">
