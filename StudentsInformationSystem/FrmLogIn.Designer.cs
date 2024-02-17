@@ -40,6 +40,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_password.Properties)).BeginInit();
             this.SuspendLayout();
             // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 10;
+            // 
             // txt_username
             // 
             this.txt_username.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -118,10 +122,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(111, 37);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "LOG IN";
-            // 
-            // splashScreenManager1
-            // 
-            splashScreenManager1.ClosingDelay = 10;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // FrmLogIn
             // 

@@ -111,7 +111,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tab_page_subjects = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_stdnt_cancel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
@@ -981,7 +981,7 @@
             // tab_page_subjects
             // 
             this.tab_page_subjects.Caption = "Subjects";
-            this.tab_page_subjects.Controls.Add(this.simpleButton6);
+            this.tab_page_subjects.Controls.Add(this.btn_stdnt_cancel);
             this.tab_page_subjects.Controls.Add(this.simpleButton5);
             this.tab_page_subjects.Controls.Add(this.simpleButton1);
             this.tab_page_subjects.Controls.Add(this.groupControl4);
@@ -989,19 +989,22 @@
             this.tab_page_subjects.Name = "tab_page_subjects";
             this.tab_page_subjects.Size = new System.Drawing.Size(665, 434);
             // 
-            // simpleButton6
+            // btn_stdnt_cancel
             // 
-            this.simpleButton6.Appearance.BackColor = System.Drawing.Color.IndianRed;
-            this.simpleButton6.Appearance.Options.UseBackColor = true;
-            this.simpleButton6.Location = new System.Drawing.Point(259, 370);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(109, 37);
-            this.simpleButton6.TabIndex = 2;
-            this.simpleButton6.Text = "Cancel";
+            this.btn_stdnt_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_stdnt_cancel.Appearance.BackColor = System.Drawing.Color.IndianRed;
+            this.btn_stdnt_cancel.Appearance.Options.UseBackColor = true;
+            this.btn_stdnt_cancel.Location = new System.Drawing.Point(303, 372);
+            this.btn_stdnt_cancel.Name = "btn_stdnt_cancel";
+            this.btn_stdnt_cancel.Size = new System.Drawing.Size(109, 37);
+            this.btn_stdnt_cancel.TabIndex = 2;
+            this.btn_stdnt_cancel.Text = "Cancel";
+            this.btn_stdnt_cancel.Click += new System.EventHandler(this.btn_stdnt_cancel_Click);
             // 
             // simpleButton5
             // 
-            this.simpleButton5.Location = new System.Drawing.Point(387, 370);
+            this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButton5.Location = new System.Drawing.Point(418, 372);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(109, 37);
             this.simpleButton5.TabIndex = 2;
@@ -1009,9 +1012,10 @@
             // 
             // simpleButton1
             // 
+            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Appearance.BackColor = System.Drawing.Color.LightGreen;
             this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Location = new System.Drawing.Point(520, 370);
+            this.simpleButton1.Location = new System.Drawing.Point(533, 370);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(109, 37);
             this.simpleButton1.TabIndex = 2;
@@ -1300,7 +1304,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.CheckedListBoxControl checkedListBoxControl1;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton btn_stdnt_cancel;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }

@@ -1,6 +1,7 @@
 ﻿using DevExpress.DXperience.Demos;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.FluentDesignSystem;
+using DevExpress.XtraSplashScreen;
 using StudentsInformationSystem.UI.Modules;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -53,10 +55,15 @@ namespace StudentsInformationSystem
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+
+            splashScreenManager1.ShowWaitForm();
+            Thread.Sleep(3000);
+            splashScreenManager1.CloseWaitForm();
+
             m_element_teacher.Expanded = false;
             m_element_student.Expanded = false;
             m_element_schedule.Expanded = false;
-            frm_main_container.Controls.Add(new UcRmStdnt() { Dock = DockStyle.Fill });
+            //frm_main_container.Controls.Add(new UcRmStdnt() { Dock = DockStyle.Fill });
         }
 
 

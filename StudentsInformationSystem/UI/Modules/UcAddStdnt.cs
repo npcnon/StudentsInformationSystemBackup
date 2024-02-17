@@ -46,5 +46,10 @@ namespace StudentsInformationSystem.UI.Modules
 
         }
 
+        private void btn_stdnt_cancel_Click(object sender, EventArgs e)
+        {
+            // Dispose the user control
+            this.Dispose();
+        }
     }
 }

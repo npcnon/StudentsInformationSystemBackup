@@ -29,5 +29,11 @@ namespace StudentsInformationSystem
 
         }
 
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmMain frmMain = new FrmMain();
+            frmMain.ShowDialog();
+        }
     }
 }

@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Data.SqlClient;
 
 namespace StudentsInformationSystem.UI.Modules
 {
@@ -75,9 +76,83 @@ namespace StudentsInformationSystem.UI.Modules
             }
         }
 
-
-        private void stdnt_idTextEdit_EditValueChanged(object sender, EventArgs e)
+        private void simpleButton4_Click(object sender, EventArgs e)
         {
+            // Retrieve the values from the textboxes
+            string tcherFname = tcher_fname.Text;
+            string tcherMname = tcher_mname.Text;
+            string tcherLname = tcher_lname.Text;
+            DateTime tcherBday;
+            string tcherGender = tcher_gender.Text;
+            string tcherCivil = tcher_civil_stats.Text;
+            string tcherAddress = tcher_address.Text;
+            string tcherContact = tcher_contact_info.Text;
+            string tcherEmail = tcher_email.Text;
+
+            if (DateTime.TryParse(tcher_bd.Text, out tcherBday))
+            {
+                // Add similar lines for other textboxes
+
+                // Create a connection string for your database
+                string connectionString = "Data Source=DESKTOP-9GA3LFJ\\SQLEXPRESS;Initial Catalog=sis;Integrated Security=True;\r\n";
+
+                // Write your SQL command to insert data into your database
+                string sqlInsert = @"
+        INSERT INTO TblTeacherInfo (f_name, m_name, l_ame, birth_date, gender, civil_stat) 
+        VALUES (@tcherFname, @tcherMname, @tcherLname, @tcherBday, @tcherGender, @tcherCivil);
+        
+        DECLARE @TeacherID INT;
+        SET @TeacherID = SCOPE_IDENTITY();
+
+        INSERT INTO TblAddTeacherInfo (teacher_id, teacher_address, contact_info, email) 
+        VALUES (@TeacherID, @tcherAddress, @tcherContact, @tcherEmail);";
+                
+                // Adjust the column names and table name accordingly
+
+                // Create a SqlConnection object
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    // Create a SqlCommand object
+                    using (SqlCommand command = new SqlCommand(sqlInsert, connection))
+                    {
+                        // Add parameters to the SQL command to prevent SQL injection
+                        command.Parameters.AddWithValue("@tcherFname", tcherFname);
+                        command.Parameters.AddWithValue("@tcherMname", tcherMname);
+                        command.Parameters.AddWithValue("@tcherLname", tcherLname);
+                        command.Parameters.AddWithValue("@tcherBday", tcherBday);
+                        command.Parameters.AddWithValue("@tcherGender", tcherGender);
+                        command.Parameters.AddWithValue("@tcherCivil", tcherCivil);
+                        command.Parameters.AddWithValue("@tcherAddress", tcherAddress);
+                        command.Parameters.AddWithValue("@tcherContact", tcherContact);
+                        command.Parameters.AddWithValue("@tcherEmail", tcherEmail);
+
+
+
+                        // Add similar lines for other parameters
+
+                        // Open the connection
+                        connection.Open();
+
+                        // Execute the SQL command
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // Check if the query executed successfully
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Data inserted successfully into the database.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to insert data into the database.");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid date format");
+            }
+
 
         }
     }

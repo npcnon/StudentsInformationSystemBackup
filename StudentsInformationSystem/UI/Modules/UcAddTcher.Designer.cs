@@ -95,7 +95,7 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_teacher_submit = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem19 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem20 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -244,7 +244,6 @@
             this.tcher_id.Size = new System.Drawing.Size(58, 20);
             this.tcher_id.StyleController = this.dataLayoutControl1;
             this.tcher_id.TabIndex = 21;
-            this.tcher_id.EditValueChanged += new System.EventHandler(this.stdnt_idTextEdit_EditValueChanged);
             // 
             // tcher_fname
             // 
@@ -510,7 +509,7 @@
             this.dataLayoutControl2.Controls.Add(this.btn_teacher_add_email);
             this.dataLayoutControl2.Controls.Add(this.simpleButton2);
             this.dataLayoutControl2.Controls.Add(this.simpleButton3);
-            this.dataLayoutControl2.Controls.Add(this.simpleButton4);
+            this.dataLayoutControl2.Controls.Add(this.btn_teacher_submit);
             this.dataLayoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl2.Location = new System.Drawing.Point(2, 22);
             this.dataLayoutControl2.Name = "dataLayoutControl2";
@@ -800,18 +799,19 @@
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
-            // simpleButton4
+            // btn_teacher_submit
             // 
-            this.simpleButton4.Location = new System.Drawing.Point(195, 381);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(56, 22);
-            this.simpleButton4.StyleController = this.dataLayoutControl2;
-            this.simpleButton4.TabIndex = 12;
-            this.simpleButton4.Text = "Submit";
+            this.btn_teacher_submit.Location = new System.Drawing.Point(195, 381);
+            this.btn_teacher_submit.Name = "btn_teacher_submit";
+            this.btn_teacher_submit.Size = new System.Drawing.Size(56, 22);
+            this.btn_teacher_submit.StyleController = this.dataLayoutControl2;
+            this.btn_teacher_submit.TabIndex = 12;
+            this.btn_teacher_submit.Text = "Submit";
+            this.btn_teacher_submit.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // layoutControlItem8
             // 
-            this.layoutControlItem8.Control = this.simpleButton4;
+            this.layoutControlItem8.Control = this.btn_teacher_submit;
             this.layoutControlItem8.Location = new System.Drawing.Point(183, 369);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.Size = new System.Drawing.Size(60, 26);
@@ -982,7 +982,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btn_teacher_submit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
