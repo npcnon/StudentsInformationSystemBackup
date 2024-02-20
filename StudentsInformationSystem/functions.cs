@@ -3,6 +3,7 @@ using DevExpress.XtraToolbox;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,13 +15,13 @@ namespace StudentsInformationSystem
     internal class functions
     {
         //method to lead the teacher id to the teacher id textbox
-        public static void LoadTeacherId(Control txtbox)
+        public static void LoadID(Control txtbox,string sqlQuery)
         {
             // Create a connection string for your database
             string connectionString = "Data Source=DESKTOP-9GA3LFJ\\SQLEXPRESS;Initial Catalog=sis;Integrated Security=True";
 
             // Write your SQL command to retrieve teacher ID from the database
-            string sqlQuery = "SELECT MAX(teacher_id)+1 FROM TblTeacherInfo";
+          
 
             // Create a SqlConnection object
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -35,13 +36,18 @@ namespace StudentsInformationSystem
                     object result = command.ExecuteScalar();
 
                     // Check if the result is not null
-                    if (result != null)
+                    if (!string.IsNullOrEmpty(result.ToString()))
                     {
+                        Debug.WriteLine($"{result}ifffffffffffffff#################################################################################");
                         // Assign the result to the Text property of the textbox
                         txtbox.Text = result.ToString();
                     }
                     else
+                    {
+                        Debug.Write("#############################ELSE WAS EXECUTED##################################################");
                         txtbox.Text = "1";
+                    }
+                   
                 }
             }
         }

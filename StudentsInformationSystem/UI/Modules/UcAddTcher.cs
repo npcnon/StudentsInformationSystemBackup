@@ -33,62 +33,64 @@
 
             private void UcAddTcher_Load_1(object sender, EventArgs e)
             {
-                //added all the textbox, datetime and combo box to a list of controls
-                controlList = new List<Control>
+            
+            splashScreenManager1.ShowWaitForm();
+            Thread.Sleep(3000);
+            splashScreenManager1.CloseWaitForm();
+            //added all the textbox, datetime and combo box to a list of controls
+            controlList = new List<Control>
                 {
-                    tcher_id,
                     tcher_fname,
                     tcher_mname,
                     tcher_lname,
-                    tcher_bd,
-                    tcher_gender,
-                    tcher_civil_stats,
+                    txt_department,
                     tcher_address,
                     tcher_contact_info,
                     tcher_email
                 };
 
                 //loading animation appears 
-                splashScreenManager1.ShowWaitForm();
-                Thread.Sleep(3000);
-                splashScreenManager1.CloseWaitForm();
+               
 
 
                 //added keypress event handler
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 7; i++)
                 {
                     controlList[i].KeyDown += control_keypress;
                 }
                 tcher_fname.Focus();
 
-                //added value to the teacher id textbox, value is from database teacher_id
-                functions.LoadTeacherId(tcher_id);
+            //added value to the teacher id textbox, value is from database teacher_id
+            string sqlQuery = "SELECT MAX(teacher_id)+1 FROM TblTeacherInfo";
+            functions.LoadID(tcher_id ,sqlQuery);
+
+
             }
 
 
             //keypress event handler
             private void control_keypress(object sender, KeyEventArgs e)
             {
-                Control control = sender as Control; // Cast sender to Control
+                    Control control = sender as Control; // Cast sender to Control
 
-                if (control != null)
-                {
-                    if (e.KeyCode == Keys.Enter)
+                    if (control != null)
                     {
-                        // Check the name of the control that triggered the event
-                        string controlName = control.Name;
-
-                        // Do something based on the name of the control
-                        for (int i = 0; i < 9; i++)
+                        if (e.KeyCode == Keys.Enter)
                         {
-                            if (controlName == controlList[i].Name)
-                            {
-                                controlList[i + 1].Focus();
-                            }
+                            // Check the name of the control that triggered the event
+                            string controlName = control.Name;
 
+                            // Do something based on the name of the control
+                            for (int i = 0; i < 6; i++)
+                            {
+                                if (controlName == controlList[i].Name)
+                                {
+                                    controlList[i + 1].Focus();
+                                }
+
+                            }
                         }
                     }
-                }
             }
 
             private void submit()
@@ -98,9 +100,7 @@
                 string tcherFname = tcher_fname.Text;
                 string tcherMname = tcher_mname.Text;
                 string tcherLname = tcher_lname.Text;
-                DateTime tcherBday;
-                string tcherGender = tcher_gender.Text;
-                string tcherCivil = tcher_civil_stats.Text;
+            string tcherDepart = txt_department.Text;
                 string tcherAddress = tcher_address.Text;
                 string tcherContact = tcher_contact_info.Text;
                 string tcherEmail = tcher_email.Text;
@@ -126,18 +126,7 @@
                     tcher_lname.Focus();
 
                 }
-                else if (tcherGender.Length > 30 || string.IsNullOrWhiteSpace(tcherGender))
-                {
-                    MessageBox.Show("Gender -- INVALID");
-                    tcher_gender.Focus();
-
-                }
-                else if (tcherCivil.Length > 50 || string.IsNullOrWhiteSpace(tcherCivil))
-                {
-                    MessageBox.Show("Civil Status -- INVALID");
-                    tcher_civil_stats.Focus();
-
-                }
+                
                 else if (tcherAddress.Length > 150 || string.IsNullOrWhiteSpace(tcherAddress))
                 {
                     MessageBox.Show("Address -- INVALID");
@@ -162,8 +151,7 @@
                 else
                 {
                     //checks if the date format is valid
-                    if (DateTime.TryParse(tcher_bd.Text, out tcherBday))
-                    {
+                    
                         // Add similar lines for other textboxes
 
                         // Create a connection string for your database
@@ -171,8 +159,8 @@
 
                         // Write your SQL command to insert data into your database
                         string sqlInsert = @"
-            INSERT INTO TblTeacherInfo (f_name, m_name, l_ame, birth_date, gender, civil_stat) 
-            VALUES (@tcherFname, @tcherMname, @tcherLname, @tcherBday, @tcherGender, @tcherCivil);
+            INSERT INTO TblTeacherInfo (f_name, m_name, l_name, department) 
+            VALUES (@tcherFname, @tcherMname, @tcherLname, @tcherDepartment);
         
             DECLARE @TeacherID INT;
             SET @TeacherID = SCOPE_IDENTITY();
@@ -192,10 +180,8 @@
                                 command.Parameters.AddWithValue("@tcherFname", tcherFname);
                                 command.Parameters.AddWithValue("@tcherMname", tcherMname);
                                 command.Parameters.AddWithValue("@tcherLname", tcherLname);
-                                command.Parameters.AddWithValue("@tcherBday", tcherBday);
-                                command.Parameters.AddWithValue("@tcherGender", tcherGender);
-                                command.Parameters.AddWithValue("@tcherCivil", tcherCivil);
-                                command.Parameters.AddWithValue("@tcherAddress", tcherAddress);
+                        command.Parameters.AddWithValue("@tcherDepartment", txt_department.Text);
+                        command.Parameters.AddWithValue("@tcherAddress", tcherAddress);
                                 command.Parameters.AddWithValue("@tcherContact", tcherContact);
                                 command.Parameters.AddWithValue("@tcherEmail", tcherEmail);
 
@@ -222,13 +208,8 @@
                                 }
                             }
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid date format");
-                        tcher_bd.Focus();
-                        tcher_bd.EditValue = null;
-                    }
+                    
+                  
                 }
 
 
@@ -239,7 +220,7 @@
             private void refresh()
             {
                 tcher_id.Text = (Convert.ToInt32(tcher_id.Text) + 1).ToString();
-                for (int i = 1; i < 10; i++)
+                for (int i = 0; i < 7; i++)
                 {
                     if (controlList[i] is TextEdit)
                     {
@@ -257,12 +238,12 @@
                 tcher_fname.Focus();
             }
 
-        private bool CheckDataExistsInDatabase()
+        private bool CheckDataExistsInDatabase()        
         {
             bool dataExists = false;
 
             // Write your SQL query to check if the data exists in the database
-            string sqlQuery = "SELECT COUNT(*) FROM TblTeacherInfo WHERE f_name = @tcherFname AND m_name = @tcherMname AND l_ame = @tcherLname AND birth_date = @tcherBday AND gender = @tcherGender AND civil_stat = @tcherCivil";
+            string sqlQuery = "SELECT COUNT(*) FROM TblTeacherInfo WHERE f_name = @tcherFname AND m_name = @tcherMname AND l_name = @tcherLname AND department = @tcherDepartment";
 
             // Create a SqlConnection object
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -274,9 +255,8 @@
                     command.Parameters.AddWithValue("@tcherFname", tcher_fname.Text);
                     command.Parameters.AddWithValue("@tcherMname", tcher_mname.Text);
                     command.Parameters.AddWithValue("@tcherLname", tcher_lname.Text);
-                    command.Parameters.AddWithValue("@tcherBday", tcher_bd.EditValue);
-                    command.Parameters.AddWithValue("@tcherGender", tcher_gender.Text);
-                    command.Parameters.AddWithValue("@tcherCivil", tcher_civil_stats.Text);
+                    command.Parameters.AddWithValue("@tcherDepartment", txt_department.Text);
+                    
 
                     // Open the connection
                     connection.Open();

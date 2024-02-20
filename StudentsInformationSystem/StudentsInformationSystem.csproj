@@ -140,6 +140,12 @@
     <Compile Include="TblTeacherInfo.cs">
       <DependentUpon>EntityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\UcAddSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\UcAddSchedule.Designer.cs">
+      <DependentUpon>UcAddSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\UcAddStdnt.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -183,6 +189,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\Modules\UcAddSchedule.resx">
+      <DependentUpon>UcAddSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcAddStdnt.resx">
       <DependentUpon>UcAddStdnt.cs</DependentUpon>
     </EmbeddedResource>

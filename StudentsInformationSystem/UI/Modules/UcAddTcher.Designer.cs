@@ -46,29 +46,21 @@
             this.tcher_fname = new DevExpress.XtraEditors.TextEdit();
             this.tcher_mname = new DevExpress.XtraEditors.TextEdit();
             this.tcher_lname = new DevExpress.XtraEditors.TextEdit();
-            this.tcher_bd = new DevExpress.XtraEditors.DateEdit();
-            this.tcher_gender = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.tcher_civil_stats = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.txt_tcher_id = new DevExpress.XtraLayout.LayoutControlItem();
             this.txt_teacher_fname = new DevExpress.XtraLayout.LayoutControlItem();
             this.txt_teacher_mname = new DevExpress.XtraLayout.LayoutControlItem();
             this.txt_teacher_lname = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txt_teacher_bd = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txt_teacher_gender = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txt_civil_stat = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.gcont_add = new DevExpress.XtraEditors.GroupControl();
             this.dataLayoutControl2 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.tcher_address = new DevExpress.XtraEditors.TextEdit();
@@ -100,6 +92,8 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txt_department = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.tabpane_addtcher)).BeginInit();
             this.tabpane_addtcher.SuspendLayout();
             this.tb_page_basic_info.SuspendLayout();
@@ -113,30 +107,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.tcher_fname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcher_mname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcher_lname.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_bd.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_bd.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_gender.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_civil_stats.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tcher_id)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_fname)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_mname)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_lname)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_bd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_gender)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_civil_stat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcont_add)).BeginInit();
             this.gcont_add.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl2)).BeginInit();
@@ -165,6 +150,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_department.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splashScreenManager1
@@ -219,9 +206,7 @@
             this.dataLayoutControl1.Controls.Add(this.tcher_fname);
             this.dataLayoutControl1.Controls.Add(this.tcher_mname);
             this.dataLayoutControl1.Controls.Add(this.tcher_lname);
-            this.dataLayoutControl1.Controls.Add(this.tcher_bd);
-            this.dataLayoutControl1.Controls.Add(this.tcher_gender);
-            this.dataLayoutControl1.Controls.Add(this.tcher_civil_stats);
+            this.dataLayoutControl1.Controls.Add(this.txt_department);
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.Location = new System.Drawing.Point(2, 22);
             this.dataLayoutControl1.Name = "dataLayoutControl1";
@@ -240,13 +225,13 @@
             this.tcher_id.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.tcher_id.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.tcher_id.Properties.MaskSettings.Set("mask", "N0");
-            this.tcher_id.Size = new System.Drawing.Size(58, 20);
+            this.tcher_id.Size = new System.Drawing.Size(64, 20);
             this.tcher_id.StyleController = this.dataLayoutControl1;
             this.tcher_id.TabIndex = 21;
             // 
             // tcher_fname
             // 
-            this.tcher_fname.Location = new System.Drawing.Point(101, 71);
+            this.tcher_fname.Location = new System.Drawing.Point(101, 49);
             this.tcher_fname.Name = "tcher_fname";
             this.tcher_fname.Size = new System.Drawing.Size(150, 20);
             this.tcher_fname.StyleController = this.dataLayoutControl1;
@@ -254,7 +239,7 @@
             // 
             // tcher_mname
             // 
-            this.tcher_mname.Location = new System.Drawing.Point(101, 118);
+            this.tcher_mname.Location = new System.Drawing.Point(101, 92);
             this.tcher_mname.Name = "tcher_mname";
             this.tcher_mname.Size = new System.Drawing.Size(150, 20);
             this.tcher_mname.StyleController = this.dataLayoutControl1;
@@ -262,52 +247,11 @@
             // 
             // tcher_lname
             // 
-            this.tcher_lname.Location = new System.Drawing.Point(101, 162);
+            this.tcher_lname.Location = new System.Drawing.Point(101, 136);
             this.tcher_lname.Name = "tcher_lname";
             this.tcher_lname.Size = new System.Drawing.Size(150, 20);
             this.tcher_lname.StyleController = this.dataLayoutControl1;
             this.tcher_lname.TabIndex = 24;
-            // 
-            // tcher_bd
-            // 
-            this.tcher_bd.EditValue = null;
-            this.tcher_bd.Location = new System.Drawing.Point(101, 241);
-            this.tcher_bd.Name = "tcher_bd";
-            this.tcher_bd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tcher_bd.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tcher_bd.Size = new System.Drawing.Size(53, 20);
-            this.tcher_bd.StyleController = this.dataLayoutControl1;
-            this.tcher_bd.TabIndex = 25;
-            // 
-            // tcher_gender
-            // 
-            this.tcher_gender.Location = new System.Drawing.Point(101, 289);
-            this.tcher_gender.Name = "tcher_gender";
-            this.tcher_gender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tcher_gender.Properties.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.tcher_gender.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.tcher_gender.Size = new System.Drawing.Size(62, 20);
-            this.tcher_gender.StyleController = this.dataLayoutControl1;
-            this.tcher_gender.TabIndex = 26;
-            // 
-            // tcher_civil_stats
-            // 
-            this.tcher_civil_stats.Location = new System.Drawing.Point(101, 337);
-            this.tcher_civil_stats.Name = "tcher_civil_stats";
-            this.tcher_civil_stats.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.tcher_civil_stats.Properties.Items.AddRange(new object[] {
-            "Married",
-            "Single"});
-            this.tcher_civil_stats.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.tcher_civil_stats.Size = new System.Drawing.Size(80, 20);
-            this.tcher_civil_stats.StyleController = this.dataLayoutControl1;
-            this.tcher_civil_stats.TabIndex = 27;
             // 
             // layoutControlGroup1
             // 
@@ -315,7 +259,7 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup2});
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(263, 415);
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -328,20 +272,16 @@
             this.txt_teacher_fname,
             this.txt_teacher_mname,
             this.txt_teacher_lname,
-            this.txt_teacher_bd,
-            this.txt_teacher_gender,
-            this.txt_civil_stat,
             this.emptySpaceItem1,
             this.emptySpaceItem2,
             this.emptySpaceItem3,
             this.emptySpaceItem4,
             this.emptySpaceItem5,
-            this.emptySpaceItem6,
             this.emptySpaceItem7,
             this.emptySpaceItem8,
             this.emptySpaceItem9,
             this.emptySpaceItem10,
-            this.emptySpaceItem11});
+            this.layoutControlItem4});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
             this.layoutControlGroup2.Size = new System.Drawing.Size(243, 395);
@@ -351,14 +291,14 @@
             this.txt_tcher_id.Control = this.tcher_id;
             this.txt_tcher_id.Location = new System.Drawing.Point(0, 0);
             this.txt_tcher_id.Name = "txt_tcher_id";
-            this.txt_tcher_id.Size = new System.Drawing.Size(151, 24);
+            this.txt_tcher_id.Size = new System.Drawing.Size(157, 24);
             this.txt_tcher_id.Text = "Teacher ID(Auto)";
             this.txt_tcher_id.TextSize = new System.Drawing.Size(85, 13);
             // 
             // txt_teacher_fname
             // 
             this.txt_teacher_fname.Control = this.tcher_fname;
-            this.txt_teacher_fname.Location = new System.Drawing.Point(0, 59);
+            this.txt_teacher_fname.Location = new System.Drawing.Point(0, 37);
             this.txt_teacher_fname.Name = "txt_teacher_fname";
             this.txt_teacher_fname.Size = new System.Drawing.Size(243, 24);
             this.txt_teacher_fname.Text = "Fist Name";
@@ -367,7 +307,7 @@
             // txt_teacher_mname
             // 
             this.txt_teacher_mname.Control = this.tcher_mname;
-            this.txt_teacher_mname.Location = new System.Drawing.Point(0, 106);
+            this.txt_teacher_mname.Location = new System.Drawing.Point(0, 80);
             this.txt_teacher_mname.Name = "txt_teacher_mname";
             this.txt_teacher_mname.Size = new System.Drawing.Size(243, 24);
             this.txt_teacher_mname.Text = "Middle Name";
@@ -376,45 +316,18 @@
             // txt_teacher_lname
             // 
             this.txt_teacher_lname.Control = this.tcher_lname;
-            this.txt_teacher_lname.Location = new System.Drawing.Point(0, 150);
+            this.txt_teacher_lname.Location = new System.Drawing.Point(0, 124);
             this.txt_teacher_lname.Name = "txt_teacher_lname";
             this.txt_teacher_lname.Size = new System.Drawing.Size(243, 24);
             this.txt_teacher_lname.Text = "Last Name";
             this.txt_teacher_lname.TextSize = new System.Drawing.Size(85, 13);
             // 
-            // txt_teacher_bd
-            // 
-            this.txt_teacher_bd.Control = this.tcher_bd;
-            this.txt_teacher_bd.Location = new System.Drawing.Point(0, 229);
-            this.txt_teacher_bd.Name = "txt_teacher_bd";
-            this.txt_teacher_bd.Size = new System.Drawing.Size(146, 24);
-            this.txt_teacher_bd.Text = "Birth Date";
-            this.txt_teacher_bd.TextSize = new System.Drawing.Size(85, 13);
-            // 
-            // txt_teacher_gender
-            // 
-            this.txt_teacher_gender.Control = this.tcher_gender;
-            this.txt_teacher_gender.Location = new System.Drawing.Point(0, 277);
-            this.txt_teacher_gender.Name = "txt_teacher_gender";
-            this.txt_teacher_gender.Size = new System.Drawing.Size(155, 24);
-            this.txt_teacher_gender.Text = "Gender";
-            this.txt_teacher_gender.TextSize = new System.Drawing.Size(85, 13);
-            // 
-            // txt_civil_stat
-            // 
-            this.txt_civil_stat.Control = this.tcher_civil_stats;
-            this.txt_civil_stat.Location = new System.Drawing.Point(0, 325);
-            this.txt_civil_stat.Name = "txt_civil_stat";
-            this.txt_civil_stat.Size = new System.Drawing.Size(173, 24);
-            this.txt_civil_stat.Text = "Civil Status";
-            this.txt_civil_stat.TextSize = new System.Drawing.Size(85, 13);
-            // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 349);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 325);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(243, 46);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(243, 70);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
@@ -422,21 +335,21 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 24);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(243, 35);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(243, 13);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 83);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 61);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(243, 23);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(243, 19);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 130);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(0, 104);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(243, 20);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -444,58 +357,42 @@
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 174);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 148);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(243, 55);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(243, 57);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem6
-            // 
-            this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(0, 253);
-            this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(243, 24);
-            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 301);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 259);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(243, 24);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(243, 66);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(151, 0);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(157, 0);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(92, 24);
+            this.emptySpaceItem8.Size = new System.Drawing.Size(86, 24);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem9
             // 
             this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(146, 229);
+            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 205);
             this.emptySpaceItem9.Name = "emptySpaceItem9";
-            this.emptySpaceItem9.Size = new System.Drawing.Size(97, 24);
+            this.emptySpaceItem9.Size = new System.Drawing.Size(243, 30);
             this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem10
             // 
             this.emptySpaceItem10.AllowHotTrack = false;
-            this.emptySpaceItem10.Location = new System.Drawing.Point(155, 277);
+            this.emptySpaceItem10.Location = new System.Drawing.Point(233, 235);
             this.emptySpaceItem10.Name = "emptySpaceItem10";
-            this.emptySpaceItem10.Size = new System.Drawing.Size(88, 24);
+            this.emptySpaceItem10.Size = new System.Drawing.Size(10, 24);
             this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem11
-            // 
-            this.emptySpaceItem11.AllowHotTrack = false;
-            this.emptySpaceItem11.Location = new System.Drawing.Point(173, 325);
-            this.emptySpaceItem11.Name = "emptySpaceItem11";
-            this.emptySpaceItem11.Size = new System.Drawing.Size(70, 24);
-            this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
             // 
             // gcont_add
             // 
@@ -816,6 +713,25 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txt_department;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 235);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(233, 24);
+            this.layoutControlItem4.Text = "Department";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(85, 13);
+            // 
+            // txt_department
+            // 
+            this.txt_department.Location = new System.Drawing.Point(101, 247);
+            this.txt_department.Name = "txt_department";
+            this.txt_department.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txt_department.Size = new System.Drawing.Size(140, 20);
+            this.txt_department.StyleController = this.dataLayoutControl1;
+            this.txt_department.TabIndex = 25;
+            // 
             // UcAddTcher
             // 
             this.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F);
@@ -839,30 +755,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.tcher_fname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcher_mname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tcher_lname.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_bd.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_bd.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_gender.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_civil_stats.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tcher_id)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_fname)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_mname)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_lname)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_bd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_gender)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_civil_stat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcont_add)).EndInit();
             this.gcont_add.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl2)).EndInit();
@@ -891,6 +798,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_department.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -906,29 +815,21 @@
         private DevExpress.XtraEditors.TextEdit tcher_fname;
         private DevExpress.XtraEditors.TextEdit tcher_mname;
         private DevExpress.XtraEditors.TextEdit tcher_lname;
-        private DevExpress.XtraEditors.DateEdit tcher_bd;
-        private DevExpress.XtraEditors.ComboBoxEdit tcher_gender;
-        private DevExpress.XtraEditors.ComboBoxEdit tcher_civil_stats;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem txt_tcher_id;
         private DevExpress.XtraLayout.LayoutControlItem txt_teacher_fname;
         private DevExpress.XtraLayout.LayoutControlItem txt_teacher_mname;
         private DevExpress.XtraLayout.LayoutControlItem txt_teacher_lname;
-        private DevExpress.XtraLayout.LayoutControlItem txt_teacher_bd;
-        private DevExpress.XtraLayout.LayoutControlItem txt_teacher_gender;
-        private DevExpress.XtraLayout.LayoutControlItem txt_civil_stat;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem11;
         private DevExpress.XtraEditors.GroupControl gcont_add;
         private DevExpress.XtraDataLayout.DataLayoutControl dataLayoutControl2;
         private DevExpress.XtraEditors.TextEdit tcher_address;
@@ -960,5 +861,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem20;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem21;
         private DevExpress.Utils.ToolTipController toolTipController1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraEditors.ComboBoxEdit txt_department;
     }
 }

@@ -164,6 +164,7 @@
             this.s_element_addsched.Name = "s_element_addsched";
             this.s_element_addsched.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.s_element_addsched.Text = "Add Schedule";
+            this.s_element_addsched.Click += new System.EventHandler(this.s_element_addsched_Click);
             // 
             // s_element_remsched
             // 

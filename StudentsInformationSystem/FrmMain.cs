@@ -101,5 +101,16 @@ namespace StudentsInformationSystem
                 await LoadModuleAsync(ModulesInfo.GetItem("UcAddTcher"));
             }
         }
+
+        private async void s_element_addsched_Click(object sender, EventArgs e)
+        {
+            if (ModulesInfo.GetItem("UcAddSchedule") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcAddSchedule", "StudentsInformationSystem.UI.Modules.UcAddSchedule"));
+
+                await LoadModuleAsync(ModulesInfo.GetItem("UcAddSchedule"));
+            }
+        }
     }
 }
