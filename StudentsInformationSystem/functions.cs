@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +51,16 @@ namespace StudentsInformationSystem
                    
                 }
             }
+        }
+
+        public static Bitmap ResizeImage(Image image, int width, int height)
+        {
+            Bitmap resizedImage = new Bitmap(width, height);
+            using (Graphics graphics = Graphics.FromImage(resizedImage))
+            {
+                graphics.DrawImage(image, 0, 0, width, height);
+            }
+            return resizedImage;
         }
 
 

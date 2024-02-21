@@ -43,7 +43,7 @@
             this.cbox_department = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbox_year_lvl = new DevExpress.XtraEditors.ComboBoxEdit();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.textEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbox_semester = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup6 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForcourse = new DevExpress.XtraLayout.LayoutControlItem();
@@ -59,6 +59,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
+            this.btn_add_picture = new DevExpress.XtraEditors.SimpleButton();
             this.txt_id = new DevExpress.XtraEditors.TextEdit();
             this.tblStdntInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txt_fname = new DevExpress.XtraEditors.TextEdit();
@@ -68,7 +69,7 @@
             this.cbox_gender = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbox_civil_status = new DevExpress.XtraEditors.ComboBoxEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
+            this.pedit_stdnt_pic = new DevExpress.XtraEditors.PictureEdit();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -87,6 +88,8 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem13 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.dataLayoutControl2 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.txt_address = new DevExpress.XtraEditors.TextEdit();
@@ -137,7 +140,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sisDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbox_department.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbox_year_lvl.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbox_semester.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForcourse)).BeginInit();
@@ -167,7 +170,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbox_gender.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbox_civil_status.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pedit_stdnt_pic.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -186,6 +189,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl2)).BeginInit();
@@ -245,7 +250,7 @@
             this.dataLayoutControl3.Controls.Add(this.cbox_year_lvl);
             this.dataLayoutControl3.Controls.Add(simpleButton2);
             this.dataLayoutControl3.Controls.Add(this.simpleButton3);
-            this.dataLayoutControl3.Controls.Add(this.textEdit2);
+            this.dataLayoutControl3.Controls.Add(this.cbox_semester);
             this.dataLayoutControl3.DataSource = this.tblStdntSchoolDetailsBindingSource;
             this.dataLayoutControl3.Location = new System.Drawing.Point(12, 195);
             this.dataLayoutControl3.Name = "dataLayoutControl3";
@@ -257,6 +262,7 @@
             // cbox_course
             // 
             this.cbox_course.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.tblStdntSchoolDetailsBindingSource, "course", true));
+            this.cbox_course.EditValue = "--SELECT COURSE--";
             this.cbox_course.Location = new System.Drawing.Point(83, 12);
             this.cbox_course.Name = "cbox_course";
             this.cbox_course.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -298,6 +304,7 @@
             // cbox_department
             // 
             this.cbox_department.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.tblStdntSchoolDetailsBindingSource, "department", true));
+            this.cbox_department.EditValue = "--SELECT DEPARTMENT--";
             this.cbox_department.Location = new System.Drawing.Point(83, 36);
             this.cbox_department.Name = "cbox_department";
             this.cbox_department.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -340,21 +347,22 @@
             this.simpleButton3.TabIndex = 44;
             this.simpleButton3.Text = "SAVE";
             // 
-            // textEdit2
+            // cbox_semester
             // 
-            this.textEdit2.Location = new System.Drawing.Point(83, 84);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbox_semester.EditValue = "--SELECT SEMESTER--";
+            this.cbox_semester.Location = new System.Drawing.Point(83, 84);
+            this.cbox_semester.Name = "cbox_semester";
+            this.cbox_semester.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.textEdit2.Properties.Items.AddRange(new object[] {
+            this.cbox_semester.Properties.Items.AddRange(new object[] {
             "--SELECT SEMESTER--",
             "First Semester ",
             "Second Semester",
             "Summer"});
-            this.textEdit2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.textEdit2.Size = new System.Drawing.Size(196, 20);
-            this.textEdit2.StyleController = this.dataLayoutControl3;
-            this.textEdit2.TabIndex = 42;
+            this.cbox_semester.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbox_semester.Size = new System.Drawing.Size(196, 20);
+            this.cbox_semester.StyleController = this.dataLayoutControl3;
+            this.cbox_semester.TabIndex = 42;
             // 
             // layoutControlGroup5
             // 
@@ -412,7 +420,7 @@
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.textEdit2;
+            this.layoutControlItem9.Control = this.cbox_semester;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(271, 24);
@@ -496,10 +504,10 @@
             this.groupControl2.Size = new System.Drawing.Size(318, 410);
             this.groupControl2.TabIndex = 6;
             this.groupControl2.Text = "I. PERSONAL DATA";
-            this.groupControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl2_Paint);
             // 
             // dataLayoutControl1
             // 
+            this.dataLayoutControl1.Controls.Add(this.btn_add_picture);
             this.dataLayoutControl1.Controls.Add(this.txt_id);
             this.dataLayoutControl1.Controls.Add(this.txt_fname);
             this.dataLayoutControl1.Controls.Add(this.txt_mname);
@@ -508,7 +516,7 @@
             this.dataLayoutControl1.Controls.Add(this.cbox_gender);
             this.dataLayoutControl1.Controls.Add(this.cbox_civil_status);
             this.dataLayoutControl1.Controls.Add(this.pictureEdit1);
-            this.dataLayoutControl1.Controls.Add(this.pictureEdit2);
+            this.dataLayoutControl1.Controls.Add(this.pedit_stdnt_pic);
             this.dataLayoutControl1.DataSource = this.tblStdntInfoBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -519,6 +527,20 @@
             this.dataLayoutControl1.Size = new System.Drawing.Size(314, 386);
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
+            // 
+            // btn_add_picture
+            // 
+            this.btn_add_picture.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_picture.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_add_picture.Appearance.Options.UseFont = true;
+            this.btn_add_picture.Appearance.Options.UseForeColor = true;
+            this.btn_add_picture.Location = new System.Drawing.Point(114, 95);
+            this.btn_add_picture.Name = "btn_add_picture";
+            this.btn_add_picture.Size = new System.Drawing.Size(188, 23);
+            this.btn_add_picture.StyleController = this.dataLayoutControl1;
+            this.btn_add_picture.TabIndex = 45;
+            this.btn_add_picture.Text = "ADD PICTURE";
+            this.btn_add_picture.Click += new System.EventHandler(this.btn_add_picture_Click);
             // 
             // txt_id
             // 
@@ -585,6 +607,7 @@
             // cbox_gender
             // 
             this.cbox_gender.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.tblStdntInfoBindingSource, "gender", true));
+            this.cbox_gender.EditValue = "--SELECT GENDER--";
             this.cbox_gender.Location = new System.Drawing.Point(108, 252);
             this.cbox_gender.Name = "cbox_gender";
             this.cbox_gender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -601,6 +624,7 @@
             // cbox_civil_status
             // 
             this.cbox_civil_status.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.tblStdntInfoBindingSource, "civil_stat", true));
+            this.cbox_civil_status.EditValue = "--SELECT STATUS--";
             this.cbox_civil_status.Location = new System.Drawing.Point(108, 276);
             this.cbox_civil_status.Name = "cbox_civil_status";
             this.cbox_civil_status.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -624,14 +648,14 @@
             this.pictureEdit1.StyleController = this.dataLayoutControl1;
             this.pictureEdit1.TabIndex = 36;
             // 
-            // pictureEdit2
+            // pedit_stdnt_pic
             // 
-            this.pictureEdit2.Location = new System.Drawing.Point(12, 12);
-            this.pictureEdit2.Name = "pictureEdit2";
-            this.pictureEdit2.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit2.Size = new System.Drawing.Size(99, 106);
-            this.pictureEdit2.StyleController = this.dataLayoutControl1;
-            this.pictureEdit2.TabIndex = 37;
+            this.pedit_stdnt_pic.Location = new System.Drawing.Point(12, 12);
+            this.pedit_stdnt_pic.Name = "pedit_stdnt_pic";
+            this.pedit_stdnt_pic.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pedit_stdnt_pic.Size = new System.Drawing.Size(98, 106);
+            this.pedit_stdnt_pic.StyleController = this.dataLayoutControl1;
+            this.pedit_stdnt_pic.TabIndex = 37;
             // 
             // layoutControlItem4
             // 
@@ -670,7 +694,9 @@
             this.emptySpaceItem11,
             this.layoutControlItem5,
             this.emptySpaceItem2,
-            this.emptySpaceItem3});
+            this.emptySpaceItem3,
+            this.emptySpaceItem13,
+            this.layoutControlItem12});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
             this.layoutControlGroup2.Size = new System.Drawing.Size(294, 366);
@@ -780,19 +806,19 @@
             // 
             // layoutControlItem5
             // 
-            this.layoutControlItem5.Control = this.pictureEdit2;
+            this.layoutControlItem5.Control = this.pedit_stdnt_pic;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(103, 110);
+            this.layoutControlItem5.Size = new System.Drawing.Size(102, 110);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(103, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(191, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(191, 110);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(103, 83);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
@@ -802,6 +828,23 @@
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(294, 10);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem13
+            // 
+            this.emptySpaceItem13.AllowHotTrack = false;
+            this.emptySpaceItem13.Location = new System.Drawing.Point(102, 0);
+            this.emptySpaceItem13.Name = "emptySpaceItem13";
+            this.emptySpaceItem13.Size = new System.Drawing.Size(89, 83);
+            this.emptySpaceItem13.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.Control = this.btn_add_picture;
+            this.layoutControlItem12.Location = new System.Drawing.Point(102, 83);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(192, 27);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem12.TextVisible = false;
             // 
             // groupControl1
             // 
@@ -1218,7 +1261,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sisDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbox_department.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbox_year_lvl.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbox_semester.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemForcourse)).EndInit();
@@ -1248,7 +1291,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbox_gender.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbox_civil_status.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pedit_stdnt_pic.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -1267,6 +1310,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl2)).EndInit();
@@ -1382,7 +1427,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit2;
+        private DevExpress.XtraEditors.PictureEdit pedit_stdnt_pic;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
@@ -1402,6 +1447,9 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem12;
-        private DevExpress.XtraEditors.ComboBoxEdit textEdit2;
+        private DevExpress.XtraEditors.ComboBoxEdit cbox_semester;
+        private DevExpress.XtraEditors.SimpleButton btn_add_picture;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem13;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
     }
 }

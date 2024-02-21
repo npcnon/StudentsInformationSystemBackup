@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DevExpress.XtraBars.Controls.CustomLinksControl;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace StudentsInformationSystem.UI.Modules
 {
@@ -37,16 +39,19 @@ namespace StudentsInformationSystem.UI.Modules
                 dedit_bday,
                 cbox_gender,
                 cbox_civil_status,
+                cbox_citizenship,
+                cbox_religion,
                 txt_address,
                 txt_contact_info,
                 txt_email,
                 cbox_course,
                 cbox_department,
                 cbox_year_lvl,
+                cbox_semester,
             };
 
             //added keypress event handler
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < 15; i++)
             {
                 controlList[i].KeyDown += control_keypress;
             }
@@ -68,12 +73,23 @@ namespace StudentsInformationSystem.UI.Modules
                     string controlName = control.Name;
 
                     // Do something based on the name of the control
-                    for (int i = 0; i < 11; i++)
+                    for (int i = 0; i < 14; i++)
                     {
                         if (controlName == controlList[i].Name)
                         {
                             controlList[i + 1].Focus();
                             Debug.Write(controlList[i].Name , "\n was entered");
+                            if (controlList[i + 1] is ComboBoxEdit)
+                            {
+                                ComboBoxEdit comboBoxEdit = controlList[i + 1] as ComboBoxEdit;
+                                comboBoxEdit.ShowPopup();
+                            }
+                            else if (controlList[i + 1] is DateEdit)
+                            {
+                                DateEdit dateedit  = controlList[i + 1] as DateEdit;
+                                dateedit.ShowPopup();
+                            }
+
                         }
 
                     }
@@ -83,25 +99,32 @@ namespace StudentsInformationSystem.UI.Modules
 
        
 
-        private void groupControl2_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
-        private void labelControl1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_stdnt_cancel_Click(object sender, EventArgs e)
         {
             // Dispose the user control
             this.Dispose();
+        }
+
+        private void btn_add_picture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.gif; *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (Bitmap selectedImage = new Bitmap(openFileDialog.FileName))
+                {
+                    // Resize the image to fit the desired dimensions (99x106)
+                    Bitmap resizedImage = functions.ResizeImage(selectedImage, 99, 106);
+
+                    // Set the resized image as the picture in the PictureEdit control
+                    pedit_stdnt_pic.Image = resizedImage;
+                }
+            }
         }
     }
 }
