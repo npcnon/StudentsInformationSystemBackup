@@ -12,23 +12,20 @@ namespace StudentsInformationSystem
     using System;
     using System.Collections.Generic;
     
-    public partial class TblSubjInfo
+    public partial class TblRoomInfo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TblSubjInfo()
+        public TblRoomInfo()
         {
             this.TblSchedules = new HashSet<TblSchedule>();
-            this.TblStdntSubjs = new HashSet<TblStdntSubj>();
         }
     
-        public string offercode { get; set; }
-        public string Description { get; set; }
-        public string subject_code { get; set; }
-        public Nullable<int> unit { get; set; }
+        public int room_id { get; set; }
+        public string building { get; set; }
+        public string floor_lvl { get; set; }
+        public Nullable<int> room_no { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblSchedule> TblSchedules { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblStdntSubj> TblStdntSubjs { get; set; }
     }
 }

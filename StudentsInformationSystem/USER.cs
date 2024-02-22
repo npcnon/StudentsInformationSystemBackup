@@ -12,17 +12,11 @@ namespace StudentsInformationSystem
     using System;
     using System.Collections.Generic;
     
-    public partial class TblSchedule
+    public partial class USER
     {
-        public int schedule_id { get; set; }
-        public string class_day { get; set; }
-        public string class_hour { get; set; }
-        public Nullable<int> teacher_id { get; set; }
-        public string offercode { get; set; }
-        public Nullable<int> room_id { get; set; }
-    
-        public virtual TblRoomInfo TblRoomInfo { get; set; }
-        public virtual TblSubjInfo TblSubjInfo { get; set; }
-        public virtual TblTeacherInfo TblTeacherInfo { get; set; }
+        public int usr_id { get; set; }
+        public string username { get; set; }
+        public string pass { get; set; }
+        public string previlages { get; set; }
     }
 }

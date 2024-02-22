@@ -18,20 +18,18 @@ namespace StudentsInformationSystem
         public TblTeacherInfo()
         {
             this.TblAddTeacherInfoes = new HashSet<TblAddTeacherInfo>();
-            this.TblSubjInfoes = new HashSet<TblSubjInfo>();
+            this.TblSchedules = new HashSet<TblSchedule>();
         }
     
         public int teacher_id { get; set; }
         public string f_name { get; set; }
         public string m_name { get; set; }
-        public string l_ame { get; set; }
-        public Nullable<System.DateTime> birth_date { get; set; }
-        public string gender { get; set; }
-        public string civil_stat { get; set; }
+        public string l_name { get; set; }
+        public string department { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblAddTeacherInfo> TblAddTeacherInfoes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TblSubjInfo> TblSubjInfoes { get; set; }
+        public virtual ICollection<TblSchedule> TblSchedules { get; set; }
     }
 }

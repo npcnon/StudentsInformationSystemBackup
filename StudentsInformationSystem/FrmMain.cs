@@ -134,5 +134,16 @@ namespace StudentsInformationSystem
                 await LoadModuleAsync(ModulesInfo.GetItem("UcAddSchedule"));
             }
         }
+
+        private async void s_element_room_Click(object sender, EventArgs e)
+        {
+            if (ModulesInfo.GetItem("UCRooms") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UCRooms", "StudentsInformationSystem.UI.Modules.UCRooms"));
+
+                await LoadModuleAsync(ModulesInfo.GetItem("UCRooms"));
+            }
+        }
     }
 }

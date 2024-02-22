@@ -45,17 +45,17 @@
             this.s_element_addsched = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_remsched = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_checksched = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_room = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.m_element_users = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_add_user = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_rm_users = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.m_element_depart = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_subjects = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_departments = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.s_element_room = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.m_element_depart = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.s_element_subjects = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.s_element_departments = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.frm_main_acc_control)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -133,6 +133,7 @@
             this.s_element_addstdnt,
             this.s_element_srchstdnt,
             this.s_element_rmstdnt});
+            this.m_element_student.Expanded = true;
             this.m_element_student.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_student.ImageOptions.SvgImage")));
             this.m_element_student.Name = "m_element_student";
             this.m_element_student.Text = "Students";
@@ -167,7 +168,6 @@
             this.s_element_remsched,
             this.s_element_checksched,
             this.s_element_room});
-            this.m_element_schedule.Expanded = true;
             this.m_element_schedule.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_schedule.ImageOptions.SvgImage")));
             this.m_element_schedule.Name = "m_element_schedule";
             this.m_element_schedule.Text = "Schedule";
@@ -195,6 +195,14 @@
             this.s_element_checksched.Text = "Check Schedule";
             this.s_element_checksched.Click += new System.EventHandler(this.s_element_checksched_Click);
             // 
+            // s_element_room
+            // 
+            this.s_element_room.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_room.ImageOptions.SvgImage")));
+            this.s_element_room.Name = "s_element_room";
+            this.s_element_room.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_room.Text = "Rooms";
+            this.s_element_room.Click += new System.EventHandler(this.s_element_room_Click);
+            // 
             // m_element_users
             // 
             this.m_element_users.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -218,6 +226,29 @@
             this.s_element_rm_users.Name = "s_element_rm_users";
             this.s_element_rm_users.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.s_element_rm_users.Text = "Remove Users";
+            // 
+            // m_element_depart
+            // 
+            this.m_element_depart.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.s_element_subjects,
+            this.s_element_departments});
+            this.m_element_depart.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_depart.ImageOptions.SvgImage")));
+            this.m_element_depart.Name = "m_element_depart";
+            this.m_element_depart.Text = "Department";
+            // 
+            // s_element_subjects
+            // 
+            this.s_element_subjects.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_subjects.ImageOptions.SvgImage")));
+            this.s_element_subjects.Name = "s_element_subjects";
+            this.s_element_subjects.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_subjects.Text = "Subjects";
+            // 
+            // s_element_departments
+            // 
+            this.s_element_departments.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_departments.ImageOptions.SvgImage")));
+            this.s_element_departments.Name = "s_element_departments";
+            this.s_element_departments.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_departments.Text = "Departments";
             // 
             // fluentDesignFormControl1
             // 
@@ -245,36 +276,6 @@
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement2.Text = "Element2";
-            // 
-            // s_element_room
-            // 
-            this.s_element_room.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_addroom.ImageOptions.SvgImage")));
-            this.s_element_room.Name = "s_element_room";
-            this.s_element_room.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.s_element_room.Text = "Rooms";
-            // 
-            // m_element_depart
-            // 
-            this.m_element_depart.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.s_element_subjects,
-            this.s_element_departments});
-            this.m_element_depart.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_depart.ImageOptions.SvgImage")));
-            this.m_element_depart.Name = "m_element_depart";
-            this.m_element_depart.Text = "Department";
-            // 
-            // s_element_subjects
-            // 
-            this.s_element_subjects.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_add_subjects.ImageOptions.SvgImage")));
-            this.s_element_subjects.Name = "s_element_subjects";
-            this.s_element_subjects.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.s_element_subjects.Text = "Subjects";
-            // 
-            // s_element_departments
-            // 
-            this.s_element_departments.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_departments.ImageOptions.SvgImage")));
-            this.s_element_departments.Name = "s_element_departments";
-            this.s_element_departments.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.s_element_departments.Text = "Departments";
             // 
             // FrmMain
             // 

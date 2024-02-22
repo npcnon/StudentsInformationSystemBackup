@@ -29,6 +29,9 @@ namespace StudentsInformationSystem
         public Nullable<System.DateTime> birth_date { get; set; }
         public string gender { get; set; }
         public string civil_stat { get; set; }
+        public string citizenship { get; set; }
+        public string religion { get; set; }
+        public byte[] ImageData { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TblAddStdntInfo> TblAddStdntInfoes { get; set; }

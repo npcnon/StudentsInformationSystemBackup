@@ -17,6 +17,7 @@ namespace StudentsInformationSystem
         public int stdnt_subj_record { get; set; }
         public Nullable<int> stdnt_id { get; set; }
         public string offercode { get; set; }
+        public Nullable<int> semester { get; set; }
     
         public virtual TblStdntInfo TblStdntInfo { get; set; }
         public virtual TblSubjInfo TblSubjInfo { get; set; }
