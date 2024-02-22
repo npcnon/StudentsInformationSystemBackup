@@ -117,8 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="login_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login_background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="FrmChangePass.IconOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAnJJREFUOE+l
+        kutLk1Ecx/tPehNF9K6XQdgLK9GoKMQyCCsv62bk3RTNvGCmqRR5SbtopqlF6tjNbc7LhLwynTlXuqVG
+        ongrdWtu+3S2lhcwCPrAwwPf3+HznOec7y7+kx0FK2sOWtonKagaobD6I/LOaWz2dd90O9sELpebghdG
+        jkcpOXShmVs5XQRIVATHaAgQ2ZM6E26327f6NxsCp8tFdE43l+60EXy7ldRH/ZQ3miltMJNY2CcyNX5h
+        cuLye7ZJNgQPq4wk5HcTmqBlfHLZl25iti4RkdZB0DUVTxvHfKlPsPzjJyfEIFAip0ZqJve5kce1o0zN
+        rCA+h8PQir2zBpNKxploJUcjFBtn4hU0qKzE3deTVTaIybKIf5SW9r5vnEvswv42G+fEIE6nE5u+nsyS
+        Aa5m6FDqpzcF98qG2H+6hdeyCcaE4MBZGcnFA1Q1f8aWdpivc3L0piYss1Pe7GCIlKKa0U1BRukwe09J
+        qZVbvIIj4RrvP+872cJc5B6GP2Wj6o3EaO3jZfM4uwObKXy1RVCnsJBV0kNSUT+miUX8rqi9w2MSLb1J
+        F1nTVGKZmcJuHSJF7Cw8TYdMdMODV7CwbOdCgoaQWDVNWguxBf1UvhujXjnO0sI8Dk0FdmkhVnk95+M1
+        hMapWbVtOUQPuRVDpBZ1E5Hewez8mi/dZGZuVZRKzc1MHcXVI750i8Cx7uJGdjeS9DbCkrVikVHs5gvv
+        xZP3zMDllDaxQw0xeR+8jf3DhsCDR5JTPuQti3+4jPgHevFWEJWuI+h6qxANi8b+pcpbmV+yUSOu9G6J
+        QdyQgTcKK0vf7b7pdnYU/DvwC2+Qar2e7G0qAAAAAElFTkSuQmCC
+</value>
   </data>
 </root>

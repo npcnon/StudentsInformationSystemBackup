@@ -32,10 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.frm_main_container = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.frm_main_acc_control = new DevExpress.XtraBars.Navigation.AccordionControl();
-            this.m_element_teacher = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.s_element_addtcher = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.s_element_srchtcher = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.s_element_rmtcher = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.m_element_Staff = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_addstaff = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_srchstaff = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_rmstaff = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.m_element_student = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_addstdnt = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_srchstdnt = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -43,6 +43,9 @@
             this.m_element_schedule = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_addsched = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_remsched = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.m_element_users = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_add_user = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_rm_users = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -71,9 +74,10 @@
             this.frm_main_acc_control.Appearance.AccordionControl.Options.UseForeColor = true;
             this.frm_main_acc_control.Dock = System.Windows.Forms.DockStyle.Left;
             this.frm_main_acc_control.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.m_element_teacher,
+            this.m_element_Staff,
             this.m_element_student,
-            this.m_element_schedule});
+            this.m_element_schedule,
+            this.m_element_users});
             this.frm_main_acc_control.Location = new System.Drawing.Point(0, 24);
             this.frm_main_acc_control.Name = "frm_main_acc_control";
             this.frm_main_acc_control.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
@@ -81,38 +85,37 @@
             this.frm_main_acc_control.TabIndex = 1;
             this.frm_main_acc_control.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
-            // m_element_teacher
+            // m_element_Staff
             // 
-            this.m_element_teacher.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.s_element_addtcher,
-            this.s_element_srchtcher,
-            this.s_element_rmtcher});
-            this.m_element_teacher.Expanded = true;
-            this.m_element_teacher.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_teacher.ImageOptions.SvgImage")));
-            this.m_element_teacher.Name = "m_element_teacher";
-            this.m_element_teacher.Text = "Teachers";
+            this.m_element_Staff.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.s_element_addstaff,
+            this.s_element_srchstaff,
+            this.s_element_rmstaff});
+            this.m_element_Staff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_teacher.ImageOptions.SvgImage")));
+            this.m_element_Staff.Name = "m_element_Staff";
+            this.m_element_Staff.Text = "Staff";
             // 
-            // s_element_addtcher
+            // s_element_addstaff
             // 
-            this.s_element_addtcher.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_addtcher.ImageOptions.SvgImage")));
-            this.s_element_addtcher.Name = "s_element_addtcher";
-            this.s_element_addtcher.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.s_element_addtcher.Text = "Add Teacher";
-            this.s_element_addtcher.Click += new System.EventHandler(this.s_element_addtcher_Click);
+            this.s_element_addstaff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_addtcher.ImageOptions.SvgImage")));
+            this.s_element_addstaff.Name = "s_element_addstaff";
+            this.s_element_addstaff.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_addstaff.Text = "Add Staff";
+            this.s_element_addstaff.Click += new System.EventHandler(this.s_element_addtcher_Click);
             // 
-            // s_element_srchtcher
+            // s_element_srchstaff
             // 
-            this.s_element_srchtcher.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_srchtcher.ImageOptions.SvgImage")));
-            this.s_element_srchtcher.Name = "s_element_srchtcher";
-            this.s_element_srchtcher.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.s_element_srchtcher.Text = "Search Teacher";
+            this.s_element_srchstaff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_srchtcher.ImageOptions.SvgImage")));
+            this.s_element_srchstaff.Name = "s_element_srchstaff";
+            this.s_element_srchstaff.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_srchstaff.Text = "Search Staff";
             // 
-            // s_element_rmtcher
+            // s_element_rmstaff
             // 
-            this.s_element_rmtcher.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_rmtcher.ImageOptions.SvgImage")));
-            this.s_element_rmtcher.Name = "s_element_rmtcher";
-            this.s_element_rmtcher.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.s_element_rmtcher.Text = "Remove Teacher";
+            this.s_element_rmstaff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_rmtcher.ImageOptions.SvgImage")));
+            this.s_element_rmstaff.Name = "s_element_rmstaff";
+            this.s_element_rmstaff.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_rmstaff.Text = "Remove Staff";
             // 
             // m_element_student
             // 
@@ -120,7 +123,6 @@
             this.s_element_addstdnt,
             this.s_element_srchstdnt,
             this.s_element_rmstdnt});
-            this.m_element_student.Expanded = true;
             this.m_element_student.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_student.ImageOptions.SvgImage")));
             this.m_element_student.Name = "m_element_student";
             this.m_element_student.Text = "Students";
@@ -153,7 +155,6 @@
             this.m_element_schedule.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.s_element_addsched,
             this.s_element_remsched});
-            this.m_element_schedule.Expanded = true;
             this.m_element_schedule.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_schedule.ImageOptions.SvgImage")));
             this.m_element_schedule.Name = "m_element_schedule";
             this.m_element_schedule.Text = "Schedule";
@@ -172,6 +173,31 @@
             this.s_element_remsched.Name = "s_element_remsched";
             this.s_element_remsched.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.s_element_remsched.Text = "Remove Schedule";
+            // 
+            // m_element_users
+            // 
+            this.m_element_users.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.s_element_add_user,
+            this.s_element_rm_users});
+            this.m_element_users.Expanded = true;
+            this.m_element_users.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_users.ImageOptions.SvgImage")));
+            this.m_element_users.Name = "m_element_users";
+            this.m_element_users.Text = "Users";
+            // 
+            // s_element_add_user
+            // 
+            this.s_element_add_user.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_add_user.ImageOptions.SvgImage")));
+            this.s_element_add_user.Name = "s_element_add_user";
+            this.s_element_add_user.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_add_user.Text = "Add Users";
+            this.s_element_add_user.Click += new System.EventHandler(this.s_element_add_user_Click);
+            // 
+            // s_element_rm_users
+            // 
+            this.s_element_rm_users.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_rm_users.ImageOptions.SvgImage")));
+            this.s_element_rm_users.Name = "s_element_rm_users";
+            this.s_element_rm_users.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_rm_users.Text = "Remove Users";
             // 
             // fluentDesignFormControl1
             // 
@@ -240,10 +266,13 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_srchstdnt;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_rmstdnt;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_remsched;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement m_element_teacher;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_addtcher;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_srchtcher;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_rmtcher;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement m_element_Staff;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_addstaff;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_srchstaff;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_rmstaff;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement m_element_users;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_add_user;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_rm_users;
     }
 }

@@ -90,6 +90,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EntityModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="FrmChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangePass.Designer.cs">
+      <DependentUpon>FrmChangePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,12 @@
     <Compile Include="UI\Modules\UcAddTcher.Designer.cs">
       <DependentUpon>UcAddTcher.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\UcAddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\UcAddUser.Designer.cs">
+      <DependentUpon>UcAddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\UcRmStdnt.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -170,6 +182,9 @@
     <Compile Include="UI\Modules\WaitForm2.Designer.cs">
       <DependentUpon>WaitForm2.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmChangePass.resx">
+      <DependentUpon>FrmChangePass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogIn.resx">
       <DependentUpon>FrmLogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +203,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\Modules\UcAddSchedule.resx">
       <DependentUpon>UcAddSchedule.cs</DependentUpon>
@@ -197,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcAddTcher.resx">
       <DependentUpon>UcAddTcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\UcAddUser.resx">
+      <DependentUpon>UcAddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcRmStdnt.resx">
       <DependentUpon>UcRmStdnt.cs</DependentUpon>
@@ -245,6 +264,7 @@
       <DependentUpon>EntityModel.edmx</DependentUpon>
       <LastGenOutput>EntityModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\login_background.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

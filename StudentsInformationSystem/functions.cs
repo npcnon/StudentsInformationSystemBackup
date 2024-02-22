@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -87,6 +88,52 @@ namespace StudentsInformationSystem
                     return count > 0;
                 }
             }
+        }
+
+
+       public static bool ChckAdmin()
+        {
+            List<string[]> adminCredentials = new List<string[]>();
+
+            string connectionString = "Data Source=DESKTOP-9GA3LFJ\\SQLEXPRESS;Initial Catalog=sis;Integrated Security=True";
+            string sqlQuery = @"SELECT [username], [pass] FROM USERS WHERE previlages = 'admin'";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // Check if the query returned any rows
+                        if (reader.HasRows)
+                        {
+                            // Iterate through the rows
+                            while (reader.Read())
+                            {
+                                // Create an array to store the user and password
+                                string[] credentials = new string[2];
+                                // Store the values in the array
+                                credentials[0] = reader.GetString(0); // assuming 'user' is at index 0
+                                credentials[1] = reader.GetString(1); // assuming 'password' is at index 1
+                                                                      // Add the array to the list
+                                adminCredentials.Add(credentials);
+                            }
+                        }
+                    }
+                }
+            }
+            if (adminCredentials.Count > 0 && adminCredentials[0][0] == "admin" && adminCredentials[0][1] == "admin")
+            {
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
         }
 
     }

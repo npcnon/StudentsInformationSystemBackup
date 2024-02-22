@@ -55,12 +55,18 @@ namespace StudentsInformationSystem
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            
             splashScreenManager1.ShowWaitForm();
             Thread.Sleep(3000);
             splashScreenManager1.CloseWaitForm();
+            functions.ChckAdmin();
 
-            m_element_teacher.Expanded = false;
+            if(functions.ChckAdmin())
+            {
+                FrmChangePass frmChangePass = new FrmChangePass();
+                frmChangePass.ShowDialog();
+            }    
+            m_element_Staff.Expanded = false;
             m_element_student.Expanded = false;
             m_element_schedule.Expanded = false;
             //frm_main_container.Controls.Add(new UcRmStdnt() { Dock = DockStyle.Fill });
@@ -110,6 +116,17 @@ namespace StudentsInformationSystem
                 ModulesInfo.Add(new ModuleInfo("UcAddSchedule", "StudentsInformationSystem.UI.Modules.UcAddSchedule"));
 
                 await LoadModuleAsync(ModulesInfo.GetItem("UcAddSchedule"));
+            }
+        }
+
+        private async void s_element_add_user_Click(object sender, EventArgs e)
+        {
+            if (ModulesInfo.GetItem("UcAddUser") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcAddUser", "StudentsInformationSystem.UI.Modules.UcAddUser"));
+
+                await LoadModuleAsync(ModulesInfo.GetItem("UcAddUser"));
             }
         }
     }
