@@ -30,19 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.SimpleButton simpleButton2;
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
             this.dataLayoutControl3 = new DevExpress.XtraDataLayout.DataLayoutControl();
             this.cbox_course = new DevExpress.XtraEditors.ComboBoxEdit();
             this.tblStdntSchoolDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sisDataSet = new StudentsInformationSystem.sisDataSet();
             this.cbox_department = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbox_year_lvl = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.cbox_semester = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup6 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -52,7 +51,6 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabpane_addstdnt = new DevExpress.XtraBars.Navigation.TabPane();
             this.tb_page_basic_info = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -96,8 +94,8 @@
             this.tblAddStdntInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txt_contact_info = new DevExpress.XtraEditors.TextEdit();
             this.txt_email = new DevExpress.XtraEditors.TextEdit();
-            this.cbox_citizenship = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbox_religion = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbox_citizenship = new DevExpress.XtraEditors.TextEdit();
+            this.cbox_religion = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ItemForcontact_info = new DevExpress.XtraLayout.LayoutControlItem();
@@ -114,9 +112,9 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tab_page_subjects = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.btn_stdnt_cancel = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_cancel = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_subadd = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_submit = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.checkedListBoxControl1 = new DevExpress.XtraEditors.CheckedListBoxControl();
@@ -149,7 +147,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabpane_addstdnt)).BeginInit();
             this.tabpane_addstdnt.SuspendLayout();
@@ -236,12 +233,13 @@
             simpleButton2.Appearance.ForeColor = System.Drawing.Color.Black;
             simpleButton2.Appearance.Options.UseFont = true;
             simpleButton2.Appearance.Options.UseForeColor = true;
-            simpleButton2.Location = new System.Drawing.Point(196, 144);
+            simpleButton2.Location = new System.Drawing.Point(128, 144);
             simpleButton2.Name = "simpleButton2";
-            simpleButton2.Size = new System.Drawing.Size(83, 23);
+            simpleButton2.Size = new System.Drawing.Size(151, 23);
             simpleButton2.StyleController = this.dataLayoutControl3;
             simpleButton2.TabIndex = 43;
             simpleButton2.Text = "NEXT ";
+            simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // dataLayoutControl3
             // 
@@ -249,7 +247,6 @@
             this.dataLayoutControl3.Controls.Add(this.cbox_department);
             this.dataLayoutControl3.Controls.Add(this.cbox_year_lvl);
             this.dataLayoutControl3.Controls.Add(simpleButton2);
-            this.dataLayoutControl3.Controls.Add(this.simpleButton3);
             this.dataLayoutControl3.Controls.Add(this.cbox_semester);
             this.dataLayoutControl3.DataSource = this.tblStdntSchoolDetailsBindingSource;
             this.dataLayoutControl3.Location = new System.Drawing.Point(12, 195);
@@ -325,27 +322,27 @@
             // cbox_year_lvl
             // 
             this.cbox_year_lvl.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.tblStdntSchoolDetailsBindingSource, "yr_lvl", true));
+            this.cbox_year_lvl.EditValue = "--SELECT YEAR LEVEL--";
             this.cbox_year_lvl.Location = new System.Drawing.Point(83, 60);
             this.cbox_year_lvl.Name = "cbox_year_lvl";
             this.cbox_year_lvl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbox_year_lvl.Properties.Items.AddRange(new object[] {
+            "--SELECT YEAR LEVEL--",
+            "JUNIOR HIGH SCHOOL(1)",
+            "JUNIOR HIGH SCHOOL(2)",
+            "JUNIOR HIGH SCHOOL(3)",
+            "JUNIOR HIGH SCHOOL(4)",
+            "SENIOR HIGH SCHOOL(1)",
+            "SENIOR HIGH SCHOOL(2)",
+            "COLLEGE(1)",
+            "COLLEGE(2)",
+            "COLLEGE(3)",
+            "COLLEGE(4)"});
             this.cbox_year_lvl.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbox_year_lvl.Size = new System.Drawing.Size(196, 20);
             this.cbox_year_lvl.StyleController = this.dataLayoutControl3;
             this.cbox_year_lvl.TabIndex = 41;
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.Location = new System.Drawing.Point(109, 144);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(83, 23);
-            this.simpleButton3.StyleController = this.dataLayoutControl3;
-            this.simpleButton3.TabIndex = 44;
-            this.simpleButton3.Text = "SAVE";
             // 
             // cbox_semester
             // 
@@ -385,7 +382,6 @@
             this.layoutControlItem9,
             this.layoutControlItem10,
             this.emptySpaceItem4,
-            this.layoutControlItem11,
             this.emptySpaceItem5});
             this.layoutControlGroup6.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup6.Name = "autoGeneratedGroup0";
@@ -430,9 +426,9 @@
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = simpleButton2;
-            this.layoutControlItem10.Location = new System.Drawing.Point(184, 132);
+            this.layoutControlItem10.Location = new System.Drawing.Point(116, 132);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(87, 27);
+            this.layoutControlItem10.Size = new System.Drawing.Size(155, 27);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
@@ -444,21 +440,12 @@
             this.emptySpaceItem4.Size = new System.Drawing.Size(271, 36);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.simpleButton3;
-            this.layoutControlItem11.Location = new System.Drawing.Point(97, 132);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(87, 27);
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem11.TextVisible = false;
-            // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
             this.emptySpaceItem5.Location = new System.Drawing.Point(0, 132);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(97, 27);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(116, 27);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // tabpane_addstdnt
@@ -908,10 +895,7 @@
             // 
             this.cbox_citizenship.Location = new System.Drawing.Point(89, 22);
             this.cbox_citizenship.Name = "cbox_citizenship";
-            this.cbox_citizenship.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbox_citizenship.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbox_citizenship.Size = new System.Drawing.Size(103, 20);
+            this.cbox_citizenship.Size = new System.Drawing.Size(130, 20);
             this.cbox_citizenship.StyleController = this.dataLayoutControl2;
             this.cbox_citizenship.TabIndex = 39;
             // 
@@ -919,10 +903,7 @@
             // 
             this.cbox_religion.Location = new System.Drawing.Point(89, 46);
             this.cbox_religion.Name = "cbox_religion";
-            this.cbox_religion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbox_religion.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbox_religion.Size = new System.Drawing.Size(103, 20);
+            this.cbox_religion.Size = new System.Drawing.Size(130, 20);
             this.cbox_religion.StyleController = this.dataLayoutControl2;
             this.cbox_religion.TabIndex = 40;
             // 
@@ -935,17 +916,17 @@
             this.layoutControlItem3});
             this.layoutControlGroup3.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition1.Width = 100D;
+            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition4.Width = 100D;
             this.layoutControlGroup3.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition1});
-            rowDefinition1.Height = 100D;
-            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition2.Height = 100D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition4});
+            rowDefinition4.Height = 100D;
+            rowDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition5.Height = 100D;
+            rowDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
             this.layoutControlGroup3.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition1,
-            rowDefinition2});
+            rowDefinition4,
+            rowDefinition5});
             this.layoutControlGroup3.Size = new System.Drawing.Size(315, 386);
             this.layoutControlGroup3.TextVisible = false;
             // 
@@ -1007,7 +988,7 @@
             this.layoutControlItem6.Control = this.cbox_citizenship;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 10);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(184, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(211, 24);
             this.layoutControlItem6.Text = "Citizenship :";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(73, 13);
             // 
@@ -1016,7 +997,7 @@
             this.layoutControlItem7.Control = this.cbox_religion;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 34);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(184, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(211, 24);
             this.layoutControlItem7.Text = "Religion";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(73, 13);
             // 
@@ -1031,17 +1012,17 @@
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(184, 10);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(211, 10);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(111, 24);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(84, 24);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem12
             // 
             this.emptySpaceItem12.AllowHotTrack = false;
-            this.emptySpaceItem12.Location = new System.Drawing.Point(184, 34);
+            this.emptySpaceItem12.Location = new System.Drawing.Point(211, 34);
             this.emptySpaceItem12.Name = "emptySpaceItem12";
-            this.emptySpaceItem12.Size = new System.Drawing.Size(111, 24);
+            this.emptySpaceItem12.Size = new System.Drawing.Size(84, 24);
             this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
@@ -1063,17 +1044,17 @@
             this.layoutControlItem1});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
-            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition2.Width = 100D;
-            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition3.Width = 100D;
+            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition5.Width = 100D;
+            columnDefinition6.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition6.Width = 100D;
             this.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition2,
-            columnDefinition3});
-            rowDefinition3.Height = 100D;
-            rowDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition5,
+            columnDefinition6});
+            rowDefinition6.Height = 100D;
+            rowDefinition6.SizeType = System.Windows.Forms.SizeType.Percent;
             this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition3});
+            rowDefinition6});
             this.Root.Size = new System.Drawing.Size(665, 434);
             this.Root.TextVisible = false;
             // 
@@ -1099,47 +1080,51 @@
             // tab_page_subjects
             // 
             this.tab_page_subjects.Caption = "Subjects";
-            this.tab_page_subjects.Controls.Add(this.btn_stdnt_cancel);
-            this.tab_page_subjects.Controls.Add(this.simpleButton5);
-            this.tab_page_subjects.Controls.Add(this.simpleButton1);
+            this.tab_page_subjects.Controls.Add(this.btn_cancel);
+            this.tab_page_subjects.Controls.Add(this.btn_subadd);
+            this.tab_page_subjects.Controls.Add(this.btn_submit);
             this.tab_page_subjects.Controls.Add(this.groupControl4);
             this.tab_page_subjects.Controls.Add(this.groupControl3);
             this.tab_page_subjects.Name = "tab_page_subjects";
             this.tab_page_subjects.Size = new System.Drawing.Size(665, 434);
             // 
-            // btn_stdnt_cancel
+            // btn_cancel
             // 
-            this.btn_stdnt_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_stdnt_cancel.Appearance.BackColor = System.Drawing.Color.IndianRed;
-            this.btn_stdnt_cancel.Appearance.Options.UseBackColor = true;
-            this.btn_stdnt_cancel.Location = new System.Drawing.Point(303, 372);
-            this.btn_stdnt_cancel.Name = "btn_stdnt_cancel";
-            this.btn_stdnt_cancel.Size = new System.Drawing.Size(109, 37);
-            this.btn_stdnt_cancel.TabIndex = 2;
-            this.btn_stdnt_cancel.Text = "Cancel";
-            this.btn_stdnt_cancel.Click += new System.EventHandler(this.btn_stdnt_cancel_Click);
+            this.btn_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cancel.Appearance.BackColor = System.Drawing.Color.White;
+            this.btn_cancel.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btn_cancel.Appearance.Options.UseBackColor = true;
+            this.btn_cancel.Appearance.Options.UseForeColor = true;
+            this.btn_cancel.Location = new System.Drawing.Point(303, 372);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(109, 37);
+            this.btn_cancel.TabIndex = 2;
+            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.Click += new System.EventHandler(this.btn_stdnt_cancel_Click);
             // 
-            // simpleButton5
+            // btn_subadd
             // 
-            this.simpleButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton5.Location = new System.Drawing.Point(418, 372);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(109, 37);
-            this.simpleButton5.TabIndex = 2;
-            this.simpleButton5.Text = "Submit and Add";
+            this.btn_subadd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_subadd.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btn_subadd.Appearance.Options.UseForeColor = true;
+            this.btn_subadd.Location = new System.Drawing.Point(418, 372);
+            this.btn_subadd.Name = "btn_subadd";
+            this.btn_subadd.Size = new System.Drawing.Size(109, 37);
+            this.btn_subadd.TabIndex = 2;
+            this.btn_subadd.Text = "Submit and Add";
             // 
-            // simpleButton1
+            // btn_submit
             // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.LightGreen;
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.Transparent;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.Location = new System.Drawing.Point(533, 370);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(109, 37);
-            this.simpleButton1.TabIndex = 2;
-            this.simpleButton1.Text = "Submit Data";
+            this.btn_submit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_submit.Appearance.BackColor = System.Drawing.Color.White;
+            this.btn_submit.Appearance.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btn_submit.Appearance.Options.UseBackColor = true;
+            this.btn_submit.Appearance.Options.UseForeColor = true;
+            this.btn_submit.Location = new System.Drawing.Point(533, 372);
+            this.btn_submit.Name = "btn_submit";
+            this.btn_submit.Size = new System.Drawing.Size(109, 37);
+            this.btn_submit.TabIndex = 2;
+            this.btn_submit.Text = "Submit Data";
             // 
             // groupControl4
             // 
@@ -1149,7 +1134,7 @@
             this.groupControl4.Name = "groupControl4";
             this.groupControl4.Size = new System.Drawing.Size(393, 277);
             this.groupControl4.TabIndex = 1;
-            this.groupControl4.Text = "groupControl4";
+            this.groupControl4.Text = "STUDY LOAD";
             // 
             // groupControl3
             // 
@@ -1162,11 +1147,15 @@
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(190, 389);
             this.groupControl3.TabIndex = 0;
-            this.groupControl3.Text = "groupControl3";
+            this.groupControl3.Text = "SELECT SUBJECTS";
             // 
             // checkedListBoxControl1
             // 
             this.checkedListBoxControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkedListBoxControl1.Items.AddRange(new DevExpress.XtraEditors.Controls.CheckedListBoxItem[] {
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "subject1"),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "subject2"),
+            new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "subject3")});
             this.checkedListBoxControl1.Location = new System.Drawing.Point(2, 22);
             this.checkedListBoxControl1.Name = "checkedListBoxControl1";
             this.checkedListBoxControl1.Size = new System.Drawing.Size(186, 365);
@@ -1270,7 +1259,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabpane_addstdnt)).EndInit();
             this.tabpane_addstdnt.ResumeLayout(false);
@@ -1423,26 +1411,22 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.CheckedListBoxControl checkedListBoxControl1;
         private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraEditors.SimpleButton btn_stdnt_cancel;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btn_cancel;
+        private DevExpress.XtraEditors.SimpleButton btn_subadd;
+        private DevExpress.XtraEditors.SimpleButton btn_submit;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.PictureEdit pedit_stdnt_pic;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private DevExpress.XtraEditors.ComboBoxEdit cbox_citizenship;
-        private DevExpress.XtraEditors.ComboBoxEdit cbox_religion;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
@@ -1451,5 +1435,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_add_picture;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        private DevExpress.XtraEditors.TextEdit cbox_citizenship;
+        private DevExpress.XtraEditors.TextEdit cbox_religion;
     }
 }

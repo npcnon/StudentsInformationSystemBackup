@@ -51,9 +51,9 @@ namespace StudentsInformationSystem
         private void FrmMain_Load(object sender, EventArgs e)
         {
 
-            splashScreenManager1.ShowWaitForm();
-            Thread.Sleep(3000);
-            splashScreenManager1.CloseWaitForm();
+            //splashScreenManager1.ShowWaitForm();
+            //Thread.Sleep(3000);
+            //splashScreenManager1.CloseWaitForm();
 
             if (functions.ChckAdmin())
             {
@@ -121,6 +121,17 @@ namespace StudentsInformationSystem
                 ModulesInfo.Add(new ModuleInfo("UcAddUser", "StudentsInformationSystem.UI.Modules.UcAddUser"));
 
                 await LoadModuleAsync(ModulesInfo.GetItem("UcAddUser"));
+            }
+        }
+
+        private async void s_element_checksched_Click(object sender, EventArgs e)
+        {
+            if (ModulesInfo.GetItem("UcAddSchedule") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcAddSchedule", "StudentsInformationSystem.UI.Modules.UcAddSchedule"));
+
+                await LoadModuleAsync(ModulesInfo.GetItem("UcAddSchedule"));
             }
         }
     }

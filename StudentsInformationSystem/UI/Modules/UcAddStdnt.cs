@@ -119,5 +119,23 @@ namespace StudentsInformationSystem.UI.Modules
                 }
             }
         }
+
+        
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            int currentIndex = tabpane_addstdnt.SelectedPageIndex;
+
+            // Calculate the index of the next tab
+            int nextIndex = (currentIndex + 1) % tabpane_addstdnt.Pages.Count;
+
+            // Select the next tab
+            tabpane_addstdnt.SelectedPageIndex = nextIndex;
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

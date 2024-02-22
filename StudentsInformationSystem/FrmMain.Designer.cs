@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.frm_main_container = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.frm_main_acc_control = new DevExpress.XtraBars.Navigation.AccordionControl();
@@ -43,6 +44,7 @@
             this.m_element_schedule = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_addsched = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_remsched = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_checksched = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.m_element_users = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_add_user = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_rm_users = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -50,11 +52,18 @@
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentsInformationSystem.UI.Modules.WaitForm2), true, true);
+            this.s_element_room = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.m_element_depart = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_subjects = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_departments = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.frm_main_acc_control)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 500;
             // 
             // frm_main_container
             // 
@@ -77,7 +86,8 @@
             this.m_element_Staff,
             this.m_element_student,
             this.m_element_schedule,
-            this.m_element_users});
+            this.m_element_users,
+            this.m_element_depart});
             this.frm_main_acc_control.Location = new System.Drawing.Point(0, 24);
             this.frm_main_acc_control.Name = "frm_main_acc_control";
             this.frm_main_acc_control.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
@@ -154,7 +164,10 @@
             // 
             this.m_element_schedule.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.s_element_addsched,
-            this.s_element_remsched});
+            this.s_element_remsched,
+            this.s_element_checksched,
+            this.s_element_room});
+            this.m_element_schedule.Expanded = true;
             this.m_element_schedule.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_schedule.ImageOptions.SvgImage")));
             this.m_element_schedule.Name = "m_element_schedule";
             this.m_element_schedule.Text = "Schedule";
@@ -173,6 +186,14 @@
             this.s_element_remsched.Name = "s_element_remsched";
             this.s_element_remsched.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.s_element_remsched.Text = "Remove Schedule";
+            // 
+            // s_element_checksched
+            // 
+            this.s_element_checksched.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_checksched.ImageOptions.SvgImage")));
+            this.s_element_checksched.Name = "s_element_checksched";
+            this.s_element_checksched.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_checksched.Text = "Check Schedule";
+            this.s_element_checksched.Click += new System.EventHandler(this.s_element_checksched_Click);
             // 
             // m_element_users
             // 
@@ -225,9 +246,35 @@
             this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement2.Text = "Element2";
             // 
-            // splashScreenManager1
+            // s_element_room
             // 
-            this.splashScreenManager1.ClosingDelay = 500;
+            this.s_element_room.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_addroom.ImageOptions.SvgImage")));
+            this.s_element_room.Name = "s_element_room";
+            this.s_element_room.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_room.Text = "Rooms";
+            // 
+            // m_element_depart
+            // 
+            this.m_element_depart.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.s_element_subjects,
+            this.s_element_departments});
+            this.m_element_depart.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_depart.ImageOptions.SvgImage")));
+            this.m_element_depart.Name = "m_element_depart";
+            this.m_element_depart.Text = "Department";
+            // 
+            // s_element_subjects
+            // 
+            this.s_element_subjects.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_add_subjects.ImageOptions.SvgImage")));
+            this.s_element_subjects.Name = "s_element_subjects";
+            this.s_element_subjects.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_subjects.Text = "Subjects";
+            // 
+            // s_element_departments
+            // 
+            this.s_element_departments.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_departments.ImageOptions.SvgImage")));
+            this.s_element_departments.Name = "s_element_departments";
+            this.s_element_departments.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_departments.Text = "Departments";
             // 
             // FrmMain
             // 
@@ -271,9 +318,13 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_addstaff;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_srchstaff;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_rmstaff;
-        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement m_element_users;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_add_user;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_rm_users;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_checksched;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_room;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement m_element_depart;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_subjects;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_departments;
     }
 }
