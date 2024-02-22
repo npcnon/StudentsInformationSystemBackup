@@ -1,29 +1,21 @@
-﻿using DevExpress.DocumentServices.ServiceModel.DataContracts;
-using DevExpress.XtraToolbox;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace StudentsInformationSystem
 {
     internal class functions
     {
         //method to lead the teacher id to the teacher id textbox
-        public static void LoadID(Control txtbox,string sqlQuery)
+        public static void LoadID(Control txtbox, string sqlQuery)
         {
             // Create a connection string for your database
             string connectionString = "Data Source=DESKTOP-9GA3LFJ\\SQLEXPRESS;Initial Catalog=sis;Integrated Security=True";
 
             // Write your SQL command to retrieve teacher ID from the database
-          
+
 
             // Create a SqlConnection object
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -49,7 +41,7 @@ namespace StudentsInformationSystem
                         Debug.Write("#############################ELSE WAS EXECUTED##################################################");
                         txtbox.Text = "1";
                     }
-                   
+
                 }
             }
         }
@@ -91,7 +83,7 @@ namespace StudentsInformationSystem
         }
 
 
-       public static bool ChckAdmin()
+        public static bool ChckAdmin()
         {
             List<string[]> adminCredentials = new List<string[]>();
 

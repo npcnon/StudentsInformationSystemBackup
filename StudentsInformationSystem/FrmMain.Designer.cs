@@ -91,13 +91,13 @@
             this.s_element_addstaff,
             this.s_element_srchstaff,
             this.s_element_rmstaff});
-            this.m_element_Staff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_teacher.ImageOptions.SvgImage")));
+            this.m_element_Staff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_Staff.ImageOptions.SvgImage")));
             this.m_element_Staff.Name = "m_element_Staff";
             this.m_element_Staff.Text = "Staff";
             // 
             // s_element_addstaff
             // 
-            this.s_element_addstaff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_addtcher.ImageOptions.SvgImage")));
+            this.s_element_addstaff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_addstaff.ImageOptions.SvgImage")));
             this.s_element_addstaff.Name = "s_element_addstaff";
             this.s_element_addstaff.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.s_element_addstaff.Text = "Add Staff";
@@ -105,14 +105,14 @@
             // 
             // s_element_srchstaff
             // 
-            this.s_element_srchstaff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_srchtcher.ImageOptions.SvgImage")));
+            this.s_element_srchstaff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_srchstaff.ImageOptions.SvgImage")));
             this.s_element_srchstaff.Name = "s_element_srchstaff";
             this.s_element_srchstaff.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.s_element_srchstaff.Text = "Search Staff";
             // 
             // s_element_rmstaff
             // 
-            this.s_element_rmstaff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_rmtcher.ImageOptions.SvgImage")));
+            this.s_element_rmstaff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_rmstaff.ImageOptions.SvgImage")));
             this.s_element_rmstaff.Name = "s_element_rmstaff";
             this.s_element_rmstaff.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.s_element_rmstaff.Text = "Remove Staff";
@@ -179,7 +179,6 @@
             this.m_element_users.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.s_element_add_user,
             this.s_element_rm_users});
-            this.m_element_users.Expanded = true;
             this.m_element_users.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_users.ImageOptions.SvgImage")));
             this.m_element_users.Name = "m_element_users";
             this.m_element_users.Text = "Users";
@@ -240,7 +239,9 @@
             this.Controls.Add(this.frm_main_acc_control);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
-            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmMain.IconOptions.Image")));
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("FrmMain.IconOptions.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmMain";
             this.NavigationControl = this.frm_main_acc_control;
             this.Text = "BENEDICTO SIS";

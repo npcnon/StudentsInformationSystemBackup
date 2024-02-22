@@ -1,16 +1,7 @@
 ﻿using DevExpress.DXperience.Demos;
-using DevExpress.XtraBars;
-using DevExpress.XtraBars.FluentDesignSystem;
-using DevExpress.XtraSplashScreen;
-using StudentsInformationSystem.UI.Modules;
+using DevExpress.Utils.Extensions;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,8 +13,12 @@ namespace StudentsInformationSystem
         public FrmMain()
         {
             InitializeComponent();
-        }
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+      
 
+        }
+       
         async Task LoadModuleAsync(ModuleInfo module)
         {
             await Task.Factory.StartNew(() =>
@@ -44,7 +39,7 @@ namespace StudentsInformationSystem
                 }
                 else
                 {
-                   
+
                     var control = frm_main_container.Controls.Find(module.Name, true);
                     if (control.Length == 1)
                         frm_main_container.Invoke(new MethodInvoker(delegate () { control[0].BringToFront(); }));
@@ -55,17 +50,16 @@ namespace StudentsInformationSystem
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            
+
             splashScreenManager1.ShowWaitForm();
             Thread.Sleep(3000);
             splashScreenManager1.CloseWaitForm();
-            functions.ChckAdmin();
 
-            if(functions.ChckAdmin())
+            if (functions.ChckAdmin())
             {
-                FrmChangePass frmChangePass = new FrmChangePass();
-                frmChangePass.ShowDialog();
-            }    
+                //FrmChangePass frmChangePass = new FrmChangePass();
+                //frmChangePass.ShowDialog();
+            }
             m_element_Staff.Expanded = false;
             m_element_student.Expanded = false;
             m_element_schedule.Expanded = false;

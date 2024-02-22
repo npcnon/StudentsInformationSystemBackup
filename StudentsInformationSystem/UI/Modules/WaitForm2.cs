@@ -1,10 +1,5 @@
 ﻿using DevExpress.XtraWaitForm;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace StudentsInformationSystem.UI.Modules
@@ -14,6 +9,8 @@ namespace StudentsInformationSystem.UI.Modules
         public WaitForm2()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+           
             this.progressPanel1.AutoHeight = true;
         }
 

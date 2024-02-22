@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, false, true);
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentsInformationSystem.FrmSplashScreen), true, false, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogIn));
+            this.btn_signin = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_username = new DevExpress.XtraEditors.TextEdit();
             this.txt_password = new DevExpress.XtraEditors.TextEdit();
             this.cedit_signin = new DevExpress.XtraEditors.CheckEdit();
-            this.btn_signin = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -49,7 +48,6 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_username.Properties)).BeginInit();
@@ -66,12 +64,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // splashScreenManager1
             // 
             splashScreenManager1.ClosingDelay = 10;
+            // 
+            // btn_signin
+            // 
+            this.btn_signin.Location = new System.Drawing.Point(12, 102);
+            this.btn_signin.Name = "btn_signin";
+            this.btn_signin.Size = new System.Drawing.Size(172, 22);
+            this.btn_signin.StyleController = this.layoutControl1;
+            this.btn_signin.TabIndex = 7;
+            this.btn_signin.Text = "Sign in";
+            this.btn_signin.Click += new System.EventHandler(this.btn_signin_Click);
             // 
             // layoutControl1
             // 
@@ -94,7 +101,7 @@
             // 
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.SteelBlue;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(12, 62);
+            this.labelControl2.Location = new System.Drawing.Point(12, 55);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(55, 13);
             this.labelControl2.StyleController = this.layoutControl1;
@@ -105,7 +112,7 @@
             // 
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.SteelBlue;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(12, 38);
+            this.labelControl1.Location = new System.Drawing.Point(12, 31);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(57, 13);
             this.labelControl1.StyleController = this.layoutControl1;
@@ -115,16 +122,17 @@
             // txt_username
             // 
             this.txt_username.EditValue = "";
-            this.txt_username.Location = new System.Drawing.Point(83, 38);
+            this.txt_username.Location = new System.Drawing.Point(83, 31);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(101, 20);
             this.txt_username.StyleController = this.layoutControl1;
             this.txt_username.TabIndex = 4;
+            this.txt_username.EditValueChanged += new System.EventHandler(this.txt_username_EditValueChanged);
             // 
             // txt_password
             // 
             this.txt_password.EditValue = "";
-            this.txt_password.Location = new System.Drawing.Point(83, 62);
+            this.txt_password.Location = new System.Drawing.Point(83, 55);
             this.txt_password.Name = "txt_password";
             this.txt_password.Properties.PasswordChar = '*';
             this.txt_password.Size = new System.Drawing.Size(101, 20);
@@ -133,7 +141,7 @@
             // 
             // cedit_signin
             // 
-            this.cedit_signin.Location = new System.Drawing.Point(12, 86);
+            this.cedit_signin.Location = new System.Drawing.Point(12, 79);
             this.cedit_signin.Name = "cedit_signin";
             this.cedit_signin.Properties.Appearance.ForeColor = System.Drawing.Color.SteelBlue;
             this.cedit_signin.Properties.Appearance.Options.UseForeColor = true;
@@ -141,16 +149,6 @@
             this.cedit_signin.Size = new System.Drawing.Size(172, 19);
             this.cedit_signin.StyleController = this.layoutControl1;
             this.cedit_signin.TabIndex = 6;
-            // 
-            // btn_signin
-            // 
-            this.btn_signin.Location = new System.Drawing.Point(12, 109);
-            this.btn_signin.Name = "btn_signin";
-            this.btn_signin.Size = new System.Drawing.Size(172, 22);
-            this.btn_signin.StyleController = this.layoutControl1;
-            this.btn_signin.TabIndex = 7;
-            this.btn_signin.Text = "Sign in";
-            this.btn_signin.Click += new System.EventHandler(this.btn_signin_Click);
             // 
             // Root
             // 
@@ -178,7 +176,7 @@
             this.layoutControlItem1.Control = this.txt_username;
             this.layoutControlItem1.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(71, 26);
+            this.layoutControlItem1.Location = new System.Drawing.Point(71, 19);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(105, 24);
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Left;
@@ -192,7 +190,7 @@
             this.layoutControlItem2.Control = this.txt_password;
             this.layoutControlItem2.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem2.Location = new System.Drawing.Point(71, 50);
+            this.layoutControlItem2.Location = new System.Drawing.Point(71, 43);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(105, 24);
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Left;
@@ -206,7 +204,7 @@
             this.layoutControlItem3.Control = this.cedit_signin;
             this.layoutControlItem3.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 74);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 67);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(176, 23);
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Left;
@@ -220,7 +218,7 @@
             this.layoutControlItem4.Control = this.btn_signin;
             this.layoutControlItem4.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 97);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 90);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(176, 26);
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
@@ -232,7 +230,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(176, 26);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(176, 19);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem1
@@ -241,15 +239,15 @@
             this.emptySpaceItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.emptySpaceItem1.AppearanceItemCaption.Options.UseFont = true;
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 123);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 116);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(176, 33);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(176, 40);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.labelControl1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 19);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(61, 24);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -258,7 +256,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.labelControl2;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 50);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 43);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(59, 24);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
@@ -267,7 +265,7 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(61, 26);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(61, 19);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
             this.emptySpaceItem3.Size = new System.Drawing.Size(10, 24);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
@@ -275,16 +273,10 @@
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(59, 50);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(59, 43);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
             this.emptySpaceItem4.Size = new System.Drawing.Size(12, 24);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // toastNotificationsManager1
-            // 
-            this.toastNotificationsManager1.ApplicationId = "8863fb94-bb47-485c-bbed-b0ad35645c79";
-            this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("a2a109c9-ec5f-48e6-853e-ba4ff9b9e23a", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "First Time?", "Username : admin", "Password: admin", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01)});
             // 
             // FrmLogIn
             // 
@@ -292,8 +284,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(332, 176);
             this.Controls.Add(this.layoutControl1);
+            this.IconOptions.ColorizeInactiveIcon = DevExpress.Utils.DefaultBoolean.True;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("FrmLogIn.IconOptions.Icon")));
-            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmLogIn.IconOptions.Image")));
             this.Name = "FrmLogIn";
             this.Text = "BCSIS Login";
             this.Load += new System.EventHandler(this.FrmLogIn_Load);
@@ -313,32 +305,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private DevExpress.XtraEditors.SimpleButton btn_signin;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txt_username;
         private DevExpress.XtraEditors.TextEdit txt_password;
         private DevExpress.XtraEditors.CheckEdit cedit_signin;
-        private DevExpress.XtraEditors.SimpleButton btn_signin;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
-        private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
     }
 }
 

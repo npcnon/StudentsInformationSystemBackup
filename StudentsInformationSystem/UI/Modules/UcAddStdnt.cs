@@ -1,17 +1,10 @@
 ﻿using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static DevExpress.XtraBars.Controls.CustomLinksControl;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace StudentsInformationSystem.UI.Modules
 {
@@ -58,7 +51,7 @@ namespace StudentsInformationSystem.UI.Modules
             txt_fname.Focus();
             string sqlQuery = "SELECT MAX(stdnt_id)+1 FROM TblStdntInfo";
             functions.LoadID(txt_id, sqlQuery);
-           
+
         }
 
         private void control_keypress(object sender, KeyEventArgs e)
@@ -78,7 +71,7 @@ namespace StudentsInformationSystem.UI.Modules
                         if (controlName == controlList[i].Name)
                         {
                             controlList[i + 1].Focus();
-                            Debug.Write(controlList[i].Name , "\n was entered");
+                            Debug.Write(controlList[i].Name, "\n was entered");
                             if (controlList[i + 1] is ComboBoxEdit)
                             {
                                 ComboBoxEdit comboBoxEdit = controlList[i + 1] as ComboBoxEdit;
@@ -86,7 +79,7 @@ namespace StudentsInformationSystem.UI.Modules
                             }
                             else if (controlList[i + 1] is DateEdit)
                             {
-                                DateEdit dateedit  = controlList[i + 1] as DateEdit;
+                                DateEdit dateedit = controlList[i + 1] as DateEdit;
                                 dateedit.ShowPopup();
                             }
 
@@ -97,7 +90,7 @@ namespace StudentsInformationSystem.UI.Modules
             }
         }
 
-       
+
 
 
 

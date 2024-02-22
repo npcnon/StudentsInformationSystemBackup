@@ -1,10 +1,5 @@
 ﻿using DevExpress.XtraSplashScreen;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace StudentsInformationSystem
@@ -14,6 +9,7 @@ namespace StudentsInformationSystem
         public FrmSplashScreen()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.labelCopyright.Text = "Copyright © 1998-" + DateTime.Now.Year.ToString();
         }
 

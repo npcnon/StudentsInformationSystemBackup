@@ -1,8 +1,4 @@
-﻿using DevExpress.XtraEditors;
-using DevExpress.XtraEditors.Controls;
-using System;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System;
 
 namespace StudentsInformationSystem.UI.Modules
 {
