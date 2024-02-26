@@ -246,6 +246,12 @@
     <Compile Include="UI\Modules\UcAddUser.Designer.cs">
       <DependentUpon>UcAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\UcDepartment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\UcDepartment.Designer.cs">
+      <DependentUpon>UcDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\UcRmStdnt.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -304,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcAddUser.resx">
       <DependentUpon>UcAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\UcDepartment.resx">
+      <DependentUpon>UcDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcRmStdnt.resx">
       <DependentUpon>UcRmStdnt.cs</DependentUpon>
