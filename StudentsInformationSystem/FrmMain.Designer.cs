@@ -242,6 +242,7 @@
             this.s_element_subjects.Name = "s_element_subjects";
             this.s_element_subjects.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.s_element_subjects.Text = "Subjects";
+            this.s_element_subjects.Click += new System.EventHandler(this.s_element_subjects_Click);
             // 
             // s_element_departments
             // 

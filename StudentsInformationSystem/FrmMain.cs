@@ -146,6 +146,22 @@ namespace StudentsInformationSystem
             }
         }
 
+        private void m_element_depart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void s_element_subjects_Click(object sender, EventArgs e)
+        {
+            if (ModulesInfo.GetItem("UcAddSubj") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcAddSubj", "StudentsInformationSystem.UI.Modules.UcAddSubj"));
+
+                await LoadModuleAsync(ModulesInfo.GetItem("UcAddSubj"));
+            }
+        }
+
         private async void s_element_departments_Click(object sender, EventArgs e)
         {
             if (ModulesInfo.GetItem("UcDepartment") == null)

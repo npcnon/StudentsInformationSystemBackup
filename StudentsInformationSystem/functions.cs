@@ -88,7 +88,7 @@ namespace StudentsInformationSystem
             List<string[]> adminCredentials = new List<string[]>();
 
             string connectionString = "Data Source=DESKTOP-9GA3LFJ\\SQLEXPRESS;Initial Catalog=sis;Integrated Security=True";
-            string sqlQuery = @"SELECT [username], [pass] FROM USERS WHERE previlages = 'admin'";
+            string sqlQuery = @"SELECT [username], [pass] FROM TblUsers WHERE previlages = 'admin'";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
