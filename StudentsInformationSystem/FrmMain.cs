@@ -55,11 +55,11 @@ namespace StudentsInformationSystem
             //Thread.Sleep(3000);
             //splashScreenManager1.CloseWaitForm();
 
-            if (functions.ChckAdmin())
-            {
-                //FrmChangePass frmChangePass = new FrmChangePass();
-                //frmChangePass.ShowDialog();
-            }
+            //if (functions.ChckAdmin())
+            //{
+            //    //FrmChangePass frmChangePass = new FrmChangePass();
+            //    //frmChangePass.ShowDialog();
+            //}
             m_element_Staff.Expanded = false;
             m_element_student.Expanded = false;
             m_element_schedule.Expanded = false;
@@ -159,6 +159,17 @@ namespace StudentsInformationSystem
                 ModulesInfo.Add(new ModuleInfo("UcAddSubj", "StudentsInformationSystem.UI.Modules.UcAddSubj"));
 
                 await LoadModuleAsync(ModulesInfo.GetItem("UcAddSubj"));
+            }
+        }
+
+        private async void s_element_departments_Click(object sender, EventArgs e)
+        {
+            if (ModulesInfo.GetItem("UcDepartment") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcDepartment", "StudentsInformationSystem.UI.Modules.UcDepartment"));
+
+                await LoadModuleAsync(ModulesInfo.GetItem("UcDepartment"));
             }
         }
     }

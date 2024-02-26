@@ -133,7 +133,6 @@
             this.s_element_addstdnt,
             this.s_element_srchstdnt,
             this.s_element_rmstdnt});
-            this.m_element_student.Expanded = true;
             this.m_element_student.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_student.ImageOptions.SvgImage")));
             this.m_element_student.Name = "m_element_student";
             this.m_element_student.Text = "Students";
@@ -251,6 +250,7 @@
             this.s_element_departments.Name = "s_element_departments";
             this.s_element_departments.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.s_element_departments.Text = "Departments";
+            this.s_element_departments.Click += new System.EventHandler(this.s_element_departments_Click);
             // 
             // fluentDesignFormControl1
             // 
