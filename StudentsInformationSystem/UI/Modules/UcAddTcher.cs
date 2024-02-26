@@ -51,8 +51,8 @@ namespace StudentsInformationSystem.UI.Modules
             tcher_fname.Focus();
 
             //added value to the teacher id textbox, value is from database teacher_id
-            string sqlQuery = "SELECT MAX(teacher_id)+1 FROM TblTeacherInfo";
-            functions.LoadID(tcher_id, sqlQuery);
+           string sqlQuery = "SELECT MAX(teacher_id)+1 FROM TblTeacherInfo";
+           // functions.LoadID(tcher_id, sqlQuery);
 
 
         }
@@ -426,5 +426,7 @@ namespace StudentsInformationSystem.UI.Modules
 
 
         }
+
+       
     }
 }
