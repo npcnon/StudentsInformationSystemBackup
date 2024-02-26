@@ -130,6 +130,10 @@
             this.emptySpaceItem27 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem15 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem16 = new DevExpress.XtraLayout.EmptySpaceItem();
             simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl3)).BeginInit();
             this.dataLayoutControl3.SuspendLayout();
@@ -225,12 +229,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).BeginInit();
             this.SuspendLayout();
             // 
             // simpleButton2
             // 
             simpleButton2.Appearance.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            simpleButton2.Appearance.ForeColor = System.Drawing.Color.Black;
+            simpleButton2.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack;
             simpleButton2.Appearance.Options.UseFont = true;
             simpleButton2.Appearance.Options.UseForeColor = true;
             simpleButton2.Location = new System.Drawing.Point(128, 144);
@@ -504,6 +511,7 @@
             this.dataLayoutControl1.Controls.Add(this.cbox_civil_status);
             this.dataLayoutControl1.Controls.Add(this.pictureEdit1);
             this.dataLayoutControl1.Controls.Add(this.pedit_stdnt_pic);
+            this.dataLayoutControl1.Controls.Add(this.simpleButton1);
             this.dataLayoutControl1.DataSource = this.tblStdntInfoBindingSource;
             this.dataLayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLayoutControl1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
@@ -518,22 +526,22 @@
             // btn_add_picture
             // 
             this.btn_add_picture.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add_picture.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_add_picture.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.btn_add_picture.Appearance.Options.UseFont = true;
             this.btn_add_picture.Appearance.Options.UseForeColor = true;
             this.btn_add_picture.Location = new System.Drawing.Point(114, 95);
             this.btn_add_picture.Name = "btn_add_picture";
-            this.btn_add_picture.Size = new System.Drawing.Size(188, 23);
+            this.btn_add_picture.Size = new System.Drawing.Size(85, 23);
             this.btn_add_picture.StyleController = this.dataLayoutControl1;
             this.btn_add_picture.TabIndex = 45;
-            this.btn_add_picture.Text = "ADD PICTURE";
+            this.btn_add_picture.Text = "ADD";
             this.btn_add_picture.Click += new System.EventHandler(this.btn_add_picture_Click);
             // 
             // txt_id
             // 
             this.txt_id.DataBindings.Add(new System.Windows.Forms.Binding("ReadOnly", this.tblStdntInfoBindingSource, "stdnt_id", true));
             this.txt_id.Enabled = false;
-            this.txt_id.Location = new System.Drawing.Point(108, 132);
+            this.txt_id.Location = new System.Drawing.Point(108, 145);
             this.txt_id.Name = "txt_id";
             this.txt_id.Properties.Appearance.Options.UseTextOptions = true;
             this.txt_id.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -553,7 +561,7 @@
             // 
             this.txt_fname.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.tblStdntInfoBindingSource, "f_name", true));
             this.txt_fname.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txt_fname.Location = new System.Drawing.Point(108, 156);
+            this.txt_fname.Location = new System.Drawing.Point(108, 169);
             this.txt_fname.Name = "txt_fname";
             this.txt_fname.Size = new System.Drawing.Size(194, 20);
             this.txt_fname.StyleController = this.dataLayoutControl1;
@@ -562,7 +570,7 @@
             // txt_mname
             // 
             this.txt_mname.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.tblStdntInfoBindingSource, "m_name", true));
-            this.txt_mname.Location = new System.Drawing.Point(108, 180);
+            this.txt_mname.Location = new System.Drawing.Point(108, 193);
             this.txt_mname.Name = "txt_mname";
             this.txt_mname.Size = new System.Drawing.Size(194, 20);
             this.txt_mname.StyleController = this.dataLayoutControl1;
@@ -571,7 +579,7 @@
             // txt_lname
             // 
             this.txt_lname.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.tblStdntInfoBindingSource, "l_ame", true));
-            this.txt_lname.Location = new System.Drawing.Point(108, 204);
+            this.txt_lname.Location = new System.Drawing.Point(108, 217);
             this.txt_lname.Name = "txt_lname";
             this.txt_lname.Size = new System.Drawing.Size(194, 20);
             this.txt_lname.StyleController = this.dataLayoutControl1;
@@ -581,7 +589,7 @@
             // 
             this.dedit_bday.DataBindings.Add(new System.Windows.Forms.Binding("DateTime", this.tblStdntInfoBindingSource, "birth_date", true));
             this.dedit_bday.EditValue = null;
-            this.dedit_bday.Location = new System.Drawing.Point(108, 228);
+            this.dedit_bday.Location = new System.Drawing.Point(108, 241);
             this.dedit_bday.Name = "dedit_bday";
             this.dedit_bday.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -595,12 +603,12 @@
             // 
             this.cbox_gender.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.tblStdntInfoBindingSource, "gender", true));
             this.cbox_gender.EditValue = "--SELECT GENDER--";
-            this.cbox_gender.Location = new System.Drawing.Point(108, 252);
+            this.cbox_gender.Location = new System.Drawing.Point(108, 265);
             this.cbox_gender.Name = "cbox_gender";
             this.cbox_gender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbox_gender.Properties.Items.AddRange(new object[] {
-            "--SELECT GENDER--",
+            "--SELECT--",
             "MALE ",
             "FEMALE"});
             this.cbox_gender.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
@@ -612,12 +620,12 @@
             // 
             this.cbox_civil_status.DataBindings.Add(new System.Windows.Forms.Binding("SelectedIndex", this.tblStdntInfoBindingSource, "civil_stat", true));
             this.cbox_civil_status.EditValue = "--SELECT STATUS--";
-            this.cbox_civil_status.Location = new System.Drawing.Point(108, 276);
+            this.cbox_civil_status.Location = new System.Drawing.Point(108, 289);
             this.cbox_civil_status.Name = "cbox_civil_status";
             this.cbox_civil_status.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbox_civil_status.Properties.Items.AddRange(new object[] {
-            "--SELECT STATUS--",
+            "--SELECT--",
             "SINGLE ",
             "MARRIED",
             "DIVORCED"});
@@ -683,7 +691,10 @@
             this.emptySpaceItem2,
             this.emptySpaceItem3,
             this.emptySpaceItem13,
-            this.layoutControlItem12});
+            this.layoutControlItem12,
+            this.emptySpaceItem15,
+            this.layoutControlItem13,
+            this.emptySpaceItem16});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
             this.layoutControlGroup2.Size = new System.Drawing.Size(294, 366);
@@ -691,7 +702,7 @@
             // ItemForstdnt_id
             // 
             this.ItemForstdnt_id.Control = this.txt_id;
-            this.ItemForstdnt_id.Location = new System.Drawing.Point(0, 120);
+            this.ItemForstdnt_id.Location = new System.Drawing.Point(0, 133);
             this.ItemForstdnt_id.Name = "ItemForstdnt_id";
             this.ItemForstdnt_id.Size = new System.Drawing.Size(191, 24);
             this.ItemForstdnt_id.Text = "Student ID(Auto) :";
@@ -700,7 +711,7 @@
             // ItemForf_name
             // 
             this.ItemForf_name.Control = this.txt_fname;
-            this.ItemForf_name.Location = new System.Drawing.Point(0, 144);
+            this.ItemForf_name.Location = new System.Drawing.Point(0, 157);
             this.ItemForf_name.Name = "ItemForf_name";
             this.ItemForf_name.Size = new System.Drawing.Size(294, 24);
             this.ItemForf_name.Text = "Fist Name :";
@@ -709,7 +720,7 @@
             // ItemForm_name
             // 
             this.ItemForm_name.Control = this.txt_mname;
-            this.ItemForm_name.Location = new System.Drawing.Point(0, 168);
+            this.ItemForm_name.Location = new System.Drawing.Point(0, 181);
             this.ItemForm_name.Name = "ItemForm_name";
             this.ItemForm_name.Size = new System.Drawing.Size(294, 24);
             this.ItemForm_name.Text = "Middle Name :";
@@ -718,7 +729,7 @@
             // ItemForl_ame
             // 
             this.ItemForl_ame.Control = this.txt_lname;
-            this.ItemForl_ame.Location = new System.Drawing.Point(0, 192);
+            this.ItemForl_ame.Location = new System.Drawing.Point(0, 205);
             this.ItemForl_ame.Name = "ItemForl_ame";
             this.ItemForl_ame.Size = new System.Drawing.Size(294, 24);
             this.ItemForl_ame.Text = "Last Name :";
@@ -727,7 +738,7 @@
             // ItemForbirth_date
             // 
             this.ItemForbirth_date.Control = this.dedit_bday;
-            this.ItemForbirth_date.Location = new System.Drawing.Point(0, 216);
+            this.ItemForbirth_date.Location = new System.Drawing.Point(0, 229);
             this.ItemForbirth_date.Name = "ItemForbirth_date";
             this.ItemForbirth_date.Size = new System.Drawing.Size(191, 24);
             this.ItemForbirth_date.Text = "Birth Date :";
@@ -736,7 +747,7 @@
             // ItemForgender
             // 
             this.ItemForgender.Control = this.cbox_gender;
-            this.ItemForgender.Location = new System.Drawing.Point(0, 240);
+            this.ItemForgender.Location = new System.Drawing.Point(0, 253);
             this.ItemForgender.Name = "ItemForgender";
             this.ItemForgender.Size = new System.Drawing.Size(191, 24);
             this.ItemForgender.Text = "Gender :";
@@ -745,7 +756,7 @@
             // ItemForcivil_stat
             // 
             this.ItemForcivil_stat.Control = this.cbox_civil_status;
-            this.ItemForcivil_stat.Location = new System.Drawing.Point(0, 264);
+            this.ItemForcivil_stat.Location = new System.Drawing.Point(0, 277);
             this.ItemForcivil_stat.Name = "ItemForcivil_stat";
             this.ItemForcivil_stat.Size = new System.Drawing.Size(191, 24);
             this.ItemForcivil_stat.Text = "Civil Status :";
@@ -754,15 +765,15 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 288);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 301);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(294, 78);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(294, 38);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(191, 120);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(191, 133);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
             this.emptySpaceItem8.Size = new System.Drawing.Size(103, 24);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -770,7 +781,7 @@
             // emptySpaceItem9
             // 
             this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(191, 216);
+            this.emptySpaceItem9.Location = new System.Drawing.Point(191, 229);
             this.emptySpaceItem9.Name = "emptySpaceItem9";
             this.emptySpaceItem9.Size = new System.Drawing.Size(103, 24);
             this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
@@ -778,7 +789,7 @@
             // emptySpaceItem10
             // 
             this.emptySpaceItem10.AllowHotTrack = false;
-            this.emptySpaceItem10.Location = new System.Drawing.Point(191, 240);
+            this.emptySpaceItem10.Location = new System.Drawing.Point(191, 253);
             this.emptySpaceItem10.Name = "emptySpaceItem10";
             this.emptySpaceItem10.Size = new System.Drawing.Size(103, 24);
             this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
@@ -786,7 +797,7 @@
             // emptySpaceItem11
             // 
             this.emptySpaceItem11.AllowHotTrack = false;
-            this.emptySpaceItem11.Location = new System.Drawing.Point(191, 264);
+            this.emptySpaceItem11.Location = new System.Drawing.Point(191, 277);
             this.emptySpaceItem11.Name = "emptySpaceItem11";
             this.emptySpaceItem11.Size = new System.Drawing.Size(103, 24);
             this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
@@ -813,7 +824,7 @@
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(0, 110);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(294, 10);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(294, 23);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem13
@@ -829,7 +840,7 @@
             this.layoutControlItem12.Control = this.btn_add_picture;
             this.layoutControlItem12.Location = new System.Drawing.Point(102, 83);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(192, 27);
+            this.layoutControlItem12.Size = new System.Drawing.Size(89, 27);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
@@ -1233,6 +1244,44 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(295, 183);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(73, 13);
             // 
+            // emptySpaceItem15
+            // 
+            this.emptySpaceItem15.AllowHotTrack = false;
+            this.emptySpaceItem15.Location = new System.Drawing.Point(191, 83);
+            this.emptySpaceItem15.Name = "emptySpaceItem15";
+            this.emptySpaceItem15.Size = new System.Drawing.Size(103, 27);
+            this.emptySpaceItem15.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Appearance.Options.UseForeColor = true;
+            this.simpleButton1.Location = new System.Drawing.Point(219, 351);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(83, 23);
+            this.simpleButton1.StyleController = this.dataLayoutControl1;
+            this.simpleButton1.TabIndex = 47;
+            this.simpleButton1.Text = "SAVE ";
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.simpleButton1;
+            this.layoutControlItem13.Location = new System.Drawing.Point(207, 339);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(87, 27);
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem13.TextVisible = false;
+            // 
+            // emptySpaceItem16
+            // 
+            this.emptySpaceItem16.AllowHotTrack = false;
+            this.emptySpaceItem16.Location = new System.Drawing.Point(0, 339);
+            this.emptySpaceItem16.Name = "emptySpaceItem16";
+            this.emptySpaceItem16.Size = new System.Drawing.Size(207, 27);
+            this.emptySpaceItem16.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // UcAddStdnt
             // 
             this.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F);
@@ -1337,6 +1386,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1437,5 +1489,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraEditors.TextEdit cbox_citizenship;
         private DevExpress.XtraEditors.TextEdit cbox_religion;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem15;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem16;
     }
 }
