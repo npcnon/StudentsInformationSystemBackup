@@ -232,6 +232,7 @@
             this.m_element_depart.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.s_element_subjects,
             this.s_element_departments});
+            this.m_element_depart.Expanded = true;
             this.m_element_depart.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_depart.ImageOptions.SvgImage")));
             this.m_element_depart.Name = "m_element_depart";
             this.m_element_depart.Text = "Department";
@@ -242,6 +243,7 @@
             this.s_element_subjects.Name = "s_element_subjects";
             this.s_element_subjects.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.s_element_subjects.Text = "Subjects";
+            this.s_element_subjects.Click += new System.EventHandler(this.s_element_subjects_Click);
             // 
             // s_element_departments
             // 
