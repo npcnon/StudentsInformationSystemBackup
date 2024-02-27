@@ -154,6 +154,7 @@
             this.btn_add_room.StyleController = this.layoutControl1;
             this.btn_add_room.TabIndex = 6;
             this.btn_add_room.Text = "Add Room";
+            this.btn_add_room.Click += new System.EventHandler(this.btn_add_room_Click_1);
             // 
             // cbox_floorlvl
             // 

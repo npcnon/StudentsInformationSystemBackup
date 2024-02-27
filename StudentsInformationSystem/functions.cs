@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using DevExpress.XtraEditors;
+using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
@@ -126,6 +128,45 @@ namespace StudentsInformationSystem
             }
 
 
+        }
+
+        public static void loaditem(ComboBoxEdit combobox, string columnName, string tableName,string firstadd)
+        {
+            string connectionString = "Data Source=DESKTOP-9GA3LFJ\\SQLEXPRESS;Initial Catalog=sis;Integrated Security=True";
+           
+            string sqlQuery = $"SELECT DISTINCT {columnName} FROM {tableName}"; // Modify the query as per your table structure
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    // Clear existing items in the ComboBoxEdit
+                    combobox.Properties.Items.Clear();
+
+                    // Loop through the retrieved data and add it to the ComboBoxEdit
+                    combobox.Properties.Items.Add(firstadd);
+                    while (reader.Read())
+                    {
+                        combobox.Properties.Items.Add(reader[columnName].ToString());
+                    }
+
+                    // Optionally, select the first item in the ComboBoxEdit
+                    if (combobox.Properties.Items.Count > 0)
+                    {
+                        combobox.SelectedIndex = 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        
         }
 
     }

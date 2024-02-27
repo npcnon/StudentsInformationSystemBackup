@@ -24,9 +24,16 @@ namespace StudentsInformationSystem.UI.Modules
 
         }
 
-        private void btn_add_room_Click(object sender, EventArgs e)
+       
+
+        private void UCRooms_Load(object sender, EventArgs e)
         {
-           
+            sisEntities2 db = new sisEntities2();
+            tblRoomInfoBindingSource.DataSource = db.TblRoomInfoes.ToList();
+        }
+
+        private void btn_add_room_Click_1(object sender, EventArgs e)
+        {
             string sqlInsert = @"
             INSERT INTO TblRoomInfo (building, floor_lvl, room_no) 
             VALUES (@Building, @FloorLevel, @RoomNumber);
@@ -38,10 +45,10 @@ namespace StudentsInformationSystem.UI.Modules
                 using (SqlCommand command = new SqlCommand(sqlInsert, connection))
                 {
 
-                    command.Parameters.AddWithValue("@Building",cbox_building.Text);
+                    command.Parameters.AddWithValue("@Building", cbox_building.Text);
                     command.Parameters.AddWithValue("@FloorLevel", cbox_floorlvl.Text);
                     command.Parameters.AddWithValue("@RoomNumber", Convert.ToInt32(cbox_roomno.Text));
-                  
+
 
 
 
@@ -63,13 +70,5 @@ namespace StudentsInformationSystem.UI.Modules
                 }
             }
         }
-
-        private void UCRooms_Load(object sender, EventArgs e)
-        {
-            sisEntities2 db = new sisEntities2();
-            tblRoomInfoBindingSource.DataSource = db.TblRoomInfoes.ToList();
-        }
-
-      
     }
 }
