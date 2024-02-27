@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace StudentsInformationSystem
@@ -167,6 +168,52 @@ namespace StudentsInformationSystem
                 }
             }
         
+        }
+        public static void loaditemlistbox(CheckedListBoxControl libox, string columnName, string tableName)
+        {
+            string connectionString = "Data Source=DESKTOP-9GA3LFJ\\SQLEXPRESS;Initial Catalog=sis;Integrated Security=True";
+
+            string sqlQuery = $"SELECT DISTINCT {columnName} FROM {tableName}"; // Modify the query as per your table structure
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(sqlQuery, connection);
+
+                try
+                {
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    // Clear existing items in the ComboBoxEdit
+                    libox.Items.Clear();
+
+                    // Loop through the retrieved data and add it to the ComboBoxEdit
+                    
+                    while (reader.Read())
+                    {
+                        libox.Items.Add(reader[columnName].ToString());
+                    }
+
+                    // Optionally, select the first item in the ComboBoxEdit
+                    if (libox.Items.Count > 0)
+                    {
+                        libox.SelectedIndex = 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+        }
+        public static byte[] ImageToByteArray(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
         }
 
     }

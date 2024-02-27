@@ -1,10 +1,14 @@
 ﻿using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.Net;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace StudentsInformationSystem.UI.Modules
 {
@@ -51,7 +55,7 @@ namespace StudentsInformationSystem.UI.Modules
             txt_fname.Focus();
             string sqlQuery = "SELECT MAX(stdnt_id)+1 FROM TblStdntInfo";
             functions.LoadID(txt_id, sqlQuery);
-
+            functions.loaditemlistbox(chlibox_subj, "offercode", "TblSubjInfo");
         }
 
         private void control_keypress(object sender, KeyEventArgs e)
@@ -133,9 +137,262 @@ namespace StudentsInformationSystem.UI.Modules
             tabpane_addstdnt.SelectedPageIndex = nextIndex;
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void btn_submit_Click(object sender, EventArgs e)
         {
+            submit();
+        }
+
+        private void submit()
+        {
+            Debug.WriteLine("Submit was running######");
+            datavalid = false;
+            // Retrieve the values from the textboxes
+            string Fname = txt_fname.Text;
+            string Mname = txt_mname.Text;
+            string Lname = txt_lname.Text;
+            string gender = cbox_gender.Text;
+            string CivilStats = cbox_civil_status.Text;
+            string Citizenship = cbox_citizenship.Text;
+            string Religion = cbox_religion.Text;
+            string Address = txt_address.Text;
+            string Contact = txt_contact_info.Text;
+            string Email = txt_email.Text;
+            string Depart = cbox_department.Text;
+            string Course = cbox_course.Text;
+            string Yearlvl = cbox_year_lvl.Text;
+            string semester = cbox_semester.Text;
+
+            if (Fname.Length > 50 || string.IsNullOrWhiteSpace(Fname))
+            {
+                MessageBox.Show("First Name -- INVALID");
+                txt_fname.Text = "";
+                txt_fname.Focus();
+
+            }
+            else if (Mname.Length > 50 || string.IsNullOrWhiteSpace(Mname))
+            {
+                MessageBox.Show("Middle Name -- INVALID");
+                txt_mname.Text = "";
+                txt_mname.Focus();
+
+            }
+            else if (Lname.Length > 50 || string.IsNullOrWhiteSpace(Lname))
+            {
+                MessageBox.Show("Last Name -- INVALID");
+                txt_lname.Text = "";
+                txt_lname.Focus();
+
+            }
+            else if (!(DateTime.TryParseExact(dedit_bday.Text, "MM/dd/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime result)))
+            {
+                dedit_bday.DateTime = DateTime.MinValue;
+            }
+
+            else if (gender.Length > 150 || string.IsNullOrWhiteSpace(gender))
+            {
+                MessageBox.Show("Gender -- INVALID");
+                cbox_gender.SelectedIndex = 0;
+                cbox_gender.Focus();
+
+            }
+            else if (CivilStats.Length > 150 || string.IsNullOrWhiteSpace(CivilStats))
+            {
+                MessageBox.Show("Civil Status -- INVALID");
+                cbox_civil_status.SelectedIndex = 0;
+                cbox_civil_status.Focus();
+
+            }
+            else if (!Regex.IsMatch(Contact, @"^\d{11}$"))
+            {
+                MessageBox.Show("Contact -- INVALID");
+                txt_contact_info.Text = "";
+                txt_contact_info.Focus();
+
+            }
+            else if (Email.Length > 100 || !Regex.IsMatch(Email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+            {
+                MessageBox.Show("Email -- INVALID");
+                txt_email.Text = "";
+                txt_email.Focus();
+
+            }
+            else if (Citizenship.Length > 150 || string.IsNullOrWhiteSpace(Citizenship))
+            {
+                MessageBox.Show("Citizenship -- INVALID");
+                cbox_citizenship.SelectedIndex = 0;
+                cbox_citizenship.Focus();
+
+            }
+            else if (Religion.Length > 150 || string.IsNullOrWhiteSpace(Religion))
+            {
+                MessageBox.Show("Religion -- INVALID");
+                cbox_religion.SelectedIndex = 0;
+                cbox_religion.Focus();
+
+            }
+            else if (Address.Length > 150 || string.IsNullOrWhiteSpace(Address))
+            {
+                MessageBox.Show("Address -- INVALID");
+                txt_address.Text = "";
+                txt_address.Focus();
+
+            }
+            else if (Course.Length > 150 || string.IsNullOrWhiteSpace(Course))
+            {
+                MessageBox.Show("Course -- INVALID");
+                cbox_course.SelectedIndex = 0;
+                cbox_course.Focus();
+
+            }
+            else if (Depart.Length > 150 || string.IsNullOrWhiteSpace(Depart))
+            {
+                MessageBox.Show("Depart -- INVALID");
+                cbox_department.SelectedIndex = 0;
+                cbox_department.Focus();
+
+            }
+            else if (Yearlvl.Length > 150 || string.IsNullOrWhiteSpace(Yearlvl))
+            {
+                MessageBox.Show("YearLvl -- INVALID");
+                cbox_year_lvl.SelectedIndex = 0;
+                cbox_year_lvl.Focus();
+
+            }
+            else if (semester.Length > 150 || string.IsNullOrWhiteSpace(semester))
+            {
+                MessageBox.Show("semester -- INVALID");
+                cbox_citizenship.SelectedIndex = 0;
+                cbox_citizenship.Focus();
+            }
+
+            else
+            {
+                Debug.WriteLine("Else was running ##########");
+                byte[] imageData = functions.ImageToByteArray(pedit_stdnt_pic.Image);
+
+
+                string sqlInsert = @"
+            INSERT INTO TblStdntInfo (f_name, m_name, l_name, birth_date, civil_stat, citizenship, religion, ImageData) 
+            VALUES (@Fname, @Mname, @Lname, @Bday, @Gender, @Civilstat, @Citizen, @Religion, @Image);
+        
+            DECLARE @Id INT;
+            SET @Id = SCOPE_IDENTITY();
+
+            INSERT INTO TblAddStdntInfo (stdnt_id, stdnt_address, contact_info, email) 
+            VALUES (@Id, @Address, @Contact, @Email);
+
+            INSERT INTO TblStdntSchoolDetails (stdnt_id, course, department, yr_lvl, semester)
+            VALUES(@Id, @Course, @Department, @Yearlvl, @Semester)
+                
+            ";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+
+                    using (SqlCommand command = new SqlCommand(sqlInsert, connection))
+                    {
+
+                        command.Parameters.AddWithValue("@Fname", Fname);
+                        command.Parameters.AddWithValue("@Mname", Mname);
+                        command.Parameters.AddWithValue("@Lname", Lname);
+                        command.Parameters.AddWithValue("@Bday", dedit_bday.Text);
+                        command.Parameters.AddWithValue("@Gender", gender);
+                        command.Parameters.AddWithValue("@Civilstat", CivilStats);
+                        command.Parameters.AddWithValue("@Citizen", Citizenship);
+                        command.Parameters.AddWithValue("@Religion", Religion);
+                        command.Parameters.AddWithValue("@Address", Address);
+                        command.Parameters.AddWithValue("@Contact", Contact);
+                        command.Parameters.AddWithValue("@Email", Email);
+                        command.Parameters.AddWithValue("@Course", Course);
+                        command.Parameters.AddWithValue("@Department", Depart);
+                        command.Parameters.AddWithValue("@Yearlvl", Yearlvl);
+                        command.Parameters.AddWithValue("@Semester", semester);
+                        //command.Parameters.AddWithValue("@Image", imageData);
+                        connection.Open();
+
+
+                        int rowsAffected = command.ExecuteNonQuery();
+
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Data inserted successfully into the database.");
+                            datavalid = true;
+                            listcheckboxsubmit();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to insert data into the database.");
+                        }
+                    }
+                }
+
+
+            }
+
+
 
         }
+
+        private void listcheckboxsubmit()
+        {
+            CheckedListBoxControl checkedListBox = chlibox_subj;
+
+            // List to store checked values
+            List<object> checkedValues = new List<object>();
+
+            // Iterate through each item in the CheckedListBoxControl
+            for (int i = 0; i < checkedListBox.ItemCount; i++)
+            {
+                // Check if the current item is checked
+                if (checkedListBox.GetItemCheckState(i) == CheckState.Checked)
+                {
+                    // Add the value of the checked item to the list
+                    checkedValues.Add(checkedListBox.GetItemValue(i));
+                }
+            }
+
+            string sqlInsert = @"
+            DECLARE @Id INT;
+            SELECT @Id = MAX(stdnt_id)+1 FROM TblStdntInfo;
+            INSERT INTO TblStdntSubj (stdnt_id, offercode) 
+            VALUES (@Id, @Offercode);   
+        ";
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                foreach (string item in checkedValues)
+                {
+                    using (SqlCommand command = new SqlCommand(sqlInsert, connection))
+                    {
+                        try
+                        {
+                            // Assuming you have an stdnt_id available here
+                            command.Parameters.AddWithValue("@Offercode", item);
+
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("DataList inserted successfully into the database.");
+                                datavalid = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to insert datalist into the database.");
+                            }
+                        }
+                        catch (SqlException ex)
+                        {
+                            MessageBox.Show("Error inserting data: " + ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
