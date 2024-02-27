@@ -13,8 +13,8 @@ namespace StudentsInformationSystem
         public FrmMain()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            //this.StartPosition = FormStartPosition.CenterScreen;
+            //this.FormBorderStyle = FormBorderStyle.FixedSingle;
       
 
         }
