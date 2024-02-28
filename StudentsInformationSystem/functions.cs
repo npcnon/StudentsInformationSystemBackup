@@ -27,10 +27,10 @@ namespace StudentsInformationSystem
                 using (SqlCommand command = new SqlCommand(sqlQuery, connection))
                 {
                     // Open the connection
-                    connection.Open();
+                   // connection.Open();
 
                     // Execute the SQL command and get the result
-                    object result = command.ExecuteScalar();
+                   // object result = command.ExecuteScalar();
 
                     // Check if the result is not null
                     if (!string.IsNullOrEmpty(result.ToString()))
