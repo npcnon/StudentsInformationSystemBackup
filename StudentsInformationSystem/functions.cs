@@ -216,6 +216,34 @@ namespace StudentsInformationSystem
             }
         }
 
+
+        public static void datecheck(DateEdit date_edit)
+        {
+            if (DateTime.TryParseExact(date_edit.Text, "MM/dd/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime birthDate))
+            {
+                // Check if the parsed date is within a valid range
+                if (birthDate >= DateTime.MinValue && birthDate <= DateTime.MaxValue)
+                {
+                    // The parsed date is valid
+                    // You can proceed with inserting it into the database or performing any other necessary actions
+                }
+                else
+                {
+                    // The parsed date is invalid (e.g., outside the range of valid dates)
+                    MessageBox.Show("Invalid date.");
+                    // Set dedit_bday to DateTime.MinValue or take any other necessary action
+                    date_edit.DateTime = DateTime.MinValue;
+                    date_edit.Focus();
+                }
+            }
+            else
+            {
+                // The input date is in an invalid format
+                MessageBox.Show("Invalid date format. Please enter the date in MM/dd/yyyy format.");
+            }
+
+        }
+
     }
 
 

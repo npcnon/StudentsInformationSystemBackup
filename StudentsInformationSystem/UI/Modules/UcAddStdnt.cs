@@ -115,8 +115,12 @@ namespace StudentsInformationSystem.UI.Modules
             {
                 using (Bitmap selectedImage = new Bitmap(openFileDialog.FileName))
                 {
-                    // Resize the image to fit the desired dimensions (99x106)
-                    Bitmap resizedImage = functions.ResizeImage(selectedImage, 99, 106);
+                    // Calculate the desired dimensions based on the size of the PictureEdit control
+                    int width = pedit_stdnt_pic.Width;
+                    int height = pedit_stdnt_pic.Height;
+
+                    // Resize the image to fit the desired dimensions
+                    Bitmap resizedImage = functions.ResizeImage(selectedImage, width, height);
 
                     // Set the resized image as the picture in the PictureEdit control
                     pedit_stdnt_pic.Image = resizedImage;
@@ -124,7 +128,8 @@ namespace StudentsInformationSystem.UI.Modules
             }
         }
 
-        
+
+
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
@@ -161,7 +166,7 @@ namespace StudentsInformationSystem.UI.Modules
             string Course = cbox_course.Text;
             string Yearlvl = cbox_year_lvl.Text;
             string semester = cbox_semester.Text;
-
+            Debug.WriteLine("Fname check");
             if (Fname.Length > 50 || string.IsNullOrWhiteSpace(Fname))
             {
                 MessageBox.Show("First Name -- INVALID");
@@ -182,10 +187,6 @@ namespace StudentsInformationSystem.UI.Modules
                 txt_lname.Text = "";
                 txt_lname.Focus();
 
-            }
-            else if (!(DateTime.TryParseExact(dedit_bday.Text, "MM/dd/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime result)))
-            {
-                dedit_bday.DateTime = DateTime.MinValue;
             }
 
             else if (gender.Length > 150 || string.IsNullOrWhiteSpace(gender))
@@ -267,65 +268,82 @@ namespace StudentsInformationSystem.UI.Modules
 
             else
             {
+
+                //functions.datecheck(dedit_bday);
                 Debug.WriteLine("Else was running ##########");
                 byte[] imageData = functions.ImageToByteArray(pedit_stdnt_pic.Image);
 
 
                 string sqlInsert = @"
-            INSERT INTO TblStdntInfo (f_name, m_name, l_name, birth_date, civil_stat, citizenship, religion, ImageData) 
-            VALUES (@Fname, @Mname, @Lname, @Bday, @Gender, @Civilstat, @Citizen, @Religion, @Image);
-        
-            DECLARE @Id INT;
-            SET @Id = SCOPE_IDENTITY();
+                        INSERT INTO TblStdntInfo (f_name, m_name, l_ame, birth_date, gender,civil_stat, citizenship, religion, ImageData) 
+                        VALUES (@Fname, @Mname, @Lname, @Bday, @Gender, @Civilstat, @Citizen, @Religion, @Image);
 
-            INSERT INTO TblAddStdntInfo (stdnt_id, stdnt_address, contact_info, email) 
-            VALUES (@Id, @Address, @Contact, @Email);
+                        DECLARE @Id INT;
+                        SET @Id = SCOPE_IDENTITY();
 
-            INSERT INTO TblStdntSchoolDetails (stdnt_id, course, department, yr_lvl, semester)
-            VALUES(@Id, @Course, @Department, @Yearlvl, @Semester)
-                
-            ";
+                        INSERT INTO TblAddStdntInfo (stdnt_id, stdnt_address, contact_info, email) 
+                        VALUES (@Id, @Address, @Contact, @Email);
+
+                        INSERT INTO TblStdntSchoolDetails (stdnt_id, course, department, yr_lvl, semester)
+                        VALUES(@Id, @Course, @Department, @Yearlvl, @Semester);
+                    ";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-
-                    using (SqlCommand command = new SqlCommand(sqlInsert, connection))
+                    Debug.WriteLine("Connection Success!!!");
+                    try
                     {
-
-                        command.Parameters.AddWithValue("@Fname", Fname);
-                        command.Parameters.AddWithValue("@Mname", Mname);
-                        command.Parameters.AddWithValue("@Lname", Lname);
-                        command.Parameters.AddWithValue("@Bday", dedit_bday.Text);
-                        command.Parameters.AddWithValue("@Gender", gender);
-                        command.Parameters.AddWithValue("@Civilstat", CivilStats);
-                        command.Parameters.AddWithValue("@Citizen", Citizenship);
-                        command.Parameters.AddWithValue("@Religion", Religion);
-                        command.Parameters.AddWithValue("@Address", Address);
-                        command.Parameters.AddWithValue("@Contact", Contact);
-                        command.Parameters.AddWithValue("@Email", Email);
-                        command.Parameters.AddWithValue("@Course", Course);
-                        command.Parameters.AddWithValue("@Department", Depart);
-                        command.Parameters.AddWithValue("@Yearlvl", Yearlvl);
-                        command.Parameters.AddWithValue("@Semester", semester);
-                        //command.Parameters.AddWithValue("@Image", imageData);
-                        connection.Open();
-
-
-                        int rowsAffected = command.ExecuteNonQuery();
-
-
-                        if (rowsAffected > 0)
+                        using (SqlCommand command = new SqlCommand(sqlInsert, connection))
                         {
-                            MessageBox.Show("Data inserted successfully into the database.");
-                            datavalid = true;
-                            listcheckboxsubmit();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Failed to insert data into the database.");
+                            // Add parameters for the first INSERT statement
+                            command.Parameters.AddWithValue("@Fname", Fname);
+                            command.Parameters.AddWithValue("@Mname", Mname);
+                            command.Parameters.AddWithValue("@Lname", Lname);
+                            command.Parameters.AddWithValue("@Bday", dedit_bday.Text);
+                            command.Parameters.AddWithValue("@Gender", gender);
+                            command.Parameters.AddWithValue("@Civilstat", CivilStats);
+                            command.Parameters.AddWithValue("@Citizen", Citizenship);
+                            command.Parameters.AddWithValue("@Religion", Religion);
+                            command.Parameters.AddWithValue("@Image", imageData);
+
+                            // Add parameters for the second INSERT statement
+                            command.Parameters.AddWithValue("@Address", Address);
+                            command.Parameters.AddWithValue("@Contact", Contact);
+                            command.Parameters.AddWithValue("@Email", Email);
+
+                            // Add parameters for the third INSERT statement
+                            command.Parameters.AddWithValue("@Course", Course);
+                            command.Parameters.AddWithValue("@Department", Depart);
+                            command.Parameters.AddWithValue("@Yearlvl", Yearlvl);
+                            command.Parameters.AddWithValue("@Semester", semester);
+
+                            connection.Open();
+
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Data inserted successfully into the database.");
+                                datavalid = true;
+                                listcheckboxsubmit();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to insert data into the database.");
+                            }
                         }
                     }
+                    catch (SqlException ex)
+                    {
+                        Debug.WriteLine("SQL Error Number: " + ex.Number);
+                        Debug.WriteLine("SQL Error Message: " + ex.Message);
+                        Debug.WriteLine("SQL Server: " + ex.Server);
+                       
+                        Debug.WriteLine("Procedure: " + ex.Procedure);
+                        Debug.WriteLine("Line Number: " + ex.LineNumber);
+                    }
                 }
+
 
 
             }
@@ -354,7 +372,7 @@ namespace StudentsInformationSystem.UI.Modules
 
             string sqlInsert = @"
             DECLARE @Id INT;
-            SELECT @Id = MAX(stdnt_id)+1 FROM TblStdntInfo;
+            SELECT @Id = stdnt_id FROM TblStdntInfo;
             INSERT INTO TblStdntSubj (stdnt_id, offercode) 
             VALUES (@Id, @Offercode);   
         ";
