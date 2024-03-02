@@ -30,36 +30,36 @@
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.comboBoxEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -85,22 +85,6 @@
             this.layoutControl1.Size = new System.Drawing.Size(661, 472);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(96, 69);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(453, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 5;
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(96, 45);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Size = new System.Drawing.Size(453, 20);
-            this.comboBoxEdit1.StyleController = this.layoutControl1;
-            this.comboBoxEdit1.TabIndex = 4;
             // 
             // simpleButton1
             // 
@@ -163,24 +147,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(641, 121);
             this.layoutControlGroup1.Text = "ADD DEPARTMENT";
             // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.comboBoxEdit1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(528, 24);
-            this.layoutControlItem1.Text = "Department :";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(67, 13);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.textEdit1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(528, 24);
-            this.layoutControlItem2.Text = "Subject :";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(67, 13);
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.simpleButton1;
@@ -227,6 +193,40 @@
             this.emptySpaceItem5.Size = new System.Drawing.Size(441, 27);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(96, 69);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(453, 20);
+            this.textEdit1.StyleController = this.layoutControl1;
+            this.textEdit1.TabIndex = 5;
+            // 
+            // comboBoxEdit1
+            // 
+            this.comboBoxEdit1.Location = new System.Drawing.Point(96, 45);
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Size = new System.Drawing.Size(453, 20);
+            this.comboBoxEdit1.StyleController = this.layoutControl1;
+            this.comboBoxEdit1.TabIndex = 4;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.comboBoxEdit1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(528, 24);
+            this.layoutControlItem1.Text = "Department :";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(67, 13);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.textEdit1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(528, 24);
+            this.layoutControlItem2.Text = "Subject :";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(67, 13);
+            // 
             // UcDepartment
             // 
             this.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F);
@@ -241,18 +241,18 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -42,35 +42,19 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gcont_basic = new DevExpress.XtraEditors.GroupControl();
             this.dataLayoutControl1 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.tcher_id = new DevExpress.XtraEditors.TextEdit();
-            this.tcher_fname = new DevExpress.XtraEditors.TextEdit();
-            this.tcher_mname = new DevExpress.XtraEditors.TextEdit();
-            this.tcher_lname = new DevExpress.XtraEditors.TextEdit();
-            this.txt_department = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.txt_tcher_id = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txt_teacher_fname = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txt_teacher_mname = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txt_teacher_lname = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.gcont_add = new DevExpress.XtraEditors.GroupControl();
             this.dataLayoutControl2 = new DevExpress.XtraDataLayout.DataLayoutControl();
-            this.tcher_address = new DevExpress.XtraEditors.TextEdit();
-            this.tcher_contact_info = new DevExpress.XtraEditors.TextEdit();
-            this.tcher_email = new DevExpress.XtraEditors.TextEdit();
             this.btn_add_more = new DevExpress.XtraEditors.SimpleButton();
             this.btn_addsubmit = new DevExpress.XtraEditors.SimpleButton();
             this.btn_tcher_cancel = new DevExpress.XtraEditors.SimpleButton();
             this.btn_teacher_submit = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.txt_teacher_address = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txt_teacher_contact_info = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txt_teacher_email = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem14 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -81,6 +65,22 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
+            this.tcher_id = new DevExpress.XtraEditors.TextEdit();
+            this.tcher_fname = new DevExpress.XtraEditors.TextEdit();
+            this.tcher_mname = new DevExpress.XtraEditors.TextEdit();
+            this.tcher_lname = new DevExpress.XtraEditors.TextEdit();
+            this.txt_department = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txt_tcher_id = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txt_teacher_fname = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txt_teacher_mname = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txt_teacher_lname = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tcher_address = new DevExpress.XtraEditors.TextEdit();
+            this.tcher_contact_info = new DevExpress.XtraEditors.TextEdit();
+            this.tcher_email = new DevExpress.XtraEditors.TextEdit();
+            this.txt_teacher_address = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txt_teacher_contact_info = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txt_teacher_email = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabpane_addtcher)).BeginInit();
             this.tabpane_addtcher.SuspendLayout();
             this.tb_page_basic_info.SuspendLayout();
@@ -90,33 +90,17 @@
             this.gcont_basic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).BeginInit();
             this.dataLayoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_id.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_fname.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_mname.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_lname.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_department.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_tcher_id)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_fname)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_mname)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_lname)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcont_add)).BeginInit();
             this.gcont_add.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl2)).BeginInit();
             this.dataLayoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_address.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_contact_info.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_email.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_address)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_contact_info)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_email)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem14)).BeginInit();
@@ -126,6 +110,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_id.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_fname.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_mname.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_lname.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_department.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_tcher_id)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_fname)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_mname)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_lname)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_address.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_contact_info.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_email.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_address)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_contact_info)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_email)).BeginInit();
             this.SuspendLayout();
             // 
             // splashScreenManager1
@@ -189,54 +189,6 @@
             this.dataLayoutControl1.TabIndex = 0;
             this.dataLayoutControl1.Text = "dataLayoutControl1";
             // 
-            // tcher_id
-            // 
-            this.tcher_id.Enabled = false;
-            this.tcher_id.Location = new System.Drawing.Point(107, 32);
-            this.tcher_id.Name = "tcher_id";
-            this.tcher_id.Properties.Appearance.Options.UseTextOptions = true;
-            this.tcher_id.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.tcher_id.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.tcher_id.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.tcher_id.Properties.MaskSettings.Set("mask", "N0");
-            this.tcher_id.Size = new System.Drawing.Size(92, 20);
-            this.tcher_id.StyleController = this.dataLayoutControl1;
-            this.tcher_id.TabIndex = 21;
-            // 
-            // tcher_fname
-            // 
-            this.tcher_fname.Location = new System.Drawing.Point(107, 56);
-            this.tcher_fname.Name = "tcher_fname";
-            this.tcher_fname.Size = new System.Drawing.Size(168, 20);
-            this.tcher_fname.StyleController = this.dataLayoutControl1;
-            this.tcher_fname.TabIndex = 22;
-            // 
-            // tcher_mname
-            // 
-            this.tcher_mname.Location = new System.Drawing.Point(107, 80);
-            this.tcher_mname.Name = "tcher_mname";
-            this.tcher_mname.Size = new System.Drawing.Size(168, 20);
-            this.tcher_mname.StyleController = this.dataLayoutControl1;
-            this.tcher_mname.TabIndex = 23;
-            // 
-            // tcher_lname
-            // 
-            this.tcher_lname.Location = new System.Drawing.Point(107, 104);
-            this.tcher_lname.Name = "tcher_lname";
-            this.tcher_lname.Size = new System.Drawing.Size(168, 20);
-            this.tcher_lname.StyleController = this.dataLayoutControl1;
-            this.tcher_lname.TabIndex = 24;
-            // 
-            // txt_department
-            // 
-            this.txt_department.Location = new System.Drawing.Point(107, 128);
-            this.txt_department.Name = "txt_department";
-            this.txt_department.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txt_department.Size = new System.Drawing.Size(168, 20);
-            this.txt_department.StyleController = this.dataLayoutControl1;
-            this.txt_department.TabIndex = 25;
-            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -264,42 +216,6 @@
             this.layoutControlGroup2.Name = "autoGeneratedGroup0";
             this.layoutControlGroup2.Size = new System.Drawing.Size(267, 395);
             // 
-            // txt_tcher_id
-            // 
-            this.txt_tcher_id.Control = this.tcher_id;
-            this.txt_tcher_id.Location = new System.Drawing.Point(0, 20);
-            this.txt_tcher_id.Name = "txt_tcher_id";
-            this.txt_tcher_id.Size = new System.Drawing.Size(191, 24);
-            this.txt_tcher_id.Text = "Teacher ID(Auto) :";
-            this.txt_tcher_id.TextSize = new System.Drawing.Size(91, 13);
-            // 
-            // txt_teacher_fname
-            // 
-            this.txt_teacher_fname.Control = this.tcher_fname;
-            this.txt_teacher_fname.Location = new System.Drawing.Point(0, 44);
-            this.txt_teacher_fname.Name = "txt_teacher_fname";
-            this.txt_teacher_fname.Size = new System.Drawing.Size(267, 24);
-            this.txt_teacher_fname.Text = "Fist Name :";
-            this.txt_teacher_fname.TextSize = new System.Drawing.Size(91, 13);
-            // 
-            // txt_teacher_mname
-            // 
-            this.txt_teacher_mname.Control = this.tcher_mname;
-            this.txt_teacher_mname.Location = new System.Drawing.Point(0, 68);
-            this.txt_teacher_mname.Name = "txt_teacher_mname";
-            this.txt_teacher_mname.Size = new System.Drawing.Size(267, 24);
-            this.txt_teacher_mname.Text = "Middle Name :";
-            this.txt_teacher_mname.TextSize = new System.Drawing.Size(91, 13);
-            // 
-            // txt_teacher_lname
-            // 
-            this.txt_teacher_lname.Control = this.tcher_lname;
-            this.txt_teacher_lname.Location = new System.Drawing.Point(0, 92);
-            this.txt_teacher_lname.Name = "txt_teacher_lname";
-            this.txt_teacher_lname.Size = new System.Drawing.Size(267, 24);
-            this.txt_teacher_lname.Text = "Last Name :";
-            this.txt_teacher_lname.TextSize = new System.Drawing.Size(91, 13);
-            // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
@@ -315,15 +231,6 @@
             this.emptySpaceItem8.Name = "emptySpaceItem8";
             this.emptySpaceItem8.Size = new System.Drawing.Size(76, 24);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.txt_department;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 116);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(267, 24);
-            this.layoutControlItem4.Text = "Department :";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(91, 13);
             // 
             // emptySpaceItem2
             // 
@@ -358,30 +265,6 @@
             this.dataLayoutControl2.Size = new System.Drawing.Size(287, 415);
             this.dataLayoutControl2.TabIndex = 0;
             this.dataLayoutControl2.Text = "dataLayoutControl2";
-            // 
-            // tcher_address
-            // 
-            this.tcher_address.Location = new System.Drawing.Point(63, 32);
-            this.tcher_address.Name = "tcher_address";
-            this.tcher_address.Size = new System.Drawing.Size(212, 20);
-            this.tcher_address.StyleController = this.dataLayoutControl2;
-            this.tcher_address.TabIndex = 28;
-            // 
-            // tcher_contact_info
-            // 
-            this.tcher_contact_info.Location = new System.Drawing.Point(63, 56);
-            this.tcher_contact_info.Name = "tcher_contact_info";
-            this.tcher_contact_info.Size = new System.Drawing.Size(212, 20);
-            this.tcher_contact_info.StyleController = this.dataLayoutControl2;
-            this.tcher_contact_info.TabIndex = 29;
-            // 
-            // tcher_email
-            // 
-            this.tcher_email.Location = new System.Drawing.Point(63, 80);
-            this.tcher_email.Name = "tcher_email";
-            this.tcher_email.Size = new System.Drawing.Size(212, 20);
-            this.tcher_email.StyleController = this.dataLayoutControl2;
-            this.tcher_email.TabIndex = 30;
             // 
             // btn_add_more
             // 
@@ -475,33 +358,6 @@
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "autoGeneratedGroup0";
             this.layoutControlGroup4.Size = new System.Drawing.Size(267, 395);
-            // 
-            // txt_teacher_address
-            // 
-            this.txt_teacher_address.Control = this.tcher_address;
-            this.txt_teacher_address.Location = new System.Drawing.Point(0, 20);
-            this.txt_teacher_address.Name = "txt_teacher_address";
-            this.txt_teacher_address.Size = new System.Drawing.Size(267, 24);
-            this.txt_teacher_address.Text = "Address :";
-            this.txt_teacher_address.TextSize = new System.Drawing.Size(47, 13);
-            // 
-            // txt_teacher_contact_info
-            // 
-            this.txt_teacher_contact_info.Control = this.tcher_contact_info;
-            this.txt_teacher_contact_info.Location = new System.Drawing.Point(0, 44);
-            this.txt_teacher_contact_info.Name = "txt_teacher_contact_info";
-            this.txt_teacher_contact_info.Size = new System.Drawing.Size(267, 24);
-            this.txt_teacher_contact_info.Text = "Contact :";
-            this.txt_teacher_contact_info.TextSize = new System.Drawing.Size(47, 13);
-            // 
-            // txt_teacher_email
-            // 
-            this.txt_teacher_email.Control = this.tcher_email;
-            this.txt_teacher_email.Location = new System.Drawing.Point(0, 68);
-            this.txt_teacher_email.Name = "txt_teacher_email";
-            this.txt_teacher_email.Size = new System.Drawing.Size(267, 24);
-            this.txt_teacher_email.Text = "Email :";
-            this.txt_teacher_email.TextSize = new System.Drawing.Size(47, 13);
             // 
             // layoutControlItem6
             // 
@@ -597,6 +453,150 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
+            // tcher_id
+            // 
+            this.tcher_id.Enabled = false;
+            this.tcher_id.Location = new System.Drawing.Point(107, 32);
+            this.tcher_id.Name = "tcher_id";
+            this.tcher_id.Properties.Appearance.Options.UseTextOptions = true;
+            this.tcher_id.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.tcher_id.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.tcher_id.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.tcher_id.Properties.MaskSettings.Set("mask", "N0");
+            this.tcher_id.Size = new System.Drawing.Size(92, 20);
+            this.tcher_id.StyleController = this.dataLayoutControl1;
+            this.tcher_id.TabIndex = 21;
+            // 
+            // tcher_fname
+            // 
+            this.tcher_fname.Location = new System.Drawing.Point(107, 56);
+            this.tcher_fname.Name = "tcher_fname";
+            this.tcher_fname.Size = new System.Drawing.Size(168, 20);
+            this.tcher_fname.StyleController = this.dataLayoutControl1;
+            this.tcher_fname.TabIndex = 22;
+            // 
+            // tcher_mname
+            // 
+            this.tcher_mname.Location = new System.Drawing.Point(107, 80);
+            this.tcher_mname.Name = "tcher_mname";
+            this.tcher_mname.Size = new System.Drawing.Size(168, 20);
+            this.tcher_mname.StyleController = this.dataLayoutControl1;
+            this.tcher_mname.TabIndex = 23;
+            // 
+            // tcher_lname
+            // 
+            this.tcher_lname.Location = new System.Drawing.Point(107, 104);
+            this.tcher_lname.Name = "tcher_lname";
+            this.tcher_lname.Size = new System.Drawing.Size(168, 20);
+            this.tcher_lname.StyleController = this.dataLayoutControl1;
+            this.tcher_lname.TabIndex = 24;
+            // 
+            // txt_department
+            // 
+            this.txt_department.Location = new System.Drawing.Point(107, 128);
+            this.txt_department.Name = "txt_department";
+            this.txt_department.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txt_department.Size = new System.Drawing.Size(168, 20);
+            this.txt_department.StyleController = this.dataLayoutControl1;
+            this.txt_department.TabIndex = 25;
+            // 
+            // txt_tcher_id
+            // 
+            this.txt_tcher_id.Control = this.tcher_id;
+            this.txt_tcher_id.Location = new System.Drawing.Point(0, 20);
+            this.txt_tcher_id.Name = "txt_tcher_id";
+            this.txt_tcher_id.Size = new System.Drawing.Size(191, 24);
+            this.txt_tcher_id.Text = "Teacher ID(Auto) :";
+            this.txt_tcher_id.TextSize = new System.Drawing.Size(91, 13);
+            // 
+            // txt_teacher_fname
+            // 
+            this.txt_teacher_fname.Control = this.tcher_fname;
+            this.txt_teacher_fname.Location = new System.Drawing.Point(0, 44);
+            this.txt_teacher_fname.Name = "txt_teacher_fname";
+            this.txt_teacher_fname.Size = new System.Drawing.Size(267, 24);
+            this.txt_teacher_fname.Text = "Fist Name :";
+            this.txt_teacher_fname.TextSize = new System.Drawing.Size(91, 13);
+            // 
+            // txt_teacher_mname
+            // 
+            this.txt_teacher_mname.Control = this.tcher_mname;
+            this.txt_teacher_mname.Location = new System.Drawing.Point(0, 68);
+            this.txt_teacher_mname.Name = "txt_teacher_mname";
+            this.txt_teacher_mname.Size = new System.Drawing.Size(267, 24);
+            this.txt_teacher_mname.Text = "Middle Name :";
+            this.txt_teacher_mname.TextSize = new System.Drawing.Size(91, 13);
+            // 
+            // txt_teacher_lname
+            // 
+            this.txt_teacher_lname.Control = this.tcher_lname;
+            this.txt_teacher_lname.Location = new System.Drawing.Point(0, 92);
+            this.txt_teacher_lname.Name = "txt_teacher_lname";
+            this.txt_teacher_lname.Size = new System.Drawing.Size(267, 24);
+            this.txt_teacher_lname.Text = "Last Name :";
+            this.txt_teacher_lname.TextSize = new System.Drawing.Size(91, 13);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txt_department;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 116);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(267, 24);
+            this.layoutControlItem4.Text = "Department :";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(91, 13);
+            // 
+            // tcher_address
+            // 
+            this.tcher_address.Location = new System.Drawing.Point(63, 32);
+            this.tcher_address.Name = "tcher_address";
+            this.tcher_address.Size = new System.Drawing.Size(212, 20);
+            this.tcher_address.StyleController = this.dataLayoutControl2;
+            this.tcher_address.TabIndex = 28;
+            // 
+            // tcher_contact_info
+            // 
+            this.tcher_contact_info.Location = new System.Drawing.Point(63, 56);
+            this.tcher_contact_info.Name = "tcher_contact_info";
+            this.tcher_contact_info.Size = new System.Drawing.Size(212, 20);
+            this.tcher_contact_info.StyleController = this.dataLayoutControl2;
+            this.tcher_contact_info.TabIndex = 29;
+            // 
+            // tcher_email
+            // 
+            this.tcher_email.Location = new System.Drawing.Point(63, 80);
+            this.tcher_email.Name = "tcher_email";
+            this.tcher_email.Size = new System.Drawing.Size(212, 20);
+            this.tcher_email.StyleController = this.dataLayoutControl2;
+            this.tcher_email.TabIndex = 30;
+            // 
+            // txt_teacher_address
+            // 
+            this.txt_teacher_address.Control = this.tcher_address;
+            this.txt_teacher_address.Location = new System.Drawing.Point(0, 20);
+            this.txt_teacher_address.Name = "txt_teacher_address";
+            this.txt_teacher_address.Size = new System.Drawing.Size(267, 24);
+            this.txt_teacher_address.Text = "Address :";
+            this.txt_teacher_address.TextSize = new System.Drawing.Size(47, 13);
+            // 
+            // txt_teacher_contact_info
+            // 
+            this.txt_teacher_contact_info.Control = this.tcher_contact_info;
+            this.txt_teacher_contact_info.Location = new System.Drawing.Point(0, 44);
+            this.txt_teacher_contact_info.Name = "txt_teacher_contact_info";
+            this.txt_teacher_contact_info.Size = new System.Drawing.Size(267, 24);
+            this.txt_teacher_contact_info.Text = "Contact :";
+            this.txt_teacher_contact_info.TextSize = new System.Drawing.Size(47, 13);
+            // 
+            // txt_teacher_email
+            // 
+            this.txt_teacher_email.Control = this.tcher_email;
+            this.txt_teacher_email.Location = new System.Drawing.Point(0, 68);
+            this.txt_teacher_email.Name = "txt_teacher_email";
+            this.txt_teacher_email.Size = new System.Drawing.Size(267, 24);
+            this.txt_teacher_email.Text = "Email :";
+            this.txt_teacher_email.TextSize = new System.Drawing.Size(47, 13);
+            // 
             // UcAddTcher
             // 
             this.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F);
@@ -616,33 +616,17 @@
             this.gcont_basic.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             this.dataLayoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_id.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_fname.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_mname.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_lname.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_department.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_tcher_id)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_fname)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_mname)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_lname)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcont_add)).EndInit();
             this.gcont_add.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl2)).EndInit();
             this.dataLayoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_address.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_contact_info.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tcher_email.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_address)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_contact_info)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_email)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem14)).EndInit();
@@ -652,6 +636,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_id.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_fname.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_mname.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_lname.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_department.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_tcher_id)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_fname)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_mname)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_lname)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_address.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_contact_info.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tcher_email.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_address)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_contact_info)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_teacher_email)).EndInit();
             this.ResumeLayout(false);
 
         }

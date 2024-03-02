@@ -264,6 +264,12 @@
     <Compile Include="UI\Modules\UCRooms.Designer.cs">
       <DependentUpon>UCRooms.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\UcSearchStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\UcSearchStudent.Designer.cs">
+      <DependentUpon>UcSearchStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\WaitForm2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UCRooms.resx">
       <DependentUpon>UCRooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\UcSearchStudent.resx">
+      <DependentUpon>UcSearchStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\WaitForm2.resx">
       <DependentUpon>WaitForm2.cs</DependentUpon>
