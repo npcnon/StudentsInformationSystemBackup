@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.XtraBars.Navigation;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -242,6 +243,19 @@ namespace StudentsInformationSystem
                 MessageBox.Show("Invalid date format. Please enter the date in MM/dd/yyyy format.");
             }
 
+        }
+
+
+
+        public static void back_tabpane(TabPane tab)
+        {
+            int currentIndex = tab.SelectedPageIndex;
+
+            // Calculate the index of the next tab
+            int nextIndex = (currentIndex + 1) % tab.Pages.Count;
+
+            // Select the next tab
+            tab.SelectedPageIndex = nextIndex;
         }
 
     }

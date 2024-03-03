@@ -149,6 +149,7 @@ namespace StudentsInformationSystem.UI.Modules
 
         private void submit()
         {
+            
             Debug.WriteLine("Submit was running######");
             datavalid = false;
             // Retrieve the values from the textboxes
@@ -170,106 +171,120 @@ namespace StudentsInformationSystem.UI.Modules
             if (Fname.Length > 50 || string.IsNullOrWhiteSpace(Fname))
             {
                 MessageBox.Show("First Name -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 txt_fname.Text = "";
                 txt_fname.Focus();
-
+              
             }
             else if (Mname.Length > 50 || string.IsNullOrWhiteSpace(Mname))
             {
                 MessageBox.Show("Middle Name -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 txt_mname.Text = "";
                 txt_mname.Focus();
-
+              
             }
             else if (Lname.Length > 50 || string.IsNullOrWhiteSpace(Lname))
             {
                 MessageBox.Show("Last Name -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 txt_lname.Text = "";
                 txt_lname.Focus();
-
+            
             }
 
             else if (gender.Length > 150 || string.IsNullOrWhiteSpace(gender))
             {
                 MessageBox.Show("Gender -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 cbox_gender.SelectedIndex = 0;
                 cbox_gender.Focus();
-
+              
             }
             else if (CivilStats.Length > 150 || string.IsNullOrWhiteSpace(CivilStats))
             {
                 MessageBox.Show("Civil Status -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 cbox_civil_status.SelectedIndex = 0;
                 cbox_civil_status.Focus();
-
+           
             }
             else if (!Regex.IsMatch(Contact, @"^\d{11}$"))
             {
                 MessageBox.Show("Contact -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 txt_contact_info.Text = "";
                 txt_contact_info.Focus();
-
+                
             }
             else if (Email.Length > 100 || !Regex.IsMatch(Email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
             {
                 MessageBox.Show("Email -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 txt_email.Text = "";
                 txt_email.Focus();
-
+                
             }
             else if (Citizenship.Length > 150 || string.IsNullOrWhiteSpace(Citizenship))
             {
                 MessageBox.Show("Citizenship -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 cbox_citizenship.SelectedIndex = 0;
                 cbox_citizenship.Focus();
-
+               
             }
             else if (Religion.Length > 150 || string.IsNullOrWhiteSpace(Religion))
             {
                 MessageBox.Show("Religion -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 cbox_religion.SelectedIndex = 0;
                 cbox_religion.Focus();
-
+               
             }
             else if (Address.Length > 150 || string.IsNullOrWhiteSpace(Address))
             {
                 MessageBox.Show("Address -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 txt_address.Text = "";
                 txt_address.Focus();
-
+               
             }
             else if (Course.Length > 150 || string.IsNullOrWhiteSpace(Course))
             {
                 MessageBox.Show("Course -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 cbox_course.SelectedIndex = 0;
                 cbox_course.Focus();
-
+                
             }
             else if (Depart.Length > 150 || string.IsNullOrWhiteSpace(Depart))
             {
                 MessageBox.Show("Depart -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 cbox_department.SelectedIndex = 0;
                 cbox_department.Focus();
-
-            }
+                 }
             else if (Yearlvl.Length > 150 || string.IsNullOrWhiteSpace(Yearlvl))
             {
                 MessageBox.Show("YearLvl -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 cbox_year_lvl.SelectedIndex = 0;
                 cbox_year_lvl.Focus();
-
+                
             }
             else if (semester.Length > 150 || string.IsNullOrWhiteSpace(semester))
             {
                 MessageBox.Show("semester -- INVALID");
+                functions.back_tabpane(tabpane_addstdnt);
                 cbox_citizenship.SelectedIndex = 0;
                 cbox_citizenship.Focus();
+               
             }
 
             else
             {
 
-                //functions.datecheck(dedit_bday);
+              
                 Debug.WriteLine("Else was running ##########");
                 byte[] imageData = functions.ImageToByteArray(pedit_stdnt_pic.Image);
 
@@ -348,7 +363,7 @@ namespace StudentsInformationSystem.UI.Modules
 
             }
 
-
+           
 
         }
 
@@ -405,7 +420,7 @@ namespace StudentsInformationSystem.UI.Modules
                         }
                         catch (SqlException ex)
                         {
-                            MessageBox.Show("Error inserting data: " + ex.Message);
+                            MessageBox.Show("Error inserting datalist: " + ex.Message);
                         }
                     }
                 }
