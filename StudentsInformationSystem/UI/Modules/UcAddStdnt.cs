@@ -410,13 +410,13 @@ namespace StudentsInformationSystem.UI.Modules
 
                             if (rowsAffected > 0)
                             {
-                                MessageBox.Show("DataList inserted successfully into the database.");
+                                //MessageBox.Show("DataList inserted successfully into the database.");
                                 datavalid = true;
                             }
-                            else
-                            {
-                                MessageBox.Show("Failed to insert datalist into the database.");
-                            }
+                            //else
+                            //{
+                            //    MessageBox.Show("Failed to insert datalist into the database.");
+                            //}
                         }
                         catch (SqlException ex)
                         {
