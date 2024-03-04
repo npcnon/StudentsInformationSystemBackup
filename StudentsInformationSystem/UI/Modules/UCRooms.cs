@@ -1,74 +1,90 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraPrinting.Native.WebClientUIControl;
+using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StudentsInformationSystem.UI.Modules
 {
-    public partial class UCRooms : DevExpress.DXperience.Demos.TutorialControlBase// DevExpress.XtraEditors.XtraUserControl
+    public partial class UCRooms : DevExpress.DXperience.Demos.TutorialControlBase
     {
-
-        private string connectionString = "Data Source=DESKTOP-9GA3LFJ\\SQLEXPRESS;Initial Catalog=sis;Integrated Security=True;\r\n";
+        private string baseUrl = "https://afknon.pythonanywhere.com/";
+        private HttpClient client;
 
         public UCRooms()
         {
             InitializeComponent();
-
-
+            client = new HttpClient();
         }
 
-       
-
-        private void UCRooms_Load(object sender, EventArgs e)
+        private async Task LoadRoomData()
         {
-            sisEntities2 db = new sisEntities2();
-            tblRoomInfoBindingSource.DataSource = db.TblRoomInfoes.ToList();
-        }
-
-        private void btn_add_room_Click_1(object sender, EventArgs e)
-        {
-            string sqlInsert = @"
-            INSERT INTO TblRoomInfo (building, floor_lvl, room_no) 
-            VALUES (@Building, @FloorLevel, @RoomNumber);
-            ";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
+                HttpResponseMessage response = await client.GetAsync(baseUrl + "api/rooms/");
 
-                using (SqlCommand command = new SqlCommand(sqlInsert, connection))
+                if (response.IsSuccessStatusCode)
                 {
-
-                    command.Parameters.AddWithValue("@Building", cbox_building.Text);
-                    command.Parameters.AddWithValue("@FloorLevel", cbox_floorlvl.Text);
-                    command.Parameters.AddWithValue("@RoomNumber", Convert.ToInt32(cbox_roomno.Text));
-
-
-
-
-                    connection.Open();
-
-
-                    int rowsAffected = command.ExecuteNonQuery();
-
-
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Data inserted successfully into the database.");
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to insert data into the database.");
-                    }
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    var rooms = JsonConvert.DeserializeObject<Room[]>(jsonResponse);
+                    tblRoomInfoBindingSource.DataSource = rooms;
+                }
+                else
+                {
+                    MessageBox.Show("Error: " + response.StatusCode);
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
+
+        private async void UCRooms_Load(object sender, EventArgs e)
+        {
+            await LoadRoomData();
+        }
+
+        private async void btn_add_room_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                var room = new Room
+                {
+                    building = cbox_building.Text,
+                    floor_lvl = cbox_floorlvl.Text,
+                    room_no = Convert.ToInt32(cbox_roomno.Text)
+                };
+
+                string json = JsonConvert.SerializeObject(room);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await client.PostAsync(baseUrl + "api/rooms/", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Data inserted successfully into the database.");
+                    await LoadRoomData();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to insert data into the database.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+    }
+
+    public class Room
+    {
+        public string building { get; set; }
+        public string floor_lvl { get; set; }
+        public int room_no { get; set; }
     }
 }
