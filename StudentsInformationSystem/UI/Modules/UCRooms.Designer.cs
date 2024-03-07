@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tblRoomInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sisDataSet1 = new StudentsInformationSystem.sisDataSet1();
             this.tblRoomInfoTableAdapter = new StudentsInformationSystem.sisDataSet1TableAdapters.TblRoomInfoTableAdapter();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -50,14 +49,10 @@
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gcont_room = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colroom_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colbuilding = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colfloor_lvl = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colroom_no = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sisDataSet1 = new StudentsInformationSystem.sisDataSet1();
             ((System.ComponentModel.ISupportInitialize)(this.tblRoomInfoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sisDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -77,19 +72,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcont_room)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sisDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tblRoomInfoBindingSource
             // 
             this.tblRoomInfoBindingSource.DataMember = "TblRoomInfo";
-            this.tblRoomInfoBindingSource.DataSource = this.sisDataSet1;
-            // 
-            // sisDataSet1
-            // 
-            this.sisDataSet1.DataSetName = "sisDataSet1";
-            this.sisDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tblRoomInfoTableAdapter
             // 
@@ -133,7 +123,7 @@
             // 
             // cbox_building
             // 
-            this.cbox_building.Location = new System.Drawing.Point(127, 124);
+            this.cbox_building.Location = new System.Drawing.Point(131, 125);
             this.cbox_building.Name = "cbox_building";
             this.cbox_building.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -142,15 +132,16 @@
             "Builing 2",
             "Builing 3",
             "Builing 4"});
-            this.cbox_building.Size = new System.Drawing.Size(362, 20);
+            this.cbox_building.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbox_building.Size = new System.Drawing.Size(355, 20);
             this.cbox_building.StyleController = this.layoutControl1;
             this.cbox_building.TabIndex = 4;
             // 
             // btn_add_room
             // 
-            this.btn_add_room.Location = new System.Drawing.Point(326, 196);
+            this.btn_add_room.Location = new System.Drawing.Point(327, 197);
             this.btn_add_room.Name = "btn_add_room";
-            this.btn_add_room.Size = new System.Drawing.Size(163, 22);
+            this.btn_add_room.Size = new System.Drawing.Size(159, 22);
             this.btn_add_room.StyleController = this.layoutControl1;
             this.btn_add_room.TabIndex = 6;
             this.btn_add_room.Text = "Add Room";
@@ -158,7 +149,7 @@
             // 
             // cbox_floorlvl
             // 
-            this.cbox_floorlvl.Location = new System.Drawing.Point(127, 148);
+            this.cbox_floorlvl.Location = new System.Drawing.Point(131, 149);
             this.cbox_floorlvl.Name = "cbox_floorlvl";
             this.cbox_floorlvl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -169,13 +160,14 @@
             "floor 4",
             "floor 5",
             "floot 6"});
-            this.cbox_floorlvl.Size = new System.Drawing.Size(362, 20);
+            this.cbox_floorlvl.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbox_floorlvl.Size = new System.Drawing.Size(355, 20);
             this.cbox_floorlvl.StyleController = this.layoutControl1;
             this.cbox_floorlvl.TabIndex = 5;
             // 
             // cbox_roomno
             // 
-            this.cbox_roomno.Location = new System.Drawing.Point(127, 172);
+            this.cbox_roomno.Location = new System.Drawing.Point(131, 173);
             this.cbox_roomno.Name = "cbox_roomno";
             this.cbox_roomno.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -192,7 +184,8 @@
             "10",
             "11",
             "12"});
-            this.cbox_roomno.Size = new System.Drawing.Size(362, 20);
+            this.cbox_roomno.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cbox_roomno.Size = new System.Drawing.Size(355, 20);
             this.cbox_roomno.StyleController = this.layoutControl1;
             this.cbox_roomno.TabIndex = 5;
             // 
@@ -217,18 +210,18 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.cbox_building;
-            this.layoutControlItem1.Location = new System.Drawing.Point(55, 114);
+            this.layoutControlItem1.Location = new System.Drawing.Point(54, 113);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(428, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(424, 24);
             this.layoutControlItem1.Text = "Building :";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(61, 13);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.cbox_floorlvl;
-            this.layoutControlItem2.Location = new System.Drawing.Point(55, 138);
+            this.layoutControlItem2.Location = new System.Drawing.Point(54, 137);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(428, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(424, 24);
             this.layoutControlItem2.Text = "Floor Level :";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(61, 13);
             // 
@@ -237,9 +230,9 @@
             this.layoutControlItem3.Control = this.cbox_roomno;
             this.layoutControlItem3.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem3.Location = new System.Drawing.Point(55, 162);
+            this.layoutControlItem3.Location = new System.Drawing.Point(54, 161);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(428, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(424, 24);
             this.layoutControlItem3.Text = "room :";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(61, 13);
             // 
@@ -248,106 +241,77 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(55, 322);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(54, 318);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(483, 0);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(478, 0);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(84, 322);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(83, 318);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(55, 0);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(54, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(428, 114);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(424, 113);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btn_add_room;
-            this.layoutControlItem4.Location = new System.Drawing.Point(318, 186);
+            this.layoutControlItem4.Location = new System.Drawing.Point(315, 185);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(165, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(163, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(55, 186);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(54, 185);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(263, 26);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(261, 26);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(55, 212);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(54, 211);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(428, 110);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(424, 107);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "REMOVE ROOM";
-            this.tabNavigationPage2.Controls.Add(this.gridControl1);
+            this.tabNavigationPage2.Controls.Add(this.gcont_room);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(581, 336);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(581, 338);
             // 
-            // gridControl1
+            // gcont_room
             // 
-            this.gridControl1.DataSource = this.tblRoomInfoBindingSource;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(581, 336);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gcont_room.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcont_room.Location = new System.Drawing.Point(0, 0);
+            this.gcont_room.MainView = this.gridView1;
+            this.gcont_room.Name = "gcont_room";
+            this.gcont_room.Size = new System.Drawing.Size(581, 238);
+            this.gcont_room.TabIndex = 0;
+            this.gcont_room.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colroom_id,
-            this.colbuilding,
-            this.colfloor_lvl,
-            this.colroom_no});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gcont_room;
             this.gridView1.Name = "gridView1";
             // 
-            // colroom_id
+            // sisDataSet1
             // 
-            this.colroom_id.FieldName = "room_id";
-            this.colroom_id.Name = "colroom_id";
-            this.colroom_id.Visible = true;
-            this.colroom_id.VisibleIndex = 0;
-            // 
-            // colbuilding
-            // 
-            this.colbuilding.FieldName = "building";
-            this.colbuilding.Name = "colbuilding";
-            this.colbuilding.Visible = true;
-            this.colbuilding.VisibleIndex = 1;
-            // 
-            // colfloor_lvl
-            // 
-            this.colfloor_lvl.FieldName = "floor_lvl";
-            this.colfloor_lvl.Name = "colfloor_lvl";
-            this.colfloor_lvl.Visible = true;
-            this.colfloor_lvl.VisibleIndex = 2;
-            // 
-            // colroom_no
-            // 
-            this.colroom_no.FieldName = "room_no";
-            this.colroom_no.Name = "colroom_no";
-            this.colroom_no.Visible = true;
-            this.colroom_no.VisibleIndex = 3;
+            this.sisDataSet1.DataSetName = "sisDataSet1";
+            this.sisDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // UCRooms
             // 
@@ -360,7 +324,6 @@
             this.Size = new System.Drawing.Size(581, 359);
             this.Load += new System.EventHandler(this.UCRooms_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblRoomInfoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sisDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
@@ -380,15 +343,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcont_room)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sisDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.BindingSource tblRoomInfoBindingSource;
-        private sisDataSet1 sisDataSet1;
         private sisDataSet1TableAdapters.TblRoomInfoTableAdapter tblRoomInfoTableAdapter;
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
@@ -408,11 +371,8 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private sisDataSet1 sisDataSet1;
+        private DevExpress.XtraGrid.GridControl gcont_room;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colroom_id;
-        private DevExpress.XtraGrid.Columns.GridColumn colbuilding;
-        private DevExpress.XtraGrid.Columns.GridColumn colfloor_lvl;
-        private DevExpress.XtraGrid.Columns.GridColumn colroom_no;
     }
 }

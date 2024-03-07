@@ -20,32 +20,11 @@ namespace StudentsInformationSystem.UI.Modules
             client = new HttpClient();
         }
 
-        private async Task LoadRoomData()
-        {
-            try
-            {
-                HttpResponseMessage response = await client.GetAsync(baseUrl + "api/rooms/");
-
-                if (response.IsSuccessStatusCode)
-                {
-                    string jsonResponse = await response.Content.ReadAsStringAsync();
-                    var rooms = JsonConvert.DeserializeObject<Room[]>(jsonResponse);
-                    tblRoomInfoBindingSource.DataSource = rooms;
-                }
-                else
-                {
-                    MessageBox.Show("Error: " + response.StatusCode);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
+    
 
         private async void UCRooms_Load(object sender, EventArgs e)
         {
-            await LoadRoomData();
+            await functions.LoadData<Room>(gcont_room);
         }
 
         private async void btn_add_room_Click_1(object sender, EventArgs e)
@@ -54,37 +33,48 @@ namespace StudentsInformationSystem.UI.Modules
             {
                 var room = new Room
                 {
-                    building = cbox_building.Text,
                     floor_lvl = cbox_floorlvl.Text,
+                    building = cbox_building.Text,
                     room_no = Convert.ToInt32(cbox_roomno.Text)
                 };
-
-                string json = JsonConvert.SerializeObject(room);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-
-                HttpResponseMessage response = await client.PostAsync(baseUrl + "api/rooms/", content);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    MessageBox.Show("Data inserted successfully into the database.");
-                    await LoadRoomData();
-                }
-                else
-                {
-                    MessageBox.Show("Failed to insert data into the database.");
-                }
+                await functions.InsertData<Room>(room, gcont_room);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: "+ex.Message);
             }
+                
         }
     }
 
-    public class Room
+    internal class Room
     {
-        public string building { get; set; }
-        public string floor_lvl { get; set; }
-        public int room_no { get; set; }
+        private string _floor_lvl;
+        private string _building;
+        private int? _room_no;
+        public int id { get; set; }
+        public int? room_no
+        {
+            get => _room_no;
+            set => _room_no = value ?? throw new ArgumentException("room cannot be null");
+        }
+
+        public string floor_lvl
+        {
+            get => _floor_lvl;
+            set => _floor_lvl = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Floor cannot be null");
+        }
+
+        public string building
+        {
+            get => _building;
+            set => _building = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Building cannot be null");
+
+        }
+
+        
+
+        
     }
+
 }

@@ -31,39 +31,39 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btn_submit = new DevExpress.XtraEditors.SimpleButton();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cbox_course = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txt_offercode = new DevExpress.XtraEditors.TextEdit();
             this.txt_description = new DevExpress.XtraEditors.TextEdit();
             this.txt_subcode = new DevExpress.XtraEditors.TextEdit();
             this.txt_unit = new DevExpress.XtraEditors.TextEdit();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbox_course.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_offercode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_description.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_subcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_unit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +79,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.comboBoxEdit1);
+            this.layoutControl1.Controls.Add(this.cbox_course);
             this.layoutControl1.Controls.Add(this.btn_submit);
             this.layoutControl1.Controls.Add(this.txt_offercode);
             this.layoutControl1.Controls.Add(this.txt_description);
@@ -102,38 +102,6 @@
             this.btn_submit.TabIndex = 8;
             this.btn_submit.Text = "submit";
             this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
-            // 
-            // txt_offercode
-            // 
-            this.txt_offercode.Location = new System.Drawing.Point(128, 45);
-            this.txt_offercode.Name = "txt_offercode";
-            this.txt_offercode.Size = new System.Drawing.Size(209, 20);
-            this.txt_offercode.StyleController = this.layoutControl1;
-            this.txt_offercode.TabIndex = 4;
-            // 
-            // txt_description
-            // 
-            this.txt_description.Location = new System.Drawing.Point(128, 69);
-            this.txt_description.Name = "txt_description";
-            this.txt_description.Size = new System.Drawing.Size(209, 20);
-            this.txt_description.StyleController = this.layoutControl1;
-            this.txt_description.TabIndex = 5;
-            // 
-            // txt_subcode
-            // 
-            this.txt_subcode.Location = new System.Drawing.Point(128, 93);
-            this.txt_subcode.Name = "txt_subcode";
-            this.txt_subcode.Size = new System.Drawing.Size(209, 20);
-            this.txt_subcode.StyleController = this.layoutControl1;
-            this.txt_subcode.TabIndex = 6;
-            // 
-            // txt_unit
-            // 
-            this.txt_unit.Location = new System.Drawing.Point(128, 117);
-            this.txt_unit.Name = "txt_unit";
-            this.txt_unit.Size = new System.Drawing.Size(209, 20);
-            this.txt_unit.StyleController = this.layoutControl1;
-            this.txt_unit.TabIndex = 7;
             // 
             // Root
             // 
@@ -169,42 +137,6 @@
             this.layoutControlGroup1.Size = new System.Drawing.Size(671, 166);
             this.layoutControlGroup1.Text = "ADD SUBJECTS";
             // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.txt_offercode;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(316, 24);
-            this.layoutControlItem1.Text = "Offercode :";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(99, 13);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.txt_description;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(316, 24);
-            this.layoutControlItem2.Text = "Description :";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(99, 13);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.txt_subcode;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(316, 24);
-            this.layoutControlItem3.Text = "Subject code :";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(99, 13);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.txt_unit;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(316, 24);
-            this.layoutControlItem4.Text = "Unit :";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(99, 13);
-            // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
@@ -222,23 +154,92 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
-            // comboBoxEdit1
+            // cbox_course
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(128, 141);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbox_course.Location = new System.Drawing.Point(101, 141);
+            this.cbox_course.Name = "cbox_course";
+            this.cbox_course.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(209, 20);
-            this.comboBoxEdit1.StyleController = this.layoutControl1;
-            this.comboBoxEdit1.TabIndex = 9;
+            this.cbox_course.Size = new System.Drawing.Size(236, 20);
+            this.cbox_course.StyleController = this.layoutControl1;
+            this.cbox_course.TabIndex = 9;
+            // 
+            // txt_offercode
+            // 
+            this.txt_offercode.Location = new System.Drawing.Point(101, 45);
+            this.txt_offercode.Name = "txt_offercode";
+            this.txt_offercode.Size = new System.Drawing.Size(236, 20);
+            this.txt_offercode.StyleController = this.layoutControl1;
+            this.txt_offercode.TabIndex = 4;
+            // 
+            // txt_description
+            // 
+            this.txt_description.Location = new System.Drawing.Point(101, 69);
+            this.txt_description.Name = "txt_description";
+            this.txt_description.Size = new System.Drawing.Size(236, 20);
+            this.txt_description.StyleController = this.layoutControl1;
+            this.txt_description.TabIndex = 5;
+            // 
+            // txt_subcode
+            // 
+            this.txt_subcode.Location = new System.Drawing.Point(101, 93);
+            this.txt_subcode.Name = "txt_subcode";
+            this.txt_subcode.Size = new System.Drawing.Size(236, 20);
+            this.txt_subcode.StyleController = this.layoutControl1;
+            this.txt_subcode.TabIndex = 6;
+            // 
+            // txt_unit
+            // 
+            this.txt_unit.Location = new System.Drawing.Point(101, 117);
+            this.txt_unit.Name = "txt_unit";
+            this.txt_unit.Size = new System.Drawing.Size(236, 20);
+            this.txt_unit.StyleController = this.layoutControl1;
+            this.txt_unit.TabIndex = 7;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.txt_offercode;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(316, 24);
+            this.layoutControlItem1.Text = "Offercode :";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(72, 13);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.txt_description;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(316, 24);
+            this.layoutControlItem2.Text = "Description :";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(72, 13);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.txt_subcode;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(316, 24);
+            this.layoutControlItem3.Text = "Subject code :";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(72, 13);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.txt_unit;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(316, 24);
+            this.layoutControlItem4.Text = "Unit :";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(72, 13);
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.comboBoxEdit1;
+            this.layoutControlItem6.Control = this.cbox_course;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(316, 24);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(99, 13);
+            this.layoutControlItem6.Text = "Course :";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(72, 13);
             // 
             // UcAddSubj
             // 
@@ -254,20 +255,20 @@
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbox_course.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_offercode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_description.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_subcode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_unit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
@@ -291,7 +292,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraEditors.SimpleButton btn_submit;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.ComboBoxEdit cbox_course;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

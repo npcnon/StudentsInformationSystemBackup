@@ -1,17 +1,28 @@
 ﻿using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
+using Newtonsoft.Json;
+using StudentsInformationSystem.UI.Modules;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Net.Http;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using DevExpress.XtraGrid;
+using System.Text;
 
 namespace StudentsInformationSystem
 {
     internal class functions
     {
+
+        internal static string baseUrl = "https://afknon.pythonanywhere.com/";
+        internal static HttpClient client;
+
+
         //method to lead the teacher id to the teacher id textbox
         public static void LoadID(Control txtbox, string sqlQuery)
         {
@@ -257,6 +268,58 @@ namespace StudentsInformationSystem
             // Select the next tab
             tab.SelectedPageIndex = nextIndex;
         }
+
+
+        internal static async Task LoadData<T>(GridControl gcont) where T : class
+        {
+            try
+            {
+                client = new HttpClient();
+                HttpResponseMessage response = await client.GetAsync(baseUrl + "api/rooms/");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    var data = JsonConvert.DeserializeObject<T[]>(jsonResponse);
+                    gcont.DataSource = data;
+                }
+                else
+                {
+                    MessageBox.Show("Error: " + response.StatusCode);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        internal static async Task InsertData<T>(T data, GridControl gcont) where T : class
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(data);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await client.PostAsync(baseUrl + "api/rooms/", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Data inserted successfully into the database.");
+                    // Assuming gcont_room is a GridControl for the corresponding type T
+                    await functions.LoadData<T>(gcont);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to insert data into the database.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
 
     }
 

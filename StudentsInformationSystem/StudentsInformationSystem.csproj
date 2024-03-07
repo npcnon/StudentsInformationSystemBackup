@@ -270,6 +270,12 @@
     <Compile Include="UI\Modules\UcAddUser.Designer.cs">
       <DependentUpon>UcAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\UcCourses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\UcCourses.Designer.cs">
+      <DependentUpon>UcCourses.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\UcDepartment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -340,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcAddUser.resx">
       <DependentUpon>UcAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\UcCourses.resx">
+      <DependentUpon>UcCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcDepartment.resx">
       <DependentUpon>UcDepartment.cs</DependentUpon>
@@ -429,6 +438,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
