@@ -240,6 +240,12 @@
     <Compile Include="TblTeacherInfo.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="ucSearchby.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSearchby.Designer.cs">
+      <DependentUpon>ucSearchby.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\UcAddSchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -332,6 +338,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucSearchby.resx">
+      <DependentUpon>ucSearchby.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcAddSchedule.resx">
       <DependentUpon>UcAddSchedule.cs</DependentUpon>
     </EmbeddedResource>
