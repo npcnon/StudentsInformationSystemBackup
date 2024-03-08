@@ -29,459 +29,410 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 15);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 30);
+            this.label1.Size = new System.Drawing.Size(121, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Search Student";
             // 
-            // comboBoxEdit1
+            // label2
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(20, 48);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(266, 24);
-            this.comboBoxEdit1.TabIndex = 1;
-            this.comboBoxEdit1.SelectedIndexChanged += new System.EventHandler(this.comboBoxEdit1_SelectedIndexChanged);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(209, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 17);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "First Name :";
             // 
-            // layoutControl1
+            // label3
             // 
-            this.layoutControl1.Controls.Add(this.textEdit1);
-            this.layoutControl1.Controls.Add(this.textEdit2);
-            this.layoutControl1.Controls.Add(this.textEdit3);
-            this.layoutControl1.Controls.Add(this.textEdit4);
-            this.layoutControl1.Controls.Add(this.textEdit5);
-            this.layoutControl1.Controls.Add(this.textEdit6);
-            this.layoutControl1.Controls.Add(this.textEdit7);
-            this.layoutControl1.Controls.Add(this.pictureEdit1);
-            this.layoutControl1.Controls.Add(this.simpleButton1);
-            this.layoutControl1.Controls.Add(this.simpleButton2);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.layoutControl1.Location = new System.Drawing.Point(292, 0);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(441, 400);
-            this.layoutControl1.TabIndex = 2;
-            this.layoutControl1.Text = "layoutControl1";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(209, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 17);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Middle Name :";
             // 
-            // Root
+            // label4
             // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlGroup1,
-            this.layoutControlItem11,
-            this.layoutControlItem12,
-            this.emptySpaceItem2,
-            this.emptySpaceItem9});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(441, 400);
-            this.Root.TextVisible = false;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(209, 108);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 17);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Last Name :";
             // 
-            // textEdit1
+            // label5
             // 
-            this.textEdit1.Location = new System.Drawing.Point(237, 45);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(179, 24);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 4;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(209, 142);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 17);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Gender :";
             // 
-            // textEdit2
+            // label6
             // 
-            this.textEdit2.Location = new System.Drawing.Point(237, 83);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Size = new System.Drawing.Size(179, 24);
-            this.textEdit2.StyleController = this.layoutControl1;
-            this.textEdit2.TabIndex = 5;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(418, 180);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 17);
+            this.label6.TabIndex = 4;
+            this.label6.Text = " Birthdate :";
             // 
-            // textEdit3
+            // label7
             // 
-            this.textEdit3.Location = new System.Drawing.Point(237, 121);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit3.Properties.Appearance.Options.UseFont = true;
-            this.textEdit3.Size = new System.Drawing.Size(179, 24);
-            this.textEdit3.StyleController = this.layoutControl1;
-            this.textEdit3.TabIndex = 6;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(418, 42);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 17);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Civil Status :";
             // 
-            // emptySpaceItem1
+            // label8
             // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(127, 28);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(268, 10);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(418, 108);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 17);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Contact no. :";
             // 
-            // textEdit4
+            // label9
             // 
-            this.textEdit4.Location = new System.Drawing.Point(237, 159);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit4.Properties.Appearance.Options.UseFont = true;
-            this.textEdit4.Size = new System.Drawing.Size(179, 24);
-            this.textEdit4.StyleController = this.layoutControl1;
-            this.textEdit4.TabIndex = 7;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(209, 180);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 17);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Address :";
             // 
-            // textEdit5
+            // label10
             // 
-            this.textEdit5.Location = new System.Drawing.Point(237, 197);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit5.Properties.Appearance.Options.UseFont = true;
-            this.textEdit5.Size = new System.Drawing.Size(179, 24);
-            this.textEdit5.StyleController = this.layoutControl1;
-            this.textEdit5.TabIndex = 8;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(418, 142);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(62, 17);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Religion :";
             // 
-            // textEdit6
+            // label11
             // 
-            this.textEdit6.Location = new System.Drawing.Point(237, 235);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit6.Properties.Appearance.Options.UseFont = true;
-            this.textEdit6.Size = new System.Drawing.Size(179, 24);
-            this.textEdit6.StyleController = this.layoutControl1;
-            this.textEdit6.TabIndex = 9;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(418, 74);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(46, 17);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Email :";
             // 
-            // textEdit7
+            // label12
             // 
-            this.textEdit7.Location = new System.Drawing.Point(237, 273);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit7.Properties.Appearance.Options.UseFont = true;
-            this.textEdit7.Size = new System.Drawing.Size(179, 24);
-            this.textEdit7.StyleController = this.layoutControl1;
-            this.textEdit7.TabIndex = 10;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(209, 213);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(56, 17);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Course :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(209, 246);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(50, 17);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Major :";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(418, 246);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(77, 17);
+            this.label14.TabIndex = 12;
+            this.label14.Text = " Year Level :";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label23);
+            this.panel1.Controls.Add(this.label24);
+            this.panel1.Controls.Add(this.label25);
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.label27);
+            this.panel1.Controls.Add(this.label28);
+            this.panel1.Controls.Add(this.label29);
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.label21);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.pictureEdit1);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(18, 58);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(603, 327);
+            this.panel1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(640, 58);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 30);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(640, 100);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 30);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(418, 213);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(69, 17);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Semester :";
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(25, 45);
+            this.pictureEdit1.Location = new System.Drawing.Point(30, 42);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(123, 137);
-            this.pictureEdit1.StyleController = this.layoutControl1;
-            this.pictureEdit1.TabIndex = 11;
+            this.pictureEdit1.Size = new System.Drawing.Size(133, 132);
+            this.pictureEdit1.TabIndex = 14;
             // 
-            // layoutControlItem8
+            // label16
             // 
-            this.layoutControlItem8.Control = this.pictureEdit1;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(127, 141);
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem8.TextVisible = false;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(323, 42);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(39, 17);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "none";
             // 
-            // layoutControlItem2
+            // label17
             // 
-            this.layoutControlItem2.Control = this.textEdit2;
-            this.layoutControlItem2.Location = new System.Drawing.Point(127, 38);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(268, 28);
-            this.layoutControlItem2.Text = "First Name :";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(81, 13);
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(323, 74);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(39, 17);
+            this.label17.TabIndex = 16;
+            this.label17.Text = "none";
             // 
-            // layoutControlItem1
+            // label18
             // 
-            this.layoutControlItem1.Control = this.textEdit1;
-            this.layoutControlItem1.CustomizationFormText = "Student ID :";
-            this.layoutControlItem1.Location = new System.Drawing.Point(127, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(268, 28);
-            this.layoutControlItem1.Text = "Student ID no. :";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(81, 13);
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(323, 108);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(39, 17);
+            this.label18.TabIndex = 17;
+            this.label18.Text = "none";
             // 
-            // layoutControlItem3
+            // label19
             // 
-            this.layoutControlItem3.Control = this.textEdit3;
-            this.layoutControlItem3.Location = new System.Drawing.Point(127, 76);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(268, 28);
-            this.layoutControlItem3.Text = "Middle Name :";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(81, 13);
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(323, 142);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(39, 17);
+            this.label19.TabIndex = 18;
+            this.label19.Text = "none";
             // 
-            // layoutControlItem4
+            // label20
             // 
-            this.layoutControlItem4.Control = this.textEdit4;
-            this.layoutControlItem4.Location = new System.Drawing.Point(127, 114);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(268, 28);
-            this.layoutControlItem4.Text = "Last Name :";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(81, 13);
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(323, 180);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(39, 17);
+            this.label20.TabIndex = 19;
+            this.label20.Text = "none";
             // 
-            // layoutControlItem5
+            // label21
             // 
-            this.layoutControlItem5.Control = this.textEdit5;
-            this.layoutControlItem5.Location = new System.Drawing.Point(127, 152);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(268, 28);
-            this.layoutControlItem5.Text = "Gender :";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(81, 13);
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(323, 213);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(39, 17);
+            this.label21.TabIndex = 20;
+            this.label21.Text = "none";
             // 
-            // layoutControlItem6
+            // label22
             // 
-            this.layoutControlItem6.Control = this.textEdit6;
-            this.layoutControlItem6.Location = new System.Drawing.Point(127, 190);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(268, 28);
-            this.layoutControlItem6.Text = "Birthdate :";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(81, 13);
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(323, 246);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(39, 17);
+            this.label22.TabIndex = 21;
+            this.label22.Text = "none";
             // 
-            // layoutControlItem7
+            // label23
             // 
-            this.layoutControlItem7.Control = this.textEdit7;
-            this.layoutControlItem7.Location = new System.Drawing.Point(127, 228);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(268, 28);
-            this.layoutControlItem7.Text = "Civil Status :";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(81, 13);
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(516, 246);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(39, 17);
+            this.label23.TabIndex = 28;
+            this.label23.Text = "none";
             // 
-            // layoutControlGroup1
+            // label24
             // 
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem4,
-            this.layoutControlItem3,
-            this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.layoutControlItem7,
-            this.layoutControlItem8,
-            this.emptySpaceItem1,
-            this.emptySpaceItem4,
-            this.emptySpaceItem3,
-            this.emptySpaceItem6,
-            this.emptySpaceItem7,
-            this.emptySpaceItem8,
-            this.emptySpaceItem5});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(421, 302);
-            this.layoutControlGroup1.Text = "Searched Student";
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(516, 213);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(39, 17);
+            this.label24.TabIndex = 27;
+            this.label24.Text = "none";
             // 
-            // simpleButton1
+            // label25
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(259, 364);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(83, 24);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 14;
-            this.simpleButton1.Text = "CLEAR";
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(516, 180);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(39, 17);
+            this.label25.TabIndex = 26;
+            this.label25.Text = "none";
             // 
-            // layoutControlItem11
+            // label26
             // 
-            this.layoutControlItem11.Control = this.simpleButton1;
-            this.layoutControlItem11.Location = new System.Drawing.Point(247, 352);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(87, 28);
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem11.TextVisible = false;
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(516, 142);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(39, 17);
+            this.label26.TabIndex = 25;
+            this.label26.Text = "none";
             // 
-            // simpleButton2
+            // label27
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Location = new System.Drawing.Point(346, 364);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(83, 24);
-            this.simpleButton2.StyleController = this.layoutControl1;
-            this.simpleButton2.TabIndex = 15;
-            this.simpleButton2.Text = "CLOSE";
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(516, 108);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(39, 17);
+            this.label27.TabIndex = 24;
+            this.label27.Text = "none";
             // 
-            // layoutControlItem12
+            // label28
             // 
-            this.layoutControlItem12.Control = this.simpleButton2;
-            this.layoutControlItem12.Location = new System.Drawing.Point(334, 352);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(87, 28);
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem12.TextVisible = false;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(516, 74);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(39, 17);
+            this.label28.TabIndex = 23;
+            this.label28.Text = "none";
             // 
-            // emptySpaceItem2
+            // label29
             // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 352);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(239, 28);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(127, 104);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(268, 10);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem4
-            // 
-            this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(127, 66);
-            this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(268, 10);
-            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem5
-            // 
-            this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 141);
-            this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(127, 115);
-            this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem6
-            // 
-            this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(127, 142);
-            this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(268, 10);
-            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem7
-            // 
-            this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(127, 180);
-            this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(268, 10);
-            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem8
-            // 
-            this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(127, 218);
-            this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(268, 10);
-            this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem9
-            // 
-            this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 302);
-            this.emptySpaceItem9.Name = "emptySpaceItem9";
-            this.emptySpaceItem9.Size = new System.Drawing.Size(421, 50);
-            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(516, 42);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(39, 17);
+            this.label29.TabIndex = 22;
+            this.label29.Text = "none";
             // 
             // UcSearchStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.layoutControl1);
-            this.Controls.Add(this.comboBoxEdit1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "UcSearchStudent";
             this.Size = new System.Drawing.Size(733, 400);
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -490,38 +441,37 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label15;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }
