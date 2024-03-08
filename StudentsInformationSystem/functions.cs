@@ -270,12 +270,12 @@ namespace StudentsInformationSystem
         }
 
 
-        internal static async Task LoadData<T>(GridControl gcont) where T : class
+        internal static async Task LoadData<T>(GridControl gcont,string endpoint) where T : class
         {
             try
             {
                 client = new HttpClient();
-                HttpResponseMessage response = await client.GetAsync(baseUrl + "api/rooms/");
+                HttpResponseMessage response = await client.GetAsync(baseUrl + endpoint);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -294,20 +294,20 @@ namespace StudentsInformationSystem
             }
         }
 
-        internal static async Task InsertData<T>(T data, GridControl gcont) where T : class
+        internal static async Task InsertData<T>(T data, GridControl gcont, string endpoint) where T : class
         {
             try
             {
                 string json = JsonConvert.SerializeObject(data);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await client.PostAsync(baseUrl + "api/rooms/", content);
+                HttpResponseMessage response = await client.PostAsync(baseUrl + endpoint, content);
 
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Data inserted successfully into the database.");
                     // Assuming gcont_room is a GridControl for the corresponding type T
-                    await functions.LoadData<T>(gcont);
+                    await functions.LoadData<T>(gcont, endpoint);
                 }
                 else
                 {

@@ -11,7 +11,7 @@ namespace StudentsInformationSystem.UI.Modules
 {
     public partial class UCRooms : DevExpress.DXperience.Demos.TutorialControlBase
     {
-        private string baseUrl = "https://afknon.pythonanywhere.com/";
+        string endpoint = "api/rooms/";
         private HttpClient client;
 
         public UCRooms()
@@ -24,7 +24,7 @@ namespace StudentsInformationSystem.UI.Modules
 
         private async void UCRooms_Load(object sender, EventArgs e)
         {
-            await functions.LoadData<Room>(gcont_room);
+            await functions.LoadData<Room>(gcont_room, endpoint);
         }
 
         private async void btn_add_room_Click_1(object sender, EventArgs e)
@@ -37,11 +37,15 @@ namespace StudentsInformationSystem.UI.Modules
                     building = cbox_building.Text,
                     room_no = Convert.ToInt32(cbox_roomno.Text)
                 };
-                await functions.InsertData<Room>(room, gcont_room);
+                await functions.InsertData<Room>(room, gcont_room, endpoint);
             }
-            catch (Exception ex)
+            catch (FormatException)
             {
-                MessageBox.Show("Error: "+ex.Message);
+                MessageBox.Show("Error: Room number cannot be null");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
                 
         }
@@ -56,7 +60,7 @@ namespace StudentsInformationSystem.UI.Modules
         public int? room_no
         {
             get => _room_no;
-            set => _room_no = value ?? throw new ArgumentException("room cannot be null");
+            set => _room_no = value;
         }
 
         public string floor_lvl
