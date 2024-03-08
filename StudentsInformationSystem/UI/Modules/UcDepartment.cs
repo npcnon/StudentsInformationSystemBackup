@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.XtraBars.Ribbon.ViewInfo;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,20 +14,38 @@ namespace StudentsInformationSystem.UI.Modules
 {
     public partial class UcDepartment : DevExpress.DXperience.Demos.TutorialControlBase//DevExpress.XtraEditors. DevExpress.XtraEditors.XtraUserControl
     {
+
+        private string endpoint = "api/department/";
         public UcDepartment()
         {
             InitializeComponent();
         }
 
-        private void UcDepartment_Load(object sender, EventArgs e)
+        private async void btn_save_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var department = new Department
+                {
+                    department = txt_department.Text,
+                };
+                await functions.InsertData(department,)
+            }
+            catch
+            {
 
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
+            }
         }
     }
+
+    internal class Department 
+    {
+        private string _department;
+        public string department
+        {
+            get => _department;
+            set => _department = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Floor cannot be null");
+        }
     }
+}
 

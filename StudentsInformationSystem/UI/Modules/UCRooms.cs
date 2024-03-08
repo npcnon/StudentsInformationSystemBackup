@@ -12,12 +12,12 @@ namespace StudentsInformationSystem.UI.Modules
     public partial class UCRooms : DevExpress.DXperience.Demos.TutorialControlBase
     {
         string endpoint = "api/rooms/";
-        private HttpClient client;
+     
 
         public UCRooms()
         {
             InitializeComponent();
-            client = new HttpClient();
+           
         }
 
     
@@ -37,7 +37,7 @@ namespace StudentsInformationSystem.UI.Modules
                     building = cbox_building.Text,
                     room_no = Convert.ToInt32(cbox_roomno.Text)
                 };
-                await functions.InsertData<Room>(room, gcont_room, endpoint);
+                await functions.InsertData(room, gcont_room, endpoint);
             }
             catch (FormatException)
             {

@@ -56,6 +56,7 @@
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_course = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.frm_main_acc_control)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentDesignFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
@@ -68,9 +69,10 @@
             // frm_main_container
             // 
             this.frm_main_container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frm_main_container.Location = new System.Drawing.Point(201, 24);
+            this.frm_main_container.Location = new System.Drawing.Point(268, 30);
+            this.frm_main_container.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.frm_main_container.Name = "frm_main_container";
-            this.frm_main_container.Size = new System.Drawing.Size(716, 462);
+            this.frm_main_container.Size = new System.Drawing.Size(955, 680);
             this.frm_main_container.TabIndex = 0;
             // 
             // frm_main_acc_control
@@ -88,10 +90,11 @@
             this.m_element_schedule,
             this.m_element_users,
             this.m_element_depart});
-            this.frm_main_acc_control.Location = new System.Drawing.Point(0, 24);
+            this.frm_main_acc_control.Location = new System.Drawing.Point(0, 30);
+            this.frm_main_acc_control.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.frm_main_acc_control.Name = "frm_main_acc_control";
             this.frm_main_acc_control.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.frm_main_acc_control.Size = new System.Drawing.Size(201, 462);
+            this.frm_main_acc_control.Size = new System.Drawing.Size(268, 680);
             this.frm_main_acc_control.TabIndex = 1;
             this.frm_main_acc_control.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -208,6 +211,7 @@
             this.m_element_users.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.s_element_add_user,
             this.s_element_rm_users});
+            this.m_element_users.Expanded = true;
             this.m_element_users.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_users.ImageOptions.SvgImage")));
             this.m_element_users.Name = "m_element_users";
             this.m_element_users.Text = "Users";
@@ -231,7 +235,8 @@
             // 
             this.m_element_depart.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.s_element_subjects,
-            this.s_element_departments});
+            this.s_element_departments,
+            this.s_element_course});
             this.m_element_depart.Expanded = true;
             this.m_element_depart.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_depart.ImageOptions.SvgImage")));
             this.m_element_depart.Name = "m_element_depart";
@@ -258,8 +263,9 @@
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
             this.fluentDesignFormControl1.Manager = this.fluentFormDefaultManager1;
+            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(917, 24);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(1223, 30);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
@@ -280,17 +286,26 @@
             this.accordionControlElement2.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement2.Text = "Element2";
             // 
+            // s_element_course
+            // 
+            this.s_element_course.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_course.ImageOptions.SvgImage")));
+            this.s_element_course.Name = "s_element_course";
+            this.s_element_course.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_course.Text = "Course";
+            this.s_element_course.Click += new System.EventHandler(this.s_element_course_Click);
+            // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 486);
+            this.ClientSize = new System.Drawing.Size(1223, 710);
             this.ControlContainer = this.frm_main_container;
             this.Controls.Add(this.frm_main_container);
             this.Controls.Add(this.frm_main_acc_control);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("FrmMain.IconOptions.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMain";
             this.NavigationControl = this.frm_main_acc_control;
             this.Text = "BENEDICTO SIS";
@@ -328,5 +343,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement m_element_depart;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_subjects;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_departments;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_course;
     }
 }

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace StudentsInformationSystem.UI.Modules
     public partial class UcCourses : DevExpress.DXperience.Demos.TutorialControlBase
     {
 
-        private string baseUrl = "https://afknon.pythonanywhere.com/";
+        string endpoint = "api/rooms/";
         private HttpClient client;
 
 
@@ -26,9 +27,31 @@ namespace StudentsInformationSystem.UI.Modules
             client = new HttpClient();
         }
 
-        private void UcCourses_Load(object sender, EventArgs e)
+        private async void UcCourses_Load(object sender, EventArgs e)
         {
-
+            await functions.LoadData<Course>(gcont_course, endpoint);
         }
     }
+
+    internal class Course
+    {
+        private string _course;
+        private string _department_id;
+
+
+
+        public string course
+        {
+            get => _course;
+            set => _course = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Floor cannot be null");
+        }
+
+        public string department_id
+        {
+            get => _department_id;
+            set => _department_id = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Floor cannot be null");
+        }
+    }
+
 }
+

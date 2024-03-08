@@ -172,5 +172,16 @@ namespace StudentsInformationSystem
                 await LoadModuleAsync(ModulesInfo.GetItem("UcDepartment"));
             }
         }
+
+        private async void s_element_course_Click(object sender, EventArgs e)
+        {
+            if (ModulesInfo.GetItem("UcCourses") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcCourses", "StudentsInformationSystem.UI.Modules.UcCourses"));
+
+                await LoadModuleAsync(ModulesInfo.GetItem("UcCourses"));
+            }
+        }
     }
 }

@@ -91,21 +91,23 @@
             this.tabPane1.Controls.Add(this.tabNavigationPage2);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Location = new System.Drawing.Point(0, 0);
+            this.tabPane1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
             this.tabNavigationPage2});
-            this.tabPane1.RegularSize = new System.Drawing.Size(581, 359);
+            this.tabPane1.RegularSize = new System.Drawing.Size(775, 469);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
-            this.tabPane1.Size = new System.Drawing.Size(581, 359);
+            this.tabPane1.Size = new System.Drawing.Size(775, 469);
             this.tabPane1.TabIndex = 1;
             // 
             // tabNavigationPage1
             // 
             this.tabNavigationPage1.Caption = "ADD ROOM";
             this.tabNavigationPage1.Controls.Add(this.layoutControl1);
+            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(581, 338);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(775, 440);
             // 
             // layoutControl1
             // 
@@ -115,15 +117,17 @@
             this.layoutControl1.Controls.Add(this.cbox_roomno);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(581, 338);
+            this.layoutControl1.Size = new System.Drawing.Size(775, 440);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // cbox_building
             // 
-            this.cbox_building.Location = new System.Drawing.Point(131, 125);
+            this.cbox_building.Location = new System.Drawing.Point(166, 163);
+            this.cbox_building.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbox_building.Name = "cbox_building";
             this.cbox_building.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -133,15 +137,16 @@
             "Builing 3",
             "Builing 4"});
             this.cbox_building.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbox_building.Size = new System.Drawing.Size(355, 20);
+            this.cbox_building.Size = new System.Drawing.Size(482, 26);
             this.cbox_building.StyleController = this.layoutControl1;
             this.cbox_building.TabIndex = 4;
             // 
             // btn_add_room
             // 
-            this.btn_add_room.Location = new System.Drawing.Point(327, 197);
+            this.btn_add_room.Location = new System.Drawing.Point(436, 259);
+            this.btn_add_room.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_add_room.Name = "btn_add_room";
-            this.btn_add_room.Size = new System.Drawing.Size(159, 22);
+            this.btn_add_room.Size = new System.Drawing.Size(212, 27);
             this.btn_add_room.StyleController = this.layoutControl1;
             this.btn_add_room.TabIndex = 6;
             this.btn_add_room.Text = "Add Room";
@@ -149,7 +154,8 @@
             // 
             // cbox_floorlvl
             // 
-            this.cbox_floorlvl.Location = new System.Drawing.Point(131, 149);
+            this.cbox_floorlvl.Location = new System.Drawing.Point(166, 195);
+            this.cbox_floorlvl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbox_floorlvl.Name = "cbox_floorlvl";
             this.cbox_floorlvl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -161,13 +167,14 @@
             "floor 5",
             "floot 6"});
             this.cbox_floorlvl.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbox_floorlvl.Size = new System.Drawing.Size(355, 20);
+            this.cbox_floorlvl.Size = new System.Drawing.Size(482, 26);
             this.cbox_floorlvl.StyleController = this.layoutControl1;
             this.cbox_floorlvl.TabIndex = 5;
             // 
             // cbox_roomno
             // 
-            this.cbox_roomno.Location = new System.Drawing.Point(131, 173);
+            this.cbox_roomno.Location = new System.Drawing.Point(166, 227);
+            this.cbox_roomno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbox_roomno.Name = "cbox_roomno";
             this.cbox_roomno.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -185,7 +192,7 @@
             "11",
             "12"});
             this.cbox_roomno.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.cbox_roomno.Size = new System.Drawing.Size(355, 20);
+            this.cbox_roomno.Size = new System.Drawing.Size(482, 26);
             this.cbox_roomno.StyleController = this.layoutControl1;
             this.cbox_roomno.TabIndex = 5;
             // 
@@ -204,109 +211,114 @@
             this.emptySpaceItem5,
             this.emptySpaceItem6});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(581, 338);
+            this.Root.Size = new System.Drawing.Size(775, 440);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.cbox_building;
-            this.layoutControlItem1.Location = new System.Drawing.Point(54, 113);
+            this.layoutControlItem1.Location = new System.Drawing.Point(72, 147);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(424, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(566, 32);
             this.layoutControlItem1.Text = "Building :";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(61, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(73, 19);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.cbox_floorlvl;
-            this.layoutControlItem2.Location = new System.Drawing.Point(54, 137);
+            this.layoutControlItem2.Location = new System.Drawing.Point(72, 179);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(424, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(566, 32);
             this.layoutControlItem2.Text = "Floor Level :";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(61, 13);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(73, 19);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.cbox_roomno;
             this.layoutControlItem3.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem3.Location = new System.Drawing.Point(54, 161);
+            this.layoutControlItem3.Location = new System.Drawing.Point(72, 211);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(424, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(566, 32);
             this.layoutControlItem3.Text = "room :";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(61, 13);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(73, 19);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(54, 318);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(72, 414);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(478, 0);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(638, 0);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(83, 318);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(111, 414);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(54, 0);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(72, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(424, 113);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(566, 147);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btn_add_room;
-            this.layoutControlItem4.Location = new System.Drawing.Point(315, 185);
+            this.layoutControlItem4.Location = new System.Drawing.Point(420, 243);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(163, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(218, 33);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(54, 185);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(72, 243);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(261, 26);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(348, 33);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem6
             // 
             this.emptySpaceItem6.AllowHotTrack = false;
-            this.emptySpaceItem6.Location = new System.Drawing.Point(54, 211);
+            this.emptySpaceItem6.Location = new System.Drawing.Point(72, 276);
             this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(424, 107);
+            this.emptySpaceItem6.Size = new System.Drawing.Size(566, 138);
             this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
             // 
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "REMOVE ROOM";
             this.tabNavigationPage2.Controls.Add(this.gcont_room);
+            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(581, 338);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(775, 442);
             // 
             // gcont_room
             // 
             this.gcont_room.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcont_room.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcont_room.Location = new System.Drawing.Point(0, 0);
             this.gcont_room.MainView = this.gridView1;
+            this.gcont_room.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcont_room.Name = "gcont_room";
-            this.gcont_room.Size = new System.Drawing.Size(581, 238);
+            this.gcont_room.Size = new System.Drawing.Size(775, 311);
             this.gcont_room.TabIndex = 0;
             this.gcont_room.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.DetailHeight = 458;
             this.gridView1.GridControl = this.gcont_room;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsEditForm.PopupEditFormWidth = 1067;
             // 
             // sisDataSet1
             // 
@@ -317,11 +329,12 @@
             // 
             this.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabPane1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UCRooms";
-            this.Size = new System.Drawing.Size(581, 359);
+            this.Size = new System.Drawing.Size(775, 469);
             this.Load += new System.EventHandler(this.UCRooms_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblRoomInfoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
