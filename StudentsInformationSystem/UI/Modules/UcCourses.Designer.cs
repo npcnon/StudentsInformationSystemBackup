@@ -70,7 +70,7 @@
             this.tabNavigationPage1.Caption = "ADD";
             this.tabNavigationPage1.Controls.Add(this.groupc_addcourse);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(660, 416);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(660, 400);
             // 
             // groupc_addcourse
             // 
@@ -80,7 +80,7 @@
             this.groupc_addcourse.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupc_addcourse.Location = new System.Drawing.Point(0, 0);
             this.groupc_addcourse.Name = "groupc_addcourse";
-            this.groupc_addcourse.Size = new System.Drawing.Size(660, 416);
+            this.groupc_addcourse.Size = new System.Drawing.Size(660, 400);
             this.groupc_addcourse.TabIndex = 0;
             this.groupc_addcourse.Text = "ADD COURSE";
             // 
@@ -113,6 +113,7 @@
             this.cbox_department.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cbox_department.Size = new System.Drawing.Size(297, 32);
             this.cbox_department.TabIndex = 0;
+            this.cbox_department.SelectedIndexChanged += new System.EventHandler(this.cbox_department_SelectedIndexChanged);
             // 
             // tabNavigationPage2
             // 

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -18,6 +19,8 @@ namespace StudentsInformationSystem.UI.Modules
 
         internal const string endpoint = "api/course/";
         private HttpClient client;
+        internal Course course = new Course();
+
 
 
         public UcCourses()
@@ -25,63 +28,68 @@ namespace StudentsInformationSystem.UI.Modules
             InitializeComponent();
 
             client = new HttpClient();
+
+            
         }
 
         private async void UcCourses_Load(object sender, EventArgs e)
         {
             await functions.LoadData<Course>(endpoint, gcont_course);
-            await functions.LoadData<Department>(UcDepartment.endpoint, null,cbox_department, d => d.department);
+            await functions.LoadData<Department>(UcDepartment.endpoint, null,cbox_department, d => d.department,"TblDepartment.id");
         }
 
         private async void btn_addcourse_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    // Get the selected department ID from the ComboBox
-            //    string selectedDepartmentId = ((Department)cbox_department.SelectedItem)?.department_id;
+            try
+            {
+                course.course = txt_addcourse.Text;
+                await functions.InsertData(course, endpoint, gcont_course);
 
-            //    if (string.IsNullOrEmpty(selectedDepartmentId))
-            //    {
-            //        MessageBox.Show("Please select a department.");
-            //        return;
-            //    }
+            }
+            catch (ArgumentException ex_argument)
+            {
+               
+                MessageBox.Show(ex_argument.Message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Exception Catched");
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-            //    // Create a new course object
-            //    var course = new Course
-            //    {
-            //        course = txt_addcourse.Text,
-            //        department_id = selectedDepartmentId
-            //    };
-
-            //    // Insert the course into the database
-            //    await functions.InsertData<Course>(course, endpoint, gcont_course);
-
-            //    // Refresh the courses grid after insertion
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error: " + ex.Message);
-            //}
+        internal async void cbox_department_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Selected an Item");
+            
+            course.department_Id = await functions.GetDepartmentId(cbox_department.Text, UcDepartment.endpoint);
         }
     }
 
     internal class Course
     {
         private string _course;
-        private string _department_id;
+        private int? _department_id;
 
 
 
         public string course
         {
             get => _course;
-            set => _course = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Floor cannot be null");
+            set => _course = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Course cannot be null");
         }
 
-        public string department_id
+        public int? department_Id
         {
             get => _department_id;
-            set => _department_id = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Floor cannot be null");
+            set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentException("Error: Department ID cannot be null");
+                }
+                _department_id = value;
+            }
         }
     }
 

@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using DevExpress.XtraGrid;
 using System.Text;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 
 namespace StudentsInformationSystem
 {
@@ -271,7 +272,7 @@ namespace StudentsInformationSystem
         }
 
 
-        internal static async Task LoadData<T>(string endpoint, GridControl gcont, ComboBoxEdit cbox = null, Func<T, object> conversionFunc = null) where T : class
+        internal static async Task LoadData<T>(string endpoint, GridControl gcont, ComboBoxEdit cbox = null, Func<T, object> conversionFunc = null, string getid = null) where T : class
         {
             try
             {
@@ -280,6 +281,11 @@ namespace StudentsInformationSystem
                 if (response.IsSuccessStatusCode)
                 {
                     string jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    // Export the JSON response as a file
+                    File.WriteAllText("response.json", jsonResponse);
+
+
                     var data = JsonConvert.DeserializeObject<T[]>(jsonResponse);
 
                     if (gcont != null)
@@ -299,6 +305,13 @@ namespace StudentsInformationSystem
                             MessageBox.Show("Conversion function is not provided.");
                         }
                     }
+
+                    // Get the property names of the objects
+                    var propertyNames = typeof(T).GetProperties().Select(p => p.Name).ToArray();
+                    foreach (var propertyName in propertyNames)
+                    {
+                        Console.WriteLine(propertyName); // or do whatever you want with the property names
+                    }
                 }
                 else
                 {
@@ -311,11 +324,18 @@ namespace StudentsInformationSystem
             }
         }
 
+
+
         internal static async Task InsertData<T>(T data, string endpoint, GridControl gcont = null) where T : class
         {
             try
             {
                 string json = JsonConvert.SerializeObject(data);
+
+                // Export the JSON response as a file
+                File.WriteAllText("response.json", json);
+
+                Debug.WriteLine(json.ToString());
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                  HttpResponseMessage response = await client.PostAsync(baseUrl + endpoint, content);
@@ -340,7 +360,43 @@ namespace StudentsInformationSystem
         }
 
 
+        internal static async Task<int?> GetDepartmentId(string departmentName, string endpoint)
+        {
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(baseUrl + endpoint);
 
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    JArray data = JArray.Parse(jsonResponse);
+
+                    foreach (JObject item in data)
+                    {
+                        string name = item.GetValue("department").ToString();
+                        if (name == departmentName)
+                        {
+                            Debug.WriteLine(Convert.ToInt32(item.GetValue("id")));
+                            return Convert.ToInt32(item.GetValue("id"));
+                        }
+                    }
+
+                    // Department not found
+                    Debug.WriteLine("Department not found");
+                    return -1;
+                }
+                else
+                {
+                    MessageBox.Show("Error: " + response.StatusCode);
+                    return -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return -1;
+            }
+        }
     }
 
 

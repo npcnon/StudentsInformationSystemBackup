@@ -42,14 +42,19 @@ namespace StudentsInformationSystem.UI.Modules
         }
     }
 
-    internal class Department 
+    internal class Department
     {
         private string _department;
-        private string _department_id;
+        private int _id;
         public string department
         {
             get => _department;
             set => _department = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Floor cannot be null");
+        }
+
+        public int id
+        {
+            get => _id;
         }
 
     }

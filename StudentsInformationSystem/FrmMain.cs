@@ -78,8 +78,10 @@ namespace StudentsInformationSystem
             {
                 ac.Appearance.Default.BackColor = Color.FromArgb(41, 89, 151);
             }
-           
 
+            //WindowState = FormWindowState.Maximized;
+            FormBorderStyle = FormBorderStyle.None;
+            //frm_main_acc_control.ExpandAll();
         }
 
 
@@ -200,5 +202,9 @@ namespace StudentsInformationSystem
             }
         }
 
+        private void m_element_Staff_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
