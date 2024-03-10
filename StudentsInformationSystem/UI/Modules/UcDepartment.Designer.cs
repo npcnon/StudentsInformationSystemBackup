@@ -63,9 +63,8 @@
             this.groupControl1.Controls.Add(this.layoutControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(887, 649);
+            this.groupControl1.Size = new System.Drawing.Size(711, 506);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "DEPARTMENT ";
             // 
@@ -75,20 +74,18 @@
             this.layoutControl1.Controls.Add(this.btn_clear);
             this.layoutControl1.Controls.Add(this.btn_save);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(2, 28);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.layoutControl1.Location = new System.Drawing.Point(2, 22);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(883, 619);
+            this.layoutControl1.Size = new System.Drawing.Size(707, 482);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // txt_department
             // 
-            this.txt_department.Location = new System.Drawing.Point(110, 51);
-            this.txt_department.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_department.Location = new System.Drawing.Point(88, 40);
             this.txt_department.Name = "txt_department";
-            this.txt_department.Size = new System.Drawing.Size(630, 26);
+            this.txt_department.Size = new System.Drawing.Size(507, 20);
             this.txt_department.StyleController = this.layoutControl1;
             this.txt_department.TabIndex = 4;
             // 
@@ -98,10 +95,9 @@
             this.btn_clear.Appearance.ForeColor = System.Drawing.Color.Teal;
             this.btn_clear.Appearance.Options.UseFont = true;
             this.btn_clear.Appearance.Options.UseForeColor = true;
-            this.btn_clear.Location = new System.Drawing.Point(625, 81);
-            this.btn_clear.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_clear.Location = new System.Drawing.Point(500, 64);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(114, 42);
+            this.btn_clear.Size = new System.Drawing.Size(93, 32);
             this.btn_clear.StyleController = this.layoutControl1;
             this.btn_clear.TabIndex = 8;
             this.btn_clear.Text = "CLEAR";
@@ -112,10 +108,9 @@
             this.btn_save.Appearance.ForeColor = System.Drawing.Color.LimeGreen;
             this.btn_save.Appearance.Options.UseFont = true;
             this.btn_save.Appearance.Options.UseForeColor = true;
-            this.btn_save.Location = new System.Drawing.Point(743, 81);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_save.Location = new System.Drawing.Point(595, 64);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(115, 42);
+            this.btn_save.Size = new System.Drawing.Size(94, 32);
             this.btn_save.StyleController = this.layoutControl1;
             this.btn_save.TabIndex = 9;
             this.btn_save.Text = "SAVE";
@@ -129,15 +124,15 @@
             this.emptySpaceItem1,
             this.layoutControlGroup1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(883, 619);
+            this.Root.Size = new System.Drawing.Size(707, 482);
             this.Root.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 161);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 126);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(863, 438);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(693, 340);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlGroup1
@@ -151,7 +146,7 @@
             this.emptySpaceItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(863, 161);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(693, 126);
             this.layoutControlGroup1.Text = "ADD DEPARTMENT";
             // 
             // layoutControlItem1
@@ -159,17 +154,17 @@
             this.layoutControlItem1.Control = this.txt_department;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(719, 30);
+            this.layoutControlItem1.Size = new System.Drawing.Size(579, 24);
             this.layoutControlItem1.Text = "Department :";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(81, 19);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(67, 13);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btn_clear;
-            this.layoutControlItem5.Location = new System.Drawing.Point(600, 30);
-            this.layoutControlItem5.MinSize = new System.Drawing.Size(67, 35);
+            this.layoutControlItem5.Location = new System.Drawing.Point(482, 24);
+            this.layoutControlItem5.MinSize = new System.Drawing.Size(50, 27);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(118, 46);
+            this.layoutControlItem5.Size = new System.Drawing.Size(95, 36);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
@@ -177,10 +172,10 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.btn_save;
-            this.layoutControlItem6.Location = new System.Drawing.Point(718, 30);
-            this.layoutControlItem6.MinSize = new System.Drawing.Size(64, 35);
+            this.layoutControlItem6.Location = new System.Drawing.Point(577, 24);
+            this.layoutControlItem6.MinSize = new System.Drawing.Size(48, 27);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(119, 46);
+            this.layoutControlItem6.Size = new System.Drawing.Size(96, 36);
             this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
@@ -188,37 +183,36 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(719, 0);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(579, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(118, 30);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(94, 24);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 30);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 24);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(600, 79);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(482, 62);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(600, 76);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(482, 60);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(237, 33);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(191, 26);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // UcDepartment
             // 
             this.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupControl1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UcDepartment";
-            this.Size = new System.Drawing.Size(887, 649);
+            this.Size = new System.Drawing.Size(711, 506);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

@@ -11,7 +11,7 @@ namespace StudentsInformationSystem.UI.Modules
 {
     public partial class UCRooms : DevExpress.DXperience.Demos.TutorialControlBase
     {
-        string endpoint = "api/rooms/";
+        internal const string endpoint = "api/rooms/";
      
 
         public UCRooms()
@@ -24,7 +24,7 @@ namespace StudentsInformationSystem.UI.Modules
 
         private async void UCRooms_Load(object sender, EventArgs e)
         {
-            await functions.LoadData<Room>(gcont_room, endpoint);
+            await functions.LoadData<Room>(endpoint, gcont_room);
         }
 
         private async void btn_add_room_Click_1(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace StudentsInformationSystem.UI.Modules
                     building = cbox_building.Text,
                     room_no = Convert.ToInt32(cbox_roomno.Text)
                 };
-                await functions.InsertData(room, gcont_room, endpoint);
+                await functions.InsertData(room,endpoint, gcont_room);
             }
             catch (FormatException)
             {

@@ -1,7 +1,10 @@
 ﻿using DevExpress.DXperience.Demos;
 using DevExpress.Utils.Extensions;
+using DevExpress.XtraBars.Navigation;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -10,6 +13,7 @@ namespace StudentsInformationSystem
 {
     public partial class FrmMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
+
         public FrmMain()
         {
             InitializeComponent();
@@ -60,10 +64,22 @@ namespace StudentsInformationSystem
             //    //FrmChangePass frmChangePass = new FrmChangePass();
             //    //frmChangePass.ShowDialog();
             //}
-            m_element_Staff.Expanded = false;
-            m_element_student.Expanded = false;
-            m_element_schedule.Expanded = false;
+
             //frm_main_container.Controls.Add(new UcRmStdnt() { Dock = DockStyle.Fill });
+            List<AccordionControlElement> ac_element = new List<AccordionControlElement>()
+            {
+                m_element_Staff,
+                m_element_student,
+                m_element_schedule,
+                m_element_depart,
+                m_element_users
+            };
+            foreach(AccordionControlElement ac in ac_element)
+            {
+                ac.Appearance.Default.BackColor = Color.FromArgb(41, 89, 151);
+            }
+           
+
         }
 
 
@@ -183,5 +199,6 @@ namespace StudentsInformationSystem
                 await LoadModuleAsync(ModulesInfo.GetItem("UcCourses"));
             }
         }
+
     }
 }

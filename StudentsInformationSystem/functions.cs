@@ -13,15 +13,16 @@ using System.Windows.Forms;
 using System.Threading.Tasks;
 using DevExpress.XtraGrid;
 using System.Text;
+using System.Linq;
 
 namespace StudentsInformationSystem
 {
     internal class functions
     {
 
-        internal static string baseUrl = "https://afknon.pythonanywhere.com/";
-        internal static HttpClient client;
-
+        internal static string baseUrl = "http://127.0.0.1:8000/";
+        internal static HttpClient client = new HttpClient();
+       
 
         //method to lead the teacher id to the teacher id textbox
         public static void LoadID(Control txtbox, string sqlQuery)
@@ -270,18 +271,34 @@ namespace StudentsInformationSystem
         }
 
 
-        internal static async Task LoadData<T>(GridControl gcont,string endpoint) where T : class
+        internal static async Task LoadData<T>(string endpoint, GridControl gcont, ComboBoxEdit cbox = null, Func<T, object> conversionFunc = null) where T : class
         {
             try
             {
-                client = new HttpClient();
                 HttpResponseMessage response = await client.GetAsync(baseUrl + endpoint);
 
                 if (response.IsSuccessStatusCode)
                 {
                     string jsonResponse = await response.Content.ReadAsStringAsync();
                     var data = JsonConvert.DeserializeObject<T[]>(jsonResponse);
-                    gcont.DataSource = data;
+
+                    if (gcont != null)
+                    {
+                        gcont.DataSource = data;
+                    }
+
+                    if (cbox != null)
+                    {
+                        if (conversionFunc != null)
+                        {
+                            // Use the provided conversion function to populate the ComboBoxEdit
+                            cbox.Properties.Items.AddRange(data.Select(conversionFunc).ToArray());
+                        }
+                        else
+                        {
+                            MessageBox.Show("Conversion function is not provided.");
+                        }
+                    }
                 }
                 else
                 {
@@ -294,20 +311,22 @@ namespace StudentsInformationSystem
             }
         }
 
-        internal static async Task InsertData<T>(T data, GridControl gcont, string endpoint) where T : class
+        internal static async Task InsertData<T>(T data, string endpoint, GridControl gcont = null) where T : class
         {
             try
             {
                 string json = JsonConvert.SerializeObject(data);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await client.PostAsync(baseUrl + endpoint, content);
+                 HttpResponseMessage response = await client.PostAsync(baseUrl + endpoint, content);
 
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Data inserted successfully into the database.");
-                    // Assuming gcont_room is a GridControl for the corresponding type T
-                    await functions.LoadData<T>(gcont, endpoint);
+                    if (gcont != null)
+                    {
+                        await LoadData<T>(endpoint,gcont);
+                    }
                 }
                 else
                 {
@@ -319,6 +338,7 @@ namespace StudentsInformationSystem
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
 
     }

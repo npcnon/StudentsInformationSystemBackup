@@ -15,7 +15,7 @@ namespace StudentsInformationSystem.UI.Modules
     public partial class UcDepartment : DevExpress.DXperience.Demos.TutorialControlBase//DevExpress.XtraEditors. DevExpress.XtraEditors.XtraUserControl
     {
 
-        private string endpoint = "api/department/";
+        internal const string endpoint = "api/department/";
         public UcDepartment()
         {
             InitializeComponent();
@@ -29,11 +29,15 @@ namespace StudentsInformationSystem.UI.Modules
                 {
                     department = txt_department.Text,
                 };
-                await functions.InsertData(department,)
+                await functions.InsertData(department, endpoint);
             }
-            catch
+            catch (ArgumentException ex_argument)
             {
-
+                MessageBox.Show(ex_argument.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
@@ -41,11 +45,13 @@ namespace StudentsInformationSystem.UI.Modules
     internal class Department 
     {
         private string _department;
+        private string _department_id;
         public string department
         {
             get => _department;
             set => _department = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Floor cannot be null");
         }
+
     }
 }
 
