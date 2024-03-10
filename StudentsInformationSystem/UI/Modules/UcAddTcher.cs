@@ -10,6 +10,8 @@ namespace StudentsInformationSystem.UI.Modules
 {
     public partial class UcAddTcher : DevExpress.DXperience.Demos.TutorialControlBase//DevExpress.XtraEditors.XtraUserControl
     {
+
+        public event EventHandler CancelButtonClicked;
         private List<Control> controlList;
         private bool datavalid;
         private string connectionString = "Data Source=DESKTOP-9GA3LFJ\\SQLEXPRESS;Initial Catalog=sis;Integrated Security=True;\r\n";
@@ -326,6 +328,7 @@ namespace StudentsInformationSystem.UI.Modules
             }
         }
 
+        //this is the cancel button
         private void simpleButton3_Click(object sender, EventArgs e)
         {
             if (gcont_basic.Enabled == false)
@@ -339,9 +342,15 @@ namespace StudentsInformationSystem.UI.Modules
 
             else
             {
-                this.Dispose();
+                //this.Parent.Controls.Remove(this);
+                //this.Dispose();
+                OnCancelButtonClicked(EventArgs.Empty);
             }
 
+        }
+        protected virtual void OnCancelButtonClicked(EventArgs e)
+        {
+            CancelButtonClicked?.Invoke(this, e);
         }
 
         private void btn_teacher_add_email_Click(object sender, EventArgs e)

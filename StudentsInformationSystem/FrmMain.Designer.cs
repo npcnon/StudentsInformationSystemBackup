@@ -108,7 +108,6 @@
             this.m_element_Staff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_Staff.ImageOptions.SvgImage")));
             this.m_element_Staff.Name = "m_element_Staff";
             this.m_element_Staff.Text = "Staff";
-            this.m_element_Staff.Click += new System.EventHandler(this.m_element_Staff_Click);
             // 
             // s_element_addstaff
             // 

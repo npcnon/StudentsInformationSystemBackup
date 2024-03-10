@@ -383,18 +383,18 @@ namespace StudentsInformationSystem
 
                     // Department not found
                     Debug.WriteLine("Department not found");
-                    return -1;
+                    return null;
                 }
                 else
                 {
                     MessageBox.Show("Error: " + response.StatusCode);
-                    return -1;
+                    return null;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-                return -1;
+                return null;
             }
         }
     }
