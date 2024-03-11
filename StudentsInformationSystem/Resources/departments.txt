@@ -1,0 +1,35 @@
+College of Arts and Sciences
+College of Business and Management
+College of Computer Studies
+College of Education
+Bachelor of Science in Secondary Education
+College of Engineering
+
+College of Arts and Sciences:
+
+Bachelor of Arts in Mass Communication
+College of Business and Management:
+
+Bachelor of Science in Accountancy (BSA)
+Bachelor of Science in Business Administration (BSBA)
+BSBA, Major in Management
+BSBA, Major in Management Accounting
+BSBA, Major in Financial Management
+BSBA, Major in Marketing Management
+BSBA, Major in Human Resources Management
+College of Computer Studies:
+
+Bachelor of Science in Information Technology (BSIT)
+Associate in Computer Technology (ACT)
+College of Education:
+
+Bachelor of Science in Elementary Education
+Bachelor of Science in Secondary Education
+College of Engineering:
+
+Bachelor of Science in Industrial Engineering (BSIE)
+Bachelor of Science in Electronics and Communications Engineering (BSECE)
+Bachelor of Science in Electrical Engineering (BSEE)
+Bachelor of Science in Mechanical Engineering (BSME)
+Bachelor of Science in Civil Engineering (BSCE)
+Bachelor of Science in Industrial Technology (BSIT)

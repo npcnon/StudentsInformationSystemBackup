@@ -55,7 +55,7 @@ namespace StudentsInformationSystem.UI.Modules
             txt_fname.Focus();
             string sqlQuery = "SELECT MAX(stdnt_id)+1 FROM TblStdntInfo";
             functions.LoadID(txt_id, sqlQuery);
-            functions.loaditemlistbox(chlibox_subj, "offercode", "TblSubjInfo");
+          
         }
 
         private void control_keypress(object sender, KeyEventArgs e)
@@ -285,147 +285,93 @@ namespace StudentsInformationSystem.UI.Modules
             {
 
               
-                Debug.WriteLine("Else was running ##########");
-                byte[] imageData = functions.ImageToByteArray(pedit_stdnt_pic.Image);
+                //Debug.WriteLine("Else was running ##########");
+                //byte[] imageData = functions.ImageToByteArray(pedit_stdnt_pic.Image);
 
 
-                string sqlInsert = @"
-                        INSERT INTO TblStdntInfo (f_name, m_name, l_ame, birth_date, gender,civil_stat, citizenship, religion, ImageData) 
-                        VALUES (@Fname, @Mname, @Lname, @Bday, @Gender, @Civilstat, @Citizen, @Religion, @Image);
+                //string sqlInsert = @"
+                //        INSERT INTO TblStdntInfo (f_name, m_name, l_ame, birth_date, gender,civil_stat, citizenship, religion, ImageData) 
+                //        VALUES (@Fname, @Mname, @Lname, @Bday, @Gender, @Civilstat, @Citizen, @Religion, @Image);
 
-                        DECLARE @Id INT;
-                        SET @Id = SCOPE_IDENTITY();
+                //        DECLARE @Id INT;
+                //        SET @Id = SCOPE_IDENTITY();
 
-                        INSERT INTO TblAddStdntInfo (stdnt_id, stdnt_address, contact_info, email) 
-                        VALUES (@Id, @Address, @Contact, @Email);
+                //        INSERT INTO TblAddStdntInfo (stdnt_id, stdnt_address, contact_info, email) 
+                //        VALUES (@Id, @Address, @Contact, @Email);
 
-                        INSERT INTO TblStdntSchoolDetails (stdnt_id, course, department, yr_lvl, semester)
-                        VALUES(@Id, @Course, @Department, @Yearlvl, @Semester);
-                    ";
+                //        INSERT INTO TblStdntSchoolDetails (stdnt_id, course, department, yr_lvl, semester)
+                //        VALUES(@Id, @Course, @Department, @Yearlvl, @Semester);
+                //    ";
 
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    Debug.WriteLine("Connection Success!!!");
-                    try
-                    {
-                        using (SqlCommand command = new SqlCommand(sqlInsert, connection))
-                        {
-                            // Add parameters for the first INSERT statement
-                            command.Parameters.AddWithValue("@Fname", Fname);
-                            command.Parameters.AddWithValue("@Mname", Mname);
-                            command.Parameters.AddWithValue("@Lname", Lname);
-                            command.Parameters.AddWithValue("@Bday", dedit_bday.Text);
-                            command.Parameters.AddWithValue("@Gender", gender);
-                            command.Parameters.AddWithValue("@Civilstat", CivilStats);
-                            command.Parameters.AddWithValue("@Citizen", Citizenship);
-                            command.Parameters.AddWithValue("@Religion", Religion);
-                            command.Parameters.AddWithValue("@Image", imageData);
+                //using (SqlConnection connection = new SqlConnection(connectionString))
+                //{
+                //    Debug.WriteLine("Connection Success!!!");
+                //    try
+                //    {
+                //        using (SqlCommand command = new SqlCommand(sqlInsert, connection))
+                //        {
+                //            // Add parameters for the first INSERT statement
+                //            command.Parameters.AddWithValue("@Fname", Fname);
+                //            command.Parameters.AddWithValue("@Mname", Mname);
+                //            command.Parameters.AddWithValue("@Lname", Lname);
+                //            command.Parameters.AddWithValue("@Bday", dedit_bday.Text);
+                //            command.Parameters.AddWithValue("@Gender", gender);
+                //            command.Parameters.AddWithValue("@Civilstat", CivilStats);
+                //            command.Parameters.AddWithValue("@Citizen", Citizenship);
+                //            command.Parameters.AddWithValue("@Religion", Religion);
+                //            command.Parameters.AddWithValue("@Image", imageData);
 
-                            // Add parameters for the second INSERT statement
-                            command.Parameters.AddWithValue("@Address", Address);
-                            command.Parameters.AddWithValue("@Contact", Contact);
-                            command.Parameters.AddWithValue("@Email", Email);
+                //            // Add parameters for the second INSERT statement
+                //            command.Parameters.AddWithValue("@Address", Address);
+                //            command.Parameters.AddWithValue("@Contact", Contact);
+                //            command.Parameters.AddWithValue("@Email", Email);
 
-                            // Add parameters for the third INSERT statement
-                            command.Parameters.AddWithValue("@Course", Course);
-                            command.Parameters.AddWithValue("@Department", Depart);
-                            command.Parameters.AddWithValue("@Yearlvl", Yearlvl);
-                            command.Parameters.AddWithValue("@Semester", semester);
+                //            // Add parameters for the third INSERT statement
+                //            command.Parameters.AddWithValue("@Course", Course);
+                //            command.Parameters.AddWithValue("@Department", Depart);
+                //            command.Parameters.AddWithValue("@Yearlvl", Yearlvl);
+                //            command.Parameters.AddWithValue("@Semester", semester);
 
-                            connection.Open();
+                //            connection.Open();
 
-                            int rowsAffected = command.ExecuteNonQuery();
+                //            int rowsAffected = command.ExecuteNonQuery();
 
-                            if (rowsAffected > 0)
-                            {
-                                MessageBox.Show("Data inserted successfully into the database.");
-                                datavalid = true;
-                                listcheckboxsubmit();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Failed to insert data into the database.");
-                            }
-                        }
-                    }
-                    catch (SqlException ex)
-                    {
-                        Debug.WriteLine("SQL Error Number: " + ex.Number);
-                        Debug.WriteLine("SQL Error Message: " + ex.Message);
-                        Debug.WriteLine("SQL Server: " + ex.Server);
+                //            if (rowsAffected > 0)
+                //            {
+                //                MessageBox.Show("Data inserted successfully into the database.");
+                //                datavalid = true;
+                //                listcheckboxsubmit();
+                //            }
+                //            else
+                //            {
+                //                MessageBox.Show("Failed to insert data into the database.");
+                //            }
+                //        }
+                //    }
+                //    catch (SqlException ex)
+                //    {
+                //        Debug.WriteLine("SQL Error Number: " + ex.Number);
+                //        Debug.WriteLine("SQL Error Message: " + ex.Message);
+                //        Debug.WriteLine("SQL Server: " + ex.Server);
                        
-                        Debug.WriteLine("Procedure: " + ex.Procedure);
-                        Debug.WriteLine("Line Number: " + ex.LineNumber);
-                    }
+                //        Debug.WriteLine("Procedure: " + ex.Procedure);
+                //        Debug.WriteLine("Line Number: " + ex.LineNumber);
+                //    }
                 }
 
 
 
-            }
+            
 
            
 
         }
 
-        private void listcheckboxsubmit()
-        {
-            CheckedListBoxControl checkedListBox = chlibox_subj;
-
-            // List to store checked values
-            List<object> checkedValues = new List<object>();
-
-            // Iterate through each item in the CheckedListBoxControl
-            for (int i = 0; i < checkedListBox.ItemCount; i++)
-            {
-                // Check if the current item is checked
-                if (checkedListBox.GetItemCheckState(i) == CheckState.Checked)
-                {
-                    // Add the value of the checked item to the list
-                    checkedValues.Add(checkedListBox.GetItemValue(i));
-                }
-            }
-
-            string sqlInsert = @"
-            DECLARE @Id INT;
-            SELECT @Id = stdnt_id FROM TblStdntInfo;
-            INSERT INTO TblStdntSubj (stdnt_id, offercode) 
-            VALUES (@Id, @Offercode);   
-        ";
+   
 
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                foreach (string item in checkedValues)
-                {
-                    using (SqlCommand command = new SqlCommand(sqlInsert, connection))
-                    {
-                        try
-                        {
-                            // Assuming you have an stdnt_id available here
-                            command.Parameters.AddWithValue("@Offercode", item);
-
-                            int rowsAffected = command.ExecuteNonQuery();
-
-                            if (rowsAffected > 0)
-                            {
-                                //MessageBox.Show("DataList inserted successfully into the database.");
-                                datavalid = true;
-                            }
-                            //else
-                            //{
-                            //    MessageBox.Show("Failed to insert datalist into the database.");
-                            //}
-                        }
-                        catch (SqlException ex)
-                        {
-                            MessageBox.Show("Error inserting datalist: " + ex.Message);
-                        }
-                    }
-                }
-            }
-        }
+           
+            
 
     }
 }

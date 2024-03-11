@@ -1,70 +1,60 @@
 ﻿using DevExpress.DXperience.Demos;
-using DevExpress.Utils.Extensions;
 using DevExpress.XtraBars.Navigation;
-using StudentsInformationSystem.UI.Modules;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StudentsInformationSystem.UI.Modules;
 
 namespace StudentsInformationSystem
 {
     public partial class FrmMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
     {
-        private Dictionary<string, TutorialControlBase> loadedControls = new Dictionary<string, TutorialControlBase>();
+          
+        
+
+
         public FrmMain()
         {
             InitializeComponent();
-            //this.StartPosition = FormStartPosition.CenterScreen;
+            this.StartPosition = FormStartPosition.CenterScreen;
             //this.FormBorderStyle = FormBorderStyle.FixedSingle;
-      
-
+            
         }
+        
+
 
         async Task LoadModuleAsync(ModuleInfo module)
         {
-            if (module == null)
+            await Task.Factory.StartNew(() =>
             {
-                Debug.WriteLine("Module is null");
-                return;
-            }
-
-            await Task.Run(() =>
-            {
-                TutorialControlBase control = module.TModule as TutorialControlBase;
-                if (control != null)
+                if (!frm_main_container.Controls.ContainsKey(module.Name))
                 {
-                    frm_main_container.Invoke(new MethodInvoker(() =>
+                    TutorialControlBase control = module.TModule as TutorialControlBase;
+                    if (control != null)
                     {
-                        if (!loadedControls.ContainsKey(module.Name))
+                        control.Dock = DockStyle.Fill;
+                        control.CreateWaitDialog();
+                        frm_main_container.Invoke(new MethodInvoker(delegate ()
                         {
-                            control.Dock = DockStyle.Fill;
-                            control.CreateWaitDialog();
                             frm_main_container.Controls.Add(control);
                             control.BringToFront();
-
-                            // Add the control to the dictionary
-                            loadedControls.Add(module.Name, control);
-                        }
-                        else
-                        {
-                            var existingControl = loadedControls[module.Name];
-                            existingControl.BringToFront();
-                            Debug.WriteLine("Control already loaded: " + module.Name);
-                        }
-                    }));
+                        }));
+                    }
                 }
                 else
                 {
-                    Debug.WriteLine("Failed to load control: " + module.Name);
+
+                    var control = frm_main_container.Controls.Find(module.Name, true);
+                    if (control.Length == 1)
+                        frm_main_container.Invoke(new MethodInvoker(delegate () { control[0].BringToFront(); }));
+                    Debug.Write("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
                 }
             });
         }
-
-
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
@@ -79,7 +69,7 @@ namespace StudentsInformationSystem
             //    //frmChangePass.ShowDialog();
             //}
 
-            //frm_main_container.Controls.Add(new UcRmStdnt() { Dock = DockStyle.Fill });
+            frm_main_container.Controls.Add(new UcStartmenu() { Dock = DockStyle.Fill });
             List<AccordionControlElement> ac_element = new List<AccordionControlElement>()
             {
                 m_element_Staff,
@@ -88,95 +78,150 @@ namespace StudentsInformationSystem
                 m_element_depart,
                 m_element_users
             };
-            foreach(AccordionControlElement ac in ac_element)
+            foreach (AccordionControlElement ac in ac_element)
             {
                 ac.Appearance.Default.BackColor = Color.FromArgb(41, 89, 151);
             }
-
-            //WindowState = FormWindowState.Maximized;
-            FormBorderStyle = FormBorderStyle.None;
-            //frm_main_acc_control.ExpandAll();
-            //frm_main_acc_control.Enabled = false;
             
+            //frm_main_acc_control.OptionsHamburgerMenu.DisplayMode = DevExpress.XtraBars.Navigation.AccordionControlDisplayMode.Overlay;
+            frm_main_acc_control.CollapseAll();
+            frm_main_acc_control.ExpandAll();
+            FormBorderStyle = FormBorderStyle.None;
+            //WindowState = FormWindowState.Maximized;
+            OptionsAdaptiveLayout.AdaptiveLayout = false;
+
         }
 
 
-        private void DisposeControl(string controlName)
-        {
-           
-            if (loadedControls.ContainsKey(controlName))
-            {
-                TutorialControlBase control = loadedControls[controlName];
-                frm_main_container.Controls.Remove(control);
-                control.Dispose();
-                loadedControls.Remove(controlName);
-            }
-        }
-        private void SubscribeToCancelButtonClickedEvent(UcAddTcher ucAddTcher)
-        {
-            // Subscribe to the CancelButtonClicked event of the UcAddTcher user control
-            ucAddTcher.CancelButtonClicked += UcAddTcher_CancelButtonClicked;
-        }
-        private void UcAddTcher_CancelButtonClicked(object sender, EventArgs e)
-        {
-            // Method to handle the cancel button click event
-            // This method will be called when the cancel button is clicked in UcAddTcher
-            // You can perform any necessary actions here
-            DisposeControl("UcAddTcher");
-        }
+
         private async void s_element_addstdnt_Click_1(object sender, EventArgs e)
         {
+            if (ModulesInfo.GetItem("UcAddStdnt") == null)
+            {
+
+                ModulesInfo.Add(new ModuleInfo("UcAddStdnt", "StudentsInformationSystem.UI.Modules.UcAddStdnt"));
+
+            }
             await LoadModuleAsync(ModulesInfo.GetItem("UcAddStdnt"));
         }
 
         private async void s_element_rmstdnt_Click_1(object sender, EventArgs e)
         {
+            if (ModulesInfo.GetItem("UcRmStdnt") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcRmStdnt", "StudentsInformationSystem.UI.Modules.UcRmStdnt"));
+
+
+            }
             await LoadModuleAsync(ModulesInfo.GetItem("UcRmStdnt"));
         }
 
 
         private async void s_element_addtcher_Click(object sender, EventArgs e)
         {
+            if (ModulesInfo.GetItem("UcAddTcher") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcAddTcher", "StudentsInformationSystem.UI.Modules.UcAddTcher"));
+
+
+            }
             await LoadModuleAsync(ModulesInfo.GetItem("UcAddTcher"));
         }
 
         private async void s_element_addsched_Click(object sender, EventArgs e)
         {
+            if (ModulesInfo.GetItem("UcAddSchedule") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcAddSchedule", "StudentsInformationSystem.UI.Modules.UcAddSchedule"));
+
+
+            }
             await LoadModuleAsync(ModulesInfo.GetItem("UcAddSchedule"));
         }
 
         private async void s_element_add_user_Click(object sender, EventArgs e)
         {
+            if (ModulesInfo.GetItem("UcAddUser") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcAddUser", "StudentsInformationSystem.UI.Modules.UcAddUser"));
+
+
+            }
             await LoadModuleAsync(ModulesInfo.GetItem("UcAddUser"));
         }
 
         private async void s_element_checksched_Click(object sender, EventArgs e)
         {
-            await LoadModuleAsync(ModulesInfo.GetItem(""));
+            if (ModulesInfo.GetItem("UcAddSchedule") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcAddSchedule", "StudentsInformationSystem.UI.Modules.UcAddSchedule"));
+
+            }
+
+            await LoadModuleAsync(ModulesInfo.GetItem("UcAddSchedule"));
         }
 
         private async void s_element_room_Click(object sender, EventArgs e)
         {
+            if (ModulesInfo.GetItem("UCRooms") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UCRooms", "StudentsInformationSystem.UI.Modules.UCRooms"));
+
+
+            }
             await LoadModuleAsync(ModulesInfo.GetItem("UCRooms"));
         }
 
-      
+        private void m_element_depart_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private async void s_element_subjects_Click(object sender, EventArgs e)
         {
+            if (ModulesInfo.GetItem("UcAddSubj") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcAddSubj", "StudentsInformationSystem.UI.Modules.UcAddSubj"));
+
+
+            }
             await LoadModuleAsync(ModulesInfo.GetItem("UcAddSubj"));
         }
 
         private async void s_element_departments_Click(object sender, EventArgs e)
         {
+            if (ModulesInfo.GetItem("UcDepartment") == null)
+            {
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcDepartment", "StudentsInformationSystem.UI.Modules.UcDepartment"));
+
+
+            }
             await LoadModuleAsync(ModulesInfo.GetItem("UcDepartment"));
         }
 
         private async void s_element_course_Click(object sender, EventArgs e)
         {
+            if (ModulesInfo.GetItem("UcCourses") == null)
+            {  
+                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
+                ModulesInfo.Add(new ModuleInfo("UcCourses", "StudentsInformationSystem.UI.Modules.UcCourses"));
+
+
+            }
             await LoadModuleAsync(ModulesInfo.GetItem("UcCourses"));
         }
 
-       
+        private void log_out_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

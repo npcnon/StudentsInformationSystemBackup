@@ -1,21 +1,16 @@
-﻿using DevExpress.XtraBars.Ribbon.ViewInfo;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StudentsInformationSystem.UI.Modules
 {
-    public partial class UcDepartment : DevExpress.DXperience.Demos.TutorialControlBase//DevExpress.XtraEditors. DevExpress.XtraEditors.XtraUserControl
+    public partial class UcDepartment : DevExpress.DXperience.Demos.TutorialControlBase
     {
+        // Define a custom event
+        public static event EventHandler SaveButtonClicked;
 
         internal const string endpoint = "api/department/";
+
         public UcDepartment()
         {
             InitializeComponent();
@@ -30,6 +25,9 @@ namespace StudentsInformationSystem.UI.Modules
                     department = txt_department.Text,
                 };
                 await functions.InsertData(department, endpoint);
+
+                // Raise the custom event when the "Save" button is clicked
+                OnSaveButtonClicked(EventArgs.Empty);
             }
             catch (ArgumentException ex_argument)
             {
@@ -40,12 +38,19 @@ namespace StudentsInformationSystem.UI.Modules
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // Method to raise the custom event
+        protected virtual void OnSaveButtonClicked(EventArgs e)
+        {
+            SaveButtonClicked?.Invoke(this, e);
+        }
     }
 
     internal class Department
     {
         private string _department;
-        private int _id;
+        private int _id = 0;
+
         public string department
         {
             get => _department;
@@ -56,7 +61,5 @@ namespace StudentsInformationSystem.UI.Modules
         {
             get => _id;
         }
-
     }
 }
-

@@ -53,6 +53,7 @@
             this.s_element_subjects = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_departments = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_course = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.log_out = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -69,9 +70,9 @@
             // frm_main_container
             // 
             this.frm_main_container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frm_main_container.Location = new System.Drawing.Point(241, 31);
+            this.frm_main_container.Location = new System.Drawing.Point(250, 31);
             this.frm_main_container.Name = "frm_main_container";
-            this.frm_main_container.Size = new System.Drawing.Size(682, 458);
+            this.frm_main_container.Size = new System.Drawing.Size(673, 458);
             this.frm_main_container.TabIndex = 0;
             // 
             // frm_main_acc_control
@@ -88,11 +89,12 @@
             this.m_element_student,
             this.m_element_schedule,
             this.m_element_users,
-            this.m_element_depart});
+            this.m_element_depart,
+            this.log_out});
             this.frm_main_acc_control.Location = new System.Drawing.Point(0, 31);
             this.frm_main_acc_control.Name = "frm_main_acc_control";
             this.frm_main_acc_control.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.frm_main_acc_control.Size = new System.Drawing.Size(241, 458);
+            this.frm_main_acc_control.Size = new System.Drawing.Size(250, 458);
             this.frm_main_acc_control.TabIndex = 1;
             this.frm_main_acc_control.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -104,7 +106,6 @@
             this.s_element_addstaff,
             this.s_element_srchstaff,
             this.s_element_rmstaff});
-            this.m_element_Staff.Expanded = true;
             this.m_element_Staff.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_Staff.ImageOptions.SvgImage")));
             this.m_element_Staff.Name = "m_element_Staff";
             this.m_element_Staff.Text = "Staff";
@@ -139,7 +140,6 @@
             this.s_element_addstdnt,
             this.s_element_srchstdnt,
             this.s_element_rmstdnt});
-            this.m_element_student.Expanded = true;
             this.m_element_student.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_student.ImageOptions.SvgImage")));
             this.m_element_student.Name = "m_element_student";
             this.m_element_student.Text = "Students";
@@ -176,7 +176,6 @@
             this.s_element_remsched,
             this.s_element_checksched,
             this.s_element_room});
-            this.m_element_schedule.Expanded = true;
             this.m_element_schedule.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_schedule.ImageOptions.SvgImage")));
             this.m_element_schedule.Name = "m_element_schedule";
             this.m_element_schedule.Text = "Schedule";
@@ -219,7 +218,6 @@
             this.m_element_users.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.s_element_add_user,
             this.s_element_rm_users});
-            this.m_element_users.Expanded = true;
             this.m_element_users.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_users.ImageOptions.SvgImage")));
             this.m_element_users.Name = "m_element_users";
             this.m_element_users.Text = "Users";
@@ -247,7 +245,6 @@
             this.s_element_subjects,
             this.s_element_departments,
             this.s_element_course});
-            this.m_element_depart.Expanded = true;
             this.m_element_depart.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_depart.ImageOptions.SvgImage")));
             this.m_element_depart.Name = "m_element_depart";
             this.m_element_depart.Text = "Department";
@@ -275,6 +272,14 @@
             this.s_element_course.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.s_element_course.Text = "Course";
             this.s_element_course.Click += new System.EventHandler(this.s_element_course_Click);
+            // 
+            // log_out
+            // 
+            this.log_out.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("log_out.ImageOptions.SvgImage")));
+            this.log_out.Name = "log_out";
+            this.log_out.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.log_out.Text = "LOG OUT";
+            this.log_out.Click += new System.EventHandler(this.log_out_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -354,5 +359,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_subjects;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_departments;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_course;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement log_out;
     }
 }
