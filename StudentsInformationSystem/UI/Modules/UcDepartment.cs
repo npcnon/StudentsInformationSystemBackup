@@ -16,6 +16,14 @@ namespace StudentsInformationSystem.UI.Modules
             InitializeComponent();
         }
 
+       
+
+        // Method to raise the custom event
+        protected virtual void OnSaveButtonClicked(EventArgs e)
+        { 
+            SaveButtonClicked?.Invoke(this, e);
+        }
+
         private async void btn_save_Click(object sender, EventArgs e)
         {
             try
@@ -39,10 +47,10 @@ namespace StudentsInformationSystem.UI.Modules
             }
         }
 
-        // Method to raise the custom event
-        protected virtual void OnSaveButtonClicked(EventArgs e)
-        { 
-            SaveButtonClicked?.Invoke(this, e);
+        private void btn_select_Click(object sender, EventArgs e)
+        {
+            FrmDepartmentGrid departmentGrid = new FrmDepartmentGrid();
+            departmentGrid.ShowDialog();
         }
     }
 

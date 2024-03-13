@@ -12,7 +12,7 @@ namespace StudentsInformationSystem.UI.Modules
     public partial class UcCourses : DevExpress.DXperience.Demos.TutorialControlBase
     {
         internal const string endpoint = "api/course/";
-        internal const string endpoint_deactivate = "api/modify_course";
+        internal const string endpoint_deactivate = "api/deactivate_course";
 
 
         internal Course course = new Course();
@@ -59,6 +59,7 @@ namespace StudentsInformationSystem.UI.Modules
                 
                 course.course = txt_addcourse.Text;
                 await functions.InsertData(course, endpoint);
+                txt_addcourse.Text = "";
             }
             catch (ArgumentException ex_argument)
             {
@@ -93,7 +94,7 @@ namespace StudentsInformationSystem.UI.Modules
         private async void btn_delete_Click(object sender, EventArgs e)
         {
 
-            await functions.ModifyActiveField(endpoint_deactivate,Convert.ToInt32(lbl_course_id.Text));
+            //await functions.ModifyActiveField(endpoint_deactivate,Convert.ToInt32(lbl_course_id.Text));
         }
     }
 
@@ -108,7 +109,6 @@ namespace StudentsInformationSystem.UI.Modules
             get => _course;
             set => _course = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Course cannot be null");
         }
-
         public int? department_Id
         {
             get => _department_id;

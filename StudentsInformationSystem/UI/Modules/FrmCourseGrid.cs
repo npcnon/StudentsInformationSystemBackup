@@ -38,7 +38,7 @@ namespace StudentsInformationSystem.UI.Modules
         private async void FrmCourseGrid_Load(object sender, EventArgs e)
         {
         
-            gview_course.OptionsBehavior.ReadOnly = true;
+            //gview_course.OptionsBehavior.ReadOnly = true;
             StartPosition = FormStartPosition.CenterScreen;
             await functions.LoadData<Course>(UcCourses.endpoint, grid_course);
         }

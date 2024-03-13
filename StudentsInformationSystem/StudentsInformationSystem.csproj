@@ -320,6 +320,12 @@
     <Compile Include="UI\Modules\WaitForm2.Designer.cs">
       <DependentUpon>WaitForm2.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\FrmDepartmentGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\FrmDepartmentGrid.Designer.cs">
+      <DependentUpon>FrmDepartmentGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="USER.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
@@ -348,6 +354,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Modules\FrmCourseGrid.resx">
       <DependentUpon>FrmCourseGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\FrmDepartmentGrid.resx">
+      <DependentUpon>FrmDepartmentGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcAddSchedule.resx">
       <DependentUpon>UcAddSchedule.cs</DependentUpon>

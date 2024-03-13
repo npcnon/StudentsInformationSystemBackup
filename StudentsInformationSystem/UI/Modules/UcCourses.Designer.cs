@@ -203,7 +203,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_delete.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.Appearance.Options.UseFont = true;
-            this.btn_delete.Location = new System.Drawing.Point(514, 229);
+            this.btn_delete.Location = new System.Drawing.Point(427, 217);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(117, 30);
             this.btn_delete.TabIndex = 0;
@@ -216,7 +216,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_select.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_select.Appearance.Options.UseFont = true;
-            this.btn_select.Location = new System.Drawing.Point(371, 229);
+            this.btn_select.Location = new System.Drawing.Point(284, 217);
             this.btn_select.Name = "btn_select";
             this.btn_select.Size = new System.Drawing.Size(117, 30);
             this.btn_select.TabIndex = 0;

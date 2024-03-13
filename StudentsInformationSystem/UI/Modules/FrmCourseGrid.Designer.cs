@@ -39,9 +39,9 @@
             // directXFormContainerControl1
             // 
             this.directXFormContainerControl1.Controls.Add(this.grid_course);
-            this.directXFormContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.directXFormContainerControl1.Location = new System.Drawing.Point(1, 31);
             this.directXFormContainerControl1.Name = "directXFormContainerControl1";
-            this.directXFormContainerControl1.Size = new System.Drawing.Size(632, 374);
+            this.directXFormContainerControl1.Size = new System.Drawing.Size(630, 342);
             this.directXFormContainerControl1.TabIndex = 0;
             // 
             // grid_course
@@ -50,7 +50,7 @@
             this.grid_course.Location = new System.Drawing.Point(0, 0);
             this.grid_course.MainView = this.gview_course;
             this.grid_course.Name = "grid_course";
-            this.grid_course.Size = new System.Drawing.Size(632, 374);
+            this.grid_course.Size = new System.Drawing.Size(630, 342);
             this.grid_course.TabIndex = 0;
             this.grid_course.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gview_course});
@@ -63,12 +63,14 @@
             // 
             // FrmCourseGrid
             // 
+            this.Appearance.BorderColor = System.Drawing.Color.Transparent;
+            this.Appearance.Options.UseBorderColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ChildControls.Add(this.directXFormContainerControl1);
             this.ClientSize = new System.Drawing.Size(632, 374);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmCourseGrid";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCourseGrid";

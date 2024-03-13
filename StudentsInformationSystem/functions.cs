@@ -15,6 +15,8 @@ using DevExpress.XtraGrid;
 using System.Text;
 using System.Linq;
 using Newtonsoft.Json.Linq;
+using System.ComponentModel;
+using System.Data;
 
 namespace StudentsInformationSystem
 {
@@ -285,12 +287,21 @@ namespace StudentsInformationSystem
                     // Export the JSON response as a file
                     Debug.WriteLine("response.json", jsonResponse);
 
-
                     var data = JsonConvert.DeserializeObject<T[]>(jsonResponse);
 
                     if (gcont != null)
                     {
-                        gcont.DataSource = data;
+                        // Convert data to DataTable
+                        DataTable dataTable = ConvertToDataTable(data);
+
+                        // Remove the "active" column from the DataTable if it exists
+                        if (dataTable.Columns.Contains("active"))
+                        {
+                            dataTable.Columns.Remove("active");
+                        }
+
+                        // Set the DataTable as the DataSource for the GridControl
+                        gcont.DataSource = dataTable;
                     }
 
                     if (cbox != null)
@@ -323,6 +334,30 @@ namespace StudentsInformationSystem
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        internal static DataTable ConvertToDataTable<T>(IEnumerable<T> data)
+        {
+            PropertyDescriptorCollection properties = TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+
+            foreach (PropertyDescriptor prop in properties)
+            {
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            }
+
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in properties)
+                {
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                }
+                table.Rows.Add(row);
+            }
+
+            return table;
+        }
+
 
 
 
@@ -359,12 +394,40 @@ namespace StudentsInformationSystem
             }
         }
 
-        internal static async Task ModifyActiveField(string point,int id)
+         internal static async Task ModifyActiveField(string point,DataRow row = null, bool deactivate = false)
         {
             try
             {
-                string endpoint = $"{point}/{id}/";
-                HttpResponseMessage response = await client.PutAsync(baseUrl + endpoint, null);
+                // Assuming the column names in the DataRow correspond to the field names in your Django model
+                int id = Convert.ToInt32(row["id"]);
+                string endpoint = $"{point}/{id}/{deactivate}";
+               
+                HttpResponseMessage response;
+                if (deactivate)
+                {
+                    Debug.WriteLine("ModifyActiveField if running");
+                    response = await client.PutAsync(baseUrl + endpoint, null);
+                }
+                else
+                {
+                    Debug.WriteLine("ModifyActiveField else running");
+                 
+                   
+                    string department = row["department"].ToString(); // Adjust this based on your column names
+                    // Construct the JSON payload to send in the request body
+                    var payload = new Dictionary<string, string>
+                {
+                    { "department", department } // Adjust this based on your field names
+                };
+
+                    // Convert the payload to JSON
+                    string jsonPayload = JsonConvert.SerializeObject(payload);
+
+                    // Create the HTTP request
+                    var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+                    response = await client.PutAsync(baseUrl + endpoint, content);
+                }
+               
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -380,6 +443,7 @@ namespace StudentsInformationSystem
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
 
         internal static async Task<int?> GetDepartmentId(string departmentName, string endpoint)
@@ -419,6 +483,41 @@ namespace StudentsInformationSystem
                 return null;
             }
         }
+
+        //internal static async Task UpdateData<T>(T data, string endpoint, int id, GridControl gcont = null) where T : class
+        //{
+        //    try
+        //    {
+        //        string json = JsonConvert.SerializeObject(data);
+
+        //        // Export the JSON response as a file
+        //        File.WriteAllText("response.json", json);
+
+        //        Debug.WriteLine(json.ToString());
+        //        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        //        string putEndpoint = $"{endpoint}/{id}/";
+        //        HttpResponseMessage response = await client.PutAsync(baseUrl + putEndpoint, content);
+
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            MessageBox.Show("Data updated successfully.");
+        //            if (gcont != null)
+        //            {
+        //                await LoadData<T>(endpoint, gcont);
+        //            }
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Failed to update data.");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error: " + ex.Message);
+        //    }
+        //}
+
     }
 
 
