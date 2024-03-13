@@ -22,7 +22,7 @@ namespace StudentsInformationSystem.UI.Modules
             {
                 var department = new Department
                 {
-                    department = txt_department.Text,
+                    department = txt_department.Text
                 };
                 await functions.InsertData(department, endpoint);
 
@@ -41,7 +41,7 @@ namespace StudentsInformationSystem.UI.Modules
 
         // Method to raise the custom event
         protected virtual void OnSaveButtonClicked(EventArgs e)
-        {
+        { 
             SaveButtonClicked?.Invoke(this, e);
         }
     }
@@ -49,7 +49,7 @@ namespace StudentsInformationSystem.UI.Modules
     internal class Department
     {
         private string _department;
-        private int _id = 0;
+        private int _id;
 
         public string department
         {
@@ -60,6 +60,7 @@ namespace StudentsInformationSystem.UI.Modules
         public int id
         {
             get => _id;
+            set => _id = value;
         }
     }
 }

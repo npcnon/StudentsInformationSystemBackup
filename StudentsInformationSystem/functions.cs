@@ -272,7 +272,7 @@ namespace StudentsInformationSystem
         }
 
 
-        internal static async Task LoadData<T>(string endpoint, GridControl gcont, ComboBoxEdit cbox = null, Func<T, object> conversionFunc = null, string getid = null) where T : class
+        internal static async Task LoadData<T>(string endpoint, GridControl gcont, ComboBoxEdit cbox = null, Func<T, object> conversionFunc = null) where T : class
         {
             try
             {
@@ -283,7 +283,7 @@ namespace StudentsInformationSystem
                     string jsonResponse = await response.Content.ReadAsStringAsync();
 
                     // Export the JSON response as a file
-                    File.WriteAllText("response.json", jsonResponse);
+                    Debug.WriteLine("response.json", jsonResponse);
 
 
                     var data = JsonConvert.DeserializeObject<T[]>(jsonResponse);
@@ -338,19 +338,41 @@ namespace StudentsInformationSystem
                 Debug.WriteLine(json.ToString());
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                 HttpResponseMessage response = await client.PostAsync(baseUrl + endpoint, content);
+                HttpResponseMessage response = await client.PostAsync(baseUrl + endpoint, content);
 
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Data inserted successfully into the database.");
                     if (gcont != null)
                     {
-                        await LoadData<T>(endpoint,gcont);
+                        await LoadData<T>(endpoint, gcont);
                     }
                 }
                 else
                 {
                     MessageBox.Show("Failed to insert data into the database.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        internal static async Task ModifyActiveField(string point,int id)
+        {
+            try
+            {
+                string endpoint = $"{point}/{id}/";
+                HttpResponseMessage response = await client.PutAsync(baseUrl + endpoint, null);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Active field modified successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to modify active field.");
                 }
             }
             catch (Exception ex)

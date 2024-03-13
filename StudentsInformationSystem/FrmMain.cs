@@ -11,18 +11,18 @@ using StudentsInformationSystem.UI.Modules;
 
 namespace StudentsInformationSystem
 {
-    public partial class FrmMain : DevExpress.XtraBars.FluentDesignSystem.FluentDesignForm
+    public partial class FrmMain : DevExpress.XtraEditors.DirectXForm
     {
-          
-        
+
+
 
 
         public FrmMain()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
+           
             //this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            
+
         }
         
 
@@ -58,7 +58,7 @@ namespace StudentsInformationSystem
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-
+            Debug.WriteLine("load running");
             //splashScreenManager1.ShowWaitForm();
             //Thread.Sleep(3000);
             //splashScreenManager1.CloseWaitForm();
@@ -82,13 +82,17 @@ namespace StudentsInformationSystem
             {
                 ac.Appearance.Default.BackColor = Color.FromArgb(41, 89, 151);
             }
+
+            ////frm_main_acc_control.OptionsHamburgerMenu.DisplayMode = DevExpress.XtraBars.Navigation.AccordionControlDisplayMode.Overlay;
+            ////frm_main_acc_control.Hide();
+            ////frm_main_acc_control.Show();
             
-            //frm_main_acc_control.OptionsHamburgerMenu.DisplayMode = DevExpress.XtraBars.Navigation.AccordionControlDisplayMode.Overlay;
-            frm_main_acc_control.CollapseAll();
-            frm_main_acc_control.ExpandAll();
-            FormBorderStyle = FormBorderStyle.None;
-            //WindowState = FormWindowState.Maximized;
-            OptionsAdaptiveLayout.AdaptiveLayout = false;
+            //frm_main_acc_control.CollapseAll();
+            //frm_main_acc_control.ExpandAll();
+            //FormBorderStyle = FormBorderStyle.None;
+            ////WindowState = FormWindowState.Maximized;
+            StartPosition = FormStartPosition.CenterScreen;
+            ////OptionsAdaptiveLayout.AdaptiveLayout = false;
 
         }
 
@@ -204,7 +208,14 @@ namespace StudentsInformationSystem
 
 
             }
+            //trigger UcCourse load/loaddata event here
+
+            UcCourses ucCourses = new UcCourses();
+
+            // Call the LoadData method
+            await ucCourses.LoadData();
             await LoadModuleAsync(ModulesInfo.GetItem("UcDepartment"));
+           
         }
 
         private async void s_element_course_Click(object sender, EventArgs e)
@@ -222,6 +233,25 @@ namespace StudentsInformationSystem
         private void log_out_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void fluentDesignFormControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement1_Click(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Running");
+            frm_main_acc_control.ExpandAll();
+
+            Debug.WriteLine(frm_main_acc_control.ExpandAll());
+        }
+
+        private void accordionControlElement4_Click(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Running");
+            frm_main_acc_control.CollapseAll();
         }
     }
 }

@@ -4,7 +4,7 @@
 using DevExpress.XtraEditors;
 using System;
 using System.Diagnostics;
-using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StudentsInformationSystem.UI.Modules
@@ -12,36 +12,51 @@ namespace StudentsInformationSystem.UI.Modules
     public partial class UcCourses : DevExpress.DXperience.Demos.TutorialControlBase
     {
         internal const string endpoint = "api/course/";
-        private HttpClient client;
-        internal Course course = new Course();
+        internal const string endpoint_deactivate = "api/modify_course";
 
+
+        internal Course course = new Course();
+        private static ComboBoxEdit cbox;
         public UcCourses()
         {
             InitializeComponent();
-            client = new HttpClient();
+           
+            UcDepartment.SaveButtonClicked += UcDepartment_SaveButtonClicked;
+            FrmCourseGrid.selectedr += FrmCourseGrid_selectedrow;
 
-            // Subscribe to the SaveButtonClicked event of UcDepartment directly
-            //UcDepartment.SaveButtonClicked += DepartmentForm_SaveButtonClicked;
+        }
+        private void FrmCourseGrid_selectedrow(object sender, EventArgs e)
+        {
+            lbl_course.Text = FrmCourseGrid.course;
+            lbl_course_dep.Text = FrmCourseGrid.department_id;
+            lbl_course_id.Text = FrmCourseGrid.id;
+
+      
         }
 
+        private async void UcDepartment_SaveButtonClicked(object sender, EventArgs e)
+        {
+            await LoadData();
+            Debug.WriteLine("The save button in UcDepartment was clicked");
+        }
         private async void UcCourses_Load(object sender, EventArgs e)
         {
-            
-            await functions.LoadData<Department>(UcDepartment.endpoint, null, cbox_department, d => d.department, "TblDepartment.id");
+            cbox = cbox_department;
+            await LoadData();
         }
 
-        
-
-        internal async void cbox_department_SelectedIndexChanged(object sender, EventArgs e)
+        public async Task LoadData()
         {
-            Debug.WriteLine("Selected an Item");
-            course.department_Id = await functions.GetDepartmentId(cbox_department.Text, UcDepartment.endpoint);
+            Debug.WriteLine("LoadData is running");
+            await functions.LoadData<Department>(UcDepartment.endpoint, null, cbox, d => d.department);
         }
+
 
         private async void btn_addcourse_Click(object sender, EventArgs e)
         {
             try
             {
+                
                 course.course = txt_addcourse.Text;
                 await functions.InsertData(course, endpoint);
             }
@@ -56,29 +71,38 @@ namespace StudentsInformationSystem.UI.Modules
             }
         }
 
-        private void cbox_department_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
+     
+       
 
+
+
+        private async void cbox_department_SelectedIndexChanged_2(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Selected an Item");
+            course.department_Id = await functions.GetDepartmentId(cbox_department.Text, UcDepartment.endpoint);
         }
 
+        private void btn_select_Click(object sender, EventArgs e)
+        {
+            FrmCourseGrid courseGrid = new FrmCourseGrid();
+            
+            courseGrid.Show();
+          
+        }
 
+        private async void btn_delete_Click(object sender, EventArgs e)
+        {
 
-        // Method to handle the SaveButtonClicked event from UcDepartment
-        //private async void DepartmentForm_SaveButtonClicked(object sender, EventArgs e)
-        //{
-        //    // Add your code here to handle the event
-        //    Debug.WriteLine("Save button clicked in UcDepartment form");
-        //    // You can perform any necessary actions here when the event is triggered
-
-        //    //await functions.LoadData<Department>(UcDepartment.endpoint, null, cbox_department, d => d.department, "TblDepartment.id");
-        //}
+            await functions.ModifyActiveField(endpoint_deactivate,Convert.ToInt32(lbl_course_id.Text));
+        }
     }
 
-    internal class Course
+    public class Course
     {
+        private int _id;
         private string _course;
         private int? _department_id;
-
+        private bool _active = true;
         public string course
         {
             get => _course;
@@ -96,6 +120,18 @@ namespace StudentsInformationSystem.UI.Modules
                 }
                 _department_id = value;
             }
+        }
+
+        public bool active
+        {
+            get => _active;
+            set => _active = value;
+        }
+
+        public int id
+        {
+            get => _id;
+            set => _id = value;
         }
     }
 }
