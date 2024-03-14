@@ -120,7 +120,7 @@ namespace StudentsInformationSystem
         }
 
 
-
+        
 
         private async void s_element_addstdnt_Click_1(object sender, EventArgs e)
         {
@@ -135,7 +135,8 @@ namespace StudentsInformationSystem
                 Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
                 ModulesInfo.Add(new ModuleInfo("UcRmStdnt", "StudentsInformationSystem.UI.Modules.UcRmStdnt"));
 
-
+                FrmAddDepartment adddep = new FrmAddDepartment();
+                UcGrid.frm = adddep;
             }
             await LoadModuleAsync(ModulesInfo.GetItem("UcRmStdnt"));
         }

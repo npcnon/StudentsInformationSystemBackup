@@ -25,6 +25,7 @@ namespace StudentsInformationSystem.UI.Modules
         public static string endpoint;
         public static string modifyendpoint;
         private static object class_reference;
+        public static DirectXForm frm;
         public UcGrid()
         {
             
@@ -40,15 +41,13 @@ namespace StudentsInformationSystem.UI.Modules
             exit_is_clicked?.Invoke(this, e);
         }
        
-
+        
         private async void windowsUIButtonPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
             switch (e.Button.Properties.Caption)
             {
                 case "New":
-                    FrmAddDepartment adddep = new FrmAddDepartment();
-                    adddep.ShowDialog();
-
+                    frm.ShowDialog();
                     break;
                 case "Edit":
                     gridView.OptionsBehavior.Editable = true;
