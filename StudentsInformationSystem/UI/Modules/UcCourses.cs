@@ -91,7 +91,7 @@ namespace StudentsInformationSystem.UI.Modules
           
         }
 
-        private async void btn_delete_Click(object sender, EventArgs e)
+        private void btn_delete_Click(object sender, EventArgs e)
         {
 
             //await functions.ModifyActiveField(endpoint_deactivate,Convert.ToInt32(lbl_course_id.Text));

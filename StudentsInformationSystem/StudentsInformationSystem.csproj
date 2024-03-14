@@ -144,7 +144,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="compare.cs" />
     <Compile Include="EntityModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -165,6 +164,12 @@
     </Compile>
     <Compile Include="FrmChangePass.Designer.cs">
       <DependentUpon>FrmChangePass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoading.Designer.cs">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogIn.cs">
       <SubType>Form</SubType>
@@ -241,6 +246,12 @@
     </Compile>
     <Compile Include="TblTeacherInfo.cs">
       <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\FrmAddCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\FrmAddCourse.Designer.cs">
+      <DependentUpon>FrmAddCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Modules\FrmAddDepartment.cs">
       <SubType>Form</SubType>
@@ -350,6 +361,9 @@
     <EmbeddedResource Include="FrmChangePass.resx">
       <DependentUpon>FrmChangePass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoading.resx">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogIn.resx">
       <DependentUpon>FrmLogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,6 +384,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Modules\FrmAddCourse.resx">
+      <DependentUpon>FrmAddCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\FrmAddDepartment.resx">
       <DependentUpon>FrmAddDepartment.cs</DependentUpon>
     </EmbeddedResource>
@@ -492,6 +509,8 @@
       <DependentUpon>Model2.edmx</DependentUpon>
       <LastGenOutput>Model2.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\loading GIF2.gif" />
+    <None Include="Resources\loading GIF1.gif" />
     <None Include="Resources\login_background.jpg" />
   </ItemGroup>
   <ItemGroup>

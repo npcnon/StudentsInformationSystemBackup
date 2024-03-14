@@ -312,6 +312,7 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BENEDICTO SIS";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FrmMain_LoadAsync);
             ((System.ComponentModel.ISupportInitialize)(this.frm_main_acc_control)).EndInit();
             this.directXFormContainerControl1.ResumeLayout(false);

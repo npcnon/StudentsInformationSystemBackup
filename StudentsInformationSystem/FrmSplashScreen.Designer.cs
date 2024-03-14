@@ -44,26 +44,30 @@
             this.progressBarControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBarControl.EditValue = 0;
-            this.progressBarControl.Location = new System.Drawing.Point(24, 232);
+            this.progressBarControl.Location = new System.Drawing.Point(24, 371);
             this.progressBarControl.Name = "progressBarControl";
-            this.progressBarControl.Size = new System.Drawing.Size(425, 12);
+            this.progressBarControl.Size = new System.Drawing.Size(877, 22);
             this.progressBarControl.TabIndex = 5;
             // 
             // labelCopyright
             // 
+            this.labelCopyright.Appearance.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCopyright.Appearance.Options.UseFont = true;
             this.labelCopyright.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.labelCopyright.Location = new System.Drawing.Point(24, 287);
+            this.labelCopyright.Location = new System.Drawing.Point(24, 498);
             this.labelCopyright.Name = "labelCopyright";
-            this.labelCopyright.Size = new System.Drawing.Size(119, 13);
+            this.labelCopyright.Size = new System.Drawing.Size(217, 30);
             this.labelCopyright.TabIndex = 6;
             this.labelCopyright.Text = "Copyright © 2024-2030";
             // 
             // labelStatus
             // 
-            this.labelStatus.Location = new System.Drawing.Point(24, 215);
+            this.labelStatus.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatus.Appearance.Options.UseFont = true;
+            this.labelStatus.Location = new System.Drawing.Point(24, 328);
             this.labelStatus.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(50, 13);
+            this.labelStatus.Size = new System.Drawing.Size(78, 25);
             this.labelStatus.TabIndex = 7;
             this.labelStatus.Text = "Starting...";
             // 
@@ -80,7 +84,7 @@
             this.peImage.Properties.ShowMenu = false;
             this.peImage.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.peImage.Properties.SvgImageColorizationMode = DevExpress.Utils.SvgImageColorizationMode.None;
-            this.peImage.Size = new System.Drawing.Size(471, 200);
+            this.peImage.Size = new System.Drawing.Size(923, 321);
             this.peImage.TabIndex = 9;
             // 
             // peLogo
@@ -88,22 +92,22 @@
             this.peLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.peLogo.EditValue = ((object)(resources.GetObject("peLogo.EditValue")));
-            this.peLogo.Location = new System.Drawing.Point(245, 273);
+            this.peLogo.Location = new System.Drawing.Point(652, 414);
             this.peLogo.Name = "peLogo";
             this.peLogo.Properties.AllowFocused = false;
-            this.peLogo.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.peLogo.Properties.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.peLogo.Properties.Appearance.Options.UseBackColor = true;
             this.peLogo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.peLogo.Properties.ShowMenu = false;
             this.peLogo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
-            this.peLogo.Size = new System.Drawing.Size(204, 42);
+            this.peLogo.Size = new System.Drawing.Size(249, 141);
             this.peLogo.TabIndex = 8;
             // 
             // FrmSplashScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 330);
+            this.ClientSize = new System.Drawing.Size(925, 559);
             this.Controls.Add(this.peImage);
             this.Controls.Add(this.peLogo);
             this.Controls.Add(this.labelStatus);
@@ -112,6 +116,7 @@
             this.Name = "FrmSplashScreen";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.Text = "FrmSplashScreen";
+            this.Load += new System.EventHandler(this.FrmSplashScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.progressBarControl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peImage.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peLogo.Properties)).EndInit();
@@ -125,7 +130,7 @@
         private DevExpress.XtraEditors.MarqueeProgressBarControl progressBarControl;
         private DevExpress.XtraEditors.LabelControl labelCopyright;
         private DevExpress.XtraEditors.LabelControl labelStatus;
-        private DevExpress.XtraEditors.PictureEdit peLogo;
         private DevExpress.XtraEditors.PictureEdit peImage;
+        private DevExpress.XtraEditors.PictureEdit peLogo;
     }
 }

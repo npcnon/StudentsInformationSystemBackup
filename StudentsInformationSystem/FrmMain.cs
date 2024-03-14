@@ -12,6 +12,8 @@ using System.Linq;
 using DevExpress.XtraWaitForm;
 using DevExpress.XtraSplashScreen;
 using System.Runtime.CompilerServices;
+using DevExpress.Data.Browsing;
+using DevExpress.XtraGrid;
 
 namespace StudentsInformationSystem
 {
@@ -30,6 +32,7 @@ namespace StudentsInformationSystem
         {
             InitializeComponent();
             UcGrid.exit_is_clicked += enable_disable_accordion;
+            FrmLoading.load_done += loading_is_done;
            List<AccordionControlElement> ac_element = new List<AccordionControlElement>()
             {
                 m_element_Staff,
@@ -50,7 +53,24 @@ namespace StudentsInformationSystem
             base.OnClosed(e);
             UcGrid.exit_is_clicked -= enable_disable_accordion;
         }
+        private  void loading_is_done(object sender, EventArgs e)
+        {
 
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() =>
+                {
+                    Enabled = true;
+                    TopMost = false;
+                }));
+            }
+            else
+            {
+                Enabled = true;
+                TopMost = false;
+            }
+            
+        }
         public void enable_disable_accordion(object sender, EventArgs e)
         {
             if(acc_is_enable)
@@ -62,10 +82,10 @@ namespace StudentsInformationSystem
             }
             else
             {
-                
+
                 frm_main_acc_control.Enabled = true;
                 frm_main_acc_control.OptionsMinimizing.State = AccordionControlState.Normal;
-                acc_is_enable = false;
+                acc_is_enable = true;
             }
         }
 
@@ -106,21 +126,20 @@ namespace StudentsInformationSystem
             });
         }
 
-        private void FrmMain_LoadAsync(object sender, EventArgs e)
+        private async void FrmMain_LoadAsync(object sender, EventArgs e)
         {
- 
-       
 
-        
+            this.Enabled = false;
+            UcGrid.firstload = true;
+            ModulesInfo.Add(new ModuleInfo("UcGrid", "StudentsInformationSystem.UI.Modules.UcGrid"));
+            await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
+            ModulesInfo.Add(new ModuleInfo("UcStartmenu", "StudentsInformationSystem.UI.Modules.UcStartmenu"));
+            await LoadModuleAsync(ModulesInfo.GetItem("UcStartmenu"));
 
             
-
-
-          
         }
-
-
         
+
 
         private async void s_element_addstdnt_Click_1(object sender, EventArgs e)
         {
@@ -135,8 +154,7 @@ namespace StudentsInformationSystem
                 Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
                 ModulesInfo.Add(new ModuleInfo("UcRmStdnt", "StudentsInformationSystem.UI.Modules.UcRmStdnt"));
 
-                FrmAddDepartment adddep = new FrmAddDepartment();
-                UcGrid.frm = adddep;
+                
             }
             await LoadModuleAsync(ModulesInfo.GetItem("UcRmStdnt"));
         }
@@ -196,7 +214,7 @@ namespace StudentsInformationSystem
             {
                 Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
                 ModulesInfo.Add(new ModuleInfo("UCRooms", "StudentsInformationSystem.UI.Modules.UCRooms"));
-
+               
 
             }
             await LoadModuleAsync(ModulesInfo.GetItem("UCRooms"));
@@ -221,27 +239,20 @@ namespace StudentsInformationSystem
 
         private async void s_element_departments_Click(object sender, EventArgs e)
         {
+            enable_disable_accordion(sender,e);
             UcGrid.endpoint = FrmAddDepartment.endpoint;
             UcGrid.modifyendpoint = "api/deactivate_department";
-            UcGrid ucGridInstance = null;
-            if (ModulesInfo.GetItem("UcGrid") == null)
-            {
-                
-                // Create and add UcGrid module
-                ucGridInstance = new UcGrid();
-                ModulesInfo.Add(new ModuleInfo("UcGrid", "StudentsInformationSystem.UI.Modules.UcGrid"));
-                // Load module asynchronously
-                await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
-
-                // Retrieve UcGrid instance
-                ucGridInstance = (UcGrid)frm_main_container.Controls.Find("UcGrid", true).FirstOrDefault();
-
-                // After loading the module, call initload
-                 myFunction = () => UcGrid.initload<Department>(ucGridInstance);
-                // Invoke the delegate
-                myFunction.Invoke();
-            }
-
+            UcGrid ucGridInstance = new UcGrid();
+            UcGrid.title = "Department";
+            // Retrieve UcGrid instance
+            ucGridInstance = (UcGrid)frm_main_container.Controls.Find("UcGrid", true).FirstOrDefault();
+            FrmAddDepartment adddep = new FrmAddDepartment();
+            UcGrid.frm = adddep;
+            UcGrid.myinstance = ucGridInstance;
+            // After loading the module, call initload
+            myFunction = () => UcGrid.initload<Department>();
+            // Invoke the delegate
+            myFunction.Invoke();
             await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
          
         }
@@ -255,14 +266,21 @@ namespace StudentsInformationSystem
 
         private async void s_element_course_Click(object sender, EventArgs e)
         {
-            if (ModulesInfo.GetItem("UcCourses") == null)
-            {  
-                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
-                ModulesInfo.Add(new ModuleInfo("UcCourses", "StudentsInformationSystem.UI.Modules.UcCourses"));
-
-
-            }
-            await LoadModuleAsync(ModulesInfo.GetItem("UcCourses"));
+            enable_disable_accordion(sender, e);
+            UcGrid.endpoint = FrmAddDepartment.endpoint;
+            UcGrid.modifyendpoint = "api/deactivate_course";
+            UcGrid ucGridInstance = new UcGrid();
+            UcGrid.title = "Department";
+            // Retrieve UcGrid instance
+            ucGridInstance = (UcGrid)frm_main_container.Controls.Find("UcGrid", true).FirstOrDefault();
+            FrmAddDepartment adddep = new FrmAddDepartment();
+            UcGrid.frm = adddep;
+            UcGrid.myinstance = ucGridInstance;
+            // After loading the module, call initload
+            myFunction = () => UcGrid.initload<Department>();
+            // Invoke the delegate
+            myFunction.Invoke();
+            await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
         }
         
         private void log_out_Click(object sender, EventArgs e)

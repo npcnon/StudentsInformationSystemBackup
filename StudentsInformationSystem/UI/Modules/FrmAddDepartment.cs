@@ -40,7 +40,14 @@ namespace StudentsInformationSystem.UI.Modules
                 // Raise the custom event when the "Save" button is clicked
                 OnSaveButtonClicked(EventArgs.Empty);
                 txt_department.Text = "";
-                (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
+                if(functions.api_response_success)
+                {
+                    (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
+                    Enabled = false;
+                    await Task.Delay(2000);
+                    Enabled = true;
+                }
+                
             }
             catch (ArgumentException ex_argument)
             {

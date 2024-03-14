@@ -26,7 +26,7 @@ namespace StudentsInformationSystem
 
         internal static string baseUrl = "http://127.0.0.1:8000/";
         internal static HttpClient client = new HttpClient();
-       
+        internal static bool api_response_success = true;
         //method to lead the teacher id to the teacher id textbox
         public static void LoadID(Control txtbox, string sqlQuery)
         {
@@ -77,29 +77,7 @@ namespace StudentsInformationSystem
 
 
 
-        public static bool ChckIfDatabaseHaveData()
-        {
-            string connectionString = "Data Source=DESKTOP-9GA3LFJ\\SQLEXPRESS;Initial Catalog=sis;Integrated Security=True";
-
-            // Write your SQL command to retrieve teacher ID from the database
-            string sqlQuery = "SELECT COUNT (*) FROM TblTeacherInfo";
-
-            // Create a SqlConnection object
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                // Create a SqlCommand object
-                using (SqlCommand command = new SqlCommand(sqlQuery, connection))
-                {
-                    // Open the connection
-                    connection.Open();
-
-                    // Execute the SQL command and get the result
-                    int count = (int)command.ExecuteScalar();
-
-                    return count > 0;
-                }
-            }
-        }
+       
 
 
         public static bool ChckAdmin()
@@ -185,44 +163,7 @@ namespace StudentsInformationSystem
             }
         
         }
-        public static void loaditemlistbox(CheckedListBoxControl libox, string columnName, string tableName)
-        {
-            string connectionString = "Data Source=DESKTOP-9GA3LFJ\\SQLEXPRESS;Initial Catalog=sis;Integrated Security=True";
-
-            string sqlQuery = $"SELECT DISTINCT {columnName} FROM {tableName}"; // Modify the query as per your table structure
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                SqlCommand command = new SqlCommand(sqlQuery, connection);
-
-                try
-                {
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    // Clear existing items in the ComboBoxEdit
-                    libox.Items.Clear();
-
-                    // Loop through the retrieved data and add it to the ComboBoxEdit
-                    
-                    while (reader.Read())
-                    {
-                        libox.Items.Add(reader[columnName].ToString());
-                    }
-
-                    // Optionally, select the first item in the ComboBoxEdit
-                    if (libox.Items.Count > 0)
-                    {
-                        libox.SelectedIndex = 0;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
-            }
-
-        }
+       
         public static byte[] ImageToByteArray(Image image)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -282,6 +223,7 @@ namespace StudentsInformationSystem
 
                 if (response.IsSuccessStatusCode)
                 {
+                    api_response_success = true;
                     string jsonResponse = await response.Content.ReadAsStringAsync();
 
                     // Export the JSON response as a file
@@ -327,10 +269,12 @@ namespace StudentsInformationSystem
                 else
                 {
                     MessageBox.Show("Error: " + response.StatusCode);
+                    api_response_success = false;
                 }
             }
             catch (Exception ex)
             {
+                api_response_success = false;
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
@@ -378,6 +322,7 @@ namespace StudentsInformationSystem
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Data inserted successfully into the database.");
+                    api_response_success = true;
                     if (gcont != null)
                     {
                         await LoadData<T>(endpoint, gcont);
@@ -386,11 +331,13 @@ namespace StudentsInformationSystem
                 else
                 {
                     MessageBox.Show("Failed to insert data into the database.");
+                    api_response_success = false;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+                api_response_success = false;
             }
         }
 
@@ -432,15 +379,18 @@ namespace StudentsInformationSystem
                 if (response.IsSuccessStatusCode)
                 {
                     MessageBox.Show("Active field modified successfully.");
+                    api_response_success = true;
                 }
                 else
                 {
                     MessageBox.Show("Failed to modify active field.");
+                    api_response_success = false;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+                api_response_success = false;
             }
         }
 
@@ -463,29 +413,33 @@ namespace StudentsInformationSystem
                         if (name == departmentName)
                         {
                             Debug.WriteLine(Convert.ToInt32(item.GetValue("id")));
+                            api_response_success = true;
                             return Convert.ToInt32(item.GetValue("id"));
                         }
                     }
 
                     // Department not found
                     Debug.WriteLine("Department not found");
+                    api_response_success = false;
                     return null;
                 }
                 else
                 {
                     MessageBox.Show("Error: " + response.StatusCode);
+                    api_response_success = false;
                     return null;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+                api_response_success = false;
                 return null;
             }
         }
 
 
-        internal static async Task ShowWaitFormAsync()
+        internal static async Task ShowWaitFormAsync(UcGrid inst = null, DirectXForm frm = null, GridControl grid = null)
         {
           
             var waitForm = new WaitForm2(); // Replace YourWaitForm with the actual name of your wait form
@@ -493,16 +447,41 @@ namespace StudentsInformationSystem
 
             try
             {
+                if(inst != null)
+                {
+                    inst.Enabled = false;
+                }
+                if(frm != null)
+                {
+                    frm.Enabled = false;
+                }
+                if (grid != null)
+                {
+                    grid.Enabled = false;
+                }
                 await Task.Delay(2000);
             }
             finally
             {
-
+                if (inst != null)
+                {
+                    inst.Enabled = true;
+                }
+                if (frm != null)
+                {
+                    frm.Enabled = true;
+                }
+                if (grid != null)
+                {
+                    grid.Enabled = true;
+                }
+                
                 // Close the wait form once the time is up
                 waitForm.Close();
             }
         }
         
+
     }
 
 

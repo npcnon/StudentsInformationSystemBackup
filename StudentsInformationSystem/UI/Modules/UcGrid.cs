@@ -1,4 +1,5 @@
 ﻿using DevExpress.DXperience.Demos;
+using DevExpress.XtraBars.ViewInfo;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using System;
@@ -21,17 +22,19 @@ namespace StudentsInformationSystem.UI.Modules
     public partial class UcGrid : DevExpress.DXperience.Demos.TutorialControlBase
     {
         public static event EventHandler exit_is_clicked;
-        public static UcGrid gridcont;
+        public static UcGrid myinstance;
         public static string endpoint;
         public static string modifyendpoint;
-        private static object class_reference;
+        public static string title;
         public static DirectXForm frm;
+        public static bool firstload = false;
         public UcGrid()
         {
             
        
-
-        InitializeComponent();
+            
+            InitializeComponent();
+            
             DoubleBuffered = true;
             
 
@@ -39,6 +42,7 @@ namespace StudentsInformationSystem.UI.Modules
         protected virtual void exitisclicked(EventArgs e)
         {
             exit_is_clicked?.Invoke(this, e);
+            
         }
        
         
@@ -65,6 +69,7 @@ namespace StudentsInformationSystem.UI.Modules
                         // Call the function to delete the row
                         await functions.ModifyActiveField(modifyendpoint, selectedRowToDelete.Row, true);
                         (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
+                        gridcont_department.Enabled = false;
                         // After deleting, refresh the grid to reflect the changes
                         //load();
                     }
@@ -77,6 +82,7 @@ namespace StudentsInformationSystem.UI.Modules
                     // Refresh the grid to reload the data from the database
                     gridView.OptionsBehavior.Editable = false;
                     (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
+                    gridcont_department.Enabled = false;
                     break;
 
                 case "Exit":
@@ -87,23 +93,24 @@ namespace StudentsInformationSystem.UI.Modules
                     break;
             }
         }
-     
-        public static async void initload<T>(UcGrid grid) where T : class
+
+        public static async Task initload<T>() where T : class
         {
-            
-            class_reference = Activator.CreateInstance<T>();
-            await functions.ShowWaitFormAsync();
-            await functions.LoadData<T>(endpoint, grid.gridcont_department);
-            
+            myinstance.lbl_title.Text = title;
+            await functions.ShowWaitFormAsync(myinstance);
+            // Load data asynchronously
+            await functions.LoadData<T>(endpoint, myinstance.gridcont_department);
         }
-        
+
+
+
         private void UcGrid_Load(object sender, EventArgs e)
         {
-            exitisclicked(EventArgs.Empty);
+            
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             gridView.OptionsBehavior.Editable = false;
         }
-        
+    
         private async void gridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             // Get the modified row
@@ -112,9 +119,10 @@ namespace StudentsInformationSystem.UI.Modules
             {
                 // Assuming the ID of the row to update is in the "id" column
                 int idToUpdate = Convert.ToInt32(modifiedRow["id"]);
-                await functions.ModifyActiveField(endpoint, modifiedRow, false);
+                await functions.ModifyActiveField(modifyendpoint, modifiedRow, false);
                 //await functions.LoadData<class_reference>(endpoint, gridcont_department);
                 (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
+               
             }
         }
     }

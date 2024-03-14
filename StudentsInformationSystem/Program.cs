@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StudentsInformationSystem.UI.Modules;
+using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StudentsInformationSystem
@@ -15,8 +17,17 @@ namespace StudentsInformationSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new FrmMain());
-        }
+            // Start the FrmMain form on a separate thread
+            Task.Run(() =>
+            {
+                // Start the FrmLoading form
+                Application.Run(new FrmLoading());
 
+            });
+
+            FrmMain frmMain = new FrmMain();
+          
+            Application.Run(frmMain);
+        }
     }
 }
