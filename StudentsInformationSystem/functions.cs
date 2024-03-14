@@ -24,7 +24,7 @@ namespace StudentsInformationSystem
     internal class functions
     {
 
-        internal static string baseUrl = "http://127.0.0.1:8000/";
+        internal static string baseUrl = "http://afknon.pythonanywhere.com/";
         internal static HttpClient client = new HttpClient();
         internal static bool api_response_success = true;
         //method to lead the teacher id to the teacher id textbox
@@ -323,7 +323,7 @@ namespace StudentsInformationSystem
                 {
                     MessageBox.Show("Data inserted successfully into the database.");
                     api_response_success = true;
-                    if (gcont != null)
+                    if (gcont != null)  
                     {
                         await LoadData<T>(endpoint, gcont);
                     }
