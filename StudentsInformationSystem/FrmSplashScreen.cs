@@ -25,5 +25,10 @@ namespace StudentsInformationSystem
         public enum SplashScreenCommand
         {
         }
+
+        private async void FrmSplashScreen_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

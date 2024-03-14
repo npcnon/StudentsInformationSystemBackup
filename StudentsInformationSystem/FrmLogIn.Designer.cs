@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentsInformationSystem.FrmSplashScreen), true, false, true);
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentsInformationSystem.FrmSplashScreen), true, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogIn));
             this.btn_signin = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -72,7 +72,7 @@
             // 
             // btn_signin
             // 
-            this.btn_signin.Location = new System.Drawing.Point(12, 102);
+            this.btn_signin.Location = new System.Drawing.Point(12, 101);
             this.btn_signin.Name = "btn_signin";
             this.btn_signin.Size = new System.Drawing.Size(172, 22);
             this.btn_signin.StyleController = this.layoutControl1;
@@ -146,7 +146,7 @@
             this.cedit_signin.Properties.Appearance.ForeColor = System.Drawing.Color.SteelBlue;
             this.cedit_signin.Properties.Appearance.Options.UseForeColor = true;
             this.cedit_signin.Properties.Caption = "Keep me signed in";
-            this.cedit_signin.Size = new System.Drawing.Size(172, 19);
+            this.cedit_signin.Size = new System.Drawing.Size(172, 18);
             this.cedit_signin.StyleController = this.layoutControl1;
             this.cedit_signin.TabIndex = 6;
             // 
@@ -206,7 +206,7 @@
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 67);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(176, 23);
+            this.layoutControlItem3.Size = new System.Drawing.Size(176, 22);
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -218,7 +218,7 @@
             this.layoutControlItem4.Control = this.btn_signin;
             this.layoutControlItem4.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 90);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 89);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(176, 26);
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
@@ -239,9 +239,9 @@
             this.emptySpaceItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.emptySpaceItem1.AppearanceItemCaption.Options.UseFont = true;
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 116);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 115);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(176, 40);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(176, 41);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5

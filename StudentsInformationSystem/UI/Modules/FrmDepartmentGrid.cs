@@ -88,6 +88,5 @@ namespace StudentsInformationSystem.UI.Modules
             }
         }
 
-
     }
 }

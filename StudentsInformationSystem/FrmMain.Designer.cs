@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
-            this.frm_main_container = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             this.frm_main_acc_control = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.m_element_Staff = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_addstaff = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -54,26 +51,13 @@
             this.s_element_departments = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_course = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.log_out = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.fluentFormDefaultManager1 = new DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(this.components);
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.directXFormContainerControl1 = new DevExpress.XtraEditors.DirectXFormContainerControl();
+            this.frm_main_container = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer();
             ((System.ComponentModel.ISupportInitialize)(this.frm_main_acc_control)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).BeginInit();
             this.directXFormContainerControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // splashScreenManager1
-            // 
-            splashScreenManager1.ClosingDelay = 500;
-            // 
-            // frm_main_container
-            // 
-            this.frm_main_container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.frm_main_container.Location = new System.Drawing.Point(250, 0);
-            this.frm_main_container.Name = "frm_main_container";
-            this.frm_main_container.Size = new System.Drawing.Size(675, 559);
-            this.frm_main_container.TabIndex = 0;
             // 
             // frm_main_acc_control
             // 
@@ -249,6 +233,7 @@
             this.m_element_depart.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_depart.ImageOptions.SvgImage")));
             this.m_element_depart.Name = "m_element_depart";
             this.m_element_depart.Text = "Department";
+            this.m_element_depart.Click += new System.EventHandler(this.m_element_depart_Click_1);
             // 
             // s_element_subjects
             // 
@@ -282,10 +267,6 @@
             this.log_out.Text = "LOG OUT";
             this.log_out.Click += new System.EventHandler(this.log_out_Click);
             // 
-            // fluentFormDefaultManager1
-            // 
-            this.fluentFormDefaultManager1.Form = this;
-            // 
             // accordionControlElement3
             // 
             this.accordionControlElement3.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -308,6 +289,14 @@
             this.directXFormContainerControl1.Size = new System.Drawing.Size(925, 559);
             this.directXFormContainerControl1.TabIndex = 0;
             // 
+            // frm_main_container
+            // 
+            this.frm_main_container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.frm_main_container.Location = new System.Drawing.Point(250, 0);
+            this.frm_main_container.Name = "frm_main_container";
+            this.frm_main_container.Size = new System.Drawing.Size(675, 559);
+            this.frm_main_container.TabIndex = 0;
+            // 
             // FrmMain
             // 
             this.Appearance.BackColor = System.Drawing.Color.SkyBlue;
@@ -323,19 +312,16 @@
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BENEDICTO SIS";
-            this.Load += new System.EventHandler(this.FrmMain_Load);
+            this.Load += new System.EventHandler(this.FrmMain_LoadAsync);
             ((System.ComponentModel.ISupportInitialize)(this.frm_main_acc_control)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fluentFormDefaultManager1)).EndInit();
             this.directXFormContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer frm_main_container;
         private DevExpress.XtraBars.Navigation.AccordionControl frm_main_acc_control;
         private DevExpress.XtraBars.Navigation.AccordionControlElement m_element_student;
-        private DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager fluentFormDefaultManager1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement m_element_schedule;
@@ -359,5 +345,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_course;
         private DevExpress.XtraBars.Navigation.AccordionControlElement log_out;
         private DevExpress.XtraEditors.DirectXFormContainerControl directXFormContainerControl1;
+        private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer frm_main_container;
     }
 }

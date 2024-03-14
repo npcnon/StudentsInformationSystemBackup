@@ -17,6 +17,7 @@ using System.Linq;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 using System.Data;
+using DevExpress.XtraBars.FluentDesignSystem;
 
 namespace StudentsInformationSystem
 {
@@ -26,7 +27,6 @@ namespace StudentsInformationSystem
         internal static string baseUrl = "http://127.0.0.1:8000/";
         internal static HttpClient client = new HttpClient();
        
-
         //method to lead the teacher id to the teacher id textbox
         public static void LoadID(Control txtbox, string sqlQuery)
         {
@@ -484,40 +484,25 @@ namespace StudentsInformationSystem
             }
         }
 
-        //internal static async Task UpdateData<T>(T data, string endpoint, int id, GridControl gcont = null) where T : class
-        //{
-        //    try
-        //    {
-        //        string json = JsonConvert.SerializeObject(data);
 
-        //        // Export the JSON response as a file
-        //        File.WriteAllText("response.json", json);
+        internal static async Task ShowWaitFormAsync()
+        {
+          
+            var waitForm = new WaitForm2(); // Replace YourWaitForm with the actual name of your wait form
+            waitForm.Show();
 
-        //        Debug.WriteLine(json.ToString());
-        //        var content = new StringContent(json, Encoding.UTF8, "application/json");
+            try
+            {
+                await Task.Delay(2000);
+            }
+            finally
+            {
 
-        //        string putEndpoint = $"{endpoint}/{id}/";
-        //        HttpResponseMessage response = await client.PutAsync(baseUrl + putEndpoint, content);
-
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            MessageBox.Show("Data updated successfully.");
-        //            if (gcont != null)
-        //            {
-        //                await LoadData<T>(endpoint, gcont);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Failed to update data.");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex.Message);
-        //    }
-        //}
-
+                // Close the wait form once the time is up
+                waitForm.Close();
+            }
+        }
+        
     }
 
 

@@ -8,31 +8,80 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StudentsInformationSystem.UI.Modules;
+using System.Linq;
+using DevExpress.XtraWaitForm;
+using DevExpress.XtraSplashScreen;
+using System.Runtime.CompilerServices;
 
 namespace StudentsInformationSystem
 {
     public partial class FrmMain : DevExpress.XtraEditors.DirectXForm
     {
 
+        
 
+        public delegate void MyFunctionDelegate();
+        public static MyFunctionDelegate myFunction;
+        bool acc_is_enable = true;
+        
 
-
+        
         public FrmMain()
         {
             InitializeComponent();
-           
-            //this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            UcGrid.exit_is_clicked += enable_disable_accordion;
+           List<AccordionControlElement> ac_element = new List<AccordionControlElement>()
+            {
+                m_element_Staff,
+                m_element_student,
+                m_element_schedule,
+                m_element_depart,
+                m_element_users
+            };
+
+            foreach (AccordionControlElement ac in ac_element)
+            {
+                ac.Appearance.Default.BackColor = Color.FromArgb(41, 89, 151);
+            }
 
         }
-        
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            UcGrid.exit_is_clicked -= enable_disable_accordion;
+        }
 
+        public void enable_disable_accordion(object sender, EventArgs e)
+        {
+            if(acc_is_enable)
+            {
+
+                frm_main_acc_control.Enabled = false;
+                frm_main_acc_control.OptionsMinimizing.State = AccordionControlState.Minimized;
+                acc_is_enable = false;
+            }
+            else
+            {
+                
+                frm_main_acc_control.Enabled = true;
+                frm_main_acc_control.OptionsMinimizing.State = AccordionControlState.Normal;
+                acc_is_enable = false;
+            }
+        }
+
+        public void InvokeMyFunction()
+        {
+            myFunction?.Invoke();
+        }
 
         async Task LoadModuleAsync(ModuleInfo module)
         {
             await Task.Factory.StartNew(() =>
             {
+                
                 if (!frm_main_container.Controls.ContainsKey(module.Name))
                 {
+                  
                     TutorialControlBase control = module.TModule as TutorialControlBase;
                     if (control != null)
                     {
@@ -53,59 +102,29 @@ namespace StudentsInformationSystem
                         frm_main_container.Invoke(new MethodInvoker(delegate () { control[0].BringToFront(); }));
                     Debug.Write("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
                 }
+              
             });
         }
 
-        private void FrmMain_Load(object sender, EventArgs e)
+        private void FrmMain_LoadAsync(object sender, EventArgs e)
         {
-            Debug.WriteLine("load running");
-            //splashScreenManager1.ShowWaitForm();
-            //Thread.Sleep(3000);
-            //splashScreenManager1.CloseWaitForm();
+ 
+       
 
-            //if (functions.ChckAdmin())
-            //{
-            //    //FrmChangePass frmChangePass = new FrmChangePass();
-            //    //frmChangePass.ShowDialog();
-            //}
+        
 
-            frm_main_container.Controls.Add(new UcStartmenu() { Dock = DockStyle.Fill });
-            List<AccordionControlElement> ac_element = new List<AccordionControlElement>()
-            {
-                m_element_Staff,
-                m_element_student,
-                m_element_schedule,
-                m_element_depart,
-                m_element_users
-            };
-            foreach (AccordionControlElement ac in ac_element)
-            {
-                ac.Appearance.Default.BackColor = Color.FromArgb(41, 89, 151);
-            }
-
-            ////frm_main_acc_control.OptionsHamburgerMenu.DisplayMode = DevExpress.XtraBars.Navigation.AccordionControlDisplayMode.Overlay;
-            ////frm_main_acc_control.Hide();
-            ////frm_main_acc_control.Show();
             
-            //frm_main_acc_control.CollapseAll();
-            //frm_main_acc_control.ExpandAll();
-            //FormBorderStyle = FormBorderStyle.None;
-            ////WindowState = FormWindowState.Maximized;
-            StartPosition = FormStartPosition.CenterScreen;
-            ////OptionsAdaptiveLayout.AdaptiveLayout = false;
 
+
+          
         }
+
 
 
 
         private async void s_element_addstdnt_Click_1(object sender, EventArgs e)
         {
-            if (ModulesInfo.GetItem("UcAddStdnt") == null)
-            {
-
-                ModulesInfo.Add(new ModuleInfo("UcAddStdnt", "StudentsInformationSystem.UI.Modules.UcAddStdnt"));
-
-            }
+            
             await LoadModuleAsync(ModulesInfo.GetItem("UcAddStdnt"));
         }
 
@@ -201,22 +220,37 @@ namespace StudentsInformationSystem
 
         private async void s_element_departments_Click(object sender, EventArgs e)
         {
-            if (ModulesInfo.GetItem("UcDepartment") == null)
+            UcGrid.endpoint = FrmAddDepartment.endpoint;
+            UcGrid.modifyendpoint = "api/deactivate_department";
+            UcGrid ucGridInstance = null;
+            if (ModulesInfo.GetItem("UcGrid") == null)
             {
-                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
-                ModulesInfo.Add(new ModuleInfo("UcDepartment", "StudentsInformationSystem.UI.Modules.UcDepartment"));
+                
+                // Create and add UcGrid module
+                ucGridInstance = new UcGrid();
+                ModulesInfo.Add(new ModuleInfo("UcGrid", "StudentsInformationSystem.UI.Modules.UcGrid"));
+                // Load module asynchronously
+                await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
 
+                // Retrieve UcGrid instance
+                ucGridInstance = (UcGrid)frm_main_container.Controls.Find("UcGrid", true).FirstOrDefault();
 
+                // After loading the module, call initload
+                 myFunction = () => UcGrid.initload<Department>(ucGridInstance);
+                // Invoke the delegate
+                myFunction.Invoke();
             }
-            //trigger UcCourse load/loaddata event here
 
-            UcCourses ucCourses = new UcCourses();
-
-            // Call the LoadData method
-            await ucCourses.LoadData();
-            await LoadModuleAsync(ModulesInfo.GetItem("UcDepartment"));
-           
+            await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
+         
         }
+
+
+
+
+
+
+
 
         private async void s_element_course_Click(object sender, EventArgs e)
         {
@@ -229,7 +263,7 @@ namespace StudentsInformationSystem
             }
             await LoadModuleAsync(ModulesInfo.GetItem("UcCourses"));
         }
-
+        
         private void log_out_Click(object sender, EventArgs e)
         {
             Close();
@@ -252,6 +286,11 @@ namespace StudentsInformationSystem
         {
             Debug.WriteLine("Running");
             frm_main_acc_control.CollapseAll();
+        }
+
+        private void m_element_depart_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
