@@ -86,10 +86,10 @@
             this.layoutControl1.Controls.Add(this.txt_subcode);
             this.layoutControl1.Controls.Add(this.txt_unit);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(2, 22);
+            this.layoutControl1.Location = new System.Drawing.Point(2, 23);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(691, 476);
+            this.layoutControl1.Size = new System.Drawing.Size(691, 475);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -111,13 +111,13 @@
             this.emptySpaceItem1,
             this.layoutControlGroup1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(691, 476);
+            this.Root.Size = new System.Drawing.Size(691, 475);
             this.Root.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 166);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 165);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(671, 290);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -134,21 +134,21 @@
             this.layoutControlItem6});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(671, 166);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(671, 165);
             this.layoutControlGroup1.Text = "ADD SUBJECTS";
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(480, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(481, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(165, 120);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(166, 120);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.btn_submit;
-            this.layoutControlItem5.Location = new System.Drawing.Point(316, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(317, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(164, 120);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -156,43 +156,43 @@
             // 
             // cbox_course
             // 
-            this.cbox_course.Location = new System.Drawing.Point(101, 141);
+            this.cbox_course.Location = new System.Drawing.Point(108, 141);
             this.cbox_course.Name = "cbox_course";
             this.cbox_course.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbox_course.Size = new System.Drawing.Size(236, 20);
+            this.cbox_course.Size = new System.Drawing.Size(229, 20);
             this.cbox_course.StyleController = this.layoutControl1;
             this.cbox_course.TabIndex = 9;
             // 
             // txt_offercode
             // 
-            this.txt_offercode.Location = new System.Drawing.Point(101, 45);
+            this.txt_offercode.Location = new System.Drawing.Point(108, 45);
             this.txt_offercode.Name = "txt_offercode";
-            this.txt_offercode.Size = new System.Drawing.Size(236, 20);
+            this.txt_offercode.Size = new System.Drawing.Size(229, 20);
             this.txt_offercode.StyleController = this.layoutControl1;
             this.txt_offercode.TabIndex = 4;
             // 
             // txt_description
             // 
-            this.txt_description.Location = new System.Drawing.Point(101, 69);
+            this.txt_description.Location = new System.Drawing.Point(108, 69);
             this.txt_description.Name = "txt_description";
-            this.txt_description.Size = new System.Drawing.Size(236, 20);
+            this.txt_description.Size = new System.Drawing.Size(229, 20);
             this.txt_description.StyleController = this.layoutControl1;
             this.txt_description.TabIndex = 5;
             // 
             // txt_subcode
             // 
-            this.txt_subcode.Location = new System.Drawing.Point(101, 93);
+            this.txt_subcode.Location = new System.Drawing.Point(108, 93);
             this.txt_subcode.Name = "txt_subcode";
-            this.txt_subcode.Size = new System.Drawing.Size(236, 20);
+            this.txt_subcode.Size = new System.Drawing.Size(229, 20);
             this.txt_subcode.StyleController = this.layoutControl1;
             this.txt_subcode.TabIndex = 6;
             // 
             // txt_unit
             // 
-            this.txt_unit.Location = new System.Drawing.Point(101, 117);
+            this.txt_unit.Location = new System.Drawing.Point(108, 117);
             this.txt_unit.Name = "txt_unit";
-            this.txt_unit.Size = new System.Drawing.Size(236, 20);
+            this.txt_unit.Size = new System.Drawing.Size(229, 20);
             this.txt_unit.StyleController = this.layoutControl1;
             this.txt_unit.TabIndex = 7;
             // 
@@ -201,7 +201,7 @@
             this.layoutControlItem1.Control = this.txt_offercode;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(316, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(317, 24);
             this.layoutControlItem1.Text = "Offercode :";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(72, 13);
             // 
@@ -210,7 +210,7 @@
             this.layoutControlItem2.Control = this.txt_description;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(316, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(317, 24);
             this.layoutControlItem2.Text = "Description :";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(72, 13);
             // 
@@ -219,7 +219,7 @@
             this.layoutControlItem3.Control = this.txt_subcode;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(316, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(317, 24);
             this.layoutControlItem3.Text = "Subject code :";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(72, 13);
             // 
@@ -228,7 +228,7 @@
             this.layoutControlItem4.Control = this.txt_unit;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(316, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(317, 24);
             this.layoutControlItem4.Text = "Unit :";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(72, 13);
             // 
@@ -237,7 +237,7 @@
             this.layoutControlItem6.Control = this.cbox_course;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(316, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(317, 24);
             this.layoutControlItem6.Text = "Course :";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(72, 13);
             // 

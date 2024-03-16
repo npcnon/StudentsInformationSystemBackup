@@ -233,7 +233,6 @@
             this.m_element_depart.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_depart.ImageOptions.SvgImage")));
             this.m_element_depart.Name = "m_element_depart";
             this.m_element_depart.Text = "Department";
-            this.m_element_depart.Click += new System.EventHandler(this.m_element_depart_Click_1);
             // 
             // s_element_subjects
             // 

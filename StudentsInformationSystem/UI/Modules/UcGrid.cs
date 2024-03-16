@@ -9,6 +9,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -54,24 +55,30 @@ namespace StudentsInformationSystem.UI.Modules
                     frm.ShowDialog();
                     break;
                 case "Edit":
-                    gridView.OptionsBehavior.Editable = true;
-                    gridView.Columns["id"].OptionsColumn.ReadOnly = true;
-                    gridView.Columns["id"].OptionsColumn.AllowEdit = false;
+
+                    try
+                    {
+                        gview_general.OptionsBehavior.Editable = true;
+                        gview_general.Columns["id"].OptionsColumn.ReadOnly = true;
+                        gview_general.Columns["id"].OptionsColumn.AllowEdit = false;
+                    }
+                    catch(NullReferenceException nullex)
+                    {
+                        Debug.WriteLine($"Error Catched: {nullex}");
+                        gview_general.Columns["offercode"].OptionsColumn.ReadOnly = true;
+                        gview_general.Columns["offercode"].OptionsColumn.AllowEdit = false;
+                    }
+                  
                     break;
 
                 case "Delete":
-                    // Get the selected row data
-                    DataRowView selectedRowToDelete = (DataRowView)gridView.GetFocusedRow();
+                    DataRowView selectedRowToDelete = (DataRowView)gview_general.GetFocusedRow();
                     if (selectedRowToDelete != null)
                     {
-                        // Assuming the ID of the row to delete is in the "id" column
                         int idToDelete = Convert.ToInt32(selectedRowToDelete["id"]);
-                        // Call the function to delete the row
-                        await functions.ModifyActiveField(modifyendpoint, selectedRowToDelete.Row, true);
+                        // Call the new ModifyActiveField method
+                        await functions.ModifyActiveField(modifyendpoint, "id", idToDelete.ToString(), idToDelete, true);
                         (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
-                        gridcont_department.Enabled = false;
-                        // After deleting, refresh the grid to reflect the changes
-                        //load();
                     }
                     else
                     {
@@ -80,9 +87,9 @@ namespace StudentsInformationSystem.UI.Modules
                     break;
                 case "Refresh":
                     // Refresh the grid to reload the data from the database
-                    gridView.OptionsBehavior.Editable = false;
+                    gview_general.OptionsBehavior.Editable = false;
                     (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
-                    gridcont_department.Enabled = false;
+                   
                     break;
 
                 case "Exit":
@@ -96,36 +103,50 @@ namespace StudentsInformationSystem.UI.Modules
 
         public static async Task initload<T>() where T : class
         {
+           
             myinstance.lbl_title.Text = title;
-            await functions.ShowWaitFormAsync(myinstance);
+            await functions.ShowWaitFormAsync(myinstance, null, myinstance.gridcont_general);
             // Load data asynchronously
-            await functions.LoadData<T>(endpoint, myinstance.gridcont_department);
+            await functions.LoadData<T>(endpoint, myinstance.gridcont_general);
+            myinstance.gview_general.PopulateColumns();
         }
 
 
 
         private void UcGrid_Load(object sender, EventArgs e)
         {
-            
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
-            gridView.OptionsBehavior.Editable = false;
+            gview_general.OptionsBehavior.Editable = false;
         }
     
         private async void gridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             // Get the modified row
-            DataRow modifiedRow = gridView.GetDataRow(e.RowHandle);
+            DataRow modifiedRow = gview_general.GetDataRow(e.RowHandle);
             if (modifiedRow != null)
             {
-                // Assuming the ID of the row to update is in the "id" column
-                int idToUpdate = Convert.ToInt32(modifiedRow["id"]);
-                await functions.ModifyActiveField(modifyendpoint, modifiedRow, false);
-                //await functions.LoadData<class_reference>(endpoint, gridcont_department);
-                (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
-               
+                try
+                {
+                    int idToUpdate = Convert.ToInt32(modifiedRow["id"]);
+                    await functions.ModifyActiveField(modifyendpoint, e.Column.FieldName, modifiedRow[e.Column.FieldName].ToString(), idToUpdate, false);
+                }
+                catch (ArgumentException argex)
+                {
+                    Debug.WriteLine($"Error Catched: {argex}");
+                    string offercode_to_update = modifiedRow["offercode"].ToString();
+                    await functions.ModifyActiveField(modifyendpoint, e.Column.FieldName, modifiedRow[e.Column.FieldName].ToString(), null, false, offercode_to_update);
+                }
+                finally
+                {
+                    (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
+                    gview_general.OptionsBehavior.Editable = false;
+                }
             }
+                // Call the new ModifyActiveField method
+               
         }
     }
+}
 
     
-}
+

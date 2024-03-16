@@ -80,7 +80,7 @@ namespace StudentsInformationSystem.UI.Modules
         private async void cbox_department_SelectedIndexChanged_2(object sender, EventArgs e)
         {
             Debug.WriteLine("Selected an Item");
-            course.department_Id = await functions.GetDepartmentId(cbox_department.Text, UcDepartment.endpoint);
+            //course.department_Id = await functions.GetDepartmentId(cbox_department.Text, UcDepartment.endpoint);
         }
 
         private void btn_select_Click(object sender, EventArgs e)
@@ -98,40 +98,5 @@ namespace StudentsInformationSystem.UI.Modules
         }
     }
 
-    public class Course
-    {
-        private int _id;
-        private string _course;
-        private int? _department_id;
-        private bool _active = true;
-        public string course
-        {
-            get => _course;
-            set => _course = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Course cannot be null");
-        }
-        public int? department_Id
-        {
-            get => _department_id;
-            set
-            {
-                if (value == null)
-                {
-                    throw new ArgumentException("Error: Department ID cannot be null");
-                }
-                _department_id = value;
-            }
-        }
-
-        public bool active
-        {
-            get => _active;
-            set => _active = value;
-        }
-
-        public int id
-        {
-            get => _id;
-            set => _id = value;
-        }
-    }
+    
 }

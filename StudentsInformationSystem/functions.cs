@@ -18,13 +18,14 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 using System.Data;
 using DevExpress.XtraBars.FluentDesignSystem;
+using System.Net;
 
 namespace StudentsInformationSystem
 {
     internal class functions
     {
 
-        internal static string baseUrl = "http://afknon.pythonanywhere.com/";
+        internal static string baseUrl = "http://127.0.0.1:8000/";
         internal static HttpClient client = new HttpClient();
         internal static bool api_response_success = true;
         //method to lead the teacher id to the teacher id textbox
@@ -243,6 +244,9 @@ namespace StudentsInformationSystem
                         }
 
                         // Set the DataTable as the DataSource for the GridControl
+                      
+                        gcont.Refresh();
+                        gcont.RefreshDataSource();
                         gcont.DataSource = dataTable;
                     }
 
@@ -311,10 +315,6 @@ namespace StudentsInformationSystem
             {
                 string json = JsonConvert.SerializeObject(data);
 
-                // Export the JSON response as a file
-                File.WriteAllText("response.json", json);
-
-                Debug.WriteLine(json.ToString());
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                 HttpResponseMessage response = await client.PostAsync(baseUrl + endpoint, content);
@@ -323,10 +323,16 @@ namespace StudentsInformationSystem
                 {
                     MessageBox.Show("Data inserted successfully into the database.");
                     api_response_success = true;
-                    if (gcont != null)  
+                    if (gcont != null)
                     {
                         await LoadData<T>(endpoint, gcont);
                     }
+                }
+                else if (response.StatusCode == HttpStatusCode.BadRequest)
+                {
+                    string errorMessage = await response.Content.ReadAsStringAsync();
+                    MessageBox.Show("Failed to insert data into the database: " + errorMessage);
+                    api_response_success = false;
                 }
                 else
                 {
@@ -341,40 +347,42 @@ namespace StudentsInformationSystem
             }
         }
 
-         internal static async Task ModifyActiveField(string point,DataRow row = null, bool deactivate = false)
+
+        internal static async Task ModifyActiveField(string endpoint, string fieldName, string fieldValue, int? id = null, bool deactivate = false,string offercode = null)
         {
             try
             {
-                // Assuming the column names in the DataRow correspond to the field names in your Django model
-                int id = Convert.ToInt32(row["id"]);
-                string endpoint = $"{point}/{id}/{deactivate}";
-               
-                HttpResponseMessage response;
-                if (deactivate)
+                string requestEndpoint;
+                if (id != null)
                 {
-                    Debug.WriteLine("ModifyActiveField if running");
-                    response = await client.PutAsync(baseUrl + endpoint, null);
+                    requestEndpoint = $"{endpoint}/{id}/{deactivate}";
                 }
                 else
                 {
-                    Debug.WriteLine("ModifyActiveField else running");
-                 
-                   
-                    string department = row["department"].ToString(); // Adjust this based on your column names
+                    requestEndpoint = $"{endpoint}/{offercode}/{deactivate}";
+                }
+                
+
+                HttpResponseMessage response;
+                if (deactivate)
+                {
+                    response = await client.PutAsync(baseUrl + requestEndpoint, null);
+                }
+                else
+                {
                     // Construct the JSON payload to send in the request body
                     var payload = new Dictionary<string, string>
-                {
-                    { "department", department } // Adjust this based on your field names
-                };
+            {
+                { fieldName, fieldValue }
+            };
 
                     // Convert the payload to JSON
                     string jsonPayload = JsonConvert.SerializeObject(payload);
 
                     // Create the HTTP request
                     var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-                    response = await client.PutAsync(baseUrl + endpoint, content);
+                    response = await client.PutAsync(baseUrl + requestEndpoint, content);
                 }
-               
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -396,7 +404,8 @@ namespace StudentsInformationSystem
 
 
 
-        internal static async Task<int?> GetDepartmentId(string departmentName, string endpoint)
+
+        internal static async Task<int?> GetEntityId(string propertyName, string propertyValue, string idPropertyName, string endpoint)
         {
             try
             {
@@ -409,17 +418,17 @@ namespace StudentsInformationSystem
 
                     foreach (JObject item in data)
                     {
-                        string name = item.GetValue("department").ToString();
-                        if (name == departmentName)
+                        string value = item.GetValue(propertyName)?.ToString();
+                        if (value == propertyValue)
                         {
-                            Debug.WriteLine(Convert.ToInt32(item.GetValue("id")));
+                            Debug.WriteLine(Convert.ToInt32(item.GetValue(idPropertyName)));
                             api_response_success = true;
-                            return Convert.ToInt32(item.GetValue("id"));
+                            return Convert.ToInt32(item.GetValue(idPropertyName));
                         }
                     }
 
-                    // Department not found
-                    Debug.WriteLine("Department not found");
+                    // Entity not found
+                    Debug.WriteLine($"{propertyName} '{propertyValue}' not found");
                     api_response_success = false;
                     return null;
                 }
@@ -439,6 +448,7 @@ namespace StudentsInformationSystem
         }
 
 
+
         internal static async Task ShowWaitFormAsync(UcGrid inst = null, DirectXForm frm = null, GridControl grid = null)
         {
           
@@ -450,6 +460,7 @@ namespace StudentsInformationSystem
                 if(inst != null)
                 {
                     inst.Enabled = false;
+                   
                 }
                 if(frm != null)
                 {
@@ -457,7 +468,8 @@ namespace StudentsInformationSystem
                 }
                 if (grid != null)
                 {
-                    grid.Enabled = false;
+                    grid.Visible = false;
+                   
                 }
                 await Task.Delay(2000);
             }
@@ -473,7 +485,8 @@ namespace StudentsInformationSystem
                 }
                 if (grid != null)
                 {
-                    grid.Enabled = true;
+                    grid.Visible = true;
+              
                 }
                 
                 // Close the wait form once the time is up

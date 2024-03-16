@@ -22,7 +22,7 @@ namespace StudentsInformationSystem
 
         private void StartTimer()
         {
-            Task.Delay(5000).ContinueWith(task =>
+            Task.Delay(4000).ContinueWith(task =>
             {
                 if (InvokeRequired)
                 {
