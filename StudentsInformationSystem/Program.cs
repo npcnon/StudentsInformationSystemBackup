@@ -26,8 +26,9 @@ namespace StudentsInformationSystem
             });
 
             FrmMain frmMain = new FrmMain();
-          
+
             Application.Run(frmMain);
+            //Application.Run(new FrmAddSchedule());
         }
     }
 }

@@ -24,37 +24,37 @@ namespace StudentsInformationSystem.UI.Modules
 
         private void UcAddStdnt_Load(object sender, EventArgs e)
         {
-            splashScreenManager1.ShowWaitForm();
-            Thread.Sleep(3000);
-            splashScreenManager1.CloseWaitForm();
+            //splashScreenManager1.ShowWaitForm();
+            //Thread.Sleep(3000);
+            //splashScreenManager1.CloseWaitForm();
 
-            controlList = new List<Control>
-            {
-                txt_fname,
-                txt_mname,
-                txt_lname,
-                dedit_bday,
-                cbox_gender,
-                cbox_civil_status,
-                cbox_citizenship,
-                cbox_religion,
-                txt_address,
-                txt_contact_info,
-                txt_email,
-                cbox_course,
-                cbox_department,
-                cbox_year_lvl,
-                cbox_semester,
-            };
+            //controlList = new List<Control>
+            //{
+            //    txt_fname,
+            //    txt_mname,
+            //    txt_lname,
+            //    dedit_bday,
+            //    cbox_gender,
+            //    cbox_civil_status,
+            //    cbox_citizenship,
+            //    cbox_religion,
+            //    txt_address,
+            //    txt_contact_info,
+            //    txt_email,
+            //    cbox_course,
+            //    cbox_department,
+            //    cbox_year_lvl,
+            //    cbox_semester,
+            //};
 
-            //added keypress event handler
-            for (int i = 0; i < 15; i++)
-            {
-                controlList[i].KeyDown += control_keypress;
-            }
-            txt_fname.Focus();
-            string sqlQuery = "SELECT MAX(stdnt_id)+1 FROM TblStdntInfo";
-            functions.LoadID(txt_id, sqlQuery);
+            ////added keypress event handler
+            //for (int i = 0; i < 15; i++)
+            //{
+            //    controlList[i].KeyDown += control_keypress;
+            //}
+            //txt_fname.Focus();
+            //string sqlQuery = "SELECT MAX(stdnt_id)+1 FROM TblStdntInfo";
+            //functions.LoadID(txt_id, sqlQuery);
           
         }
 

@@ -129,14 +129,16 @@ namespace StudentsInformationSystem
         private async void FrmMain_LoadAsync(object sender, EventArgs e)
         {
             
-            this.Enabled = false;
+            
             UcGrid.firstload = true;
             ModulesInfo.Add(new ModuleInfo("UcGrid", "StudentsInformationSystem.UI.Modules.UcGrid"));
             await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
             ucGridInstance = (UcGrid)frm_main_container.Controls.Find("UcGrid", true).FirstOrDefault();
+            ModulesInfo.Add(new ModuleInfo("UcAddStudent", "StudentsInformationSystem.UI.Modules.UcAddStudent"));
+            await LoadModuleAsync(ModulesInfo.GetItem("UcAddStudent"));
             ModulesInfo.Add(new ModuleInfo("UcStartmenu", "StudentsInformationSystem.UI.Modules.UcStartmenu"));
             await LoadModuleAsync(ModulesInfo.GetItem("UcStartmenu"));
-            TopMost = false;
+          
 
         }
         
@@ -144,8 +146,8 @@ namespace StudentsInformationSystem
 
         private async void s_element_addstdnt_Click_1(object sender, EventArgs e)
         {
-            
-            await LoadModuleAsync(ModulesInfo.GetItem("UcAddStdnt"));
+
+            await LoadModuleAsync(ModulesInfo.GetItem("UcAddStudent"));
         }
 
         private async void s_element_rmstdnt_Click_1(object sender, EventArgs e)
@@ -163,14 +165,34 @@ namespace StudentsInformationSystem
 
         private async void s_element_addtcher_Click(object sender, EventArgs e)
         {
-            if (ModulesInfo.GetItem("UcAddTcher") == null)
-            {
-                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
-                ModulesInfo.Add(new ModuleInfo("UcAddTcher", "StudentsInformationSystem.UI.Modules.UcAddTcher"));
+            enable_disable_accordion(sender, e);
+            UcGrid.endpoint = FrmAddStaff.endpoint;
+            UcGrid.modifyendpoint = "api/deactivate_or_modify_staff";
+            UcGrid.title = "Staff Info";
+            FrmAddStaff adddep = new FrmAddStaff();
+            UcGrid.frm = adddep;
+            UcGrid.myinstance = ucGridInstance;
+            // After loading the module, call initload
+            myFunction = () => UcGrid.initload<Staff>();
+            // Invoke the delegate
+            myFunction.Invoke();
+            await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
+        }
 
-
-            }
-            await LoadModuleAsync(ModulesInfo.GetItem("UcAddTcher"));
+        private async void s_element_additional_staff_info_Click(object sender, EventArgs e)
+        {
+            enable_disable_accordion(sender, e);
+            UcGrid.endpoint = FrmAddAdditionalStaffInfo.endpoint;
+            UcGrid.modifyendpoint = "api/deactivate_or_modify_addstaffinfo";
+            UcGrid.title = "Additional Staff Info";
+            FrmAddAdditionalStaffInfo adddep = new FrmAddAdditionalStaffInfo();
+            UcGrid.frm = adddep;
+            UcGrid.myinstance = ucGridInstance;
+            // After loading the module, call initload
+            myFunction = () => UcGrid.initload<Addstaffinfo>();
+            // Invoke the delegate
+            myFunction.Invoke();
+            await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
         }
 
         private async void s_element_addsched_Click(object sender, EventArgs e)
@@ -184,7 +206,7 @@ namespace StudentsInformationSystem
             }
             await LoadModuleAsync(ModulesInfo.GetItem("UcAddSchedule"));
         }
-
+       
         private async void s_element_add_user_Click(object sender, EventArgs e)
         {
             if (ModulesInfo.GetItem("UcAddUser") == null)
@@ -199,32 +221,37 @@ namespace StudentsInformationSystem
 
         private async void s_element_checksched_Click(object sender, EventArgs e)
         {
-            if (ModulesInfo.GetItem("UcAddSchedule") == null)
-            {
-                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
-                ModulesInfo.Add(new ModuleInfo("UcAddSchedule", "StudentsInformationSystem.UI.Modules.UcAddSchedule"));
-
-            }
-
-            await LoadModuleAsync(ModulesInfo.GetItem("UcAddSchedule"));
+            enable_disable_accordion(sender, e);
+            UcGrid.endpoint = FrmAddSchedule.endpoint;
+            UcGrid.modifyendpoint = "api/deactivate_or_modify_schedule";
+            UcGrid.title = "Schedule";
+            FrmAddSchedule adddep = new FrmAddSchedule();
+            UcGrid.frm = adddep;
+            UcGrid.myinstance = ucGridInstance;
+            // After loading the module, call initload
+            myFunction = () => UcGrid.initload<Schedule>();
+            // Invoke the delegate
+            myFunction.Invoke();
+            await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
         }
 
         private async void s_element_room_Click(object sender, EventArgs e)
         {
-            if (ModulesInfo.GetItem("UCRooms") == null)
-            {
-                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
-                ModulesInfo.Add(new ModuleInfo("UCRooms", "StudentsInformationSystem.UI.Modules.UCRooms"));
-               
-
-            }
-            await LoadModuleAsync(ModulesInfo.GetItem("UCRooms"));
+            enable_disable_accordion(sender, e);
+            UcGrid.endpoint = FrmAddRoom.endpoint;
+            UcGrid.modifyendpoint = "api/deactivate_or_modify_room";
+            UcGrid.title = "Room Info";
+            FrmAddRoom adddep = new FrmAddRoom();
+            UcGrid.frm = adddep;
+            UcGrid.myinstance = ucGridInstance;
+            // After loading the module, call initload
+            myFunction = () => UcGrid.initload<Room>();
+            // Invoke the delegate
+            myFunction.Invoke();
+            await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
         }
 
-        private void m_element_depart_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private async void s_element_subjects_Click(object sender, EventArgs e)
         {
@@ -288,33 +315,7 @@ namespace StudentsInformationSystem
             Close();
         }
 
-        private void fluentDesignFormControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void accordionControlElement1_Click(object sender, EventArgs e)
-        {
-            Debug.WriteLine("Running");
-            frm_main_acc_control.ExpandAll();
-
-            Debug.WriteLine(frm_main_acc_control.ExpandAll());
-        }
-
-        private void accordionControlElement4_Click(object sender, EventArgs e)
-        {
-            Debug.WriteLine("Running");
-            frm_main_acc_control.CollapseAll();
-        }
-
-        private void m_element_depart_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void m_element_depart_Click_2(object sender, EventArgs e)
-        {
-
-        }
+        
+        
     }
 }

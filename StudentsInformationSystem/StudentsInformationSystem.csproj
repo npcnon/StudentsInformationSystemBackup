@@ -247,6 +247,12 @@
     <Compile Include="TblTeacherInfo.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\FrmAddAdditionalStaffInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\FrmAddAdditionalStaffInfo.Designer.cs">
+      <DependentUpon>FrmAddAdditionalStaffInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\FrmAddCourse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +271,18 @@
     <Compile Include="UI\Modules\FrmAddRoom.Designer.cs">
       <DependentUpon>FrmAddRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\FrmAddSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\FrmAddSchedule.Designer.cs">
+      <DependentUpon>FrmAddSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\FrmAddStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\FrmAddStaff.Designer.cs">
+      <DependentUpon>FrmAddStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\FrmAddSubj.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +295,12 @@
     <Compile Include="UI\Modules\FrmCourseGrid.Designer.cs">
       <DependentUpon>FrmCourseGrid.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\UcAddMoreStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\UcAddMoreStudent.Designer.cs">
+      <DependentUpon>UcAddMoreStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\UcAddSchedule.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -288,6 +312,12 @@
     </Compile>
     <Compile Include="UI\Modules\UcAddStdnt.Designer.cs">
       <DependentUpon>UcAddStdnt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Modules\UcAddStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\UcAddStudent.Designer.cs">
+      <DependentUpon>UcAddStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Modules\UcAddSubj.cs">
       <SubType>UserControl</SubType>
@@ -361,12 +391,6 @@
     <Compile Include="UI\Modules\UcGrid.Designer.cs">
       <DependentUpon>UcGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Modules\WaitForm3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\WaitForm3.Designer.cs">
-      <DependentUpon>WaitForm3.cs</DependentUpon>
-    </Compile>
     <Compile Include="USER.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
@@ -396,6 +420,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Modules\FrmAddAdditionalStaffInfo.resx">
+      <DependentUpon>FrmAddAdditionalStaffInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\FrmAddCourse.resx">
       <DependentUpon>FrmAddCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -404,6 +431,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\FrmAddRoom.resx">
       <DependentUpon>FrmAddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\FrmAddSchedule.resx">
+      <DependentUpon>FrmAddSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\FrmAddStaff.resx">
+      <DependentUpon>FrmAddStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\FrmAddSubj.resx">
       <DependentUpon>FrmAddSubj.cs</DependentUpon>
@@ -419,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcAddStdnt.resx">
       <DependentUpon>UcAddStdnt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\UcAddStudent.resx">
+      <DependentUpon>UcAddStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcAddSubj.resx">
       <DependentUpon>UcAddSubj.cs</DependentUpon>
@@ -452,9 +488,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\WaitForm2.resx">
       <DependentUpon>WaitForm2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\WaitForm3.resx">
-      <DependentUpon>WaitForm3.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <EntityDeploy Include="EntityModel.edmx">
@@ -527,6 +560,7 @@
       <DependentUpon>Model2.edmx</DependentUpon>
       <LastGenOutput>Model2.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\background %281%29.jpg" />
     <None Include="Resources\loading GIF2.gif" />
     <None Include="Resources\loading GIF1.gif" />
     <None Include="Resources\login_background.jpg" />

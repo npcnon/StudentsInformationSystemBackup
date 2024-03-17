@@ -26,10 +26,10 @@ namespace StudentsInformationSystem
         private void FrmLogIn_Load(object sender, EventArgs e)
         {
           
-             for (int i = 0; i < 100; i++)
-            {
-                Thread.Sleep(30);
-            }
+            // for (int i = 0; i < 100; i++)
+            //{
+            //    Thread.Sleep(30);
+            //}
             
              txt_username.KeyDown += control_keypress;
             txt_password.KeyDown += control_keypress;

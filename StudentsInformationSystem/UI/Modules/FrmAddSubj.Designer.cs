@@ -215,9 +215,9 @@
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(26, 22);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(129, 32);
+            this.labelControl1.Size = new System.Drawing.Size(132, 32);
             this.labelControl1.TabIndex = 9;
-            this.labelControl1.Text = "Add Course";
+            this.labelControl1.Text = "Add Subject";
             // 
             // cbox_course
             // 

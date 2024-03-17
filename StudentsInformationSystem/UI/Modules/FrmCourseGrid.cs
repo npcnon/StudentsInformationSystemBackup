@@ -40,7 +40,7 @@ namespace StudentsInformationSystem.UI.Modules
         
             //gview_course.OptionsBehavior.ReadOnly = true;
             StartPosition = FormStartPosition.CenterScreen;
-            await functions.LoadData<Course>(UcCourses.endpoint, grid_course);
+            //await functions.LoadData<Course>(UcCourses.endpoint, grid_course);
         }
 
         private void gview_course_DoubleClick(object sender, EventArgs e)

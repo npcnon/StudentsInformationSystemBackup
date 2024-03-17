@@ -121,6 +121,7 @@
             this.btn_cancel.Size = new System.Drawing.Size(107, 37);
             this.btn_cancel.TabIndex = 10;
             this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_clear
             // 
@@ -133,6 +134,7 @@
             this.btn_clear.Size = new System.Drawing.Size(107, 37);
             this.btn_clear.TabIndex = 11;
             this.btn_clear.Text = "Clear";
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_delete_floor
             // 
@@ -197,6 +199,7 @@
             this.btn_add.Size = new System.Drawing.Size(107, 37);
             this.btn_add.TabIndex = 12;
             this.btn_add.Text = "Add";
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // cbox_building
             // 

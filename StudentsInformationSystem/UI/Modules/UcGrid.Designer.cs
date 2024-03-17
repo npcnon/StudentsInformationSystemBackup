@@ -185,12 +185,13 @@
             // 
             // UcGrid
             // 
-            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::StudentsInformationSystem.Properties.Resources.background__1_;
             this.Controls.Add(this.layoutControl);
             this.Name = "UcGrid";
             this.Size = new System.Drawing.Size(800, 600);

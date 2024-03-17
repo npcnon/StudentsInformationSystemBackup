@@ -14,6 +14,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -135,8 +136,10 @@ namespace StudentsInformationSystem.UI.Modules
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             gview_general.OptionsBehavior.Editable = false;
+
+            BackgroundImage = Properties.Resources.background__1_;
         }
-    
+
         private async void gridView_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             // Get the modified row
@@ -146,7 +149,26 @@ namespace StudentsInformationSystem.UI.Modules
                 try
                 {
                     string idToUpdate = modifiedRow["id"].ToString();
-                    await functions.ModifyActiveField(modifyendpoint, e.Column.FieldName, modifiedRow[e.Column.FieldName].ToString(), idToUpdate, false);
+                    string modifiedValue = modifiedRow[e.Column.FieldName].ToString();
+
+                    // Check if the modified field is an email or contact info
+                    if (e.Column.FieldName == "email" || e.Column.FieldName == "contact_info")
+                    {
+                        // Validate the modified value
+                        if (e.Column.FieldName == "email" && !Regex.IsMatch(modifiedValue, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+                        {
+                            MessageBox.Show("Invalid Email.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        else if (e.Column.FieldName == "contact_info" && !Regex.IsMatch(modifiedValue, @"^\d{11}$"))
+                        {
+                            MessageBox.Show("Invalid Contact Info.", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    // Modify the active field
+                    await functions.ModifyActiveField(modifyendpoint, e.Column.FieldName, modifiedValue, idToUpdate, false);
                 }
                 catch (ArgumentException argex)
                 {
@@ -160,9 +182,8 @@ namespace StudentsInformationSystem.UI.Modules
                     gview_general.OptionsBehavior.Editable = false;
                 }
             }
-                // Call the new ModifyActiveField method
-               
         }
+
     }
 }
 

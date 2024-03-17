@@ -19,6 +19,7 @@ using System.ComponentModel;
 using System.Data;
 using DevExpress.XtraBars.FluentDesignSystem;
 using System.Net;
+using System.Reflection;
 
 namespace StudentsInformationSystem
 {
@@ -216,11 +217,19 @@ namespace StudentsInformationSystem
         }
 
 
-        internal static async Task LoadData<T>(string endpoint, GridControl gcont, ComboBoxEdit cbox = null, Func<T, object> conversionFunc = null) where T : class
+        internal static async Task LoadData<T>(string endpoint, GridControl gcont, ComboBoxEdit cbox = null, Func<T, object> conversionFunc = null, string filter = null) where T : class
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync(baseUrl + endpoint);
+                HttpResponseMessage response;
+
+                if (filter != null)
+                {
+                    // Append the filter to the endpoint URL
+                    endpoint += $"?filter={filter}";
+                }
+
+                response = await client.GetAsync(baseUrl + endpoint);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -244,7 +253,6 @@ namespace StudentsInformationSystem
                         }
 
                         // Set the DataTable as the DataSource for the GridControl
-                      
                         gcont.Refresh();
                         gcont.RefreshDataSource();
                         gcont.DataSource = dataTable;
@@ -255,7 +263,11 @@ namespace StudentsInformationSystem
                         if (conversionFunc != null)
                         {
                             // Use the provided conversion function to populate the ComboBoxEdit
-                            cbox.Properties.Items.AddRange(data.Select(conversionFunc).ToArray());
+                            cbox.Properties.Items.Clear();
+                            foreach (var item in data)
+                            {
+                                cbox.Properties.Items.Add(conversionFunc(item));
+                            }
                         }
                         else
                         {
@@ -282,6 +294,7 @@ namespace StudentsInformationSystem
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
 
         internal static DataTable ConvertToDataTable<T>(IEnumerable<T> data)
         {
@@ -372,20 +385,25 @@ namespace StudentsInformationSystem
                 {
                     // Construct the JSON payload to send in the request body
                     var payload = new Dictionary<string, string>
-            {
-                { fieldName, fieldValue }
-            };
+                    {
+                        { fieldName, fieldValue }
+                    };
 
                     // Convert the payload to JSON
                     string jsonPayload = JsonConvert.SerializeObject(payload);
+                    Debug.WriteLine("JSON Payload: " + jsonPayload);
 
                     // Create the HTTP request
                     var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
                     response = await client.PutAsync(baseUrl + requestEndpoint, content);
                 }
 
+                string responseContent = await response.Content.ReadAsStringAsync();
+                Debug.WriteLine("API Response: " + responseContent);
+
                 if (response.IsSuccessStatusCode)
                 {
+                    
                     MessageBox.Show("Active field modified successfully.");
                     api_response_success = true;
                 }
@@ -405,7 +423,7 @@ namespace StudentsInformationSystem
 
 
 
-        internal static async Task<int?> GetEntityId(string propertyName, string propertyValue, string idPropertyName, string endpoint)
+        internal static async Task<int?> GetEntityId(string propertyName =null, string propertyValue = null, string idPropertyName= null, string endpoint=null, bool fullname = false, bool getroom = false)
         {
             try
             {
@@ -414,16 +432,49 @@ namespace StudentsInformationSystem
                 if (response.IsSuccessStatusCode)
                 {
                     string jsonResponse = await response.Content.ReadAsStringAsync();
+                    string value;
                     JArray data = JArray.Parse(jsonResponse);
-
-                    foreach (JObject item in data)
+                    if(propertyName != null)
                     {
-                        string value = item.GetValue(propertyName)?.ToString();
-                        if (value == propertyValue)
+                        foreach (JObject item in data)
                         {
-                            Debug.WriteLine(Convert.ToInt32(item.GetValue(idPropertyName)));
-                            api_response_success = true;
-                            return Convert.ToInt32(item.GetValue(idPropertyName));
+                            value = item.GetValue(propertyName)?.ToString();
+
+                            if (value == propertyValue)
+                            {
+                                Debug.WriteLine(Convert.ToInt32(item.GetValue(idPropertyName)));
+                                api_response_success = true;
+                                return Convert.ToInt32(item.GetValue(idPropertyName));
+                            }
+                        }
+                    }
+                    else if(fullname)
+                    {
+                        foreach (JObject item in data)
+                        {
+                            value = $"{item.GetValue("f_name")} {item.GetValue("m_name")} {item.GetValue("l_name")}";
+
+                            if (value == propertyValue)
+                            {
+                                Debug.WriteLine(Convert.ToInt32(item.GetValue(idPropertyName)));
+                                api_response_success = true;
+                                return Convert.ToInt32(item.GetValue(idPropertyName));
+                            }
+                        }
+                            
+                    }
+                    else if(getroom)
+                    {
+                        foreach (JObject item in data)
+                        {
+                            value = $"{item.GetValue("room_no")} {item.GetValue("floor_lvl")} {item.GetValue("building")}";
+
+                            if (value == propertyValue)
+                            {
+                                Debug.WriteLine(Convert.ToInt32(item.GetValue(idPropertyName)));
+                                api_response_success = true;
+                                return Convert.ToInt32(item.GetValue(idPropertyName));
+                            }
                         }
                     }
 
@@ -447,6 +498,100 @@ namespace StudentsInformationSystem
             }
         }
 
+        internal static async Task<List<int?>> GetMultipleEntityIds(string propertyName, string propertyValue, string idPropertyName, string endpoint)
+        {
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(baseUrl + endpoint);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    Debug.WriteLine("API Response: " + jsonResponse);
+                    JArray data = JArray.Parse(jsonResponse);
+                    List<int?> entityIds = new List<int?>();
+
+                    foreach (JObject item in data)
+                    {
+                        string value = item.GetValue(propertyName)?.ToString();
+
+                        if (value == propertyValue)
+                        {
+                            Debug.WriteLine(Convert.ToInt32(item.GetValue(idPropertyName)));
+                            api_response_success = true;
+                            entityIds.Add(Convert.ToInt32(item.GetValue(idPropertyName)));
+                        }
+                    }
+
+                    if (entityIds.Count == 0)
+                    {
+                        Debug.WriteLine($"{propertyName} '{propertyValue}' not found");
+                        api_response_success = false;
+                    }
+
+                    return entityIds;
+                }
+                else
+                {
+                    MessageBox.Show("Error: " + response.StatusCode);
+                    api_response_success = false;
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                api_response_success = false;
+                return null;
+            }
+        }
+
+
+        internal static async Task<string> GetEntityOfferCode(string propertyName = null, string propertyValue = null, string offerCodePropertyName = null, string endpoint = null)
+        {
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(baseUrl + endpoint);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    string value;
+                    JArray data = JArray.Parse(jsonResponse);
+                    if (propertyName != null)
+                    {
+                        foreach (JObject item in data)
+                        {
+                            value = item.GetValue(propertyName)?.ToString();
+
+                            if (value == propertyValue)
+                            {
+                                Debug.WriteLine(item.GetValue(offerCodePropertyName)?.ToString());
+                                api_response_success = true;
+                                return item.GetValue(offerCodePropertyName)?.ToString();
+                            }
+                        }
+                    }
+
+                    // Entity not found
+                    Debug.WriteLine($"{propertyName} '{propertyValue}' not found");
+                    api_response_success = false;
+                    return null;
+                }
+                else
+                {
+                    MessageBox.Show("Error: " + response.StatusCode);
+                    api_response_success = false;
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                api_response_success = false;
+                return null;
+            }
+        }
 
 
         internal static async Task ShowWaitFormAsync(UcGrid inst = null, DirectXForm frm = null, GridControl grid = null)
@@ -493,7 +638,38 @@ namespace StudentsInformationSystem
                 waitForm.Close();
             }
         }
-        
+
+        internal static void SaveDataToJson(List<string> data, string filename)
+        {
+            string directory = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources");
+
+            // Create the directory if it doesn't exist
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            string path = Path.Combine(directory, filename);
+            string json = JsonConvert.SerializeObject(data);
+            File.WriteAllText(path, json);
+        }
+
+
+        internal static T LoadDataFromJson<T>(string filename)
+        {
+            string directory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string path = Path.Combine(directory, "Resources", filename);
+
+            if (File.Exists(path))
+            {
+                string json = File.ReadAllText(path);
+                return JsonConvert.DeserializeObject<T>(json);
+            }
+            else
+            {
+                return default(T);
+            }
+        }
 
     }
 
