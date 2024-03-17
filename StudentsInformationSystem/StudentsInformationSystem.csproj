@@ -259,6 +259,12 @@
     <Compile Include="UI\Modules\FrmAddDepartment.Designer.cs">
       <DependentUpon>FrmAddDepartment.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\FrmAddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\FrmAddRoom.Designer.cs">
+      <DependentUpon>FrmAddRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\FrmAddSubj.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -395,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\FrmAddDepartment.resx">
       <DependentUpon>FrmAddDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\FrmAddRoom.resx">
+      <DependentUpon>FrmAddRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\FrmAddSubj.resx">
       <DependentUpon>FrmAddSubj.cs</DependentUpon>

@@ -83,7 +83,7 @@ namespace StudentsInformationSystem.UI.Modules
         }
     }
 
-    public class Course
+    internal class Course
     {
         private int _id;
         private string _course;

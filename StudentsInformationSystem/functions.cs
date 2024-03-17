@@ -348,7 +348,7 @@ namespace StudentsInformationSystem
         }
 
 
-        internal static async Task ModifyActiveField(string endpoint, string fieldName, string fieldValue, int? id = null, bool deactivate = false,string offercode = null)
+        internal static async Task ModifyActiveField(string endpoint, string fieldName, string fieldValue, string id = null, bool deactivate = false,string offercode = null)
         {
             try
             {

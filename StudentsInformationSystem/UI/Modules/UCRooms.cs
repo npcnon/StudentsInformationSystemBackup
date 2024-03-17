@@ -51,34 +51,6 @@ namespace StudentsInformationSystem.UI.Modules
         }
     }
 
-    internal class Room
-    {
-        private string _floor_lvl;
-        private string _building;
-        private int? _room_no;
-        public int id { get; set; }
-        public int? room_no
-        {
-            get => _room_no;
-            set => _room_no = value;
-        }
-
-        public string floor_lvl
-        {
-            get => _floor_lvl;
-            set => _floor_lvl = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Floor cannot be null");
-        }
-
-        public string building
-        {
-            get => _building;
-            set => _building = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Building cannot be null");
-
-        }
-
-        
-
-        
-    }
+    
 
 }

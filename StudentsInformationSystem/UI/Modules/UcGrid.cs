@@ -75,10 +75,24 @@ namespace StudentsInformationSystem.UI.Modules
                     DataRowView selectedRowToDelete = (DataRowView)gview_general.GetFocusedRow();
                     if (selectedRowToDelete != null)
                     {
-                        int idToDelete = Convert.ToInt32(selectedRowToDelete["id"]);
-                        // Call the new ModifyActiveField method
-                        await functions.ModifyActiveField(modifyendpoint, "id", idToDelete.ToString(), idToDelete, true);
-                        (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
+                        try
+                        {
+                            string idToDelete = selectedRowToDelete["id"].ToString();
+                            // Call the new ModifyActiveField method
+                            await functions.ModifyActiveField(modifyendpoint, "id", idToDelete, idToDelete, true);
+
+                        }
+                        catch (Exception argex)
+                        {
+                            Debug.WriteLine($"Error Catched: {argex}");
+                            string offercode_to_delete = selectedRowToDelete["offercode"].ToString();
+                            // Call the new ModifyActiveField method
+                            await functions.ModifyActiveField(modifyendpoint, "offercode", offercode_to_delete, offercode_to_delete, true);
+                        }
+                        finally
+                        {
+                            (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
+                        }
                     }
                     else
                     {
@@ -109,6 +123,10 @@ namespace StudentsInformationSystem.UI.Modules
             // Load data asynchronously
             await functions.LoadData<T>(endpoint, myinstance.gridcont_general);
             myinstance.gview_general.PopulateColumns();
+            if(myinstance.gview_general.RowCount == 0)
+            {
+                MessageBox.Show("Table is Empty, Please add some data.", "Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }    
         }
 
 
@@ -127,7 +145,7 @@ namespace StudentsInformationSystem.UI.Modules
             {
                 try
                 {
-                    int idToUpdate = Convert.ToInt32(modifiedRow["id"]);
+                    string idToUpdate = modifiedRow["id"].ToString();
                     await functions.ModifyActiveField(modifyendpoint, e.Column.FieldName, modifiedRow[e.Column.FieldName].ToString(), idToUpdate, false);
                 }
                 catch (ArgumentException argex)
