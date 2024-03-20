@@ -447,6 +447,9 @@
     <EmbeddedResource Include="UI\Modules\FrmDepartmentGrid.resx">
       <DependentUpon>FrmDepartmentGrid.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\UcAddMoreStudent.resx">
+      <DependentUpon>UcAddMoreStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcAddSchedule.resx">
       <DependentUpon>UcAddSchedule.cs</DependentUpon>
     </EmbeddedResource>

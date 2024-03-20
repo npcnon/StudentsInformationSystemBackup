@@ -165,12 +165,17 @@ namespace StudentsInformationSystem
             }
         
         }
-       
-        public static byte[] ImageToByteArray(Image image)
+
+        public static byte[] ConvertImageToByteArray(Image image)
         {
+            if (image == null)
+            {
+                return null;
+            }
+
             using (MemoryStream ms = new MemoryStream())
             {
-                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg); // You can choose other image formats if needed
                 return ms.ToArray();
             }
         }
@@ -590,6 +595,43 @@ namespace StudentsInformationSystem
                 MessageBox.Show("Error: " + ex.Message);
                 api_response_success = false;
                 return null;
+            }
+        }
+
+        internal static async Task<int> GetStudentId(string endpoint)
+        {
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(baseUrl + endpoint);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    JArray data = JArray.Parse(jsonResponse);
+
+                    if (data.Count > 0)
+                    {
+                        // If there are existing students, return the ID of the first student
+                        JObject latestStudent = (JObject)data.Last;
+                        int studentId = (int)latestStudent["id"];
+                        return studentId+1;
+                    }
+                    else
+                    {
+                        // If there are no existing students, return 1
+                        return 1;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error: " + response.StatusCode);
+                    return -1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return -1;
             }
         }
 

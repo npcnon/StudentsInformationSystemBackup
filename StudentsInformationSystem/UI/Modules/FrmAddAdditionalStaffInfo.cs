@@ -92,44 +92,44 @@ namespace StudentsInformationSystem.UI.Modules
         }
     }
 
-    internal class Addstaffinfo
-    {
-        private string _staff_address;
-        private string _contact_info;
-        private string _email;
-        private int? _staff_id;
-        private bool _active;
-        private int _id;
-        public string staff_address
+        internal class Addstaffinfo
         {
-            get => _staff_address;
-            set => _staff_address = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Address cannot be null");
-        }
+            private string _staff_address;
+            private string _contact_info;
+            private string _email;
+            private int? _staff_id;
+            private bool _active;
+            private int _id;
+            public string staff_address
+            {
+                get => _staff_address;
+                set => _staff_address = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Address cannot be null");
+            }
     
-        public string contact_info
-        {
-            get => _contact_info;
-            set => _contact_info = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Contact Info cannot be null");
-        }
+            public string contact_info
+            {
+                get => _contact_info;
+                set => _contact_info = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Contact Info cannot be null");
+            }
 
-        public string email
-        {
-            get => _email;
-            set => _email = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Email cannot be null");
-        }
-        public int? staff_id
-        {
-            get => _staff_id;
-            set => _staff_id = value;
-        }
+            public string email
+            {
+                get => _email;
+                set => _email = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Email cannot be null");
+            }
+            public int? staff_id
+            {
+                get => _staff_id;
+                set => _staff_id = value;
+            }
 
-        public bool active
-        {
-            get => _active;
-            set => _active = value;
-        }
-        public int id
-        {
+            public bool active
+            {
+                get => _active;
+                set => _active = value;
+            }
+            public int id
+            {
             get => _id;
             set => _id = value;
         }

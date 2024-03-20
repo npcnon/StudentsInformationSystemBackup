@@ -215,6 +215,7 @@
             this.ChildControls.Add(this.directXFormContainerControl1);
             this.ClientSize = new System.Drawing.Size(600, 459);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "FrmAddAdditionalStaffInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAddAdditionalStaffInfo";

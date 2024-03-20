@@ -85,11 +85,11 @@
             // 
             this.btn_save.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.Appearance.Options.UseFont = true;
-            this.btn_save.Location = new System.Drawing.Point(532, 501);
+            this.btn_save.Location = new System.Drawing.Point(517, 501);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(100, 41);
+            this.btn_save.Size = new System.Drawing.Size(119, 41);
             this.btn_save.TabIndex = 80;
-            this.btn_save.Text = "Save";
+            this.btn_save.Text = "Quick Save";
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_cancel
@@ -101,6 +101,7 @@
             this.btn_cancel.Size = new System.Drawing.Size(118, 41);
             this.btn_cancel.TabIndex = 79;
             this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // simpleButton1
             // 
@@ -273,6 +274,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dedit_bday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dedit_bday.Properties.MaskSettings.Set("mask", "yyy/MM/");
+            this.dedit_bday.Properties.UseMaskAsDisplayFormat = true;
             this.dedit_bday.Size = new System.Drawing.Size(216, 36);
             this.dedit_bday.TabIndex = 67;
             // 
@@ -352,9 +355,9 @@
             this.Controls.Add(this.cbox_gender);
             this.Controls.Add(this.cbox_civil_status);
             this.Controls.Add(this.pedit_stdnt_pic);
-            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "UcAddStudent";
             this.Size = new System.Drawing.Size(675, 559);
+            this.Load += new System.EventHandler(this.UcAddStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_fname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_mname.Properties)).EndInit();

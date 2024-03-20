@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +15,8 @@ namespace StudentsInformationSystem.UI.Modules
 {
     public partial class UcAddStudent : DevExpress.DXperience.Demos.TutorialControlBase
     {
+
+        internal const string endpoint = "api/student/";
         public UcAddStudent()
         {
             InitializeComponent();
@@ -44,13 +48,59 @@ namespace StudentsInformationSystem.UI.Modules
             }
         }
 
-        private void btn_save_Click(object sender, EventArgs e)
+        private async void btn_save_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var student = new Student
+                {
+                    f_name = txt_fname.Text,
+                    m_name = txt_mname.Text,
+                    l_name = txt_lname.Text,
+                    birth_date = dedit_bday.DateTime,
+                    gender = cbox_gender.Text,
+                    civil_stat = cbox_civil_status.Text,
+                    citizenship = "data not inserted",
+                    religion = "data not inserted",
+                    ImageData = functions.ConvertImageToByteArray(pedit_stdnt_pic.Image)
+                };
+                await functions.InsertData(student, endpoint);
 
+                // Raise the custom event when the "Save" button is clicked
+
+               
+                if (functions.api_response_success)
+                {
+                    (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
+                    Enabled = false;
+                    await Task.Delay(2000);
+                    Enabled = true;
+                }
+
+            }
+            catch (ArgumentException ex_argument)
+            {
+                MessageBox.Show(ex_argument.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+        }
 
-        
+        private async void UcAddStudent_Load(object sender, EventArgs e)
+        {
+            int? student_id = await functions.GetStudentId(endpoint);
+            if (student_id != null)
+            {
+                txt_id.Text = student_id.ToString();
+            }
+
+        }
     }
 
 
@@ -59,13 +109,84 @@ namespace StudentsInformationSystem.UI.Modules
         private string _f_name;
         private string _m_name;
         private string _l_name;
-        private DateTime _bird_date;
+        private DateTime _birth_date;
         private string _gender;
         private string _civil_stat;
         private string _citizenship;
-        private string 
+        private string _religion;
+        private byte[] _ImageData;
+        private bool _active;
 
+        public string f_name
+        {
+            get => _f_name;
+            set => _f_name = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Invalid First Name");
+        }
 
+        public string m_name
+        {
+            get => _m_name;
+            set => _m_name = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Invalid Middle Name");
+        }
 
+        public string l_name
+        {
+            get => _l_name;
+            set => _l_name = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Invalid Last Name");
+        }
+
+        public DateTime birth_date
+        {
+            get => _birth_date;
+            set
+            {
+                if (value <= DateTime.Now)
+                {
+                    _birth_date = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Error: Invalid Birth Date");
+                }
+            }
+        }
+
+        public string gender
+        {
+            get => _gender;
+            set => _gender = !string.IsNullOrWhiteSpace(value) ? value : throw new ArgumentException("Error: Invalid Gender");
+        }
+
+        public string civil_stat
+        {
+            get => _civil_stat;
+            set => _civil_stat = value; // You can add validation if required
+        }
+
+        public string citizenship
+        {
+            get => _citizenship;
+            set => _citizenship = value; // You can add validation if required
+        }
+
+        public string religion
+        {
+            get => _religion;
+            set => _religion = value; // You can add validation if required
+        }
+
+        public byte[] ImageData
+        {
+            get => _ImageData;
+            set => _ImageData = value; // You may need to validate or process image data here
+        }
+
+        public bool active
+        {
+            get => _active;
+            set => _active = value; // You can add validation if required
+        }
     }
+
+
 }

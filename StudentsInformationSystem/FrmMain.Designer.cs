@@ -133,14 +133,15 @@
             this.s_element_srchstdnt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_srchstdnt.ImageOptions.SvgImage")));
             this.s_element_srchstdnt.Name = "s_element_srchstdnt";
             this.s_element_srchstdnt.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.s_element_srchstdnt.Text = "Search  Student";
+            this.s_element_srchstdnt.Text = "Add Student Detailed Info";
+            this.s_element_srchstdnt.Click += new System.EventHandler(this.s_element_srchstdnt_Click);
             // 
             // s_element_rmstdnt
             // 
             this.s_element_rmstdnt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_rmstdnt.ImageOptions.SvgImage")));
             this.s_element_rmstdnt.Name = "s_element_rmstdnt";
             this.s_element_rmstdnt.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.s_element_rmstdnt.Text = "Remove Student";
+            this.s_element_rmstdnt.Text = "Student List";
             this.s_element_rmstdnt.Click += new System.EventHandler(this.s_element_rmstdnt_Click_1);
             // 
             // m_element_schedule
@@ -271,6 +272,8 @@
             this.frm_main_container.Appearance.Options.UseBackColor = true;
             this.frm_main_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.frm_main_container.Location = new System.Drawing.Point(250, 0);
+            this.frm_main_container.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.frm_main_container.LookAndFeel.UseDefaultLookAndFeel = false;
             this.frm_main_container.Name = "frm_main_container";
             this.frm_main_container.Size = new System.Drawing.Size(675, 559);
             this.frm_main_container.TabIndex = 0;
@@ -287,7 +290,6 @@
             this.ClientSize = new System.Drawing.Size(925, 559);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("FrmMain.IconOptions.Icon")));
-            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BENEDICTO SIS";
