@@ -14,8 +14,7 @@ namespace StudentsInformationSystem.UI.Modules
 {
     public partial class FrmAddAdditionalStudentInfo : DevExpress.XtraEditors.DirectXForm
     {
-        int? student_id;
-        public static string modifyendpoint = "api/addstdntinfo/";
+        public static string endpoint = "api/stdntschooldetails/";
         StudentSchoolDetails student_school = new StudentSchoolDetails();
         List<string> course_list = new List<string>();
         public FrmAddAdditionalStudentInfo()
@@ -23,14 +22,17 @@ namespace StudentsInformationSystem.UI.Modules
             InitializeComponent();
         }
 
-    
+
 
         private async void cbox_student_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                student_id = await functions.GetEntityId(null, cbox_student.Text, "id", FrmAddStudent.endpoint, true);
-
+                int? student_id = await functions.GetEntityId(null, cbox_student.Text, "id", FrmAddStudent.endpoint, true);
+                if(student_id.HasValue)
+                {
+                    student_school.stdnt_id = student_id;
+                }
             }
             catch (Exception ex)
             {
@@ -38,13 +40,10 @@ namespace StudentsInformationSystem.UI.Modules
             }
         }
 
-        private void btn_save_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private async void FrmAddAdditionalStudentInfo_Load(object sender, EventArgs e)
         {
+
             cbox_student.Properties.Items.Clear();
             await functions.LoadData<Student>(FrmAddStudent.endpoint, null, cbox_student, d => $"{d.f_name} {d.m_name} {d.l_name}");
             cbox_course.Enabled = false;
@@ -76,7 +75,7 @@ namespace StudentsInformationSystem.UI.Modules
                     foreach (int? id in course_id)
                     {
                         // Construct the filter criteria based on the selected staff's department ID
-                        string filterCriteria = $"course_id={id}";
+                        string filterCriteria = $"id={id}";
 
                         // Load subjects based on the selected staff's department
 
@@ -93,57 +92,64 @@ namespace StudentsInformationSystem.UI.Modules
                     MessageBox.Show("Unable Load Subjects");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
+       
+        private async void cbox_course_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int? course_id = await functions.GetEntityId("course", cbox_course.Text, "id", FrmAddCourse.endpoint);
+            if (course_id != null)
+            {
+                student_school.course = course_id;
+            }
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private async void btn_save_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                student_school.yr_lvl = cbox_year_lvl.Text;
+                student_school.semester = cbox_semester.Text;
+
+                await functions.InsertData(student_school, endpoint);
+         
+
+
+                if (functions.api_response_success)
+                {
+                    (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
+                    Enabled = false;
+                    await Task.Delay(2000);
+                    Enabled = true;
+                }
+
+            }
+            catch (ArgumentException ex_argument)
+            {
+                MessageBox.Show(ex_argument.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-    public class AddStdntInfo
-    {
-        private int? _stdnt_id;
-        private string _stdnt_address;
-        private string _contact_info;
-        private string _email;
-        private int _id;
-        private bool _active;
-
-
-        public int? stdnt_id
-        {
-            get => _stdnt_id;
-            set => _stdnt_id = value;
-        }
-
-        public string stdnt_address
-        {
-            get => _stdnt_address;
-            set => _stdnt_address = value;
-        }
-
-        public string contact_info
-        {
-            get => _contact_info;
-            set => _contact_info = value;
-        }
-
-        public string email
-        {
-            get => _email;
-            set => _email = value;
-        }
-        public int id
-        {
-            get => _id;
-            set => _id = value;
-        }
-
-        public bool active
-        {
-            get => _active;
-            set => _active = value;
-        }
-    }
+   
 
     public class StudentSchoolDetails
     {

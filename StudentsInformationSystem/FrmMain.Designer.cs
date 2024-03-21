@@ -36,7 +36,7 @@
             this.m_element_student = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_addstdnt = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_srchstdnt = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.s_element_rmstdnt = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.s_element_stdnt_contact = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.m_element_schedule = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_sched = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.s_element_room = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -114,7 +114,7 @@
             this.m_element_student.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.s_element_addstdnt,
             this.s_element_srchstdnt,
-            this.s_element_rmstdnt});
+            this.s_element_stdnt_contact});
             this.m_element_student.Expanded = true;
             this.m_element_student.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("m_element_student.ImageOptions.SvgImage")));
             this.m_element_student.Name = "m_element_student";
@@ -136,13 +136,13 @@
             this.s_element_srchstdnt.Text = "Add Student Detailed Info";
             this.s_element_srchstdnt.Click += new System.EventHandler(this.s_element_srchstdnt_Click);
             // 
-            // s_element_rmstdnt
+            // s_element_stdnt_contact
             // 
-            this.s_element_rmstdnt.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_rmstdnt.ImageOptions.SvgImage")));
-            this.s_element_rmstdnt.Name = "s_element_rmstdnt";
-            this.s_element_rmstdnt.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.s_element_rmstdnt.Text = "Student List";
-            this.s_element_rmstdnt.Click += new System.EventHandler(this.s_element_rmstdnt_Click_1);
+            this.s_element_stdnt_contact.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("s_element_rmstdnt.ImageOptions.SvgImage")));
+            this.s_element_stdnt_contact.Name = "s_element_stdnt_contact";
+            this.s_element_stdnt_contact.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.s_element_stdnt_contact.Text = "Student Contact Details";
+            this.s_element_stdnt_contact.Click += new System.EventHandler(this.s_element_rmstdnt_Click_1);
             // 
             // m_element_schedule
             // 
@@ -309,7 +309,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement m_element_schedule;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_addstdnt;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_srchstdnt;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_rmstdnt;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_stdnt_contact;
         private DevExpress.XtraBars.Navigation.AccordionControlElement m_element_Staff;
         private DevExpress.XtraBars.Navigation.AccordionControlElement s_element_staff;
         private DevExpress.XtraBars.Navigation.AccordionControlElement m_element_users;

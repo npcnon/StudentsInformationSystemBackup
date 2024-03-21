@@ -142,20 +142,35 @@ namespace StudentsInformationSystem
 
         private async void s_element_addstdnt_Click_1(object sender, EventArgs e)
         {
+            enable_disable_accordion(sender, e);
+            UcGrid.endpoint = FrmAddStudent.endpoint;
+            UcGrid.modifyendpoint = "api/deactivate_or_modify_student";
+            UcGrid.title = "Student Info";
+            FrmAddStudent adddep = new FrmAddStudent();
+            UcGrid.frm = adddep;
+            UcGrid.myinstance = ucGridInstance;
+            // After loading the module, call initload
+            myFunction = () => UcGrid.initload<Student>();
+            // Invoke the delegate
+            myFunction.Invoke();
+            await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
 
-            await LoadModuleAsync(ModulesInfo.GetItem("UcAddStudent"));
         }
 
         private async void s_element_rmstdnt_Click_1(object sender, EventArgs e)
         {
-            if (ModulesInfo.GetItem("UcRmStdnt") == null)
-            {
-                Debug.Write("aksksdl;knsdl;kadklajsdjas;jda");
-                ModulesInfo.Add(new ModuleInfo("UcRmStdnt", "StudentsInformationSystem.UI.Modules.UcRmStdnt"));
-
-                
-            }
-            await LoadModuleAsync(ModulesInfo.GetItem("UcRmStdnt"));
+            enable_disable_accordion(sender, e);
+            UcGrid.endpoint = FrmStdntContactInfo.endpoint;
+            UcGrid.modifyendpoint = "api/deactivate_or_modify_addstdntinfo";
+            UcGrid.title = "Student Contact Info";
+            FrmStdntContactInfo adddep = new FrmStdntContactInfo();
+            UcGrid.frm = adddep;
+            UcGrid.myinstance = ucGridInstance;
+            // After loading the module, call initload
+            myFunction = () => UcGrid.initload<AddStdntInfo>();
+            // Invoke the delegate
+            myFunction.Invoke();
+            await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
         }
 
 
@@ -313,7 +328,19 @@ namespace StudentsInformationSystem
 
         private async void s_element_srchstdnt_Click(object sender, EventArgs e)
         {
-            await LoadModuleAsync(ModulesInfo.GetItem("UcAddMoreStudent"));
+            enable_disable_accordion(sender, e);
+            UcGrid.endpoint = FrmAddAdditionalStudentInfo.endpoint;
+            UcGrid.modifyendpoint = "api/deactivate_or_modify_stdntschooldetails";
+            UcGrid.title = "Additional Student Information/School Details";
+            // Retrieve UcGrid instance
+            FrmAddAdditionalStudentInfo addcrs = new FrmAddAdditionalStudentInfo();
+            UcGrid.frm = addcrs;
+            UcGrid.myinstance = ucGridInstance;
+            // After loading the module, call initload
+            myFunction = () => UcGrid.initload<StudentSchoolDetails>();
+            // Invoke the delegate
+            myFunction.Invoke();
+            await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
         }
     }
 }
