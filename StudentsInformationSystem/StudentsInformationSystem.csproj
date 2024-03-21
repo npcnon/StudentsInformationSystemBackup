@@ -253,6 +253,12 @@
     <Compile Include="UI\Modules\FrmAddAdditionalStaffInfo.Designer.cs">
       <DependentUpon>FrmAddAdditionalStaffInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\FrmAddAdditionalStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\FrmAddAdditionalStudentInfo.Designer.cs">
+      <DependentUpon>FrmAddAdditionalStudentInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\FrmAddCourse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,107 +289,17 @@
     <Compile Include="UI\Modules\FrmAddStaff.Designer.cs">
       <DependentUpon>FrmAddStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Modules\FrmAddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Modules\FrmAddStudent.Designer.cs">
+      <DependentUpon>FrmAddStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Modules\FrmAddSubj.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Modules\FrmAddSubj.Designer.cs">
       <DependentUpon>FrmAddSubj.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\FrmCourseGrid.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\FrmCourseGrid.Designer.cs">
-      <DependentUpon>FrmCourseGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddMoreStudent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddMoreStudent.Designer.cs">
-      <DependentUpon>UcAddMoreStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddSchedule.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddSchedule.Designer.cs">
-      <DependentUpon>UcAddSchedule.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddStdnt.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddStdnt.Designer.cs">
-      <DependentUpon>UcAddStdnt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddStudent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddStudent.Designer.cs">
-      <DependentUpon>UcAddStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddSubj.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddSubj.Designer.cs">
-      <DependentUpon>UcAddSubj.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddTcher.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddTcher.Designer.cs">
-      <DependentUpon>UcAddTcher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddUser.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UcAddUser.Designer.cs">
-      <DependentUpon>UcAddUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UcCourses.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UcCourses.Designer.cs">
-      <DependentUpon>UcCourses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UcDepartment.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UcDepartment.Designer.cs">
-      <DependentUpon>UcDepartment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UcRmStdnt.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UcRmStdnt.Designer.cs">
-      <DependentUpon>UcRmStdnt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UCRooms.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UCRooms.Designer.cs">
-      <DependentUpon>UCRooms.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UcSearchStudent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UcSearchStudent.Designer.cs">
-      <DependentUpon>UcSearchStudent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\UcStartmenu.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\UcStartmenu.Designer.cs">
-      <DependentUpon>UcStartmenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\WaitForm2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\WaitForm2.Designer.cs">
-      <DependentUpon>WaitForm2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Modules\FrmDepartmentGrid.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Modules\FrmDepartmentGrid.Designer.cs">
-      <DependentUpon>FrmDepartmentGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Modules\UcGrid.cs">
       <SubType>UserControl</SubType>
@@ -393,6 +309,12 @@
     </Compile>
     <Compile Include="USER.cs">
       <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FrmChangePass.resx">
       <DependentUpon>FrmChangePass.cs</DependentUpon>
@@ -423,6 +345,9 @@
     <EmbeddedResource Include="UI\Modules\FrmAddAdditionalStaffInfo.resx">
       <DependentUpon>FrmAddAdditionalStaffInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\FrmAddAdditionalStudentInfo.resx">
+      <DependentUpon>FrmAddAdditionalStudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\FrmAddCourse.resx">
       <DependentUpon>FrmAddCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -438,59 +363,17 @@
     <EmbeddedResource Include="UI\Modules\FrmAddStaff.resx">
       <DependentUpon>FrmAddStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Modules\FrmAddStudent.resx">
+      <DependentUpon>FrmAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\FrmAddSubj.resx">
       <DependentUpon>FrmAddSubj.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\FrmCourseGrid.resx">
-      <DependentUpon>FrmCourseGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\FrmDepartmentGrid.resx">
-      <DependentUpon>FrmDepartmentGrid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcAddMoreStudent.resx">
-      <DependentUpon>UcAddMoreStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcAddSchedule.resx">
-      <DependentUpon>UcAddSchedule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcAddStdnt.resx">
-      <DependentUpon>UcAddStdnt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcAddStudent.resx">
-      <DependentUpon>UcAddStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcAddSubj.resx">
-      <DependentUpon>UcAddSubj.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcAddTcher.resx">
-      <DependentUpon>UcAddTcher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcAddUser.resx">
-      <DependentUpon>UcAddUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcCourses.resx">
-      <DependentUpon>UcCourses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcDepartment.resx">
-      <DependentUpon>UcDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Modules\UcGrid.resx">
       <DependentUpon>UcGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcRmStdnt.resx">
-      <DependentUpon>UcRmStdnt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UCRooms.resx">
-      <DependentUpon>UCRooms.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcSearchStudent.resx">
-      <DependentUpon>UcSearchStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\UcStartmenu.resx">
-      <DependentUpon>UcStartmenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Modules\WaitForm2.resx">
-      <DependentUpon>WaitForm2.cs</DependentUpon>
+    <EmbeddedResource Include="WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <EntityDeploy Include="EntityModel.edmx">

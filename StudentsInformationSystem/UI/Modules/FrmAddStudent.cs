@@ -3,31 +3,24 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StudentsInformationSystem.UI.Modules
 {
-    public partial class UcAddStudent : DevExpress.DXperience.Demos.TutorialControlBase
+    public partial class FrmAddStudent : DevExpress.XtraEditors.DirectXForm
     {
-
         internal const string endpoint = "api/student/";
-        public UcAddStudent()
+        public FrmAddStudent()
         {
             InitializeComponent();
-
-
         }
 
-
-        private void btn_add_Click_1(object sender, EventArgs e)
+        private void btn_add_Click(object sender, EventArgs e)
         {
-
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.gif; *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp";
 
@@ -68,7 +61,7 @@ namespace StudentsInformationSystem.UI.Modules
 
                 // Raise the custom event when the "Save" button is clicked
 
-               
+
                 if (functions.api_response_success)
                 {
                     (Application.OpenForms["FrmMain"] as FrmMain)?.InvokeMyFunction();
@@ -88,21 +81,15 @@ namespace StudentsInformationSystem.UI.Modules
             }
         }
 
-        private void btn_cancel_Click(object sender, EventArgs e)
-        {
-        }
-
-        private async void UcAddStudent_Load(object sender, EventArgs e)
+        private async void FrmAddStudent_Load(object sender, EventArgs e)
         {
             int? student_id = await functions.GetStudentId(endpoint);
             if (student_id != null)
             {
                 txt_id.Text = student_id.ToString();
             }
-
         }
     }
-
 
     internal class Student
     {
@@ -187,6 +174,4 @@ namespace StudentsInformationSystem.UI.Modules
             set => _active = value; // You can add validation if required
         }
     }
-
-
 }

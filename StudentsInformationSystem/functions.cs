@@ -639,7 +639,7 @@ namespace StudentsInformationSystem
         internal static async Task ShowWaitFormAsync(UcGrid inst = null, DirectXForm frm = null, GridControl grid = null)
         {
           
-            var waitForm = new WaitForm2(); // Replace YourWaitForm with the actual name of your wait form
+            var waitForm = new WaitForm1(); // Replace YourWaitForm with the actual name of your wait form
             waitForm.Show();
 
             try

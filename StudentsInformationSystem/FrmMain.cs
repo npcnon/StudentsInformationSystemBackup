@@ -133,13 +133,7 @@ namespace StudentsInformationSystem
             UcGrid.firstload = true;
             ModulesInfo.Add(new ModuleInfo("UcGrid", "StudentsInformationSystem.UI.Modules.UcGrid"));
             await LoadModuleAsync(ModulesInfo.GetItem("UcGrid"));
-            ucGridInstance = (UcGrid)frm_main_container.Controls.Find("UcGrid", true).FirstOrDefault();
-            ModulesInfo.Add(new ModuleInfo("UcAddStudent", "StudentsInformationSystem.UI.Modules.UcAddStudent"));
-            await LoadModuleAsync(ModulesInfo.GetItem("UcAddStudent"));
-            ModulesInfo.Add(new ModuleInfo("UcAddMoreStudent", "StudentsInformationSystem.UI.Modules.UcAddMoreStudent"));
-            await LoadModuleAsync(ModulesInfo.GetItem("UcAddMoreStudent"));
-            ModulesInfo.Add(new ModuleInfo("UcStartmenu", "StudentsInformationSystem.UI.Modules.UcStartmenu"));
-            await LoadModuleAsync(ModulesInfo.GetItem("UcStartmenu"));
+            ucGridInstance = (UcGrid)frm_main_container.Controls.Find("UcGrid", true).FirstOrDefault();;
           
 
         }
