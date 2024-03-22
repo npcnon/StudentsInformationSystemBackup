@@ -89,6 +89,22 @@ namespace StudentsInformationSystem.UI.Modules
                 txt_id.Text = student_id.ToString();
             }
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            pedit_stdnt_pic.Image = null;
+            txt_fname.Text = "";
+            txt_mname.Text = "";
+            txt_lname.Text = "";
+            dedit_bday.Text = "";
+            cbox_civil_status.Text = "--SELECT STATUS--";
+            cbox_gender.Text = "--SELECT GENDER--";
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 
     internal class Student

@@ -30,10 +30,10 @@
         private void InitializeComponent()
         {
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcGrid));
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcGrid));
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
             this.windowsUIButtonPanel = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
@@ -62,9 +62,10 @@
             this.layoutControl.Controls.Add(this.lbl_title);
             this.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.layoutControl.Name = "layoutControl";
             this.layoutControl.Root = this.layoutControlGroup;
-            this.layoutControl.Size = new System.Drawing.Size(800, 600);
+            this.layoutControl.Size = new System.Drawing.Size(1067, 785);
             this.layoutControl.TabIndex = 1;
             // 
             // windowsUIButtonPanel
@@ -85,8 +86,11 @@
             this.windowsUIButtonPanel.AppearanceButton.Pressed.Options.UseForeColor = true;
             this.windowsUIButtonPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
             windowsUIButtonImageOptions1.ImageUri.Uri = "Edit;Size32x32;GrayScaled";
+            windowsUIButtonImageOptions1.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions1.SvgImage")));
             windowsUIButtonImageOptions2.ImageUri.Uri = "Edit/Delete;Size32x32;GrayScaled";
+            windowsUIButtonImageOptions2.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions2.SvgImage")));
             windowsUIButtonImageOptions3.ImageUri.Uri = "Refresh;Size32x32;GrayScaled";
+            windowsUIButtonImageOptions3.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions3.SvgImage")));
             windowsUIButtonImageOptions4.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions4.SvgImage")));
             windowsUIButtonImageOptions5.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("windowsUIButtonImageOptions5.SvgImage")));
             this.windowsUIButtonPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
@@ -97,12 +101,12 @@
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Exit", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel.EnableImageTransparency = true;
             this.windowsUIButtonPanel.ForeColor = System.Drawing.Color.White;
-            this.windowsUIButtonPanel.Location = new System.Drawing.Point(42, 538);
-            this.windowsUIButtonPanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.windowsUIButtonPanel.MaximumSize = new System.Drawing.Size(0, 60);
-            this.windowsUIButtonPanel.MinimumSize = new System.Drawing.Size(60, 60);
+            this.windowsUIButtonPanel.Location = new System.Drawing.Point(56, 704);
+            this.windowsUIButtonPanel.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.windowsUIButtonPanel.MaximumSize = new System.Drawing.Size(0, 78);
+            this.windowsUIButtonPanel.MinimumSize = new System.Drawing.Size(80, 78);
             this.windowsUIButtonPanel.Name = "windowsUIButtonPanel";
-            this.windowsUIButtonPanel.Size = new System.Drawing.Size(716, 60);
+            this.windowsUIButtonPanel.Size = new System.Drawing.Size(955, 78);
             this.windowsUIButtonPanel.TabIndex = 7;
             this.windowsUIButtonPanel.Text = "windowsUIButtonPanel";
             this.windowsUIButtonPanel.UseButtonBackgroundImages = false;
@@ -110,18 +114,22 @@
             // 
             // gridcont_general
             // 
-            this.gridcont_general.Location = new System.Drawing.Point(42, 36);
+            this.gridcont_general.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.gridcont_general.Location = new System.Drawing.Point(56, 47);
             this.gridcont_general.MainView = this.gview_general;
+            this.gridcont_general.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridcont_general.Name = "gridcont_general";
-            this.gridcont_general.Size = new System.Drawing.Size(716, 498);
+            this.gridcont_general.Size = new System.Drawing.Size(955, 651);
             this.gridcont_general.TabIndex = 6;
             this.gridcont_general.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gview_general});
             // 
             // gview_general
             // 
+            this.gview_general.DetailHeight = 458;
             this.gview_general.GridControl = this.gridcont_general;
             this.gview_general.Name = "gview_general";
+            this.gview_general.OptionsEditForm.PopupEditFormWidth = 1067;
             this.gview_general.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView_CellValueChanged);
             // 
             // lbl_title
@@ -134,10 +142,11 @@
             this.lbl_title.Appearance.Options.UseTextOptions = true;
             this.lbl_title.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.lbl_title.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
-            this.lbl_title.Location = new System.Drawing.Point(40, 0);
+            this.lbl_title.Location = new System.Drawing.Point(53, 0);
+            this.lbl_title.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbl_title.Name = "lbl_title";
-            this.lbl_title.Padding = new System.Windows.Forms.Padding(0, 3, 13, 6);
-            this.lbl_title.Size = new System.Drawing.Size(720, 34);
+            this.lbl_title.Padding = new System.Windows.Forms.Padding(0, 4, 17, 8);
+            this.lbl_title.Size = new System.Drawing.Size(961, 44);
             this.lbl_title.StyleController = this.layoutControl;
             this.lbl_title.TabIndex = 4;
             this.lbl_title.Text = "Text";
@@ -151,8 +160,8 @@
             this.layoutControlItem1,
             this.layoutControlItem2});
             this.layoutControlGroup.Name = "layoutControlGroup";
-            this.layoutControlGroup.Padding = new DevExpress.XtraLayout.Utils.Padding(40, 40, 0, 0);
-            this.layoutControlGroup.Size = new System.Drawing.Size(800, 600);
+            this.layoutControlGroup.Padding = new DevExpress.XtraLayout.Utils.Padding(53, 53, 0, 0);
+            this.layoutControlGroup.Size = new System.Drawing.Size(1067, 785);
             this.layoutControlGroup.TextVisible = false;
             // 
             // itemLabel
@@ -161,25 +170,25 @@
             this.itemLabel.Location = new System.Drawing.Point(0, 0);
             this.itemLabel.Name = "itemLabel";
             this.itemLabel.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.itemLabel.Size = new System.Drawing.Size(720, 34);
+            this.itemLabel.Size = new System.Drawing.Size(961, 44);
             this.itemLabel.TextSize = new System.Drawing.Size(0, 0);
             this.itemLabel.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.gridcont_general;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 34);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 44);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(720, 502);
+            this.layoutControlItem1.Size = new System.Drawing.Size(961, 657);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.windowsUIButtonPanel;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 536);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 701);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(720, 64);
+            this.layoutControlItem2.Size = new System.Drawing.Size(961, 84);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -189,12 +198,13 @@
             this.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StudentsInformationSystem.Properties.Resources.background__1_;
             this.Controls.Add(this.layoutControl);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UcGrid";
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(1067, 785);
             this.Load += new System.EventHandler(this.UcGrid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
             this.layoutControl.ResumeLayout(false);

@@ -146,7 +146,10 @@ namespace StudentsInformationSystem.UI.Modules
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-
+            cbox_department.Text = "--Select Department--";
+            cbox_course.Text = "--Select Course--";
+            cbox_year_lvl.Text = "--Select Year level--";
+            cbox_semester.Text = "--Select Semester--";
         }
     }
    
